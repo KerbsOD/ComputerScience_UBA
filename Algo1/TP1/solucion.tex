@@ -1,0 +1,188 @@
+% CONFIGURACIÓN DEL PROYECTO
+\documentclass[a4paper]{article}
+\setlength{\parskip}{2mm}
+\newcommand{\tab}{~ \qquad}
+\input{Algo1Macros}
+\usepackage{caratula} 
+\usepackage{hyperref}
+\usepackage{scrextend}
+\usepackage{blindtext}
+
+
+
+
+% CARÁTULA
+\begin{document}
+
+\titulo{TP de Especificación}
+\subtitulo{Trabajo Práctico Grupal}
+\fecha{30 de Marzo de 2022}
+\materia{Algoritmos y Estructuras de Datos I}
+\grupo{Grupo 10}
+
+\newcommand{\dato}{\textit{Dato}}
+\newcommand{\individuo}{\textit{Individuo}}
+
+\integrante{Dominguez, Emilia}{37752993}{maemiliadominguez@gmail.com}
+\integrante{Kerbs, Octavio}{64/22}{octaviokerbs@gmail.com}
+\integrante{Russo, Gabriel}{107/19}{gabrielrussoguiot@gmail.com}
+\integrante{Traverso, Lucas}{479/18}{lucas6246@gmail.com}
+
+\maketitle
+
+
+% ÍNDICE
+\tableofcontents
+\newpage
+
+
+% DEFINICIÓN DE TIPOS
+\section{Definición de Tipos}
+\begin{description}
+	\item type \textit{pos} = \(\ent \times \ent\) 
+	\item type \textit{tablero} = \( \TLista{\TLista{\bool}}\) 
+	\item type \textit{jugadas} = \(\TLista{\textit{pos} \times \ent}\) 
+	\item type \textit{banderitas} = \(\TLista{\textit{pos}}\) 
+\end{description}
+\newpage
+
+
+
+% PROBLEMAS % 
+\section{Problemas}
+
+% PARTE I-----------------------------------------------%
+\subsection{Parte I: Juego b\'asico}
+
+
+% -------------------------------------------EJERCICIO 1-------------------------------------------%
+\subsubsection{Ejercicio 1}
+\begin{addmargin}[4em]{1em}
+\aux{minasAdyacentes}{t: \textit{tablero}, p: \textit{pos}}{\ent}{
+	\sum_{i = max(p_{0} - 1, 0)}^{min(p_{0} + 1, \longitud{t} - 1)} \sum_{j = max(p_{1} - 1, 0)}^{min(p_{1} + 1, \longitud{t} - 1)}
+	\ (if\ (t[i][j] = true)\ then\ 1\ else\ 0\ fi) - (if\ (t[p_{0}][p_{1}] = true)\ then\ 1\ else\ 0\ fi)}
+\end{addmargin}
+
+
+\begin{addmargin}[4em]{1em}
+\aux{max}{x,y: \ent}{\ent}{ if(x < y)\ then\ y\ else\ x}
+\end{addmargin}
+
+
+\begin{addmargin}[4em]{1em}
+\aux{min}{x,y: \ent}{\ent}{ if(x < y)\ then\ x\ else\ y}
+\end{addmargin}
+
+
+% -------------------------------------------EJERCICIO 2-------------------------------------------%
+\subsubsection{Ejercicio 2}
+\begin{addmargin}[4em]{1em}
+\pred{juegoValido}{t: \textit{tablero}, j: \textit{jugadas}}{
+	tableroValido(t) \wedge 
+	\\ posicionValida(t, j) \wedge
+	\\ jugadasNoRepetidas \yLuego
+	\\ ((\forall i:\ent)(0 \leq i < \longitud{j} \implicaLuego ((j[i]_{1} = minasAdyacentes(t, j[i]_{0}))\ \wedge\
+	maximaCantidadBombasEnJugada(t, j, 1)))
+}
+\end{addmargin}
+
+\begin{addmargin}[4em]{1em}
+\pred{tableroValido}{t: \textit{tablero}}{
+	(\forall i: \ent)(0 \leq i < \longitud{t} = t[i])
+}
+\end{addmargin}
+
+\begin{addmargin}[4em]{1em}
+	\pred{posicionValida}{t: \textit{tablero}, j: \textit{jugada}}{
+		(\forall i: \ent)(0 \leq i < \longitud{j} \implicaLuego (0 \leq j[i]_{00} < \longitud{t}\ \wedge\ 0 \leq j[i]_{01} < \longitud{t} ))
+	}
+\end{addmargin}
+
+\begin{addmargin}[4em]{1em}
+\pred{jugadasNoRepetidas}{j: \textit{jugadas}}{
+	(\forall i: \ent)(\forall k: \ent)((0 \leq i < \longitud{j}\ \wedge\ 0 \leq k < \longitud{j}\ \wedge\ i \neq j) \implicaLuego j[i]_{0} \neq j[k]_{0})
+}
+\end{addmargin}
+
+\begin{addmargin}[4em]{1em}
+	\pred{maximaCantidadBombasEnJugada}{t: \textit{tablero}, j: \textit{jugadas}, x: \ent}{
+	\sum_{i = 0}^{\longitud{j} - 1}
+	}
+	\end{addmargin}
+
+
+% -------------------------------------------EJERCICIO 3-------------------------------------------%
+\subsubsection{Ejercicio 3}
+\begin{addmargin}[4em]{1em}
+\begin{proc}{plantarBanderita}{in n: \ent , in j: \textit{jugadas},
+                           			in p: \textit{pos},
+						   			inout b: \textit{banderitas}}{
+
+									}
+\end{proc}
+\end{addmargin}
+
+
+% -------------------------------------------EJERCICIO 4-------------------------------------------%
+\subsubsection{Ejercicio 4}
+\begin{addmargin}[4em]{1em}
+\begin{proc}{perdi\'o}{in t: \textit{tablero} , in j: \textit{jugadas},
+					   out res: $\bool$}{}
+							   
+\end{proc}
+\end{addmargin}
+
+
+% -------------------------------------------EJERCICIO 5-------------------------------------------%
+\subsubsection{Ejercicio 5}
+\begin{addmargin}[4em]{1em}
+\begin{proc}{gan\'o}{in t: \textit{tablero} , in j: \textit{jugadas},
+	                 out res: $\bool$}{}
+			
+\end{proc}
+\end{addmargin}
+
+
+% -------------------------------------------EJERCICIO 6-------------------------------------------%
+\subsubsection{Ejercicio 6}
+\begin{addmargin}[4em]{1em}
+\begin{proc}{jugar}{in t: \textit{tablero} , in b: \textit{banderitas},
+				    in p: \textit{pos},
+	                inout j: \textit{jugadas}}{}
+			
+\end{proc}
+\end{addmargin}
+
+
+% PARTE II----------------------------------------------%
+\newpage
+\subsection{Parte II: Despejar los vac\'ios}
+% -------------------------------------------EJERCICIO 7-------------------------------------------%
+\subsubsection{Ejercicio 7}
+\begin{addmargin}[4em]{1em}
+\pred{caminoLibre}{t: \textit{tablero}, \(p_{0}\): \textit{pos}, \(p_{1}\): \textit{pos}}{}
+\end{addmargin}
+
+% -------------------------------------------EJERCICIO 8-------------------------------------------%
+\subsubsection{Ejercicio 8}
+\begin{addmargin}[4em]{1em}
+\begin{proc}{jugarPlus}{in t: \textit{tablero} , in b: \textit{banderitas},
+	                    in p: \textit{pos},
+	                    inout j: \textit{jugadas}}{}
+
+\end{proc}
+\end{addmargin}
+
+
+% PARTE III---------------------------------------------%
+\newpage
+\subsection{Parte III: Jugador autom\'atico}
+% -------------------------------------------EJERCICIO 9-------------------------------------------%
+\subsubsection{Ejercicio 9}
+\begin{addmargin}[4em]{1em}
+\begin{proc}{sugerirAutom\'atico121}{in n: \ent , in b: \textit{banderitas},
+	                                 out p: \textit{pos}}{}
+
+\end{proc}
+\end{addmargin}
+\end{document}

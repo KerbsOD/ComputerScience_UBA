@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\input{Algo1Macros.tex}
+\usepackage{caratula}
+
+
+\begin{document}
+
+%Caratula
+\titulo{Laboratorio 2}
+\subtitulo{Latex}
+\fecha{Fecha: 01/09/22}
+\materia{Algoritmos y Estructura de Datos I}
+\integrante{Octavio, Kerbs}{64/22}{octaviokerbs@gmail.com}
+\maketitle
+
+%Creacion de indice
+\tableofcontents
+\newpage
+
+
+%---------EJ1-----------%
+\section{Productorias}
+\textit{}
+\\
+\textit{El factorial de un entero positivo n se define como: n!} = \(\prod_{i=1}^n i \)
+\\ 
+\textit{El factorial de 5 es: 5!} = \(\prod_{i=1}^5 i \) = \(1 \times 2 \times 3 \times 4 \times 5\) = 120
+
+
+
+%---------EJ2-----------%
+\section{Especifiaci\'on}
+
+\begin{proc}{cociente}{\In n: \ent, \Out result: \ent}{}
+    \pre{b \neq 0}
+    \post{result = a \ mod \ b}
+    \end{proc}
+
+%---------EJ3-----------%
+\section{Primos}
+
+\pred{todosPrimos}{s: \TLista{\ent}}{
+    (\forall i:\ent)(0 \leq i < \longitud{s} \implicaLuego esPrimo(s[i]))}
+
+\pred{alMenosUnPrimo}{s: \TLista{{\ent}}}{
+    (\exists i:\ent)(0 \leq i < \longitud{s} \yLuego esPrimo(s[i]))
+}
+
+%---------EJ4-----------%
+\section{Macros}
+
+\aux{sumaPrimos}{s: \TLista{\ent}}{\ent}{
+    \sum_{i=0}^{\longitud{s}-1} \IfThenElse{esPrimo(s[i])}{s[i]}{0}
+}
+
+%---------EJ6-----------%
+\section{Fórmula}
+\textit{\(\hat R (\hat f, \bar D^{m}_{n})\)} = \textit{\(\frac{1}{\bar D^{m}_{n}}\sum_{i = (X_{i}, Y_{i}) \in \bar D^{m}_{n}}(Y_{i} - \hat{f_{m}}, \hat{D^{m}_{n}})\)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

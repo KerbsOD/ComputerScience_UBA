@@ -1,0 +1,72 @@
+\documentclass[a4paper]{article}
+
+\setlength{\parskip}{2mm}
+\newcommand{\tab}{~ \qquad}
+\input{Algo1Macros}
+\usepackage{caratula} % Version modificada para usar las macros de algo1 de ~> https://github.com/bcardiff/dc-tex
+
+\begin{document}
+
+\titulo{TP de Especificación}
+\subtitulo{AGREGAR TITULO TPE}
+\fecha{30 de Marzo de 2022}
+\materia{Algoritmos y Estructuras de Datos I}
+\grupo{Grupo XX}
+
+\newcommand{\dato}{\textit{Dato}}
+\newcommand{\individuo}{\textit{Individuo}}
+
+% Pongan cuantos integrantes quieran
+\integrante{Wazowski, Mike}{002/12}{mwazowski@dc.uba.ar}
+\integrante{Bond, James}{007/007}{bond@mi6.co.uk}
+\integrante{Capunta, Elsa}{003/17}{ecapunta@dc.uba.ar}
+\integrante{Sánchez, Warren}{004/15}{tienelasrespuestas@les.luthier.com}
+
+\maketitle
+
+
+\section{Definición de Tipos}
+\begin{description}
+	\item type \dato = \ent \hspace{1cm}
+	\item type \individuo = $\TLista{\dato}$
+\end{description}
+
+\section{Constantes}
+	\aux{MIN}{}{\ent}{1}
+	\aux{MAX}{}{\ent}{10}
+
+
+
+\section{Problemas}
+\subsection{Ejercicio 1}
+
+\begin{proc}{unProblema}{\In t: \dato, \Inout result: $\bool$}{}
+    \pre{\True}
+    \post{result = \True \leftrightarrow predicadoPrincipal(t)}
+    
+    \pred{predicadoPrincipal}{d:\dato}{
+    	pred1(d) \y pred2(d)
+    }
+    
+    \pred{pred1}{d:\dato} {...}
+    \pred{pred2}{d:\dato} {...}
+\end{proc}
+
+
+
+
+\subsection{Ejercicio 2}
+\begin{proc}{otroProblema}{\In i: \individuo, \Inout result: $\bool$}{}
+	\pre{|i| > MIN()}
+	\post{result = \True \leftrightarrow predicadoPrincipal2(i)}
+	
+	\pred{predicadoPrincipal2}{i:\individuo}{ 
+		pred1(i) \y \neg pred3(i)
+	}
+	
+	\pred{pred3}{i:\individuo} {...}
+\end{proc}
+
+
+
+\end{document}

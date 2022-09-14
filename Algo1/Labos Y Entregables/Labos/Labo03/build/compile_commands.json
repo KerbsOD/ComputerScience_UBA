@@ -1,0 +1,12 @@
+[
+{
+  "directory": "C:/Users/Octo K/Desktop/Facultad/Algo1/Labos/Labo03/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\Labo03.dir\\Funciones.cpp.obj -c \"C:\\Users\\Octo K\\Desktop\\Facultad\\Algo1\\Labos\\Labo03\\Funciones.cpp\"",
+  "file": "C:/Users/Octo K/Desktop/Facultad/Algo1/Labos/Labo03/Funciones.cpp"
+},
+{
+  "directory": "C:/Users/Octo K/Desktop/Facultad/Algo1/Labos/Labo03/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\Labo03.dir\\main.cpp.obj -c \"C:\\Users\\Octo K\\Desktop\\Facultad\\Algo1\\Labos\\Labo03\\main.cpp\"",
+  "file": "C:/Users/Octo K/Desktop/Facultad/Algo1/Labos/Labo03/main.cpp"
+}
+]
