@@ -1,4 +1,5 @@
 #include "vectores.h"
+#include<fstream>
 
 // Función para probar en main.cpp si este módulo fue cargado correctamente
 void holaModuloVectores(){
@@ -93,4 +94,43 @@ void mostrarVector(vector<int> v){
         }
     }
     cout << "]";
+}
+
+vector<int> leerVector(string nombreArchivo){
+    ifstream fin;
+    fin.open(nombreArchivo, ios::in);
+    int val;
+    vector<int> v;
+    while(fin >> val) {
+        v.push_back(val);
+    }
+    fin.close();
+    return v;
+}
+
+void guardarVector(vector<int> v, string nombreArchivo) {
+    ofstream output;
+    output.open(nombreArchivo, ios::out);
+    for(int i = 0; i < v.size(); i++) {
+        if(i == 0) {
+            output << "[" << v[i];
+        } else {
+            output << ", " << v[i];
+        }
+    }
+    output << "]";
+}
+
+int elementoMedio(vector<int>v) {
+    int cuenta = 0;
+    for(int i = 0; i < v.size(); i++) {
+        cuenta = cuenta + v[i];
+        if(cuenta > v[i+1]) {
+            return v[i];
+        }
+    }
+}
+
+void cantApariciones(string nombreArchivo) {
+
 }

@@ -36,4 +36,8 @@ void mostrarVector(vector<int> v);
 
 // Y aca van todos los otros headers de los ejercicios del laboratorio
 
+vector<int> leerVector(string nombreArchivo);
+void guardarVector(vector<int> v, string nombreArchivo);
+int elementoMedio(vector<int>v);
+void cantApariciones(string nombreArchivo);
 #endif

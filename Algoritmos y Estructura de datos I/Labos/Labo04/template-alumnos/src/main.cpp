@@ -4,13 +4,11 @@
 using namespace std;
 
 int main() {
-    // funcion para generar automaticamente los archivos numericos
-    // generarDatosLaboratorio(); // descomentar para crear automaticamente los archivos necesarios en la parte de entrada-salida. Una vez creados, se puede volver a comentar
-    //holaModuloVectores(); // función definida en vectores.cpp
-    vector<int> v = {2,4,456,8};
-    vector<int> v2 = factoresPrimos(1250);
+    //vector<int> v = {1,2,3,4,54,63};
+    //guardarVector(v, "guardarVector.txt");
 
-    // Imprimir Vectores
-    mostrarVector(v2);
+    vector<int> v = leerVector("elementoMedio.in");
+    cout << elementoMedio(v);
+
     return 0;
 }
