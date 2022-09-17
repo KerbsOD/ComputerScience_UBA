@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: C:/Users/Octo K/Desktop/Facultad/Algo1/Labos/Labo03
-BuildDirectory: C:/Users/Octo K/Desktop/Facultad/Algo1/Labos/Labo03/build
+SourceDirectory: C:/Facultad/Algoritmos y Estructura de datos I/Labos/Labo03
+BuildDirectory: C:/Facultad/Algoritmos y Estructura de datos I/Labos/Labo03/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -14,7 +14,7 @@ CostDataFile:
 Site: Octo
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Win32-mingw32-make
+BuildName: Win32-ninja
 
 # Subprojects
 LabelsForSubprojects: 
@@ -27,8 +27,8 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "C:/Program Files/CMake/bin/cmake.exe" "C:/Users/Octo K/Desktop/Facultad/Algo1/Labos/Labo03"
-MakeCommand: C:/Program\ Files/CMake/bin/cmake.exe --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
+ConfigureCommand: "C:/Program Files/CMake/bin/cmake.exe" "C:/Facultad/Algoritmos y Estructura de datos I/Labos/Labo03"
+MakeCommand: "C:\Program Files\CMake\bin\cmake.exe" --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -63,7 +63,7 @@ UpdateOptions:
 UpdateType: 
 
 # Compiler info
-Compiler: C:/mingw64/bin/g++.exe
+Compiler: C:/mingw64/bin/c++.exe
 CompilerVersion: 12.1.0
 
 # Dynamic analysis (MemCheck)

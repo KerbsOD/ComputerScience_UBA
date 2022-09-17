@@ -1,5 +1,10 @@
 #include <iostream>
-#include<math.h>
+#include <math.h>
+#include <vector>
+#include <fstream>
+
+using namespace std;
+
 void Ejercicio1();
 void Ejercicio2();
 void Ejercicio3();

@@ -2,5 +2,4 @@
 
 int main() {
 
-    divisionRecu(11,2);
 }
