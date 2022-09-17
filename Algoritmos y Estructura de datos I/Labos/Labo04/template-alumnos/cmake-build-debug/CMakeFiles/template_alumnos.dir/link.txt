@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2022.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\template_alumnos.dir/objects.a
+C:\mingw64\bin\ar.exe qc CMakeFiles\template_alumnos.dir/objects.a @CMakeFiles\template_alumnos.dir\objects1.rsp
+C:\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\template_alumnos.dir/objects.a -Wl,--no-whole-archive -o ..\template_alumnos.exe -Wl,--out-implib,..\libtemplate_alumnos.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\template_alumnos.dir\linklibs.rsp

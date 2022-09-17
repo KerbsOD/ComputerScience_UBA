@@ -40,4 +40,12 @@ vector<int> leerVector(string nombreArchivo);
 void guardarVector(vector<int> v, string nombreArchivo);
 int elementoMedio(vector<int>v);
 void cantApariciones(string nombreArchivo);
+bool pertenece(int x, vector<int> v);
+void cantidadAparicionesDePalabra(string nombreArchivo, string palabra);
+vector<string> leerVectorString(string nombreArchivo);
+void promedio(string nombreArchivoIn1, string nombreArchivoIn2, string nombreArchivoOut);
+void mostrarVectorFloat(vector<float> v);
+void guardarVectorF(vector<float> v, string nombreArchivo);
+void ordenarSecuencias(string nombreArchivoIn1, string nombreArchivoIn2, string nombreArchivoOut);
+vector<int> interseccion(string Archivo1, string Archivo2);
 #endif
