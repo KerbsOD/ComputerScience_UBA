@@ -1,17 +1,12 @@
 [
 {
   "directory": "C:/Facultad/Algoritmos y Estructura de datos I/Labos/Labo04/build",
-  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/template_alumnos.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\template_alumnos.dir\\src\\generador.cpp.obj -c \"C:\\Facultad\\Algoritmos y Estructura de datos I\\Labos\\Labo04\\template-alumnos\\src\\generador.cpp\"",
-  "file": "C:/Facultad/Algoritmos y Estructura de datos I/Labos/Labo04/template-alumnos/src/generador.cpp"
+  "command": "C:\\mingw64\\bin\\c++.exe -I\"C:/Facultad/Algoritmos y Estructura de datos I/Labos/Labo04/template-alumnos/src\" -g -std=gnu++14 -o CMakeFiles\\template_alumnos.dir\\src\\vectores.cpp.obj -c \"C:\\Facultad\\Algoritmos y Estructura de datos I\\Labos\\Labo04\\template-alumnos\\src\\vectores.cpp\"",
+  "file": "C:\\Facultad\\Algoritmos y Estructura de datos I\\Labos\\Labo04\\template-alumnos\\src\\vectores.cpp"
 },
 {
   "directory": "C:/Facultad/Algoritmos y Estructura de datos I/Labos/Labo04/build",
-  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/template_alumnos.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\template_alumnos.dir\\src\\main.cpp.obj -c \"C:\\Facultad\\Algoritmos y Estructura de datos I\\Labos\\Labo04\\template-alumnos\\src\\main.cpp\"",
-  "file": "C:/Facultad/Algoritmos y Estructura de datos I/Labos/Labo04/template-alumnos/src/main.cpp"
-},
-{
-  "directory": "C:/Facultad/Algoritmos y Estructura de datos I/Labos/Labo04/build",
-  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/template_alumnos.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\template_alumnos.dir\\src\\vectores.cpp.obj -c \"C:\\Facultad\\Algoritmos y Estructura de datos I\\Labos\\Labo04\\template-alumnos\\src\\vectores.cpp\"",
-  "file": "C:/Facultad/Algoritmos y Estructura de datos I/Labos/Labo04/template-alumnos/src/vectores.cpp"
+  "command": "C:\\mingw64\\bin\\c++.exe -I\"C:/Facultad/Algoritmos y Estructura de datos I/Labos/Labo04/template-alumnos/src\" -g -std=gnu++14 -o CMakeFiles\\template_alumnos.dir\\src\\main.cpp.obj -c \"C:\\Facultad\\Algoritmos y Estructura de datos I\\Labos\\Labo04\\template-alumnos\\src\\main.cpp\"",
+  "file": "C:\\Facultad\\Algoritmos y Estructura de datos I\\Labos\\Labo04\\template-alumnos\\src\\main.cpp"
 }
 ]

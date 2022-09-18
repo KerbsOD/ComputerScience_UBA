@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\template_alumnos.dir/objects.a
-C:\mingw64\bin\ar.exe qc CMakeFiles\template_alumnos.dir/objects.a @CMakeFiles\template_alumnos.dir\objects1.rsp
-C:\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\template_alumnos.dir/objects.a -Wl,--no-whole-archive -o "C:\Facultad\Algoritmos y Estructura de datos I\Labos\Labo04\template-alumnos\template_alumnos.exe" -Wl,--out-implib,"C:\Facultad\Algoritmos y Estructura de datos I\Labos\Labo04\template-alumnos\libtemplate_alumnos.dll.a" -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\template_alumnos.dir\linklibs.rsp
