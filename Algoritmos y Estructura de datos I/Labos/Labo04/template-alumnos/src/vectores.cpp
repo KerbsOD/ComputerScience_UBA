@@ -251,23 +251,39 @@ void ordenarSecuencias(string nombreArchivoIn1, string nombreArchivoIn2, string 
     archivoDos.open(nombreArchivoIn2);
     output.open(nombreArchivoOut);
 
-    vector<int> vecArchivo1 = leerVector(nombreArchivoIn1);
-    vector<int> vecArchivo2 = leerVector(nombreArchivoIn2);
+    vector<int> vec1 = leerVector(nombreArchivoIn1);
+    vector<int> vec2 = leerVector(nombreArchivoIn2);
 
     archivoUno.close();
     archivoDos.close();
 
     vector<int> ordenTotal;
 
-    for(int i = 0; i < vecArchivo1.size(); i++) {
-        if(vecArchivo1[i] > vecArchivo2[i]){
-            ordenTotal.push_back(vecArchivo2[i]);
-            ordenTotal.push_back(vecArchivo1[i]);
+    int n = vec1.size();
+    int m = vec2.size();
+
+    int i = 0, j = 0;
+
+    while(i < n && j < m) {
+        if(vec1[i] < vec2[j]){
+            ordenTotal.push_back(vec1[i]);
+            i++;
         } else {
-            ordenTotal.push_back(vecArchivo1[i]);
-            ordenTotal.push_back(vecArchivo2[i]);
+            ordenTotal.push_back(vec2[j]);
+            j++;
         }
     }
+
+    while(i < n) {
+        ordenTotal.push_back(vec1[i]);
+        i++;
+    }
+ 
+    while(j < m) {
+        ordenTotal.push_back(vec2[j]);
+        j++;
+    }
+
     guardarVector(ordenTotal, nombreArchivoOut);
     output.close();
 }
