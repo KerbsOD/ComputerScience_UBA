@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1662953211 "c:/Users/Octo K/Desktop/Algo1/TP1/solucion.tex" "build/solucion.pdf" "solucion" 1662953213
+["pdflatex"] 1663563974 "c:/Facultad/Algoritmos y Estructura de datos I/TP1/solucion.tex" "build/solucion.pdf" "solucion" 1663563976
   "Algo1Macros.tex" 1662088185 19491 3cf7637b405e3a5ede1a125564fdfa9f ""
   "C:/Users/Octo" 1660208025 18963 3f04e67f00203393d6a787121b26ac6f ""
   "C:/Users/Octo K/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1662941941 81068 299f700eb05b1217173e62b88b513bd0 ""
@@ -214,15 +214,14 @@
   "C:/Users/Octo K/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/Octo K/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1650051284 2245 c8a4088d07cffc2e5207730c738edd76 ""
   "C:/Users/Octo K/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1650051284 20785 71a3d72ab517959a6979c27e6176bec1 ""
-  "build/solucion.aux" 1662953213 2588 92fdd47fd41d0b8e5083c8ad0b035a0e "pdflatex"
-  "build/solucion.out" 1662953213 1970 67c140be60baa9ce87beef2fbda22171 "pdflatex"
-  "build/solucion.toc" 1662953213 1237 90fd31337a495a0d49b00c0916825326 "pdflatex"
-  "c:/Users/Octo" 1660208025 18963 3f04e67f00203393d6a787121b26ac6f ""
-  "c:/Users/Octo K/Desktop/Algo1/TP1/solucion.tex" 1662953210 5907 2dd2c7e147622577e9b3f55525e853f5 ""
+  "build/solucion.aux" 1663563976 2588 474258b7f495829083b8eb0e85c388cf "pdflatex"
+  "build/solucion.out" 1663563976 1970 67c140be60baa9ce87beef2fbda22171 "pdflatex"
+  "build/solucion.toc" 1663563976 1237 38d41c4c6bcdf22b958bd8500efd9eb2 "pdflatex"
+  "c:/Facultad/Algoritmos y Estructura de datos I/TP1/solucion.tex" 1663563975 7030 95c8db0e922ae5897c97884ba05d9247 ""
   "caratula.sty" 1662088185 11654 b7d6c7f15260a7fe039ae1559c1c577c ""
   "logo_dc.jpg" 1662088185 128041 860ed529f2e122b3922f6ce21e3273f1 ""
   "logo_uba.jpg" 1662088185 229119 10f3a63be47e1e95e44f30008ec3af50 ""
-  "solucion.tex" 1662953210 5907 2dd2c7e147622577e9b3f55525e853f5 ""
+  "solucion.tex" 1663563975 7030 95c8db0e922ae5897c97884ba05d9247 ""
   (generated)
   "build/solucion.aux"
   "build/solucion.log"

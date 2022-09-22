@@ -47,6 +47,166 @@
 \newpage
 
 
+% FUNCIONES AUXILIARES%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Funciones Auxiliares Y Predicados}
+
+\aux{max}{x,y: \ent}{\ent}{ if(x < y)\ then\ y\ else\ x}
+
+\aux{min}{x,y: \ent}{\ent}{ if(x < y)\ then\ x\ else\ y}
+
+\aux{es1SiPosicionEsBombaSino0}{t: \textit{tablero}, x, y: \ent}{\ent}{if(t[x][y]=true)\ then\ 1\ else\ 0\ fi;}
+
+\aux{cantidadTotalDeBombas}{t: \textit{tablero}}{\ent}{\sum_{i = 0}^{\longitud{t}-1} \sum_{j = 0}^{\longitud{t}-1} if(t[i][j] = true\ then\ 1\ else\ 0\ fi;)}
+
+\aux{cantidadDeBombasEnPosicionesDeLaJugada}{t: \textit{tablero}, j: \textit{jugada}}{\ent}{
+	\newline \sum^{\longitud{j}-1}_{i=0}\ es1SiPosicionEsBombaSino0(t,\ j[i][0][0], j[1][0][1])
+}
+
+
+\aux{posicionesSinMinasTotales}{t: \textit{tablero}}{\ent}{
+	(\sum_{i = 0}^{\longitud{t}-1} \sum_{k = 0}^{\longitud{t}-1} if(t[i][k]\ =\ false)\ then\ 1\ else\ 0\ fi;)
+}
+
+% Ejercicio 2
+\bigbreak
+\pred{tableroValido}{t: \textit{tablero}}{
+	(\forall i: \ent)(0 \leq i < \longitud{t} \implicaLuego \longitud{t}\ =\ \longitud{t[i]})\ \wedge (cantidadTotalDeBombas(t)\ >\ 0)
+}
+
+\bigbreak
+\pred{posicionValida}{t: \textit{tablero}, j: \textit{jugada}}{
+	(\forall i: \ent)(0 \leq i < \longitud{j} \implicaLuego (0 \leq j[i]_{00} < \longitud{t}\ \wedge\ 0 \leq j[i]_{01} < \longitud{t} ))
+}
+
+\bigbreak
+\pred{todasLasPosicionesDeLaJugadaSonValidas}{t: \textit{tablero}, j: \textit{jugada}}{
+	(\forall i:\ent)(0\ \leq i\ <\ \longitud{j}\ \implicaLuego\ posicionValida(t, j))
+}
+
+\bigbreak
+\pred{noExistenPosicionesRepetidasEnLaJugada}{j: \textit{jugadas}}{
+	(\forall i: \ent)(\forall k: \ent)((0\ \leq\ i <\ \longitud{j}\ \wedge\ 0\ \leq\ k\ <\ \longitud{j}\ \wedge\ i \neq k) \newline
+	\implicaLuego j[i][0]\ \neq\ j[k][0])
+}
+
+\bigbreak
+\pred{esLaCantidadDeMinasAdyacentesCorrectaParaTodaLaJugada}{t: \textit{tablero}, j: \textit{jugadas}}{
+	((\forall i: \ent)(0\ \leq\ i\ <\ \longitud{j}\ \implicaLuego\ j[i][1]\ =\ minasAdyacentes(t, j[i][0])))
+}
+
+% Ejercicio 3
+\bigbreak
+\pred{posicionPerteneceATablero}{p: \textit{pos}, t: \textit{tablero}}{
+	(0\ \leq \ p_{0}\ < \longitud{t})\ \wedge\ ( 0\ \leq\ p_{1}\ < \longitud{t})
+}
+
+\bigbreak
+\pred{posicionNoPerteneceAJugadas}{p: \textit{pos}, j: \textit{jugada}}{
+	(\forall i: \ent)(0\ \leq\ i <  \<\ \longitud{j}\ \implicaLuego\ j[i][0] \neq p)
+}
+
+\bigbreak
+\pred{posicionNoPerteneceABanderitas}{p: \textit{posicion}, b: \textit{banderita}}{\#apariciones(b,p)\ =\ 0}
+
+\bigbreak
+\pred{banderitasValidasParaLaJugada}{b: \textit{banderitas}, j: \textit{jugadas}, t: \textit{tablero}}{
+	noExistenPosicionesRepetidasEnLasBanderitas(b)\ \wedge\ \newline
+	todasLasPosicionesDeLasBanderitasSonValidas(t,\ b)\ \wedge \newline
+	ningunaPosicionDeLaJugadaEstaEnBanderitas(j,\ b)
+}
+
+\bigbreak
+\pred{noExistenPosicionesRepetidasEnLasBanderitas}{b: \textit{banderitas}}{
+	(\forall i: \ent)(0\ \leq\ i\ <\ \longitud{b}\ \implicaLuego\ (\#apariciones(b,\ b[i])\ =\ 1))
+}
+
+\bigbreak
+\pred{todasLasPosicionesDeLasBanderitasSonValidas}{t: \textit{tablero}, b: \textit{banderitas}}{
+	(\forall i: \ent)(0\ \leq\ i\ <\ \longitud{b}\ \implicaLuego\ posicionPerteneceATablero(b[i],\ t))
+}
+
+\bigbreak
+\pred{ningunaPosicionDeLaJugadaEstaEnBanderitas}{j: \textit{jugadas}, b: \textit{banderitas}}{
+	(\forall i: \ent)(0\ \leq\ i\ <\ \longitud{j}\ \implicaLuego\ (\#apariciones(b,\ j[i][0]) =\ 0))
+}
+
+\bigbreak
+\pred{posicionPerteneceABanderitas}{p: \textit{pos}, b: \textit{banderitas}}{
+	(\exists i:\ent)(0\ \leq\ i < \longitud{b}\ \yLuego\ b[i]\ =\ p)
+}
+
+
+\bigbreak
+\pred{\(todasLasPosicionesDeS_{1}PertenecenAS_{2}\)}{\(b_{1}\), \(b_{2}\): \textit{banderitas}}{
+	(\forall x: pos)(posicionPerteneceABanderitas(x, b_{1})\ \implica\ posicionPerteneceABanderitas(x, b_{2}))
+}
+
+\bigbreak
+\pred{jugadasNoRepetidas}{j: \textit{jugadas}}{
+	(\forall i: \ent)(\forall k: \ent)((0 \leq i < \longitud{j}\ \wedge\ 0 \leq k < \longitud{j}\ \wedge\ i \neq j) \implicaLuego j[i]_{0} \neq j[k]_{0})
+}
+		
+% Ejercicio 4
+
+% Ejercicio 5
+\bigbreak
+\pred{jugadasTodasLasPosicionesSinBombas}{t: \textit{tablero}, j: \textit{jugadas}}{
+	\longitud{j}\ =\ posicionesSinMinasTotales(t)
+}
+
+
+
+% Ejercicio 6
+\bigbreak
+\pred{noGan\'oNiPerdi\'o}{j: \textit{jugadas}, t: \textit{tablero}}{
+	(juegoValido \yLuego\ (cantidadDeBombasEnPosicionesDeLaJugada(j, t)\ =\ 0)\ \wedge\ (\longitud{j}\ <\ posicionesSinMinasTotales(t)))
+}
+
+\bigbreak
+\pred{\(todasLasJ_{1}PertenecenAJ_{2}\)}{\(j_{1}\), \(j_{2}\): \textit{jugadas}}{
+	(\forall x: pos)(posicionPerteneceAJugadas(x, j_{1})\ \implica\ posicionPerteneceAJugadas(x, j_{2}))
+}
+
+\bigbreak
+\pred{posicionPerteneceAJugadas}{x: \ent, j: \textit{jugadas}}{
+	(\exists i:\ent)(0\ \leq\ i < \longitud{j}\ \yLuego\ j[i]\ =\ x)
+}
+
+
+% Ejercicio 7
+\bigbreak
+\pred{posicionPerteneceALaSecuencia}{p: \textit{pos}, s: \TLista{pos}}{
+	(\exists i:\ent)(0\ \leq\ i < \longitud{s}\ \yLuego\ s[i]\ =\ p)
+}
+
+\bigbreak
+\pred{secuenciaOrdenada}{\(p_{1}\), \(p_{2}\): \textit{pos}, s: \TLista{pos}}{
+	(s[0]\ =\ p_{1}\ \wedge\ s[\longitud{s}\ -\ 1]\ =\ p_{2})\ \wedge \newline
+	(\forall i: \ent)(0\ \leq\ i\ <\ \longitud{s} - 1\ \implicaLuego\ esAdyacente(p[i],\ p[i+1]))
+}
+
+\bigbreak
+\pred{esAdyacente}{}{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+
+
 
 % PROBLEMAS % 
 \section{Problemas}
@@ -59,76 +219,57 @@
 \subsubsection{Ejercicio 1}
 \begin{addmargin}[4em]{1em}
 \aux{minasAdyacentes}{t: \textit{tablero}, p: \textit{pos}}{\ent}{
-	\sum_{i = max(p_{0} - 1, 0)}^{min(p_{0} + 1, \longitud{t} - 1)} \sum_{j = max(p_{1} - 1, 0)}^{min(p_{1} + 1, \longitud{t} - 1)}
-	\ (if\ (t[i][j] = true)\ then\ 1\ else\ 0\ fi) - (if\ (t[p_{0}][p_{1}] = true)\ then\ 1\ else\ 0\ fi)}
+	\newline
+	\sum_{i = max(p[0] - 1,\ 0)}^{min(p[0] + 1,\ \longitud{t} - 1)} \sum_{j = max(p[1] - 1,\ 0)}^{min(p[1] + 1,\ \longitud{t} - 1)}
+	\ (es1SiPosicionEsBombaSino0(t,\ i,\ j)\ -
+	\newline es1SiPosicionEsBombaSino0(t,\ p[0],\ p[1]))}
 \end{addmargin}
 
 
-\begin{addmargin}[4em]{1em}
-\aux{max}{x,y: \ent}{\ent}{ if(x < y)\ then\ y\ else\ x}
-\end{addmargin}
 
-
-\begin{addmargin}[4em]{1em}
-\aux{min}{x,y: \ent}{\ent}{ if(x < y)\ then\ x\ else\ y}
-\end{addmargin}
 
 
 % -------------------------------------------EJERCICIO 2-------------------------------------------%
 \subsubsection{Ejercicio 2}
 \begin{addmargin}[4em]{1em}
 \pred{juegoValido}{t: \textit{tablero}, j: \textit{jugadas}}{
-	tableroValido(t) \wedge 
-	\\ posicionValida(t, j) \wedge
-	\\ jugadasNoRepetidas \yLuego
-	\\ ((\forall i:\ent)(0 \leq i < \longitud{j} \implicaLuego ((j[i]_{1} = minasAdyacentes(t, j[i]_{0}))\ \wedge\
-	maximaCantidadBombasEnJugada(t, j, 1)))
+	(tableroValido(t)\ \wedge 
+	\\ todasLasPosicionesDeLaJugadaSonValidas(t, j)\ \wedge
+	\\ noExistenPosicionesRepetidasEnLaJugada(j))\ \yLuego
+	\\ (esLaCantidadDeMinasAdyacentesCorrectaParaTodaLaJugada(t,\ j)\ \wedge\ 
+	\newline cantidadDeBombasEnPosicionesDeLaJugada(t,\ j)\ \leq 1)
 }
 \end{addmargin}
 
-\begin{addmargin}[4em]{1em}
-\pred{tableroValido}{t: \textit{tablero}}{
-	(\forall i: \ent)(0 \leq i < \longitud{t} = t[i])
-}
-\end{addmargin}
 
-\begin{addmargin}[4em]{1em}
-	\pred{posicionValida}{t: \textit{tablero}, j: \textit{jugada}}{
-		(\forall i: \ent)(0 \leq i < \longitud{j} \implicaLuego (0 \leq j[i]_{00} < \longitud{t}\ \wedge\ 0 \leq j[i]_{01} < \longitud{t} ))
-	}
-\end{addmargin}
-
-\begin{addmargin}[4em]{1em}
-\pred{jugadasNoRepetidas}{j: \textit{jugadas}}{
-	(\forall i: \ent)(\forall k: \ent)((0 \leq i < \longitud{j}\ \wedge\ 0 \leq k < \longitud{j}\ \wedge\ i \neq j) \implicaLuego j[i]_{0} \neq j[k]_{0})
-}
-\end{addmargin}
-
-\begin{addmargin}[4em]{1em}
-	\pred{maximaCantidadBombasEnJugada}{t: \textit{tablero}, j: \textit{jugadas}, x: \ent}{
-	\sum_{i = 0}^{\longitud{j} - 1}
-	}
-	\end{addmargin}
 
 
 % -------------------------------------------EJERCICIO 3-------------------------------------------%
 \subsubsection{Ejercicio 3}
 \begin{addmargin}[4em]{1em}
-\begin{proc}{plantarBanderita}{in n: \ent , in j: \textit{jugadas},
-                           			in p: \textit{pos},
-						   			inout b: \textit{banderitas}}{
-
-									}
+\begin{proc}{plantarBanderita}{in t: \textit{tablero} , in j: \textit{jugadas}, in p: \textit{pos}, inout b: \textit{banderitas}}{}
+	\pre{juegoValido(t,\ j) \wedge\ \newline 
+	posicionPerteneceATablero(p, t)\ \wedge \newline 
+	posicionNoPerteneceAJugada(p, j)\ \wedge \newline 
+	posicionNoPerteneceABanderitas(p, b)\ \wedge \newline 
+	banderitaValidaParaLaJugada(b,\ j,\ t)\ \wedge \newline 
+	b = b_{0}}
+	\post{posicionPerteneceABanderitas(p,\ b)\ \wedge \newline
+	todassLasPosicionesDeS_{1}PertenecenAS_{2}(b_{0},\ b)\ \wedge \newline 
+	(\longitud{b} = \longitud{b_{0}}\ +\ 1)}
 \end{proc}
 \end{addmargin}
+
+
 
 
 % -------------------------------------------EJERCICIO 4-------------------------------------------%
 \subsubsection{Ejercicio 4}
 \begin{addmargin}[4em]{1em}
-\begin{proc}{perdi\'o}{in t: \textit{tablero} , in j: \textit{jugadas},
-					   out res: $\bool$}{}
-							   
+\begin{proc}{perdi\'o}{in t: \textit{tablero} , in j: \textit{jugadas}, out res: $\bool$}{}
+	\pre{juegoValido(t,j)}
+	\post{res = true \iff\ cantidadDeBombasEnPosicionesDeLaJugada(t,\ j) = 1}
+
 \end{proc}
 \end{addmargin}
 
@@ -136,20 +277,26 @@
 % -------------------------------------------EJERCICIO 5-------------------------------------------%
 \subsubsection{Ejercicio 5}
 \begin{addmargin}[4em]{1em}
-\begin{proc}{gan\'o}{in t: \textit{tablero} , in j: \textit{jugadas},
-	                 out res: $\bool$}{}
-			
+\begin{proc}{gan\'o}{in t: \textit{tablero} , in j: \textit{jugadas}, out res: $\bool$}{}
+	\pre{juegoValido(t,j)}
+	\post{res = true \iff\ cantidadDeBombasEnPosicionesDeLaJugada(t,\ j) = 0\ \wedge \newline
+	jugadasTodasLasPosicionesSinBombas(t,\ j)}
 \end{proc}
 \end{addmargin}
 
-
+\bigbreak
 % -------------------------------------------EJERCICIO 6-------------------------------------------%
 \subsubsection{Ejercicio 6}
 \begin{addmargin}[4em]{1em}
-\begin{proc}{jugar}{in t: \textit{tablero} , in b: \textit{banderitas},
-				    in p: \textit{pos},
-	                inout j: \textit{jugadas}}{}
-			
+\begin{proc}{jugar}{in t: \textit{tablero} , in b: \textit{banderitas}, in p: \textit{pos}, inout j: \textit{jugadas}}{}
+	\pre{noGanoNiPerdio(j,\ t)\ \wedge\ \newline
+	posicionNoPerteneceAJugada(p,\ j)\ \wedge\ \newline
+	posicionNoPerteneceABanderitas(p,\ b)\ \wedge\ \newline
+	posicionValida(p,\ t)\ \wedge\ \newline
+	banderitasValidasParaLaJugada(b,\ j,\ t)}
+	\post{\neg posicionNoPerteneceAJugada(p, j)\ \wedge\ \newline
+	todasLasJ_{1}PertenecenAJ_{2}(j_{0},\ j)\ \wedge\ \newline
+	(\longitud{j}\ = \longitud{j_{0}}\ +\ 1)}
 \end{proc}
 \end{addmargin}
 
@@ -160,7 +307,14 @@
 % -------------------------------------------EJERCICIO 7-------------------------------------------%
 \subsubsection{Ejercicio 7}
 \begin{addmargin}[4em]{1em}
-\pred{caminoLibre}{t: \textit{tablero}, \(p_{0}\): \textit{pos}, \(p_{1}\): \textit{pos}}{}
+\pred{caminoLibre}{t: \textit{tablero}, \(p_{0}\): \textit{pos}, \(p_{1}\): \textit{pos}}{
+	(\exists s:\ seq<pos>)((posicionPerteneceALaSecuencia(p_{0},s)\ \wedge\ \newline
+	posicionPerteneceALaSecuencia(p_{1}, s)\ \wedge\ \newline
+	(\forall p: pos)(posicionPerteneceALaSecuencia(p,s) \implica posicionValida(t,p))\ \yLuego\ \newline
+	(\forall p: pos)(posicionPerteneceALaSecuencia(p,s)\ \wedge\ p \neq p_{1} \implica minasAdyacentes(t,p) = 0)\ \wedge\ \newline 
+	((8 > minasAdyacentes(t,p_{1}) \leq 1)\ \wedge \newline
+	(\exists s_{2}:\ seq<pos>)(secuenciaOrdenada(p_{0}, p_{1}, s_{2})\ \wedge\ esPermutacion(s, s_{2})))
+}
 \end{addmargin}
 
 % -------------------------------------------EJERCICIO 8-------------------------------------------%
@@ -168,7 +322,9 @@
 \begin{addmargin}[4em]{1em}
 \begin{proc}{jugarPlus}{in t: \textit{tablero} , in b: \textit{banderitas},
 	                    in p: \textit{pos},
-	                    inout j: \textit{jugadas}}{}
+	                    inout j: \textit{jugadas}}{}{ hola
+
+}
 
 \end{proc}
 \end{addmargin}
