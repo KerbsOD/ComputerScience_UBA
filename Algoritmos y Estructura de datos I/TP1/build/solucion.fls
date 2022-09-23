@@ -1,7 +1,7 @@
-PWD c:\Facultad\Algoritmos y Estructura de datos I\TP1
+PWD c:\Users\Octo K\Desktop\TP1
 INPUT C:\Users\Octo K\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\solucion.tex
-OUTPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.log
+INPUT c:\Users\Octo K\Desktop\TP1\solucion.tex
+OUTPUT c:\Users\Octo K\Desktop\TP1\build\solucion.log
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -1233,10 +1233,10 @@ INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\blindtext\blindtex
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\blindtext\blindtext.sty
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\blindtext\blindtext.sty
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.aux
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.aux
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.aux
-OUTPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.aux
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.aux
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.aux
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.aux
+OUTPUT c:\Users\Octo K\Desktop\TP1\build\solucion.aux
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -1256,18 +1256,18 @@ INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.out
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.out
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.out
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.out
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.out
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.out
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.out
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.out
-OUTPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.pdf
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.out
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.out
-OUTPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.out
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.out
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.out
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.out
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.out
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.out
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.out
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.out
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.out
+OUTPUT c:\Users\Octo K\Desktop\TP1\build\solucion.pdf
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.out
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.out
+OUTPUT c:\Users\Octo K\Desktop\TP1\build\solucion.out
 INPUT .\logo_dc.jpg
 INPUT .\logo_dc.jpg
 INPUT logo_dc.jpg
@@ -1315,10 +1315,10 @@ INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmss10.t
 INPUT C:\Users\Octo K\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.toc
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.toc
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.toc
-OUTPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.toc
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.toc
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.toc
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.toc
+OUTPUT c:\Users\Octo K\Desktop\TP1\build\solucion.toc
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\doublestroke\udsrom.fd
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\doublestroke\udsrom.fd
@@ -1335,9 +1335,9 @@ INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.aux
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.out
-INPUT c:\Facultad\Algoritmos y Estructura de datos I\TP1\build\solucion.out
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.aux
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.out
+INPUT c:\Users\Octo K\Desktop\TP1\build\solucion.out
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
@@ -1352,8 +1352,6 @@ INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
-INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr5.pfb
-INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr5.pfb
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
 INPUT C:\Users\Octo K\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmss10.pfb
