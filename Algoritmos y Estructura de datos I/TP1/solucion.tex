@@ -92,7 +92,7 @@
 \begin{proc}{plantarBanderita}{in t: \textit{tablero} , in j: \textit{jugadas}, in p: \textit{pos}, inout b: \textit{banderitas}}{}{
 	\pre{juegoValido(t,\ j) \wedge\ \newline 
 	posicionPerteneceAlTablero(t,\ p)\ \wedge \newline 
-	\neg\ posicionPerteneceAJugada(p,\ j)\ \wedge \newline 
+	\neg\ posicionPerteneceAJugadas(p,\ j)\ \wedge \newline 
 	\neg\ posicionPerteneceABanderitas(p,\ b)\ \wedge \newline 
 	banderitasValidasParaLaJugada(b,\ j,\ t)\ \wedge \newline 
 	b = b_{0}}
@@ -134,12 +134,12 @@
 \begin{proc}{jugar}{in t: \textit{tablero} , in b: \textit{banderitas}, in p: \textit{pos}, inout j: \textit{jugadas}}{}{
 	\pre{juegoValido(t,\ j) \wedge\ \newline 
 	posicionPerteneceAlTablero(t,\ p)\ \wedge \newline 
-	\neg\ posicionPerteneceAJugada(p,\ j)\ \wedge \newline 
+	\neg\ posicionPerteneceAJugadas(p,\ j)\ \wedge \newline 
 	\neg\ posicionPerteneceABanderitas(p,\ b)\ \wedge \newline 
 	banderitasValidasParaLaJugada(b,\ j,\ t)\ \yLuego \newline 
 	(juegoEnMarcha(j,\ t)\ \wedge\ \newline
 	j = j_{0})}
-	\post{posicionPerteneceAJugada(p,\ j)\ \wedge\ \newline
+	\post{posicionPerteneceAJugadas(p,\ j)\ \wedge\ \newline
 	todasLasJ_{1}PertenecenAJ_{2}(j_{0},\ j)\ \wedge\ \newline
 	(\longitud{j}\ = \longitud{j_{0}}\ +\ 1)}
 }
@@ -167,21 +167,21 @@
 	                    inout j: \textit{jugadas}}{}{ 
 	\pre{juegoValido(t,\ j) \wedge\ \newline 
 	posicionPerteneceAlTablero(t,\ p)\ \wedge \newline 
-	\neg\ posicionPerteneceAJugada(p,\ j)\ \wedge \newline 
+	\neg\ posicionPerteneceAJugadas(p,\ j)\ \wedge \newline 
 	\neg\ posicionPerteneceABanderitas(p,\ b)\ \wedge \newline 
 	banderitasValidasParaLaJugada(b,\ j,\ t)\ \yLuego \newline 
 	(juegoEnMarcha(j,\ t)\ \wedge\ \newline
 	jugadasExtendidasValidas (t,\ j,\ b)\ \wedge\ \newline
 	j = j_{0})}
-	\post{(posicionPerteneceAJugada(p,\ j)\ \wedge \newline
+	\post{(posicionPerteneceAJugadas(p,\ j)\ \wedge \newline
 	todasLasJ_{1}PertenecenAJ_{2}(j_{0},\ j)\ \wedge\ \newline
 	juegoValido(t,\ j)) \yLuego\ \newline
 	(jugadasExtendidasValidas (t,\ j,\ b)\ \wedge\ \newline
 	(\forall q: pos)(posicionPerteneceAlTablero(t,\ q)\ \wedge \newline 
-	\neg\ posicionPerteneceAJugada(q,\ j_{0})\ \wedge \newline 
+	\neg\ posicionPerteneceAJugadas(q,\ j_{0})\ \wedge \newline 
 	q \neq\ p \wedge \newline 
 	\neg\ (\exists s: \TLista{pos})(caminoLibreSinDefinirMinasAdyacentesALaUltimaPosicionConBanderitas(t,\ p,\ q,\ s,\ b)) \implica\
-	\neg\ posicionPerteneceAJugada(q,\ j)))}
+	\neg\ posicionPerteneceAJugadas(q,\ j)))}
 }
 
 \end{proc}
@@ -252,7 +252,7 @@
 \subsection{Ejercicio 3}
 
 \bigbreak
-\pred{posicionPerteneceAJugada}{p: \textit{pos}, j: \textit{jugada}}{
+\pred{posicionPerteneceAJugadas}{p: \textit{pos}, j: \textit{jugada}}{
 	(\exists i: \ent)(0\ \leq\ i\ <\  \longitud{j}\ \yLuego\ j[i][0]\ =\ p)
 }
 \bigbreak
@@ -308,7 +308,7 @@
 }
 \bigbreak
 \pred{\(todasLasJ_{1}PertenecenAJ_{2}\)}{\(j_{1}\), \(j_{2}\): \textit{jugadas}}{
-	(\forall x: pos)(posicionPerteneceAJugada(x, j_{1})\ \implica\ posicionPerteneceAJugada(x, j_{2}))
+	(\forall x: pos)(posicionPerteneceAJugadas(x, j_{1})\ \implica\ posicionPerteneceAJugadas(x, j_{2}))
 }
 
 
@@ -342,7 +342,7 @@
 \subsection{Ejercicio 8}
 \bigbreak
 \pred{jugadasExtendidasValidas}{t: \textit{tablero}, j: \textit{jugadas}, b: \textit{banderitas}}{
-	(\forall p: \textit{pos})(posicionPerteneceAJugada(p,\ j)\ \implicaLuego\ \newline 
+	(\forall p: \textit{pos})(posicionPerteneceAJugadas(p,\ j)\ \implicaLuego\ \newline 
 	((0\ =\ minasAdyacentes(t,\ p) \wedge\ \newline
 	todasLasPosicionesConMinasAdyacentesYCaminoLibreAPertenecenAJugada(p,\ j,\ b)) \lor \newline 
 	(0\ \neq\ minasAdyacentes(t,\ p) \wedge\ \newline
@@ -354,7 +354,7 @@
 	\neg\ posicionPerteneceABanderitas(q,\ b))\ \yLuego \newline 
 	(0\ \neq\ minasAdyacentes(t,\ q) \wedge\ \newline
 	caminoLibreConBanderitas(t,\ p,\ q,\ b))) \implicaLuego \newline
-	posicionPerteneceAJugada (q,\ j))
+	posicionPerteneceAJugadas (q,\ j))
 }
 \bigbreak
 \pred{esAdyacente}{p,\ q: \textit{pos}}{
@@ -372,12 +372,12 @@
 	(0\ =\ minasAdyacentes(t,\ q) \wedge\ \newline
 	caminoLibreConBanderitas(t,\ p,\ q,\ b) \wedge\ \newline
 	existeUnaPosicionDelCaminoLibreQuePerteneceAJugada(t,\ p,\ q,\ j,\ b))) \implicaLuego \newline
-	posicionPerteneceAJugada (q,\ j))
+	posicionPerteneceAJugadas(q,\ j))
 }
 \bigbreak
 \pred{existeUnaPosicionDelCaminoLibreQuePerteneceAJugada}{t: \textit{tablero},\ p: \textit{posicion}, q: \textit{posicion},\ j: \textit{jugadas},\ b: \textit{banderitas}}{
 	(\exists m: pos)((posicionPerteneceAlTablero(t,\ m) \wedge \newline
-	posicionPerteneceAJugada(m,\ j))\ \yLuego \newline 
+	posicionPerteneceAJugadas(m,\ j))\ \yLuego \newline 
 	(0\ =\ minasAdyacentes(t,\ m) \wedge\ \newline
 	caminoLibreConBanderitas(t,\ m,\ p,\ b) \wedge\ \newline
 	(\exists s: \TLista{pos})(caminoLibreSinDefinirMinasAdyacentesALaUltimaPosicionConBanderitas(t,\ q,\ m,\ s,\ b))))
