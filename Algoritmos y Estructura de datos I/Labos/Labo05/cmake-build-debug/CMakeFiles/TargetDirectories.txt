@@ -1,0 +1,3 @@
+C:/Facultad/Algoritmos y Estructura de datos I/Labos/Labo05/cmake-build-debug/CMakeFiles/Labo05.dir
+C:/Facultad/Algoritmos y Estructura de datos I/Labos/Labo05/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Facultad/Algoritmos y Estructura de datos I/Labos/Labo05/cmake-build-debug/CMakeFiles/rebuild_cache.dir
