@@ -1,3 +1,7 @@
 {
-    "cmake.sourceDirectory": "${workspaceFolder}/template-alumnos"
+    "cmake.sourceDirectory": "${workspaceFolder}/template-alumnos",
+    "files.associations": {
+        "*.rmd": "markdown",
+        "iosfwd": "cpp"
+    }
 }

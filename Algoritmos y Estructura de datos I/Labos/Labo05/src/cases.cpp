@@ -185,7 +185,7 @@ bool test08_cantPalabras(){
     // Poner el path completo o bien en CLion entrar a Run->Edit Configuration y en donde dice
     // "Working directory" escribir la ruta en donde se encuentra el archivo main.cpp
     res &= asegurar(cantPalabras("datos/loremIpsum.txt"), 98);
-    res &= asegurar(cantPalabras("datos/losprofetas.txt"), 64);
+    res &= asegurar(cantPalabras("datos/losprofetas.txt"), 63);
 
     printEndTest(testNumber, testName);
     return res;

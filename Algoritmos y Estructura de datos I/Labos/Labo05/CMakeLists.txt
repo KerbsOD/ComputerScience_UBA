@@ -4,6 +4,7 @@ project(Labo05)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(src)
+include_directories(cmake-build-debug/datos)
 
 add_executable(Labo05
         src/cases.cpp

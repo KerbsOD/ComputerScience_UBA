@@ -36,6 +36,6 @@ int cantPalabras(string filename);
 float valorMedio();
 
 // Ejercicio 10
-void fraccion(vector<int>, float);
+void fraccion(vector<int>, float &res);
 
 #endif // EJERCICIOS_INCLUDED_H

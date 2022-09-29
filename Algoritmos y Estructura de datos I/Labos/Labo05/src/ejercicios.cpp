@@ -11,13 +11,9 @@ bool estaOrdenadoAsc(vector<int> v){
   int i=0;
   int longitud = v.size();
   bool esMenor = true;
-  while(i<=longitud-2 && esMenor){
+  while(i<longitud-1 && esMenor){
     esMenor = v[i]<=v[i+1];
     i++;
-  }
-  while(i<=longitud-2 && !esMenor){
-      esMenor = v[i]<=v[i+1];
-      i++;
   }
   return i==longitud-1;
 }
@@ -25,8 +21,8 @@ bool estaOrdenadoAsc(vector<int> v){
 bool estaOrdenadoDesc(vector<int> v){
   int longitud = v.size();
   int i=0;
-  bool esMayor;
-  while(i<=longitud-2 && esMayor){
+  bool esMayor = true;
+  while(i<longitud-1 && esMayor){
     esMayor = v[i]>=v[i+1];
     i++;
   }
@@ -50,10 +46,11 @@ bool esPrimo(int numero){
   if(numero>2) {
     int i=2;
     bool divide = false;
-    while(i<=numero && !divide)
-      divide = numero%i != 0;
-      i++;
-    return i==numero;
+    while(i<numero && !divide) {
+        divide = (numero % i == 0);
+        i++;
+    }
+    return i== numero;
   }
   else if(numero==2)
     return true;
@@ -72,10 +69,10 @@ bool pertenece(int elemento, vector<int> v){
    int i=0;
    bool sigo = true;
    while((i<longitud) && sigo){
-    sigo = v[i]!=elemento;
+    sigo = (v[i] != elemento);
     i++;
   }
-   return i<longitud;
+   return !sigo;
   }
 }
 
@@ -83,23 +80,26 @@ bool pertenece(int elemento, vector<int> v){
 
 // Encontrar el desvio estandar de un vector de floats.
 float promedio(vector<float> v){
-  int longitud = v.size();
-  int suma=0;
-  for(int i=0; i<=longitud-1; i++)
-    suma+=v[i];
-  return suma/longitud;
+    int longitud = v.size();
+    float suma=0;
+    for(int i=0; i<longitud; i++){
+        suma+=v[i];
+    }
+
+    return suma/longitud;
 }
 
 float sumaDeCuadrados(vector<float> v){
-  float sumadecuadrados=0;
-  unsigned int i;
-  for(i=0; i<=v.size()-1; i++);
-    sumadecuadrados+=pow((v[i]-promedio(v)),2);
-  return sumadecuadrados;
+    float sumadecuadrados=0;
+    for(int i=0; i<v.size(); i++){
+        sumadecuadrados+=pow((v[i]-promedio(v)),2);
+    }
+
+    return sumadecuadrados;
 }
 
 float desvioEstandar(vector<float> v){
-  return sqrt(sumaDeCuadrados(v)/v.size());
+    return sqrt(sumaDeCuadrados(v)/v.size());
 }
 
 
@@ -107,16 +107,16 @@ float desvioEstandar(vector<float> v){
 
 // Calcular el k-esimo numero de fibonacci
 long fibonacci(int k){
-  if(k=0)
+  if(k==0)
     return 0;
-  else if(k=1)
+  else if(k==1)
     return 1;
   else{
     long i=0;
     long j=1;
     long m;
     int nesimo;
-    for(nesimo==1; nesimo<=k; nesimo++){
+    for(nesimo=1; nesimo<=k; nesimo++){
       m = j;
       j = i+j;
       i = m;
@@ -129,51 +129,50 @@ long fibonacci(int k){
 
 // Encontrar el maximo comun divisor de dos numeros
 int maximo(int x, int y){
-  if(x<0)
-    x=-x;
-  if(y<0)
-    y=-y;
-  if(x>y)
-    return x;
-  else
-    return y;
+    if(x<0)
+        x=-x;
+    if(y<0)
+        y=-y;
+    if(x>y)
+        return x;
+    else
+        return y;
 }
 
 int minimo(int x, int y){
-  if(x<0)
-    x=-x;
-  if(y<0)
-    y=-y;
-  if(x<y)
-    return x;
-  else
-    return y;
+    if(x<0)
+        x=-x;
+    if(y<0)
+        y=-y;
+    if(x<y)
+        return x;
+    else
+        return y;
 }
 
 int maximoComunDivisor(int x, int y){
-  int a = maximo(x,y);
-  int b = minimo(x,y);
-  int resto;
-  while((b!=0) || (b!=1)){
-    resto = a%b;
-    b = a;
-    a = resto;
-  }
-  if(a==0)
-    return a;
-  else
-    return 1;
- }
+    int a = maximo(x,y);
+    int b = minimo(x,y);
+    int resto;
+    while(b>0){
+        resto = a%b;
+        a = b;
+        b = resto;
+    }
+    if(b==0)
+        return a;
+    else
+        return 1;
+}
 
 /************* Ejercicio 7 *************/
 
 // Para un vector de enteros, calcular la sumatoria del doble de los elementos positivos y pares.
 int sumaDoble(vector<int> v){
   int suma=0;
-  for(unsigned int i=0; i<v.size(); i++){
+  for(int i=0; i<v.size(); i++){
     if(v[i]%2==0 && v[i]>=0) 
-      suma =+ v[i]*2;
-    i++;
+      suma += v[i]*2;
   }
   return suma;
 }
@@ -182,19 +181,19 @@ int sumaDoble(vector<int> v){
 
 // Contar la cantidad de palabras que hay en un archivo de texto.
 int cantPalabras(string filename) {
-  ifstream miArchivo;
-  string palabra;
-  int cont = 0;
+    ifstream miArchivo;
+    string palabra;
+    int cont = 0;
 
-  miArchivo.open(filename.c_str(), ifstream::in);
-  if(miArchivo.is_open()) {
-    while(miArchivo.eof()) {
-      miArchivo >> palabra;
-      cont++;
+    miArchivo.open(filename.c_str(), ifstream::in);
+    if(miArchivo.is_open()) {
+        while(!miArchivo.eof()) {
+            miArchivo >> palabra;
+            cont++;
+        }
     }
-  }
-  miArchivo.close();
-  return cont;
+    miArchivo.close();
+    return cont;
 }
 
 /************* Ejercicio 9 *************/
@@ -224,12 +223,20 @@ float valorMedio() {
 }
 
 // Devolver en res la fraccion (entre 0 y 1) de numeros mayores a 0.
-void fraccion(vector<int> v, float res){
-  int count = 0;
-  for(int i = 0; i < v.size(); i++){
-    if(v[i] > 0){
-      count++;
+// Devolver en res la fraccion (entre 0 y 1) de numeros mayores a 0.
+void fraccion(vector<int> v, float &res){
+    int count = 0;
+    for(int i = 0; i < v.size(); i++){
+        if(v[i] > 0){
+            count++;
+        }
     }
-  }
-  res = count / v.size();
+
+    float longitud = v.size();
+
+    if(longitud > 0) {
+        res = count / longitud;
+    } else {
+        res = 0;
+    }
 }
