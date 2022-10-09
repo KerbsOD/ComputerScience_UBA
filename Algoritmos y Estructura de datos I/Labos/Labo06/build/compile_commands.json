@@ -1,0 +1,17 @@
+[
+{
+  "directory": "C:/Users/Octo K/Desktop/Labo06/build",
+  "command": "C:\\MinGW64\\bin\\g++.exe  @CMakeFiles/laboCiclos.dir/includes_CXX.rsp -g -o CMakeFiles\\laboCiclos.dir\\cases.cpp.obj -c \"C:\\Users\\Octo K\\Desktop\\Labo06\\template-alumnos\\cases.cpp\"",
+  "file": "C:/Users/Octo K/Desktop/Labo06/template-alumnos/cases.cpp"
+},
+{
+  "directory": "C:/Users/Octo K/Desktop/Labo06/build",
+  "command": "C:\\MinGW64\\bin\\g++.exe  @CMakeFiles/laboCiclos.dir/includes_CXX.rsp -g -o CMakeFiles\\laboCiclos.dir\\ejercicios.cpp.obj -c \"C:\\Users\\Octo K\\Desktop\\Labo06\\template-alumnos\\ejercicios.cpp\"",
+  "file": "C:/Users/Octo K/Desktop/Labo06/template-alumnos/ejercicios.cpp"
+},
+{
+  "directory": "C:/Users/Octo K/Desktop/Labo06/build",
+  "command": "C:\\MinGW64\\bin\\g++.exe  @CMakeFiles/laboCiclos.dir/includes_CXX.rsp -g -o CMakeFiles\\laboCiclos.dir\\main.cpp.obj -c \"C:\\Users\\Octo K\\Desktop\\Labo06\\template-alumnos\\main.cpp\"",
+  "file": "C:/Users/Octo K/Desktop/Labo06/template-alumnos/main.cpp"
+}
+]

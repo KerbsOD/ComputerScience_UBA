@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\laboCiclos.dir/objects.a
+C:\MinGW64\bin\ar.exe qc CMakeFiles\laboCiclos.dir/objects.a @CMakeFiles\laboCiclos.dir\objects1.rsp
+C:\MinGW64\bin\g++.exe -g -static-libstdc++ -Wl,--whole-archive CMakeFiles\laboCiclos.dir/objects.a -Wl,--no-whole-archive -o laboCiclos.exe -Wl,--out-implib,liblaboCiclos.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\laboCiclos.dir\linklibs.rsp

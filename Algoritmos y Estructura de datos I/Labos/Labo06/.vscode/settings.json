@@ -1,0 +1,4 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}/template-alumnos",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
+}

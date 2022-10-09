@@ -1,0 +1,5 @@
+C:/Users/Octo K/Desktop/Labo06/build/CMakeFiles/laboCiclos.dir
+C:/Users/Octo K/Desktop/Labo06/build/CMakeFiles/package.dir
+C:/Users/Octo K/Desktop/Labo06/build/CMakeFiles/package_source.dir
+C:/Users/Octo K/Desktop/Labo06/build/CMakeFiles/edit_cache.dir
+C:/Users/Octo K/Desktop/Labo06/build/CMakeFiles/rebuild_cache.dir

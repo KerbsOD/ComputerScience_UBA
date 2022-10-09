@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\labo06.dir/objects.a
+C:\MinGW64\bin\ar.exe qc CMakeFiles\labo06.dir/objects.a @CMakeFiles\labo06.dir\objects1.rsp
+C:\MinGW64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\labo06.dir/objects.a -Wl,--no-whole-archive -o labo06.exe -Wl,--out-implib,liblabo06.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\labo06.dir\linklibs.rsp
