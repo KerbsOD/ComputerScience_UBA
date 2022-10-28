@@ -1,7 +1,21 @@
 # Computacion-UBA
-En este repo pueden encontrar apuntes, examenes y mas que nada los trabajos practicos o entregables de cada materia. 
 
-En Algebra 2 pueden encontrar las clases y los trabajos practicos que hicimos con Haskell.  
-En Algoritmos 1 pueden encontrar los laboratorios y entregables ademas de los trabajos practicos en Latex.
+### Álgebra II
+- Prácticas
+- Laboratorios
+- Trabajos Prácticos
+- Parciales
 
+### Análisis Matemático II
+- Prácticas
+- Parciales
 
+### Algoritmos y Estructuras De Datos I
+- Prácticas
+- Laboratorios
+- Trabajos Prácticos
+- Parciales
+
+### Probabilidad Y Estadística (C)
+- Prácticas
+- Parciales
