@@ -13,6 +13,7 @@
 ### Algoritmos y Estructuras De Datos I
 - [Prácticas](https://github.com/KerbsOD/Computacion-UBA/tree/master/Algoritmos%20I/Pr%C3%A1cticas)
 - [Laboratorios](https://github.com/KerbsOD/Computacion-UBA/tree/master/Algoritmos%20I/Laboratorios)
+- [Entregables](https://github.com/KerbsOD/Computacion-UBA/tree/master/Algoritmos%20I/Entregables)
 - [Trabajos Prácticos](https://github.com/KerbsOD/Computacion-UBA/tree/master/Algoritmos%20I/Trabajos%20Pr%C3%A1cticos)
 - [Parciales](https://github.com/KerbsOD/Computacion-UBA/tree/master/Algoritmos%20I/Parciales)
 
