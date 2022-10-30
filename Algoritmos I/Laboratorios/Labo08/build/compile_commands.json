@@ -1,0 +1,17 @@
+[
+{
+  "directory": "C:/Users/Octo K/Desktop/Labo08/build",
+  "command": "C:\\MinGW64\\bin\\g++.exe   -g -o CMakeFiles\\labo08.dir\\main.cpp.obj -c \"C:\\Users\\Octo K\\Desktop\\Labo08\\main.cpp\"",
+  "file": "C:/Users/Octo K/Desktop/Labo08/main.cpp"
+},
+{
+  "directory": "C:/Users/Octo K/Desktop/Labo08/build",
+  "command": "C:\\MinGW64\\bin\\g++.exe   -g -o CMakeFiles\\labo08.dir\\cases.cpp.obj -c \"C:\\Users\\Octo K\\Desktop\\Labo08\\cases.cpp\"",
+  "file": "C:/Users/Octo K/Desktop/Labo08/cases.cpp"
+},
+{
+  "directory": "C:/Users/Octo K/Desktop/Labo08/build",
+  "command": "C:\\MinGW64\\bin\\g++.exe   -g -o CMakeFiles\\labo08.dir\\ejercicios.cpp.obj -c \"C:\\Users\\Octo K\\Desktop\\Labo08\\ejercicios.cpp\"",
+  "file": "C:/Users/Octo K/Desktop/Labo08/ejercicios.cpp"
+}
+]

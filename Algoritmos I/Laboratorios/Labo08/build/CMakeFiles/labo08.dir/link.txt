@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\labo08.dir/objects.a
+C:\MinGW64\bin\ar.exe qc CMakeFiles\labo08.dir/objects.a @CMakeFiles\labo08.dir\objects1.rsp
+C:\MinGW64\bin\g++.exe -g -static-libstdc++ -Wl,--whole-archive CMakeFiles\labo08.dir/objects.a -Wl,--no-whole-archive -o labo08.exe -Wl,--out-implib,liblabo08.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\labo08.dir\linklibs.rsp
