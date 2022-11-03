@@ -1,0 +1,2713 @@
+        -:    0:Source:C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo08/cases.cpp
+        -:    0:Graph:C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo08\cmake-build-debug-coverage\CMakeFiles\labo08.dir\cases.cpp.gcno
+        -:    0:Data:C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo08\cmake-build-debug-coverage\CMakeFiles\labo08.dir\cases.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:#include "cases.h"
+        -:    3:#include "ejercicios.h"
+        -:    4:
+        -:    5:using namespace std;
+        -:    6:
+function _Z14printBeginTestiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:    7:void printBeginTest(int testNumber, string testName){
+    #####:    8:    cout << "Corriendo test " << testNumber << " " << testName << endl;
+    %%%%%:    8-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+    #####:    9:}
+        -:   10:
+function _Z12printEndTestiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   11:void printEndTest(int testNumber, string testName){
+    #####:   12:    cout << "Finalizado test " << testNumber << " " << testName << endl << endl;
+    %%%%%:   12-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+    #####:   13:}
+        -:   14:
+function _Z8asegurarbb called 28 returned 100% blocks executed 100%
+       28:   15:bool asegurar(bool estimated, bool expected) {
+       28:   16:    return estimated == expected;
+       28:   16-block  0
+        -:   17:}
+        -:   18://////// Ejercicio 1 ////////////////
+function _Z27productoVectorialTest_test1v called 1 returned 100% blocks executed 45%
+        1:   19:bool productoVectorialTest_test1(){
+        1:   20:    vector<int> u = {2,3,4};
+        1:   20-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   20-block  1
+    $$$$$:   20-block  2
+        1:   21:    vector<int> v = {4,3,2};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   21-block  0
+    $$$$$:   21-block  1
+        -:   22:    vector<vector<int> > expected = {
+        -:   23:            {8,  6,  4},
+        -:   24:            {12,  9,  6},
+        -:   25:            {16, 12,  8}
+        6:   26:    };
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   26-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   26-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   26-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        3:   26-block  3
+call   16 returned 3
+        1:   26-block  4
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+    $$$$$:   26-block  5
+    $$$$$:   26-block  6
+    $$$$$:   26-block  7
+call   20 never executed
+    $$$$$:   26-block  8
+    $$$$$:   26-block  9
+    $$$$$:   26-block 10
+    $$$$$:   26-block 11
+    $$$$$:   26-block 12
+    $$$$$:   26-block 13
+    $$$$$:   26-block 14
+        2:   27:    vector<vector<int> > real = productoVectorial(u,v);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   27-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   27-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+    $$$$$:   27-block  2
+    $$$$$:   27-block  3
+        1:   28:    bool res = asegurar(expected == real, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   28-block  0
+call    3 returned 1
+        1:   29:    cout << "Test Igual Dimension: " << res << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   29-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   29-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   30:    return res;
+        1:   30-block  0
+        1:   31:}
+        1:   31-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:   31-block  1
+call    4 never executed
+    $$$$$:   31-block  2
+call    5 never executed
+    $$$$$:   31-block  3
+call    6 never executed
+    $$$$$:   31-block  4
+call    7 never executed
+        -:   32:
+function _Z27productoVectorialTest_test2v called 1 returned 100% blocks executed 44%
+        1:   33:bool productoVectorialTest_test2(){
+        1:   34:    vector<int> u = {6,7,8,9};
+        1:   34-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   34-block  1
+    $$$$$:   34-block  2
+        1:   35:    vector<int> v = {1,2,3};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   35-block  0
+    $$$$$:   35-block  1
+        -:   36:    vector<vector<int> > expected = {
+        -:   37:            { 6, 12, 18},
+        -:   38:            {7, 14, 21},
+        -:   39:            {8, 16, 24},
+        -:   40:            {9, 18, 27}
+        7:   41:    };
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   41-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   41-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   41-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:   41-block  3
+call   16 returned 1
+call   17 returned 1
+branch 18 taken 1 (fallthrough)
+branch 19 taken 0 (throw)
+        4:   41-block  4
+call   20 returned 4
+        1:   41-block  5
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   41-block  6
+    $$$$$:   41-block  7
+    $$$$$:   41-block  8
+call   25 never executed
+    $$$$$:   41-block  9
+    $$$$$:   41-block 10
+    $$$$$:   41-block 11
+    $$$$$:   41-block 12
+    $$$$$:   41-block 13
+    $$$$$:   41-block 14
+    $$$$$:   41-block 15
+    $$$$$:   41-block 16
+    $$$$$:   41-block 17
+        2:   42:    vector<vector<int> > real = productoVectorial(u,v);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   42-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   42-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+    $$$$$:   42-block  2
+    $$$$$:   42-block  3
+        1:   43:    bool res = asegurar(expected == real, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   43-block  0
+call    3 returned 1
+        1:   44:    cout << "Test Distinta Dimension: " << res << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   44-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   44-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   45:    return res;
+        1:   45-block  0
+        1:   46:}
+        1:   46-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:   46-block  1
+call    4 never executed
+    $$$$$:   46-block  2
+call    5 never executed
+    $$$$$:   46-block  3
+call    6 never executed
+    $$$$$:   46-block  4
+call    7 never executed
+        -:   47:
+function _Z27productoVectorialTest_test3v called 1 returned 100% blocks executed 46%
+        1:   48:bool productoVectorialTest_test3(){
+        1:   49:    vector<int> u = {6};
+        1:   49-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   49-block  1
+    $$$$$:   49-block  2
+        1:   50:    vector<int> v = {2};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   50-block  0
+    $$$$$:   50-block  1
+        -:   51:    vector<vector<int> > expected = {
+        -:   52:            {12}
+        4:   53:    };
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   53-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   53-block  1
+call    8 returned 1
+        1:   53-block  2
+call    9 returned 1
+    $$$$$:   53-block  3
+    $$$$$:   53-block  4
+    $$$$$:   53-block  5
+call   10 never executed
+    $$$$$:   53-block  6
+    $$$$$:   53-block  7
+    $$$$$:   53-block  8
+        2:   54:    vector<vector<int> > real = productoVectorial(u,v);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   54-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   54-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+    $$$$$:   54-block  2
+    $$$$$:   54-block  3
+        1:   55:    bool res = asegurar(expected == real, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   55-block  0
+call    3 returned 1
+        1:   56:    cout << "Test Uno x Uno: " << res << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   56-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   56-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   57:    return res;
+        1:   57-block  0
+        1:   58:}
+        1:   58-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:   58-block  1
+call    4 never executed
+    $$$$$:   58-block  2
+call    5 never executed
+    $$$$$:   58-block  3
+call    6 never executed
+    $$$$$:   58-block  4
+call    7 never executed
+        -:   59:
+        -:   60://////// Ejercicio 2 ////////////////
+function _Z19trasponerTest_test1v called 1 returned 100% blocks executed 77%
+        1:   61:bool trasponerTest_test1() {
+        3:   62:	vector<vector<int> > vec(4,vector<int>(4,0)), res(4,vector<int>(4,0));
+        1:   62-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   62-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+call   11 returned 1
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   62-block  2
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+call   18 returned 1
+call   19 returned 1
+    $$$$$:   62-block  3
+    $$$$$:   62-block  4
+    $$$$$:   62-block  5
+    $$$$$:   62-block  6
+    $$$$$:   62-block  7
+    $$$$$:   62-block  8
+    $$$$$:   62-block  9
+    $$$$$:   62-block 10
+        1:   63:	vec[0][1] = res[1][0] = 1;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:   64:	vec[0][2] = res[2][0] = 2;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:   65:	vec[0][3] = res[3][0] = 3;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:   66:    vec[1][0] = res[0][1] = 8;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:   67:	vec[1][2] = res[2][1] = 4;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:   68:	vec[1][3] = res[3][1] = 5;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:   69:    vec[2][0] = res[0][2] = 0;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:   70:    vec[2][1] = res[1][2] = 15;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:   71:	vec[2][3] = res[3][2] = 6;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:   72:    vec[3][0] = res[0][3] = 4;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:   73:    vec[3][1] = res[1][3] = 13;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:   74:    vec[3][2] = res[2][3] = 10;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:   75:	vec[0][0] = res[0][0] = vec[1][1] = res[1][1] = 10;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+        1:   76:	vec[2][2] = res[2][2] = vec[3][3] = res[3][3] = 20;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+        1:   77:	trasponer(vec);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   78:    bool out = asegurar(vec == res, true);
+        1:   78-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   78-block  1
+call    3 returned 1
+        1:   79:    cout << "Test Uno x Uno: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   79-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   79-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   80:    return out;
+        1:   80-block  0
+        1:   81:}
+        1:   81-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   81-block  1
+call    2 never executed
+    $$$$$:   81-block  2
+call    3 never executed
+        -:   82:
+function _Z19trasponerTest_test2v called 1 returned 100% blocks executed 68%
+        1:   83:bool trasponerTest_test2(){
+        2:   84:	vector<vector<int> > vec(5,vector<int>(5));
+        1:   84-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   84-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+    $$$$$:   84-block  2
+    $$$$$:   84-block  3
+    $$$$$:   84-block  4
+        6:   85:	for(int i=0;i<5;i++) {
+        5:   85-block  0
+        6:   85-block  1
+branch  0 taken 5
+branch  1 taken 1 (fallthrough)
+       30:   86:		for(int j=0;j<5;j++) {
+        5:   86-block  0
+       30:   86-block  1
+branch  0 taken 25
+branch  1 taken 5 (fallthrough)
+       25:   87:			vec[i][j] = i+j;
+       25:   87-block  0
+call    0 returned 25
+call    1 returned 25
+        -:   88:		}
+        -:   89:	}
+        1:   90:	vector<vector<int> > res = vec;
+        1:   90-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   91:	trasponer(vec);
+        1:   91-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   92:
+        1:   93:    bool out = asegurar(vec == res, true);
+        1:   93-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   93-block  1
+call    3 returned 1
+        1:   94:    cout << "Test Simetrica: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   94-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   94-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   95:    return out;
+        1:   95-block  0
+        1:   96:}
+        1:   96-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   96-block  1
+call    2 never executed
+    $$$$$:   96-block  2
+call    3 never executed
+        -:   97:
+function _Z19trasponerTest_test3v called 1 returned 100% blocks executed 63%
+        1:   98:bool trasponerTest_test3(){
+        3:   99:	vector<vector<int> > vec(6,vector<int>(6)), res(6,vector<int>(6));
+        1:   99-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   99-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+call   11 returned 1
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   99-block  2
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+call   18 returned 1
+call   19 returned 1
+    $$$$$:   99-block  3
+    $$$$$:   99-block  4
+    $$$$$:   99-block  5
+    $$$$$:   99-block  6
+    $$$$$:   99-block  7
+    $$$$$:   99-block  8
+        7:  100:	for(int i=0;i<6;i++) {
+        6:  100-block  0
+        7:  100-block  1
+branch  0 taken 6
+branch  1 taken 1 (fallthrough)
+       27:  101:		for(int j=0;j<=i;j++) {
+        6:  101-block  0
+       27:  101-block  1
+branch  0 taken 21
+branch  1 taken 6 (fallthrough)
+       21:  102:			vec[i][j] = (i*13+j*17)%19;
+       21:  102-block  0
+call    0 returned 21
+call    1 returned 21
+       21:  103:			res[j][i] = vec[i][j];
+call    0 returned 21
+call    1 returned 21
+call    2 returned 21
+call    3 returned 21
+        -:  104:		}
+        -:  105:	}
+        1:  106:	trasponer(vec);
+        1:  106-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  107:    bool out = asegurar(vec == res, true);
+        1:  107-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  107-block  1
+call    3 returned 1
+        1:  108:    cout << "Test Mat3: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  108-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  108-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  109:    return out;
+        1:  109-block  0
+        1:  110:}
+        1:  110-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  110-block  1
+call    2 never executed
+    $$$$$:  110-block  2
+call    3 never executed
+        -:  111:
+        -:  112://////// Ejercicio 3 ////////////////
+function _Z21multiplicarTest_test1v called 1 returned 100% blocks executed 76%
+        1:  113:bool multiplicarTest_test1(){
+        4:  114:	vector<vector<int> > m1(3,vector<int>(4)), m2(4,vector<int>(5)), res(3,vector<int>(5));
+        1:  114-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  114-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+call   11 returned 1
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  114-block  2
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+branch 23 taken 1 (fallthrough)
+branch 24 taken 0 (throw)
+        1:  114-block  3
+call   25 returned 1
+branch 26 taken 1 (fallthrough)
+branch 27 taken 0 (throw)
+call   28 returned 1
+call   29 returned 1
+    $$$$$:  114-block  4
+    $$$$$:  114-block  5
+    $$$$$:  114-block  6
+    $$$$$:  114-block  7
+    $$$$$:  114-block  8
+    $$$$$:  114-block  9
+    $$$$$:  114-block 10
+    $$$$$:  114-block 11
+    $$$$$:  114-block 12
+        1:  115:	m1[0][0] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  116:	m1[0][1] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  117:	m1[0][2] = 3;
+call    0 returned 1
+call    1 returned 1
+        1:  118:	m1[0][3] = 4;
+call    0 returned 1
+call    1 returned 1
+        1:  119:	m1[1][0] = 5;
+call    0 returned 1
+call    1 returned 1
+        1:  120:	m1[1][1] = 6;
+call    0 returned 1
+call    1 returned 1
+        1:  121:	m1[1][2] = 7;
+call    0 returned 1
+call    1 returned 1
+        1:  122:	m1[1][3] = 8;
+call    0 returned 1
+call    1 returned 1
+        1:  123:	m1[2][0] = 9;
+call    0 returned 1
+call    1 returned 1
+        1:  124:	m1[2][1] = 10;
+call    0 returned 1
+call    1 returned 1
+        1:  125:	m1[2][2] = 11;
+call    0 returned 1
+call    1 returned 1
+        1:  126:	m1[2][3] = 12;
+call    0 returned 1
+call    1 returned 1
+        -:  127:
+        1:  128:	m2[0][0] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  129:	m2[0][1] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  130:	m2[0][2] = 3;
+call    0 returned 1
+call    1 returned 1
+        1:  131:	m2[0][3] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  132:	m2[0][4] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  133:	m2[1][0] = 3;
+call    0 returned 1
+call    1 returned 1
+        1:  134:	m2[1][1] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  135:	m2[1][2] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  136:	m2[1][3] = 3;
+call    0 returned 1
+call    1 returned 1
+        1:  137:	m2[1][4] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  138:	m2[2][0] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  139:	m2[2][1] = 3;
+call    0 returned 1
+call    1 returned 1
+        1:  140:	m2[2][2] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  141:	m2[2][3] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  142:	m2[2][4] = 3;
+call    0 returned 1
+call    1 returned 1
+        1:  143:	m2[3][0] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  144:	m2[3][1] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  145:	m2[3][2] = 3;
+call    0 returned 1
+call    1 returned 1
+        1:  146:	m2[3][3] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  147:	m2[3][4] = 2;
+call    0 returned 1
+call    1 returned 1
+        -:  148:
+        1:  149:	res[0][0] = 17;
+call    0 returned 1
+call    1 returned 1
+        1:  150:	res[0][1] = 21;
+call    0 returned 1
+call    1 returned 1
+        1:  151:	res[0][2] = 22;
+call    0 returned 1
+call    1 returned 1
+        1:  152:	res[0][3] = 17;
+call    0 returned 1
+call    1 returned 1
+        1:  153:	res[0][4] = 21;
+call    0 returned 1
+call    1 returned 1
+        -:  154:
+        1:  155:	res[1][0] = 45;
+call    0 returned 1
+call    1 returned 1
+        1:  156:	res[1][1] = 53;
+call    0 returned 1
+call    1 returned 1
+        1:  157:	res[1][2] = 58;
+call    0 returned 1
+call    1 returned 1
+        1:  158:	res[1][3] = 45;
+call    0 returned 1
+call    1 returned 1
+        1:  159:	res[1][4] = 53;
+call    0 returned 1
+call    1 returned 1
+        -:  160:
+        1:  161:	res[2][0] = 73;
+call    0 returned 1
+call    1 returned 1
+        1:  162:	res[2][1] = 85;
+call    0 returned 1
+call    1 returned 1
+        1:  163:	res[2][2] = 94;
+call    0 returned 1
+call    1 returned 1
+        1:  164:	res[2][3] = 73;
+call    0 returned 1
+call    1 returned 1
+        1:  165:	res[2][4] = 85;
+call    0 returned 1
+call    1 returned 1
+        -:  166:    
+        1:  167:    bool out = asegurar(multiplicar(m1,m2) == res, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  167-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  167-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  167-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  167-block  3
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+call   15 returned 1
+    $$$$$:  167-block  4
+call   16 never executed
+    $$$$$:  167-block  5
+    $$$$$:  167-block  6
+call   17 never executed
+    $$$$$:  167-block  7
+    $$$$$:  167-block  8
+call   18 never executed
+    $$$$$:  167-block  9
+        1:  168:    cout << "Test Mat1: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  168-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  168-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  169:    return out;
+        1:  169-block  0
+        -:  170:   
+        -:  171:    
+        1:  172:}
+        1:  172-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  172-block  1
+call    3 never executed
+    $$$$$:  172-block  2
+call    4 never executed
+    $$$$$:  172-block  3
+call    5 never executed
+        -:  173:
+function _Z21multiplicarTest_test2v called 1 returned 100% blocks executed 73%
+        1:  174:bool multiplicarTest_test2() {
+        3:  175:	vector<vector<int> > m1(5,vector<int>(5,0)), m2(5,vector<int>(5)), res;
+        1:  175-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  175-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+call   11 returned 1
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  175-block  2
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  175-block  3
+    $$$$$:  175-block  4
+    $$$$$:  175-block  5
+    $$$$$:  175-block  6
+    $$$$$:  175-block  7
+    $$$$$:  175-block  8
+    $$$$$:  175-block  9
+        1:  176:	m1[0][0] = m1[1][1] = m1[2][2] = m1[3][3] = m1[4][4] = 1;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 1
+call    9 returned 1
+        1:  177:	m2[0][0] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  178:	m2[0][1] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  179:	m2[0][2] = 3;
+call    0 returned 1
+call    1 returned 1
+        1:  180:	m2[0][3] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  181:	m2[0][4] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  182:	m2[1][0] = 3;
+call    0 returned 1
+call    1 returned 1
+        1:  183:	m2[1][1] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  184:	m2[1][2] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  185:	m2[1][3] = 3;
+call    0 returned 1
+call    1 returned 1
+        1:  186:	m2[1][4] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  187:	m2[2][0] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  188:	m2[2][1] = 3;
+call    0 returned 1
+call    1 returned 1
+        1:  189:	m2[2][2] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  190:	m2[2][3] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  191:	m2[2][4] = 3;
+call    0 returned 1
+call    1 returned 1
+        1:  192:	m2[3][0] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  193:	m2[3][1] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  194:	m2[3][2] = 3;
+call    0 returned 1
+call    1 returned 1
+        1:  195:	m2[3][3] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  196:	m2[3][4] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  197:	m2[4][0] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  198:	m2[4][1] = 2;
+call    0 returned 1
+call    1 returned 1
+        1:  199:	m2[4][2] = 3;
+call    0 returned 1
+call    1 returned 1
+        1:  200:	m2[4][3] = 1;
+call    0 returned 1
+call    1 returned 1
+        1:  201:	m2[4][4] = 2;
+call    0 returned 1
+call    1 returned 1
+        -:  202:
+        1:  203:	res = m2;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  204:    bool out = asegurar(multiplicar(m1,m2) == res, true);
+        1:  204-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  204-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  204-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  204-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  204-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+call   15 returned 1
+    $$$$$:  204-block  5
+call   16 never executed
+    $$$$$:  204-block  6
+    $$$$$:  204-block  7
+call   17 never executed
+    $$$$$:  204-block  8
+    $$$$$:  204-block  9
+call   18 never executed
+    $$$$$:  204-block 10
+        1:  205:    cout << "Test Identidad: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  205-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  205-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  206:    return out;
+        1:  206-block  0
+        1:  207:}
+        1:  207-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  207-block  1
+call    3 never executed
+    $$$$$:  207-block  2
+call    4 never executed
+    $$$$$:  207-block  3
+call    5 never executed
+        -:  208:
+        -:  209://////// Ejercicio 4 ////////////////
+function _Z19promediarTest_test1v called 1 returned 100% blocks executed 69%
+        1:  210:bool promediarTest_test1() {
+        2:  211:	vector<vector<int> > vec(5,vector<int>(5,0));
+        1:  211-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  211-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+    $$$$$:  211-block  2
+    $$$$$:  211-block  3
+    $$$$$:  211-block  4
+    $$$$$:  211-block  5
+        6:  212:	for(int i=0;i<5;i++) {
+        6:  212-block  0
+branch  0 taken 5
+branch  1 taken 1 (fallthrough)
+        5:  213:		vec[i][i] = 10*(i+1);
+        5:  213-block  0
+call    0 returned 5
+call    1 returned 5
+        -:  214:	}
+        -:  215:
+        2:  216:	vector<vector<int> > res(5,vector<int>(5,0));
+        1:  216-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  216-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+    $$$$$:  216-block  2
+    $$$$$:  216-block  3
+    $$$$$:  216-block  4
+    $$$$$:  216-block  5
+        1:  217:	res[0][0] = res[2][3] = res[3][2] = 7;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+        1:  218:	res[0][1] = res[1][0] = res[1][2] = res[2][1] = 5;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+        1:  219:	res[0][2] = res[2][0] = res[1][3] = res[3][1] = 3;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+        1:  220:	res[1][1] = res[2][4] = res[4][2] = 6;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+        1:  221:	res[2][2] = 10;
+call    0 returned 1
+call    1 returned 1
+        1:  222:	res[3][3] = 13;
+call    0 returned 1
+call    1 returned 1
+        1:  223:	res[3][4] = res[4][3] = 15;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:  224:	res[4][4] = 22;
+call    0 returned 1
+call    1 returned 1
+        1:  225:    bool out = asegurar(promediar(vec) == res, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  225-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  225-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  225-block  2
+call    9 returned 1
+call   10 returned 1
+call   11 returned 1
+    $$$$$:  225-block  3
+call   12 never executed
+    $$$$$:  225-block  4
+    $$$$$:  225-block  5
+call   13 never executed
+    $$$$$:  225-block  6
+        1:  226:    cout << "Test Diagonal: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  226-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  226-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  227:    return out;
+        1:  227-block  0
+        1:  228:}
+        1:  228-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  228-block  1
+call    2 never executed
+    $$$$$:  228-block  2
+call    3 never executed
+        -:  229:
+function _Z19promediarTest_test2v called 1 returned 100% blocks executed 59%
+        1:  230:bool promediarTest_test2(){
+        3:  231:	vector<vector<int> > vec(5,vector<int>(5,0)),res(5,vector<int>(5,1));
+        1:  231-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  231-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+call   11 returned 1
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  231-block  2
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+call   18 returned 1
+call   19 returned 1
+    $$$$$:  231-block  3
+    $$$$$:  231-block  4
+    $$$$$:  231-block  5
+    $$$$$:  231-block  6
+    $$$$$:  231-block  7
+    $$$$$:  231-block  8
+    $$$$$:  231-block  9
+    $$$$$:  231-block 10
+        6:  232:	for(int i=0;i<5;i++) {
+        5:  232-block  0
+        6:  232-block  1
+branch  0 taken 5
+branch  1 taken 1 (fallthrough)
+       30:  233:		for(int j=0;j<5;j++) {
+        5:  233-block  0
+       25:  233-block  1
+       30:  233-block  2
+branch  0 taken 25
+branch  1 taken 5 (fallthrough)
+       25:  234:			if(i%2==j%2) {
+       25:  234-block  0
+branch  0 taken 13 (fallthrough)
+branch  1 taken 12
+       13:  235:				vec[i][j] = 2;
+       13:  235-block  0
+call    0 returned 13
+call    1 returned 13
+        -:  236:			}
+        -:  237:		}
+        -:  238:	}
+        1:  239:	res[1][2] = res[3][2] = res[2][1] = res[2][3] = 0;
+        1:  239-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+        1:  240:    bool out = asegurar(promediar(vec) == res, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  240-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  240-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  240-block  2
+call    9 returned 1
+call   10 returned 1
+call   11 returned 1
+    $$$$$:  240-block  3
+call   12 never executed
+    $$$$$:  240-block  4
+    $$$$$:  240-block  5
+call   13 never executed
+    $$$$$:  240-block  6
+        1:  241:    cout << "Test Mat2: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  241-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  241-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  242:    return out;
+        1:  242-block  0
+        1:  243:}
+        1:  243-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  243-block  1
+call    2 never executed
+    $$$$$:  243-block  2
+call    3 never executed
+        -:  244:
+        -:  245://////// Ejercicio 5 ////////////////
+function _Z21contarPicosTest_test1v called 1 returned 100% blocks executed 65%
+        1:  246:bool contarPicosTest_test1(){
+        2:  247:	vector<vector<int> > vec(10,vector<int>(10));
+        1:  247-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  247-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+    $$$$$:  247-block  2
+    $$$$$:  247-block  3
+    $$$$$:  247-block  4
+       11:  248:	for(int i=0;i<10;i++) {
+       10:  248-block  0
+       11:  248-block  1
+branch  0 taken 10
+branch  1 taken 1 (fallthrough)
+      110:  249:		for(int j=0;j<10;j++) {
+       10:  249-block  0
+      110:  249-block  1
+branch  0 taken 100
+branch  1 taken 10 (fallthrough)
+      100:  250:			vec[i][j] = ((1<<i)*((j+10)*41))%13;
+      100:  250-block  0
+call    0 returned 100
+call    1 returned 100
+        -:  251:		}
+        -:  252:	}
+        -:  253:
+        1:  254:    bool out = asegurar(contarPicos(vec) == 8, true);
+        1:  254-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  254-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  254-block  2
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  254-block  3
+call    8 never executed
+    $$$$$:  254-block  4
+        1:  255:    cout << "Test 1: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  255-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  255-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  256:    return out;
+        1:  256-block  0
+        1:  257:}
+        1:  257-block  0
+call    0 returned 1
+    $$$$$:  257-block  1
+call    1 never executed
+        -:  258:
+function _Z21contarPicosTest_test2v called 1 returned 100% blocks executed 62%
+        1:  259:bool contarPicosTest_test2(){
+        2:  260:	vector<vector<int> > vec(20,vector<int>(40,0));
+        1:  260-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  260-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+    $$$$$:  260-block  2
+    $$$$$:  260-block  3
+    $$$$$:  260-block  4
+    $$$$$:  260-block  5
+       11:  261:	for(int i=0;i<10;i++) {
+       10:  261-block  0
+       11:  261-block  1
+branch  0 taken 10
+branch  1 taken 1 (fallthrough)
+      210:  262:		for(int j=0;j<20;j++) {
+       10:  262-block  0
+      210:  262-block  1
+branch  0 taken 200
+branch  1 taken 10 (fallthrough)
+      200:  263:			vec[2*i][2*j] = 1;
+      200:  263-block  0
+call    0 returned 200
+call    1 returned 200
+        -:  264:		}
+        -:  265:	}
+        1:  266:    bool out = asegurar(contarPicos(vec) == 200, true);
+        1:  266-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  266-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  266-block  2
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  266-block  3
+call    8 never executed
+    $$$$$:  266-block  4
+        1:  267:    cout << "Test 2: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  267-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  267-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  268:    return out;
+        1:  268-block  0
+        1:  269:}
+        1:  269-block  0
+call    0 returned 1
+    $$$$$:  269-block  1
+call    1 never executed
+        -:  270:
+        -:  271://////// Ejercicio 6 ////////////////
+function _Z22esTriangularTest_test1v called 1 returned 100% blocks executed 47%
+        1:  272:bool esTriangularTest_test1(){
+        -:  273:    vector<vector<int> > m = {
+        -:  274:            {1,2,0,4},
+        -:  275:            {0,2,0,0},
+        -:  276:            {0,0,3,4},
+        -:  277:            {0,0,0,4}
+        7:  278:        };
+        1:  278-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  278-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  278-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  278-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  278-block  4
+call   16 returned 1
+call   17 returned 1
+branch 18 taken 1 (fallthrough)
+branch 19 taken 0 (throw)
+        4:  278-block  5
+call   20 returned 4
+        1:  278-block  6
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:  278-block  7
+    $$$$$:  278-block  8
+    $$$$$:  278-block  9
+call   25 never executed
+    $$$$$:  278-block 10
+    $$$$$:  278-block 11
+    $$$$$:  278-block 12
+    $$$$$:  278-block 13
+    $$$$$:  278-block 14
+    $$$$$:  278-block 15
+    $$$$$:  278-block 16
+    $$$$$:  278-block 17
+    $$$$$:  278-block 18
+        1:  279:    bool res = esTriangular(m);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  279-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  279-block  1
+call    6 returned 1
+    $$$$$:  279-block  2
+call    7 never executed
+    $$$$$:  279-block  3
+        1:  280:    bool out = asegurar(res, true);
+call    0 returned 1
+        1:  281:    cout << "Test triangularSuperior: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  281-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  281-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  282:    return out;
+        1:  282-block  0
+        1:  283:}
+        1:  283-block  0
+call    0 returned 1
+    $$$$$:  283-block  1
+call    1 never executed
+        -:  284:
+function _Z22esTriangularTest_test2v called 1 returned 100% blocks executed 47%
+        1:  285:bool esTriangularTest_test2(){
+        -:  286:    vector<vector<int> > m = {
+        -:  287:            {1,0,0,0},
+        -:  288:            {0,2,0,0},
+        -:  289:            {0,8,3,0},
+        -:  290:            {0,0,0,4}
+        7:  291:    };
+        1:  291-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  291-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  291-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  291-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  291-block  4
+call   16 returned 1
+call   17 returned 1
+branch 18 taken 1 (fallthrough)
+branch 19 taken 0 (throw)
+        4:  291-block  5
+call   20 returned 4
+        1:  291-block  6
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:  291-block  7
+    $$$$$:  291-block  8
+    $$$$$:  291-block  9
+call   25 never executed
+    $$$$$:  291-block 10
+    $$$$$:  291-block 11
+    $$$$$:  291-block 12
+    $$$$$:  291-block 13
+    $$$$$:  291-block 14
+    $$$$$:  291-block 15
+    $$$$$:  291-block 16
+    $$$$$:  291-block 17
+    $$$$$:  291-block 18
+        1:  292:    bool res = esTriangular(m);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  292-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  292-block  1
+call    6 returned 1
+    $$$$$:  292-block  2
+call    7 never executed
+    $$$$$:  292-block  3
+        1:  293:    bool out = asegurar(res, true);
+call    0 returned 1
+        1:  294:    cout << "Test triangularInferior: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  294-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  294-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  295:    return out;
+        1:  295-block  0
+        1:  296:}
+        1:  296-block  0
+call    0 returned 1
+    $$$$$:  296-block  1
+call    1 never executed
+        -:  297:
+function _Z22esTriangularTest_test3v called 1 returned 100% blocks executed 47%
+        1:  298:bool esTriangularTest_test3(){
+        -:  299:    vector<vector<int> > m = {
+        -:  300:            {1,0,0,0},
+        -:  301:            {0,2,3,0},
+        -:  302:            {0,0,3,0},
+        -:  303:            {1,0,0,0}
+        7:  304:    };
+        1:  304-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  304-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  304-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  304-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  304-block  4
+call   16 returned 1
+call   17 returned 1
+branch 18 taken 1 (fallthrough)
+branch 19 taken 0 (throw)
+        4:  304-block  5
+call   20 returned 4
+        1:  304-block  6
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:  304-block  7
+    $$$$$:  304-block  8
+    $$$$$:  304-block  9
+call   25 never executed
+    $$$$$:  304-block 10
+    $$$$$:  304-block 11
+    $$$$$:  304-block 12
+    $$$$$:  304-block 13
+    $$$$$:  304-block 14
+    $$$$$:  304-block 15
+    $$$$$:  304-block 16
+    $$$$$:  304-block 17
+    $$$$$:  304-block 18
+        1:  305:    bool res = esTriangular(m);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  305-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  305-block  1
+call    6 returned 1
+    $$$$$:  305-block  2
+call    7 never executed
+    $$$$$:  305-block  3
+        1:  306:    bool out = asegurar(res, false);
+call    0 returned 1
+        1:  307:    cout << "Test casi Triangular: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  307-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  307-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  308:    return out;
+        1:  308-block  0
+        1:  309:}
+        1:  309-block  0
+call    0 returned 1
+    $$$$$:  309-block  1
+call    1 never executed
+        -:  310:
+function _Z22esTriangularTest_test4v called 1 returned 100% blocks executed 47%
+        1:  311:bool esTriangularTest_test4(){
+        -:  312:    vector<vector<int> > m = {
+        -:  313:            {0,0,0,4},
+        -:  314:            {0,0,0,0},
+        -:  315:            {0,0,0,0},
+        -:  316:            {1,0,0,0}
+        7:  317:    };
+        1:  317-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  317-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  317-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  317-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  317-block  4
+call   16 returned 1
+call   17 returned 1
+branch 18 taken 1 (fallthrough)
+branch 19 taken 0 (throw)
+        4:  317-block  5
+call   20 returned 4
+        1:  317-block  6
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:  317-block  7
+    $$$$$:  317-block  8
+    $$$$$:  317-block  9
+call   25 never executed
+    $$$$$:  317-block 10
+    $$$$$:  317-block 11
+    $$$$$:  317-block 12
+    $$$$$:  317-block 13
+    $$$$$:  317-block 14
+    $$$$$:  317-block 15
+    $$$$$:  317-block 16
+    $$$$$:  317-block 17
+    $$$$$:  317-block 18
+        1:  318:    bool res = esTriangular(m);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  318-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  318-block  1
+call    6 returned 1
+    $$$$$:  318-block  2
+call    7 never executed
+    $$$$$:  318-block  3
+        1:  319:    bool out = asegurar(res, false);
+call    0 returned 1
+        1:  320:    cout << "Test ceros en Diagonal: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  320-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  320-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  321:    return out;
+        1:  321-block  0
+        1:  322:}
+        1:  322-block  0
+call    0 returned 1
+    $$$$$:  322-block  1
+call    1 never executed
+        -:  323:
+function _Z22esTriangularTest_test5v called 1 returned 100% blocks executed 50%
+        1:  324:bool esTriangularTest_test5(){
+        -:  325:    vector<vector<int> > m = {
+        -:  326:            {1,8},
+        -:  327:            {0,2},
+        5:  328:    };
+        1:  328-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  328-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  328-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        2:  328-block  3
+call   12 returned 2
+        1:  328-block  4
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  328-block  5
+    $$$$$:  328-block  6
+    $$$$$:  328-block  7
+call   15 never executed
+    $$$$$:  328-block  8
+    $$$$$:  328-block  9
+    $$$$$:  328-block 10
+    $$$$$:  328-block 11
+    $$$$$:  328-block 12
+        1:  329:    bool res = esTriangular(m);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  329-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  329-block  1
+call    6 returned 1
+    $$$$$:  329-block  2
+call    7 never executed
+    $$$$$:  329-block  3
+        1:  330:    bool out = asegurar(res, true);
+call    0 returned 1
+        1:  331:    cout << "Test dos x dos: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  331-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  331-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  332:    return out;
+        1:  332-block  0
+        1:  333:}
+        1:  333-block  0
+call    0 returned 1
+    $$$$$:  333-block  1
+call    1 never executed
+        -:  334:
+        -:  335://////// Ejercicio 7 ////////////////
+function _Z20hayAmenazaTest_test1v called 1 returned 100% blocks executed 68%
+        1:  336:bool hayAmenazaTest_test1() {
+        2:  337:	vector<vector<int> > vec(8,vector<int>(8,0));
+        1:  337-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  337-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+    $$$$$:  337-block  2
+    $$$$$:  337-block  3
+    $$$$$:  337-block  4
+    $$$$$:  337-block  5
+        1:  338:	vec[0][2] = vec[1][5] = vec[2][3] = vec[3][0] = vec[4][7] = vec[5][4] = vec[6][6] = vec[7][1] = 1;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+call   15 returned 1
+        1:  339:    bool out = asegurar(hayAmenaza(vec) == 0, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  339-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  339-block  1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  339-block  2
+call    8 never executed
+    $$$$$:  339-block  3
+        1:  340:    cout << "Test1 amenaza 0: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  340-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  340-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  341:    return out;
+        1:  341-block  0
+        1:  342:}
+        1:  342-block  0
+call    0 returned 1
+    $$$$$:  342-block  1
+call    1 never executed
+        -:  343:
+function _Z20hayAmenazaTest_test2v called 1 returned 100% blocks executed 68%
+        1:  344:bool hayAmenazaTest_test2() {
+        2:  345:	vector<vector<int> > vec(8,vector<int>(8,0));
+        1:  345-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  345-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+    $$$$$:  345-block  2
+    $$$$$:  345-block  3
+    $$$$$:  345-block  4
+    $$$$$:  345-block  5
+        1:  346:	vec[0][2] = vec[1][5] = vec[2][3] = vec[3][0] = vec[4][7] = vec[5][1] = vec[6][6] = vec[7][4] = 1;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+call   15 returned 1
+        1:  347:    bool out = asegurar(hayAmenaza(vec) == 1, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  347-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  347-block  1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  347-block  2
+call    8 never executed
+    $$$$$:  347-block  3
+        1:  348:    cout << "Test2 amenaza 1: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  348-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  348-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  349:    return out;
+        1:  349-block  0
+        1:  350:}
+        1:  350-block  0
+call    0 returned 1
+    $$$$$:  350-block  1
+call    1 never executed
+        -:  351:
+function _Z20hayAmenazaTest_test3v called 1 returned 100% blocks executed 60%
+        1:  352:bool hayAmenazaTest_test3(){
+        2:  353:	vector<vector<int> > vec(3,vector<int>(4,0));
+        1:  353-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  353-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+    $$$$$:  353-block  2
+    $$$$$:  353-block  3
+    $$$$$:  353-block  4
+    $$$$$:  353-block  5
+        1:  354:	vec[0][0] = vec[1][3] = vec[2][1] = 1;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+        1:  355:    bool out = asegurar(hayAmenaza(vec) == 0, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  355-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  355-block  1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  355-block  2
+call    8 never executed
+    $$$$$:  355-block  3
+        1:  356:    cout << "Test3 amenaza 0: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  356-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  356-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  357:    return out;
+        1:  357-block  0
+        1:  358:}
+        1:  358-block  0
+call    0 returned 1
+    $$$$$:  358-block  1
+call    1 never executed
+        -:  359:
+function _Z20hayAmenazaTest_test4v called 1 returned 100% blocks executed 60%
+        1:  360:bool hayAmenazaTest_test4(){
+        2:  361:	vector<vector<int> > vec(3,vector<int>(4,0));
+        1:  361-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  361-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+    $$$$$:  361-block  2
+    $$$$$:  361-block  3
+    $$$$$:  361-block  4
+    $$$$$:  361-block  5
+        1:  362:	vec[0][0] = vec[2][3] = vec[2][1] = 1;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+        1:  363:    bool out = asegurar(hayAmenaza(vec) == 1, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  363-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  363-block  1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  363-block  2
+call    8 never executed
+    $$$$$:  363-block  3
+        1:  364:    cout << "Test4 amenaza 1: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  364-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  364-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  365:    return out;
+        1:  365-block  0
+        1:  366:}
+        1:  366-block  0
+call    0 returned 1
+    $$$$$:  366-block  1
+call    1 never executed
+        -:  367:
+function _Z20hayAmenazaTest_test5v called 1 returned 100% blocks executed 60%
+        1:  368:bool hayAmenazaTest_test5(){
+        2:  369:	vector<vector<int> > vec(3,vector<int>(4,0));
+        1:  369-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  369-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+call    9 returned 1
+    $$$$$:  369-block  2
+    $$$$$:  369-block  3
+    $$$$$:  369-block  4
+    $$$$$:  369-block  5
+        1:  370:	vec[0][0] = vec[1][3] = vec[2][3] = 1;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+        1:  371:    bool out = asegurar(hayAmenaza(vec) == 1, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  371-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  371-block  1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  371-block  2
+call    8 never executed
+    $$$$$:  371-block  3
+        1:  372:    cout << "Test5 amenaza 1: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  372-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  372-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  373:    return out;
+        1:  373-block  0
+        1:  374:}
+        1:  374-block  0
+call    0 returned 1
+    $$$$$:  374-block  1
+call    1 never executed
+        -:  375:
+        -:  376://////// Ejercicio 8 ////////////////
+        -:  377:
+        -:  378:
+function _Z30diferenciaDiagonalesTest_test1v called 1 returned 100% blocks executed 47%
+        1:  379:bool diferenciaDiagonalesTest_test1(){
+        -:  380:    vector<vector<int> > m = {
+        -:  381:            {10,2,3,4},
+        -:  382:            {5,10,7,8},
+        -:  383:            {10,9,8,7},
+        -:  384:            {4,0,0,1}
+        7:  385:    };
+        1:  385-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  385-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  385-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  385-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  385-block  4
+call   16 returned 1
+call   17 returned 1
+branch 18 taken 1 (fallthrough)
+branch 19 taken 0 (throw)
+        4:  385-block  5
+call   20 returned 4
+        1:  385-block  6
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:  385-block  7
+    $$$$$:  385-block  8
+    $$$$$:  385-block  9
+call   25 never executed
+    $$$$$:  385-block 10
+    $$$$$:  385-block 11
+    $$$$$:  385-block 12
+    $$$$$:  385-block 13
+    $$$$$:  385-block 14
+    $$$$$:  385-block 15
+    $$$$$:  385-block 16
+    $$$$$:  385-block 17
+    $$$$$:  385-block 18
+        1:  386:    bool out = asegurar(diferenciaDiagonales(m) == 5, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  386-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  386-block  1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  386-block  2
+call    8 never executed
+    $$$$$:  386-block  3
+        1:  387:    cout << "Test1 diaglMasGrande: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  387-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  387-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  388:    return out;
+        1:  388-block  0
+        1:  389:}
+        1:  389-block  0
+call    0 returned 1
+    $$$$$:  389-block  1
+call    1 never executed
+        -:  390:
+function _Z30diferenciaDiagonalesTest_test2v called 1 returned 100% blocks executed 47%
+        1:  391:bool diferenciaDiagonalesTest_test2(){
+        -:  392:    vector<vector<int> > m = {
+        -:  393:            {1,2,3,4},
+        -:  394:            {5,6,7,8},
+        -:  395:            {10,9,8,7},
+        -:  396:            {0,0,0,1}
+        7:  397:    };
+        1:  397-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  397-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  397-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  397-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  397-block  4
+call   16 returned 1
+call   17 returned 1
+branch 18 taken 1 (fallthrough)
+branch 19 taken 0 (throw)
+        4:  397-block  5
+call   20 returned 4
+        1:  397-block  6
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:  397-block  7
+    $$$$$:  397-block  8
+    $$$$$:  397-block  9
+call   25 never executed
+    $$$$$:  397-block 10
+    $$$$$:  397-block 11
+    $$$$$:  397-block 12
+    $$$$$:  397-block 13
+    $$$$$:  397-block 14
+    $$$$$:  397-block 15
+    $$$$$:  397-block 16
+    $$$$$:  397-block 17
+    $$$$$:  397-block 18
+        1:  398:    bool out = asegurar(diferenciaDiagonales(m) == 4, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  398-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  398-block  1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  398-block  2
+call    8 never executed
+    $$$$$:  398-block  3
+        1:  399:    cout << "Test2 diag2MasGrande: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  399-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  399-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  400:    return out;
+        1:  400-block  0
+        1:  401:}
+        1:  401-block  0
+call    0 returned 1
+    $$$$$:  401-block  1
+call    1 never executed
+        -:  402:
+function _Z30diferenciaDiagonalesTest_test3v called 1 returned 100% blocks executed 47%
+        1:  403:bool diferenciaDiagonalesTest_test3(){
+        -:  404:    vector<vector<int> > m = {
+        -:  405:            {1,2,3,1},
+        -:  406:            {5,2,2,8},
+        -:  407:            {10,3,3,7},
+        -:  408:            {4,0,0,4}
+        7:  409:    };
+        1:  409-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  409-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  409-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  409-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  409-block  4
+call   16 returned 1
+call   17 returned 1
+branch 18 taken 1 (fallthrough)
+branch 19 taken 0 (throw)
+        4:  409-block  5
+call   20 returned 4
+        1:  409-block  6
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:  409-block  7
+    $$$$$:  409-block  8
+    $$$$$:  409-block  9
+call   25 never executed
+    $$$$$:  409-block 10
+    $$$$$:  409-block 11
+    $$$$$:  409-block 12
+    $$$$$:  409-block 13
+    $$$$$:  409-block 14
+    $$$$$:  409-block 15
+    $$$$$:  409-block 16
+    $$$$$:  409-block 17
+    $$$$$:  409-block 18
+        1:  410:    bool out = asegurar(diferenciaDiagonales(m) == 0, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  410-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  410-block  1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  410-block  2
+call    8 never executed
+    $$$$$:  410-block  3
+        1:  411:    cout << "Test3 iguales: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  411-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  411-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  412:    return out;
+        1:  412-block  0
+        1:  413:}
+        1:  413-block  0
+call    0 returned 1
+    $$$$$:  413-block  1
+call    1 never executed
+        -:  414:
+function _Z30diferenciaDiagonalesTest_test4v called 1 returned 100% blocks executed 47%
+        1:  415:bool diferenciaDiagonalesTest_test4(){
+        -:  416:    vector<vector<int> > m = {
+        -:  417:            {-1,2,3,-4},
+        -:  418:            {5,-6,7,8},
+        -:  419:            {1,-9,-8,7},
+        -:  420:            {0,0,0,1}
+        7:  421:    };
+        1:  421-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  421-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  421-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  421-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  421-block  4
+call   16 returned 1
+call   17 returned 1
+branch 18 taken 1 (fallthrough)
+branch 19 taken 0 (throw)
+        4:  421-block  5
+call   20 returned 4
+        1:  421-block  6
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:  421-block  7
+    $$$$$:  421-block  8
+    $$$$$:  421-block  9
+call   25 never executed
+    $$$$$:  421-block 10
+    $$$$$:  421-block 11
+    $$$$$:  421-block 12
+    $$$$$:  421-block 13
+    $$$$$:  421-block 14
+    $$$$$:  421-block 15
+    $$$$$:  421-block 16
+    $$$$$:  421-block 17
+    $$$$$:  421-block 18
+        1:  422:    bool out = asegurar(diferenciaDiagonales(m) == 8, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  422-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  422-block  1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  422-block  2
+call    8 never executed
+    $$$$$:  422-block  3
+        1:  423:    cout << "Test4 negativos: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  423-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  423-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  424:    return out;
+        1:  424-block  0
+        1:  425:}
+        1:  425-block  0
+call    0 returned 1
+    $$$$$:  425-block  1
+call    1 never executed
+        -:  426:
+function _Z30diferenciaDiagonalesTest_test5v called 1 returned 100% blocks executed 50%
+        1:  427:bool diferenciaDiagonalesTest_test5(){
+        -:  428:    vector<vector<int> > m = {
+        -:  429:            {-1,2},
+        -:  430:            {6,-6}
+        5:  431:    };
+        1:  431-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  431-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  431-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        2:  431-block  3
+call   12 returned 2
+        1:  431-block  4
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  431-block  5
+    $$$$$:  431-block  6
+    $$$$$:  431-block  7
+call   15 never executed
+    $$$$$:  431-block  8
+    $$$$$:  431-block  9
+    $$$$$:  431-block 10
+    $$$$$:  431-block 11
+    $$$$$:  431-block 12
+        1:  432:    bool out = asegurar(diferenciaDiagonales(m) == 15, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  432-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  432-block  1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  432-block  2
+call    8 never executed
+    $$$$$:  432-block  3
+        1:  433:    cout << "Test5 dos x dos: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  433-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  433-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  434:    return out;
+        1:  434-block  0
+        1:  435:}
+        1:  435-block  0
+call    0 returned 1
+    $$$$$:  435-block  1
+call    1 never executed
+        -:  436:
+function _Z30diferenciaDiagonalesTest_test6v called 1 returned 100% blocks executed 53%
+        1:  437:bool diferenciaDiagonalesTest_test6(){
+        -:  438:    vector<vector<int> > m = {
+        -:  439:            {-1}
+        4:  440:    };
+        1:  440-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  440-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  440-block  2
+call    8 returned 1
+        1:  440-block  3
+call    9 returned 1
+    $$$$$:  440-block  4
+    $$$$$:  440-block  5
+    $$$$$:  440-block  6
+call   10 never executed
+    $$$$$:  440-block  7
+    $$$$$:  440-block  8
+    $$$$$:  440-block  9
+        1:  441:    bool out = asegurar(diferenciaDiagonales(m) == 0, true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  441-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  441-block  1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  441-block  2
+call    8 never executed
+    $$$$$:  441-block  3
+        1:  442:    cout << "Test6 uno x uno: " << out << endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  442-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  442-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  443:    return out;
+        1:  443-block  0
+        1:  444:}
+        1:  444-block  0
+call    0 returned 1
+    $$$$$:  444-block  1
+call    1 never executed
+        -:  445:
+        -:  446:
+        -:  447://////// Ejercicio 9 ////////////////

@@ -1,0 +1,883 @@
+        -:    0:Source:C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo08/ejercicios.cpp
+        -:    0:Graph:C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo08\cmake-build-debug-coverage\CMakeFiles\labo08.dir\ejercicios.cpp.gcno
+        -:    0:Data:C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo08\cmake-build-debug-coverage\CMakeFiles\labo08.dir\ejercicios.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "ejercicios.h"
+        -:    2:// EJERCICIO 1///////////////////////////////////////////////////////////////////////////////////////////
+        -:    3:
+        -:    4:
+function _Z17productoVectorialSt6vectorIiSaIiEES1_ called 3 returned 100% blocks executed 75%
+        3:    5:vector<vector<int> > productoVectorial(vector<int> u, vector<int> v){
+        -:    6:	//COMPLETAR
+        6:    7:	vector<vector<int>> res(u.size(), vector<int>(v.size()));
+        3:    7-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:    7-block  1
+call    6 returned 3
+call    7 returned 3
+branch  8 taken 3 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 3
+call   11 returned 3
+    $$$$$:    7-block  2
+    $$$$$:    7-block  3
+        -:    8:
+       11:    9:	for(int i = 0; i < u.size(); i++){
+        8:    9-block  0
+       11:    9-block  1
+call    0 returned 11
+branch  1 taken 8
+branch  2 taken 3 (fallthrough)
+       30:   10:		for(int j = 0; j < v.size(); j++){
+        8:   10-block  0
+       30:   10-block  1
+call    0 returned 30
+branch  1 taken 22
+branch  2 taken 8 (fallthrough)
+       22:   11:			res[i][j] = u[i]*v[j];
+       22:   11-block  0
+call    0 returned 22
+call    1 returned 22
+call    2 returned 22
+call    3 returned 22
+        -:   12:		}
+        -:   13:	}
+        -:   14:
+        3:   15:	return res;
+        3:   15-block  0
+        3:   15-block  1
+        -:   16:}
+        -:   17:
+        -:   18:
+        -:   19:// EJERCICIO 2 ///////////////////////////////////////////////////////////////////////////////////////////
+        -:   20:
+        -:   21:
+function _Z9trasponerRSt6vectorIS_IiSaIiEESaIS1_EE called 3 returned 100% blocks executed 80%
+        3:   22:void trasponer(vector<vector<int> > &m) {
+        -:   23:	//COMPLETAR
+        -:   24:
+        6:   25:	vector<vector<int>> res(m.size(), vector<int>(m.size()));                         
+        3:   25-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   25-block  1
+call    6 returned 3
+call    7 returned 3
+branch  8 taken 3 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 3
+call   11 returned 3
+    $$$$$:   25-block  2
+    $$$$$:   25-block  3
+    $$$$$:   25-block  4
+        -:   26:
+       18:   27:    for(int i = 0; i < m.size(); i++){
+       15:   27-block  0
+       18:   27-block  1
+call    0 returned 18
+branch  1 taken 15
+branch  2 taken 3 (fallthrough)
+       92:   28:		for(int j = 0; j < m.size(); j++){
+       15:   28-block  0
+       92:   28-block  1
+call    0 returned 92
+branch  1 taken 77
+branch  2 taken 15 (fallthrough)
+       77:   29:            res[i][j] = m[j][i];
+       77:   29-block  0
+call    0 returned 77
+call    1 returned 77
+call    2 returned 77
+call    3 returned 77
+        -:   30:        }
+        -:   31:	}
+        -:   32:
+       18:   33:	for(int i = 0; i < m.size(); i++){
+        3:   33-block  0
+       15:   33-block  1
+       18:   33-block  2
+call    0 returned 18
+branch  1 taken 15
+branch  2 taken 3 (fallthrough)
+       92:   34:		for(int j = 0; j < m.size(); j++){
+       15:   34-block  0
+       92:   34-block  1
+call    0 returned 92
+branch  1 taken 77
+branch  2 taken 15 (fallthrough)
+       77:   35:            m[i][j] = res[i][j];
+       77:   35-block  0
+call    0 returned 77
+call    1 returned 77
+call    2 returned 77
+call    3 returned 77
+        -:   36:        }
+        -:   37:	}
+        -:   38:	
+        3:   39:}
+        3:   39-block  0
+call    0 returned 3
+        -:   40:
+        -:   41:
+        -:   42:// EJERCICIO 3 ///////////////////////////////////////////////////////////////////////////////////////////
+        -:   43:
+        -:   44:
+function _Z11multiplicarSt6vectorIS_IiSaIiEESaIS1_EES3_ called 2 returned 100% blocks executed 81%
+        2:   45:vector<vector<int> > multiplicar(vector<vector<int> > m1, vector<vector<int> > m2){
+        -:   46:	//COMPLETAR
+        -:   47:	
+        4:   48:	vector<vector<int>> res(m1.size(), vector<int>(m2[0].size()));
+        2:   48-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   48-block  1
+call    7 returned 2
+call    8 returned 2
+branch  9 taken 2 (fallthrough)
+branch 10 taken 0 (throw)
+call   11 returned 2
+call   12 returned 2
+    $$$$$:   48-block  2
+    $$$$$:   48-block  3
+        -:   49:
+       10:   50:    for(int i = 0; i < m1.size(); i++){
+        8:   50-block  0
+       10:   50-block  1
+call    0 returned 10
+branch  1 taken 8
+branch  2 taken 2 (fallthrough)
+       48:   51:        for(int k = 0; k < m2[0].size(); k++){
+        8:   51-block  0
+       40:   51-block  1
+       48:   51-block  2
+call    0 returned 48
+call    1 returned 48
+branch  2 taken 40
+branch  3 taken 8 (fallthrough)
+      225:   52:            for(int j = 0; j < m1[0].size(); j++){
+       40:   52-block  0
+      225:   52-block  1
+call    0 returned 225
+call    1 returned 225
+branch  2 taken 185
+branch  3 taken 40 (fallthrough)
+      185:   53:                res[i][k] = res[i][k] + (m1[i][j] * m2[j][k]);
+      185:   53-block  0
+call    0 returned 185
+call    1 returned 185
+call    2 returned 185
+call    3 returned 185
+call    4 returned 185
+call    5 returned 185
+call    6 returned 185
+call    7 returned 185
+        -:   54:            }
+        -:   55:        }
+        -:   56:    }
+        -:   57:	
+        -:   58:	
+        2:   59:	return res;
+        2:   59-block  0
+        2:   59-block  1
+        -:   60:}
+        -:   61:
+        -:   62:
+        -:   63:// EJERCICIO 4 ///////////////////////////////////////////////////////////////////////////////////////////
+        -:   64:
+        -:   65:
+        -:   66:int sumaVecinos(vector<vector<int>> m, int i, int j);
+        -:   67:bool vecinosEnRango(vector<vector<int>> m, int i, int j);
+        -:   68:int cantidadVecinos(vector<vector<int>> m, int i, int j);
+        -:   69:
+function _Z9promediarSt6vectorIS_IiSaIiEESaIS1_EE called 2 returned 100% blocks executed 65%
+        2:   70:vector<vector<int> > promediar(vector<vector<int> > m){
+        -:   71:	//COMPLETAR
+        -:   72:
+        4:   73:	vector<vector<int>> res(m.size(), vector<int>(m[0].size()));
+        2:   73-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   73-block  1
+call    7 returned 2
+call    8 returned 2
+branch  9 taken 2 (fallthrough)
+branch 10 taken 0 (throw)
+call   11 returned 2
+call   12 returned 2
+    $$$$$:   73-block  2
+    $$$$$:   73-block  3
+    $$$$$:   73-block  4
+call   13 never executed
+        -:   74:    
+       12:   75:    for(int i = 0; i < m.size(); i++){
+       10:   75-block  0
+       12:   75-block  1
+call    0 returned 12
+branch  1 taken 10
+branch  2 taken 2 (fallthrough)
+       60:   76:        for(int j = 0; j < m[0].size(); j++){
+       10:   76-block  0
+       60:   76-block  1
+call    0 returned 60
+call    1 returned 60
+branch  2 taken 50
+branch  3 taken 10 (fallthrough)
+       50:   77:            res[i][j] = (sumaVecinos(m, i, j) / cantidadVecinos(m, i, j));
+       50:   77-block  0
+call    0 returned 50
+branch  1 taken 50 (fallthrough)
+branch  2 taken 0 (throw)
+       50:   77-block  1
+call    3 returned 50
+branch  4 taken 50 (fallthrough)
+branch  5 taken 0 (throw)
+       50:   77-block  2
+call    6 returned 50
+branch  7 taken 50 (fallthrough)
+branch  8 taken 0 (throw)
+       50:   77-block  3
+call    9 returned 50
+branch 10 taken 50 (fallthrough)
+branch 11 taken 0 (throw)
+       50:   77-block  4
+call   12 returned 50
+call   13 returned 50
+call   14 returned 50
+call   15 returned 50
+    $$$$$:   77-block  5
+call   16 never executed
+    $$$$$:   77-block  6
+    $$$$$:   77-block  7
+call   17 never executed
+    $$$$$:   77-block  8
+        -:   78:        }
+        -:   79:    }
+        -:   80:
+        2:   81:	return res;
+        2:   81-block  0
+        2:   81-block  1
+    =====:   82:}
+    $$$$$:   82-block  0
+call    0 never executed
+        -:   83:
+        -:   84:
+function _Z11sumaVecinosSt6vectorIS_IiSaIiEESaIS1_EEii called 50 returned 100% blocks executed 100%
+       50:   85:int sumaVecinos(vector<vector<int>> m, int i, int j){
+        -:   86:
+       50:   87:    int suma = 0;
+        -:   88:
+      200:   89:    for(int a = i - 1; a <= i + 1; a++){
+       50:   89-block  0
+      150:   89-block  1
+      200:   89-block  2
+branch  0 taken 150
+branch  1 taken 50 (fallthrough)
+      600:   90:        for(int b = j - 1; b <= j + 1; b++){
+      150:   90-block  0
+      450:   90-block  1
+      600:   90-block  2
+branch  0 taken 450
+branch  1 taken 150 (fallthrough)
+      450:   91:            if(vecinosEnRango(m, a, b)){
+      450:   91-block  0
+call    0 returned 450
+call    1 returned 450
+call    2 returned 450
+branch  3 taken 338 (fallthrough)
+branch  4 taken 112
+      338:   92:                suma = suma + m[a][b];
+      338:   92-block  0
+call    0 returned 338
+call    1 returned 338
+        -:   93:            }
+        -:   94:        }
+        -:   95:    }
+        -:   96:
+       50:   97:    return suma;
+       50:   97-block  0
+        -:   98:}
+        -:   99:
+function _Z14vecinosEnRangoSt6vectorIS_IiSaIiEESaIS1_EEii called 900 returned 100% blocks executed 100%
+      900:  100:bool vecinosEnRango(vector<vector<int>> m, int i, int j){
+      900:  101:    return (0 <= i  && i < m.size() && 0 <= j && j < m[0].size());
+      900:  101-block  0
+branch  0 taken 840 (fallthrough)
+branch  1 taken 60
+      840:  101-block  1
+call    2 returned 840
+branch  3 taken 780 (fallthrough)
+branch  4 taken 60
+      780:  101-block  2
+branch  5 taken 728 (fallthrough)
+branch  6 taken 52
+      728:  101-block  3
+call    7 returned 728
+call    8 returned 728
+branch  9 taken 676 (fallthrough)
+branch 10 taken 52
+      676:  101-block  4
+      224:  101-block  5
+      900:  101-block  6
+        -:  102:}
+        -:  103:
+function _Z15cantidadVecinosSt6vectorIS_IiSaIiEESaIS1_EEii called 50 returned 100% blocks executed 100%
+       50:  104:int cantidadVecinos(vector<vector<int>> m, int i, int j){
+        -:  105:
+       50:  106:    int suma = 0;
+        -:  107:
+      200:  108:    for(int a = i - 1; a <= i + 1; a++){
+       50:  108-block  0
+      150:  108-block  1
+      200:  108-block  2
+branch  0 taken 150
+branch  1 taken 50 (fallthrough)
+      600:  109:        for(int b = j - 1; b <= j + 1; b++){
+      150:  109-block  0
+      450:  109-block  1
+      600:  109-block  2
+branch  0 taken 450
+branch  1 taken 150 (fallthrough)
+      450:  110:            if(vecinosEnRango(m, a, b)){
+      450:  110-block  0
+call    0 returned 450
+call    1 returned 450
+call    2 returned 450
+branch  3 taken 338 (fallthrough)
+branch  4 taken 112
+      338:  111:                suma++;
+      338:  111-block  0
+        -:  112:            }
+        -:  113:        }
+        -:  114:    }
+        -:  115:
+       50:  116:    return suma;
+       50:  116-block  0
+        -:  117:}
+        -:  118:
+        -:  119:
+        -:  120:// EJERCICIO 5 ///////////////////////////////////////////////////////////////////////////////////////////
+        -:  121:
+        -:  122:
+        -:  123:bool esPico(vector<vector<int>> m, int i, int j);
+        -:  124:bool enRango(vector<vector<int> > m, int a, int b);
+        -:  125:
+function _Z11contarPicosSt6vectorIS_IiSaIiEESaIS1_EE called 2 returned 100% blocks executed 89%
+        2:  126:int contarPicos(vector<vector<int>> m){
+        2:  127:	int suma = 0;
+        -:  128:
+       32:  129:    for(int i = 0; i < m.size(); i++){
+        2:  129-block  0
+       30:  129-block  1
+       32:  129-block  2
+call    0 returned 32
+branch  1 taken 30
+branch  2 taken 2 (fallthrough)
+      930:  130:        for(int j = 0; j < m[0].size(); j++){
+       30:  130-block  0
+      900:  130-block  1
+      930:  130-block  2
+call    0 returned 930
+call    1 returned 930
+branch  2 taken 900
+branch  3 taken 30 (fallthrough)
+      900:  131:            if(esPico(m, i, j)){
+      900:  131-block  0
+call    0 returned 900
+call    1 returned 900
+branch  2 taken 900 (fallthrough)
+branch  3 taken 0 (throw)
+      900:  131-block  1
+call    4 returned 900
+branch  5 taken 208 (fallthrough)
+branch  6 taken 692
+    $$$$$:  131-block  2
+call    7 never executed
+      208:  132:                suma++;
+      208:  132-block  0
+        -:  133:            }
+        -:  134:        }
+        -:  135:    }
+        2:  136:	return suma;
+        2:  136-block  0
+        2:  136-block  1
+        -:  137:}
+        -:  138:
+function _Z6esPicoSt6vectorIS_IiSaIiEESaIS1_EEii called 900 returned 100% blocks executed 89%
+      900:  139:bool esPico(vector<vector<int>> m, int i, int j){
+        -:  140:    
+      900:  141:    bool pico = true;
+        -:  142:
+     3600:  143:    for(int a = i - 1; a <= i + 1; a++){
+      900:  143-block  0
+     2700:  143-block  1
+     3600:  143-block  2
+branch  0 taken 2700
+branch  1 taken 900 (fallthrough)
+    10800:  144:        for(int b = j - 1; b <= j + 1; b++){
+     2700:  144-block  0
+     8100:  144-block  1
+    10800:  144-block  2
+branch  0 taken 8100
+branch  1 taken 2700 (fallthrough)
+     8100:  145:            if (enRango(m, a, b) && (m[i][j] <= m[a][b]) && !(a == i && b == j)){
+     8100:  145-block  0
+call    0 returned 8100
+branch  1 taken 8100 (fallthrough)
+branch  2 taken 0 (throw)
+     8100:  145-block  1
+call    3 returned 8100
+branch  4 taken 7628 (fallthrough)
+branch  5 taken 472
+     7628:  145-block  2
+call    6 returned 7628
+call    7 returned 7628
+call    8 returned 7628
+call    9 returned 7628
+branch 10 taken 5802 (fallthrough)
+branch 11 taken 1826
+     5802:  145-block  3
+branch 12 taken 2160 (fallthrough)
+branch 13 taken 3642
+     2160:  145-block  4
+branch 14 taken 1260 (fallthrough)
+branch 15 taken 900
+     4902:  145-block  5
+     3198:  145-block  6
+     8100:  145-block  7
+branch 16 taken 8100 (fallthrough)
+branch 17 taken 0
+     8100:  145-block  8
+call   18 returned 8100
+     8100:  145-block  9
+branch 19 taken 4902 (fallthrough)
+branch 20 taken 3198
+    $$$$$:  145-block 10
+branch 21 never executed
+branch 22 never executed
+    $$$$$:  145-block 11
+call   23 never executed
+     4902:  146:                pico = false;
+     4902:  146-block  0
+        -:  147:            }
+        -:  148:        }
+        -:  149:    }
+        -:  150:
+      900:  151:    return pico;
+      900:  151-block  0
+      900:  151-block  1
+        -:  152:}
+        -:  153:
+function _Z7enRangoSt6vectorIS_IiSaIiEESaIS1_EEii called 8100 returned 100% blocks executed 100%
+     8100:  154:bool enRango(vector<vector<int> > m, int a, int b){
+     8100:  155:    return((0 <= a) && (a < m.size()) && (0 <= b) && (b < m[0].size()));
+     8100:  155-block  0
+branch  0 taken 7950 (fallthrough)
+branch  1 taken 150
+     7950:  155-block  1
+call    2 returned 7950
+branch  3 taken 7800 (fallthrough)
+branch  4 taken 150
+     7800:  155-block  2
+branch  5 taken 7714 (fallthrough)
+branch  6 taken 86
+     7714:  155-block  3
+call    7 returned 7714
+call    8 returned 7714
+branch  9 taken 7628 (fallthrough)
+branch 10 taken 86
+     7628:  155-block  4
+      472:  155-block  5
+     8100:  155-block  6
+        -:  156:}
+        -:  157:
+        -:  158:
+        -:  159:// EJERCICIO 6 ///////////////////////////////////////////////////////////////////////////////////////////
+        -:  160:
+function _Z12esTriangularSt6vectorIS_IiSaIiEESaIS1_EE called 5 returned 100% blocks executed 100%
+        5:  161:bool esTriangular(vector<vector<int> > m){
+        5:  162:    bool esTriangularSuperior = true;
+        5:  163:    bool esTriangularInferior = true;
+        -:  164:
+       23:  165:    for(int i = 0; i < m.size(); i++){
+        5:  165-block  0
+       18:  165-block  1
+       23:  165-block  2
+call    0 returned 23
+branch  1 taken 18
+branch  2 taken 5 (fallthrough)
+       86:  166:        for(int j = 0; j < m[0].size(); j++){
+       18:  166-block  0
+       68:  166-block  1
+       86:  166-block  2
+call    0 returned 86
+call    1 returned 86
+branch  2 taken 68
+branch  3 taken 18 (fallthrough)
+       68:  167:            if(i > j && m[i][j] != 0){
+       68:  167-block  0
+branch  0 taken 25 (fallthrough)
+branch  1 taken 43
+       25:  167-block  1
+call    2 returned 25
+call    3 returned 25
+branch  4 taken 3 (fallthrough)
+branch  5 taken 22
+        3:  167-block  2
+       65:  167-block  3
+       68:  167-block  4
+branch  6 taken 3 (fallthrough)
+branch  7 taken 65
+        3:  168:                esTriangularSuperior = false;
+        3:  168-block  0
+        -:  169:            }
+        -:  170:        }
+        -:  171:    }
+        -:  172:
+       23:  173:    for(int i = 0; i < m.size(); i++){
+        5:  173-block  0
+       18:  173-block  1
+       23:  173-block  2
+call    0 returned 23
+branch  1 taken 18
+branch  2 taken 5 (fallthrough)
+       86:  174:        for(int j = 0; j < m[0].size(); j++){
+       18:  174-block  0
+       68:  174-block  1
+       86:  174-block  2
+call    0 returned 86
+call    1 returned 86
+branch  2 taken 68
+branch  3 taken 18 (fallthrough)
+       68:  175:            if(i < j && m[i][j] != 0){
+       68:  175-block  0
+branch  0 taken 25 (fallthrough)
+branch  1 taken 43
+       25:  175-block  1
+call    2 returned 25
+call    3 returned 25
+branch  4 taken 6 (fallthrough)
+branch  5 taken 19
+        6:  175-block  2
+       62:  175-block  3
+       68:  175-block  4
+branch  6 taken 6 (fallthrough)
+branch  7 taken 62
+        6:  176:                esTriangularInferior = false;
+        6:  176-block  0
+        -:  177:            }
+        -:  178:        }
+        -:  179:    }
+        -:  180:
+        5:  181:    return (esTriangularSuperior || esTriangularInferior);
+        5:  181-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 2
+        3:  181-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 2
+        3:  181-block  2
+        2:  181-block  3
+        5:  181-block  4
+        -:  182:}
+        -:  183:
+        -:  184:
+        -:  185:
+        -:  186:
+        -:  187:// EJERCICIO 7 ///////////////////////////////////////////////////////////////////////////////////////////
+        -:  188:
+        -:  189:
+        -:  190:bool existeAmenaza(vector<vector<int> > m);
+        -:  191:bool amenazaAlguna(vector<vector<int> > m, int i1, int j1);
+        -:  192:bool seAmenazan(int i1, int  j1, int  i2, int j2);
+        -:  193:
+function _Z10hayAmenazaSt6vectorIS_IiSaIiEESaIS1_EE called 5 returned 100% blocks executed 78%
+        5:  194:bool hayAmenaza(vector<vector<int> > m){
+        5:  195:	return existeAmenaza(m);
+        5:  195-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+        5:  195-block  1
+        5:  195-block  2
+call    4 returned 5
+        5:  195-block  3
+    $$$$$:  195-block  4
+call    5 never executed
+        -:  196:}
+        -:  197:
+function _Z13existeAmenazaSt6vectorIS_IiSaIiEESaIS1_EE called 5 returned 100% blocks executed 89%
+        5:  198:bool existeAmenaza(vector<vector<int> > m){
+        -:  199:
+        5:  200:    bool existeAmenaza = false;
+        -:  201:
+       30:  202:    for(int i1 = 0; i1 < m.size(); i1++){
+        5:  202-block  0
+       25:  202-block  1
+       30:  202-block  2
+call    0 returned 30
+branch  1 taken 25
+branch  2 taken 5 (fallthrough)
+      189:  203:        for(int j1 = 0; j1 < m[0].size(); j1++){
+       25:  203-block  0
+      164:  203-block  1
+      189:  203-block  2
+call    0 returned 189
+call    1 returned 189
+branch  2 taken 164
+branch  3 taken 25 (fallthrough)
+      164:  204:            if(m[i1][j1] == 1 && amenazaAlguna(m, i1, j1)){
+      164:  204-block  0
+call    0 returned 164
+call    1 returned 164
+branch  2 taken 25 (fallthrough)
+branch  3 taken 139
+       25:  204-block  1
+call    4 returned 25
+branch  5 taken 25 (fallthrough)
+branch  6 taken 0 (throw)
+       25:  204-block  2
+call    7 returned 25
+branch  8 taken 25 (fallthrough)
+branch  9 taken 0 (throw)
+       25:  204-block  3
+branch 10 taken 9 (fallthrough)
+branch 11 taken 16
+        9:  204-block  4
+      155:  204-block  5
+      164:  204-block  6
+branch 12 taken 25 (fallthrough)
+branch 13 taken 139
+       25:  204-block  7
+call   14 returned 25
+      164:  204-block  8
+branch 15 taken 9 (fallthrough)
+branch 16 taken 155
+    $$$$$:  204-block  9
+branch 17 never executed
+branch 18 never executed
+    $$$$$:  204-block 10
+call   19 never executed
+        9:  205:                existeAmenaza = true;
+        9:  205-block  0
+        -:  206:            }
+        -:  207:        }
+        -:  208:    }
+        -:  209:
+        5:  210:    return existeAmenaza;
+        5:  210-block  0
+        5:  210-block  1
+        -:  211:}
+        -:  212:
+function _Z13amenazaAlgunaSt6vectorIS_IiSaIiEESaIS1_EEii called 25 returned 100% blocks executed 100%
+       25:  213:bool amenazaAlguna(vector<vector<int> > m, int i1, int j1){
+        -:  214:    
+       25:  215:    bool amenazaAlguna = false;
+        -:  216:
+      180:  217:    for(int i2 = 0; i2 < m.size(); i2++){
+       25:  217-block  0
+      155:  217-block  1
+      180:  217-block  2
+call    0 returned 180
+branch  1 taken 155
+branch  2 taken 25 (fallthrough)
+     1287:  218:        for(int j2 = 0; j2 < m[0].size(); j2++){
+      155:  218-block  0
+     1132:  218-block  1
+     1287:  218-block  2
+call    0 returned 1287
+call    1 returned 1287
+branch  2 taken 1132
+branch  3 taken 155 (fallthrough)
+     1132:  219:            if(m[i2][j2] == 1 && seAmenazan(i1, j1, i2, j2)){
+     1132:  219-block  0
+call    0 returned 1132
+call    1 returned 1132
+branch  2 taken 155 (fallthrough)
+branch  3 taken 977
+      155:  219-block  1
+call    4 returned 155
+branch  5 taken 10 (fallthrough)
+branch  6 taken 145
+       10:  219-block  2
+     1122:  219-block  3
+     1132:  219-block  4
+branch  7 taken 10 (fallthrough)
+branch  8 taken 1122
+       10:  220:                amenazaAlguna = true;
+       10:  220-block  0
+        -:  221:            }
+        -:  222:        }
+        -:  223:    }
+        -:  224:
+       25:  225:    return amenazaAlguna;
+       25:  225-block  0
+        -:  226:}
+        -:  227:
+        -:  228:
+function _Z10seAmenazaniiii called 155 returned 100% blocks executed 100%
+      155:  229:bool seAmenazan(int i1, int  j1, int  i2, int j2){
+      155:  230:    return((i1 != i2 || j1 != j2) && (i1 == i2 || j1 == j2 || abs(i1 - i2) == abs(j1 - j2)));
+      155:  230-block  0
+branch  0 taken 27 (fallthrough)
+branch  1 taken 128
+       27:  230-block  1
+branch  2 taken 2 (fallthrough)
+branch  3 taken 25
+      130:  230-block  2
+branch  4 taken 128 (fallthrough)
+branch  5 taken 2
+      128:  230-block  3
+branch  6 taken 126 (fallthrough)
+branch  7 taken 2
+      126:  230-block  4
+branch  8 taken 6 (fallthrough)
+branch  9 taken 120
+       10:  230-block  5
+      145:  230-block  6
+      155:  230-block  7
+        -:  231:}
+        -:  232:
+        -:  233:
+        -:  234:// EJERCICIO 8 ///////////////////////////////////////////////////////////////////////////////////////////
+        -:  235:
+        -:  236:
+        -:  237:int sumaDiagonal(vector<vector<int>> m);
+        -:  238:int sumaDiagonalPerpendicular(vector<vector<int>> m);
+        -:  239:
+function _Z20diferenciaDiagonalesSt6vectorIS_IiSaIiEESaIS1_EE called 6 returned 100% blocks executed 82%
+        6:  240:int diferenciaDiagonales(vector<vector<int> > m) {
+        6:  241:    return (abs(sumaDiagonal(m) - sumaDiagonalPerpendicular(m)));
+        6:  241-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+branch  3 taken 6 (fallthrough)
+branch  4 taken 0 (throw)
+        6:  241-block  1
+call    5 returned 6
+call    6 returned 6
+call    7 returned 6
+        6:  241-block  2
+    $$$$$:  241-block  3
+call    8 never executed
+        -:  242:}
+        -:  243:
+function _Z12sumaDiagonalSt6vectorIS_IiSaIiEESaIS1_EE called 6 returned 100% blocks executed 100%
+        6:  244:int sumaDiagonal(vector<vector<int>> m){
+        -:  245:    
+        6:  246:    int suma = 0;
+        -:  247:
+       25:  248:    for(int i = 0; i < m.size(); i++){
+        6:  248-block  0
+       25:  248-block  1
+call    0 returned 25
+branch  1 taken 19
+branch  2 taken 6 (fallthrough)
+       19:  249:        suma = suma + m[i][i];
+       19:  249-block  0
+call    0 returned 19
+call    1 returned 19
+        -:  250:    }
+        -:  251:
+        6:  252:    return suma;
+        6:  252-block  0
+        -:  253:}
+        -:  254:
+function _Z25sumaDiagonalPerpendicularSt6vectorIS_IiSaIiEESaIS1_EE called 6 returned 100% blocks executed 100%
+        6:  255:int sumaDiagonalPerpendicular(vector<vector<int>> m){
+        -:  256:    
+        6:  257:    int suma = 0;
+        -:  258:
+       25:  259:    for(int i = m.size()-1; i >= 0; i--){
+        6:  259-block  0
+call    0 returned 6
+       25:  259-block  1
+branch  1 taken 19
+branch  2 taken 6 (fallthrough)
+       19:  260:        suma = suma + m[i][m.size() - i - 1];
+       19:  260-block  0
+call    0 returned 19
+call    1 returned 19
+call    2 returned 19
+        -:  261:    }
+        -:  262:
+        6:  263:    return suma;
+        6:  263-block  0
+        -:  264:}
+        -:  265:
+        -:  266:
+        -:  267:// EJERCICIO 9///////////////////////////////////////////////////////////////////////////////////////////
+        -:  268:
+        -:  269:// Usamos numeros para describir los 3 posibles estados de las casillas
+        -:  270:// 0: Casilla Vacía
+        -:  271:// 1: Casilla con "X"
+        -:  272:// 2: Casilla con "O"
+        -:  273:bool terminada(vector<vector<int>> m);
+        -:  274:
+        -:  275:
+function _Z6taTeTiSt6vectorIS_IiSaIiEESaIS1_EE called 0 returned 0% blocks executed 0%
+    #####:  276:bool taTeTi(vector<vector<int>> m){
+    #####:  277:    return(terminada(m));
+    %%%%%:  277-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  278:}
+        -:  279:
+        -:  280:
+function _Z9terminadaSt6vectorIS_IiSaIiEESaIS1_EE called 0 returned 0% blocks executed 0%
+    #####:  281:bool terminada(vector<vector<int>> m){
+        -:  282:
+    #####:  283:    bool terminada = true;
+        -:  284:
+    #####:  285:    for(int i = 0; i < 3; i++){
+    %%%%%:  285-block  0
+    %%%%%:  285-block  1
+    %%%%%:  285-block  2
+branch  0 never executed
+branch  1 never executed
+    #####:  286:        for(int j = 0; j < 3; j++){
+    %%%%%:  286-block  0
+    %%%%%:  286-block  1
+    %%%%%:  286-block  2
+branch  0 never executed
+branch  1 never executed
+    #####:  287:            if(m[i][j] == 0){
+    %%%%%:  287-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  288:                terminada = false;
+    %%%%%:  288-block  0
+        -:  289:            }
+        -:  290:        }
+        -:  291:    }
+        -:  292:
+    #####:  293:    return (terminada);
+    %%%%%:  293-block  0
+        -:  294:}
+        -:  295:
+        -:  296:
+        -:  297:// EJERCICIO 10///////////////////////////////////////////////////////////////////////////////////////////
+        -:  298:

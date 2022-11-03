@@ -1,0 +1,15 @@
+# ninja log v5
+1	329	6888179347931023	CMakeFiles/labo08.dir/main.cpp.obj	ded6b03d7dca3511
+7	675	6888179351316175	CMakeFiles/labo08.dir/cases.cpp.obj	5f7648f052cb7131
+4	454	6888179349199387	CMakeFiles/labo08.dir/ejercicios.cpp.obj	b2cbb985d9b98794
+675	1012	6888179354726641	labo08.exe	23a7a835c60c65d2
+0	358	6890922689658565	CMakeFiles/labo08.dir/main.cpp.obj	b5c9d45f9a1bffd0
+3	458	6890922690647252	CMakeFiles/labo08.dir/ejercicios.cpp.obj	9fe94e1ef2172e25
+6	675	6890922692819836	CMakeFiles/labo08.dir/cases.cpp.obj	5047dabd792410b7
+675	1007	6890922696108049	labo08.exe	bf2f19b1e6d5374c
+2	429	6890927261415016	CMakeFiles/labo08.dir/ejercicios.cpp.obj	9fe94e1ef2172e25
+430	732	6890927264397563	labo08.exe	bf2f19b1e6d5374c
+2	320	6890927700791327	CMakeFiles/labo08.dir/main.cpp.obj	b5c9d45f9a1bffd0
+5	428	6890927701863701	CMakeFiles/labo08.dir/ejercicios.cpp.obj	9fe94e1ef2172e25
+7	615	6890927703727923	CMakeFiles/labo08.dir/cases.cpp.obj	5047dabd792410b7
+615	902	6890927706562929	labo08.exe	bf2f19b1e6d5374c

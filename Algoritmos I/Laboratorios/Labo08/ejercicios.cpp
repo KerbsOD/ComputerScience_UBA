@@ -158,43 +158,30 @@ bool enRango(vector<vector<int> > m, int a, int b){
 
 // EJERCICIO 6 ///////////////////////////////////////////////////////////////////////////////////////////
 
-
-bool esTriangularSuperior(vector<vector<int> > m);
-bool esTriangularInferior(vector<vector<int> > m);
-
 bool esTriangular(vector<vector<int> > m){
-	return (esTriangularSuperior(m) || esTriangularInferior(m));
-}
-
-bool esTriangularSuperior(vector<vector<int> > m){
-
-    bool esTriangular = true;
+    bool esTriangularSuperior = true;
+    bool esTriangularInferior = true;
 
     for(int i = 0; i < m.size(); i++){
         for(int j = 0; j < m[0].size(); j++){
             if(i > j && m[i][j] != 0){
-                esTriangular = false;
+                esTriangularSuperior = false;
             }
         }
     }
-
-    return esTriangular;
-}
-
-bool esTriangularInferior(vector<vector<int> > m){
-    
-    bool esTriangular = true;
 
     for(int i = 0; i < m.size(); i++){
         for(int j = 0; j < m[0].size(); j++){
             if(i < j && m[i][j] != 0){
-                esTriangular = false;
+                esTriangularInferior = false;
             }
         }
     }
 
-    return esTriangular;
+    return (esTriangularSuperior || esTriangularInferior);
 }
+
+
 
 
 // EJERCICIO 7 ///////////////////////////////////////////////////////////////////////////////////////////

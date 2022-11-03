@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: C:/Users/Octo K/Desktop/Labo08
-BuildDirectory: C:/Users/Octo K/Desktop/Labo08/cmake-build-debug
+SourceDirectory: C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo08
+BuildDirectory: C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo08/cmake-build-debug
 
 # Where to place the cost data store
 CostDataFile: 
@@ -27,8 +27,8 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "C:/Program Files/JetBrains/CLion 2022.2/bin/cmake/win/bin/cmake.exe" "C:/Users/Octo K/Desktop/Labo08"
-MakeCommand: "C:\Program Files\JetBrains\CLion 2022.2\bin\cmake\win\bin\cmake.exe" --build . --config "${CTEST_CONFIGURATION_TYPE}"
+ConfigureCommand: "C:/Program Files/JetBrains/CLion 2022.2.4/bin/cmake/win/bin/cmake.exe" "C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo08"
+MakeCommand: "C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -63,7 +63,7 @@ UpdateOptions:
 UpdateType: 
 
 # Compiler info
-Compiler: C:/Program Files/JetBrains/CLion 2022.2/bin/mingw/bin/g++.exe
+Compiler: C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/bin/g++.exe
 CompilerVersion: 11.2.0
 
 # Dynamic analysis (MemCheck)
@@ -81,7 +81,7 @@ MemoryCheckCommandOptions:
 MemoryCheckSuppressionFile: 
 
 # Coverage
-CoverageCommand: C:/Program Files/JetBrains/CLion 2022.2/bin/mingw/bin/gcov.exe
+CoverageCommand: C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/bin/gcov.exe
 CoverageExtraFlags: -l
 
 # Testing options
