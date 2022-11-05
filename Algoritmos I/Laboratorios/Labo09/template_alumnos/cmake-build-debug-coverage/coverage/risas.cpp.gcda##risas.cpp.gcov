@@ -1,0 +1,38 @@
+        -:    0:Source:C:/Users/Octav/Desktop/Labo09/template_alumnos/src/risas.cpp
+        -:    0:Graph:C:\Users\Octav\Desktop\Labo09\template_alumnos\cmake-build-debug-coverage\CMakeFiles\strings.dir\src\risas.cpp.gcno
+        -:    0:Data:C:\Users\Octav\Desktop\Labo09\template_alumnos\cmake-build-debug-coverage\CMakeFiles\strings.dir\src\risas.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <string>
+        -:    2:#include <vector>
+        -:    3:#include "risas.h"
+        -:    4:#include <iostream>
+        -:    5:#include <fstream>
+        -:    6:
+        -:    7:using namespace std;
+        -:    8:
+        -:    9:/* Utiles */
+function _Z9leerDatosNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 29 returned 100% blocks executed 100%
+       29:   10:vector<char> leerDatos(string s) {
+       29:   11:    vector<char> vec;
+       29:   11-block  0
+call    0 returned 29
+       29:   12:    return vec;
+        -:   13:}
+        -:   14:
+function _Z13leerLargoRealNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 29 returned 100% blocks executed 100%
+       29:   15:int leerLargoReal(string filename){
+       29:   16:    int val = -1;
+       29:   17:    return val;
+       29:   17-block  0
+        -:   18:}
+        -:   19:/* Utiles */
+        -:   20:
+        -:   21:/* RESOLUCION ALUMNOS */
+function _Z12risaMasLargaSt6vectorIcSaIcEE called 29 returned 100% blocks executed 100%
+       29:   22:int risaMasLarga(vector<char> s)
+        -:   23:{
+       29:   24:    int largo = 0;
+       29:   25:    return largo;
+       29:   25-block  0
+        -:   26:}
+        -:   27:/* RESOLUCION ALUMNOS */

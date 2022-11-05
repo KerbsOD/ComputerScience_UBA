@@ -1,0 +1,638 @@
+        -:    0:Source:C:/Users/Octav/Desktop/Labo09/template_alumnos/src/ejercicios.cpp
+        -:    0:Graph:C:\Users\Octav\Desktop\Labo09\template_alumnos\cmake-build-debug-coverage\CMakeFiles\strings.dir\src\ejercicios.cpp.gcno
+        -:    0:Data:C:\Users\Octav\Desktop\Labo09\template_alumnos\cmake-build-debug-coverage\CMakeFiles\strings.dir\src\ejercicios.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "ejercicios.h"
+        -:    2:
+        -:    3:/* Para compilar */ 
+        -:    4:
+        -:    5:using namespace std;
+        -:    6:
+function _Z5splitNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEc called 11 returned 100% blocks executed 80%
+       11:    7:vector<string> split(string s, char delim){
+        -:    8:
+       11:    9:    vector<string> palabras;
+       11:    9-block  0
+call    0 returned 11
+       11:   10:    string miPalabra = "";
+call    0 returned 11
+call    1 returned 11
+branch  2 taken 11 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   10-block  0
+        -:   11:
+      204:   12:    for(int i = 0; i < s.size(); i++){
+      193:   12-block  0
+      204:   12-block  1
+call    0 returned 204
+branch  1 taken 193
+branch  2 taken 11 (fallthrough)
+        -:   13:
+      193:   14:        if(s[i] != delim ){
+      193:   14-block  0
+call    0 returned 193
+branch  1 taken 193 (fallthrough)
+branch  2 taken 0 (throw)
+      193:   14-block  1
+branch  3 taken 153 (fallthrough)
+branch  4 taken 40
+      153:   15:            miPalabra.push_back(s[i]);
+      153:   15-block  0
+call    0 returned 153
+branch  1 taken 153 (fallthrough)
+branch  2 taken 0 (throw)
+      153:   15-block  1
+call    3 returned 153
+branch  4 taken 153 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   16:        }
+        -:   17:
+      193:   18:        if(s[i] == delim || i == s.size() - 1){
+      193:   18-block  0
+call    0 returned 193
+branch  1 taken 193 (fallthrough)
+branch  2 taken 0 (throw)
+      193:   18-block  1
+branch  3 taken 153 (fallthrough)
+branch  4 taken 40
+      153:   18-block  2
+call    5 returned 153
+branch  6 taken 7 (fallthrough)
+branch  7 taken 146
+       47:   18-block  3
+      146:   18-block  4
+      193:   18-block  5
+branch  8 taken 47 (fallthrough)
+branch  9 taken 146
+       47:   19:            if(miPalabra.size() > 0){
+       47:   19-block  0
+call    0 returned 47
+branch  1 taken 30 (fallthrough)
+branch  2 taken 17
+       30:   20:                palabras.push_back(miPalabra);
+       30:   20-block  0
+call    0 returned 30
+branch  1 taken 30 (fallthrough)
+branch  2 taken 0 (throw)
+       30:   21:                miPalabra.clear();
+       30:   21-block  0
+call    0 returned 30
+        -:   22:            }
+        -:   23:        }
+        -:   24:    }
+        -:   25:
+       22:   26:    return palabras;
+       11:   26-block  0
+       11:   26-block  1
+       11:   27:}
+       11:   27-block  0
+call    0 returned 11
+    $$$$$:   27-block  1
+call    1 never executed
+    $$$$$:   27-block  2
+call    2 never executed
+        -:   28:
+        -:   29:
+function _Z16darVueltaPalabraNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 4 returned 100% blocks executed 78%
+        4:   30:string darVueltaPalabra(string s){
+        4:   31:    string res;
+        4:   31-block  0
+call    0 returned 4
+        -:   32:
+        4:   33:    vector<string> palabras = split(s, ' ');
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   33-block  0
+call    3 returned 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   33-block  1
+        4:   34:    vector<string> palabrasDadasVuelta;
+call    0 returned 4
+        -:   35:
+       13:   36:    for(int i = palabras.size()-1; i >= 0; i--){
+call    0 returned 4
+        9:   36-block  0
+       13:   36-block  1
+branch  1 taken 9
+branch  2 taken 4 (fallthrough)
+        9:   37:        palabrasDadasVuelta.push_back(palabras[i]);
+        9:   37-block  0
+call    0 returned 9
+call    1 returned 9
+branch  2 taken 9 (fallthrough)
+branch  3 taken 0 (throw)
+        -:   38:    }
+        -:   39:
+       13:   40:    for(int i = 0; i < palabrasDadasVuelta.size(); i++){
+        4:   40-block  0
+        9:   40-block  1
+       13:   40-block  2
+call    0 returned 13
+branch  1 taken 9
+branch  2 taken 4 (fallthrough)
+       53:   41:        for(int j = 0; j < palabrasDadasVuelta[i].size(); j++){
+        9:   41-block  0
+       44:   41-block  1
+       53:   41-block  2
+call    0 returned 53
+call    1 returned 53
+branch  2 taken 44
+branch  3 taken 9 (fallthrough)
+       44:   42:            res.push_back(palabrasDadasVuelta[i][j]);
+       44:   42-block  0
+call    0 returned 44
+call    1 returned 44
+branch  2 taken 44 (fallthrough)
+branch  3 taken 0 (throw)
+       44:   42-block  1
+call    4 returned 44
+branch  5 taken 44 (fallthrough)
+branch  6 taken 0 (throw)
+        -:   43:        }
+        9:   44:        if(i != palabrasDadasVuelta.size()-1){
+        9:   44-block  0
+call    0 returned 9
+branch  1 taken 6 (fallthrough)
+branch  2 taken 3
+        6:   45:            res.push_back(' ');
+        6:   45-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   46:        }
+        -:   47:    }
+        -:   48:
+        -:   49:
+        8:   50:    return res;
+        4:   50-block  0
+        4:   50-block  1
+        4:   51:}
+        4:   51-block  0
+call    0 returned 4
+call    1 returned 4
+    $$$$$:   51-block  1
+call    2 never executed
+    $$$$$:   51-block  2
+call    3 never executed
+    $$$$$:   51-block  3
+call    4 never executed
+        -:   52:
+        -:   53:// Decidir si s1 es substring o subsecuencia de s2
+function _Z12subsecuenciaNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES4_ called 8 returned 100% blocks executed 100%
+        8:   54:bool subsecuencia(string s1, string s2) {
+        -:   55:
+        8:   56:    int j = 0;
+        -:   57:
+       82:   58:    for(int i = 0; i < s2.size(); i++){
+        8:   58-block  0
+       74:   58-block  1
+       82:   58-block  2
+call    0 returned 82
+branch  1 taken 74
+branch  2 taken 8 (fallthrough)
+       74:   59:        if(j < s1.size() && s1[j] == s2[i]){
+       74:   59-block  0
+call    0 returned 74
+branch  1 taken 70 (fallthrough)
+branch  2 taken 4
+       70:   59-block  1
+call    3 returned 70
+call    4 returned 70
+branch  5 taken 27 (fallthrough)
+branch  6 taken 43
+       27:   59-block  2
+       47:   59-block  3
+       74:   59-block  4
+branch  7 taken 27 (fallthrough)
+branch  8 taken 47
+       27:   60:            j++;
+       27:   60-block  0
+        -:   61:        }
+        -:   62:    }
+        -:   63:
+        8:   64:    return(s1.size() == j);
+        8:   64-block  0
+call    0 returned 8
+        -:   65:
+        -:   66:}
+        -:   67:
+        -:   68:// Mismo orden relativo de conjunto de anagramas y dentro de cada vector y con repetidos
+function _Z16agruparAnagramasSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE called 5 returned 100% blocks executed 68%
+        5:   69:vector<vector<string> > agruparAnagramas(vector<string> v){
+        5:   70:	vector<vector<string> > res;
+        5:   70-block  0
+call    0 returned 5
+        -:   71:
+        5:   72:    vector<string> listaDeAnagramas;
+call    0 returned 5
+        -:   73:
+        -:   74:
+        -:   75:
+       45:   76:    for(int i = 0; i < v.size(); i++){
+       45:   76-block  0
+call    0 returned 45
+branch  1 taken 40
+branch  2 taken 5 (fallthrough)
+      468:   77:        for(int j = 0; j < v.size(); j++){
+       40:   77-block  0
+      428:   77-block  1
+      468:   77-block  2
+call    0 returned 468
+branch  1 taken 428
+branch  2 taken 40 (fallthrough)
+      428:   78:            if (esAnagrama(v[i], v[j]) && !pertenece(v[j], res)){
+      428:   78-block  0
+call    0 returned 428
+call    1 returned 428
+branch  2 taken 428 (fallthrough)
+branch  3 taken 0 (throw)
+      428:   78-block  1
+call    4 returned 428
+call    5 returned 428
+branch  6 taken 428 (fallthrough)
+branch  7 taken 0 (throw)
+      428:   78-block  2
+call    8 returned 428
+branch  9 taken 428 (fallthrough)
+branch 10 taken 0 (throw)
+      428:   78-block  3
+branch 11 taken 108 (fallthrough)
+branch 12 taken 320
+      108:   78-block  4
+call   13 returned 108
+branch 14 taken 108 (fallthrough)
+branch 15 taken 0 (throw)
+      108:   78-block  5
+call   16 returned 108
+call   17 returned 108
+branch 18 taken 108 (fallthrough)
+branch 19 taken 0 (throw)
+      108:   78-block  6
+call   20 returned 108
+branch 21 taken 40 (fallthrough)
+branch 22 taken 68
+       40:   78-block  7
+      388:   78-block  8
+      428:   78-block  9
+branch 23 taken 108 (fallthrough)
+branch 24 taken 320
+      108:   78-block 10
+call   25 returned 108
+      428:   78-block 11
+branch 26 taken 108 (fallthrough)
+branch 27 taken 320
+      108:   78-block 12
+call   28 returned 108
+      428:   78-block 13
+branch 29 taken 428 (fallthrough)
+branch 30 taken 0
+      428:   78-block 14
+call   31 returned 428
+      428:   78-block 15
+branch 32 taken 428 (fallthrough)
+branch 33 taken 0
+      428:   78-block 16
+call   34 returned 428
+      428:   78-block 17
+branch 35 taken 40 (fallthrough)
+branch 36 taken 388
+    $$$$$:   78-block 18
+branch 37 never executed
+branch 38 never executed
+    $$$$$:   78-block 19
+call   39 never executed
+    $$$$$:   78-block 20
+    $$$$$:   78-block 21
+branch 40 never executed
+branch 41 never executed
+    $$$$$:   78-block 22
+call   42 never executed
+    $$$$$:   78-block 23
+    $$$$$:   78-block 24
+branch 43 never executed
+branch 44 never executed
+    $$$$$:   78-block 25
+call   45 never executed
+    $$$$$:   78-block 26
+    $$$$$:   78-block 27
+branch 46 never executed
+branch 47 never executed
+    $$$$$:   78-block 28
+call   48 never executed
+    $$$$$:   78-block 29
+       40:   79:                listaDeAnagramas.push_back(v[j]);
+       40:   79-block  0
+call    0 returned 40
+call    1 returned 40
+branch  2 taken 40 (fallthrough)
+branch  3 taken 0 (throw)
+        -:   80:            }
+        -:   81:        }
+       40:   82:        if(listaDeAnagramas.size() != 0){
+       40:   82-block  0
+call    0 returned 40
+branch  1 taken 20 (fallthrough)
+branch  2 taken 20
+       20:   83:            res.push_back(listaDeAnagramas);
+       20:   83-block  0
+call    0 returned 20
+branch  1 taken 20 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   84:        }
+       40:   85:        listaDeAnagramas.clear();
+       40:   85-block  0
+call    0 returned 40
+        -:   86:    }
+        -:   87:
+        -:   88:                 // {"ab", "cd", "ef", "ba", "ab", "dc"}
+       10:   89:	return res; // {{"ab", "ba", "ab"}, {"cd", "dc"}, {"ef"}}
+        5:   89-block  0
+        5:   89-block  1
+        -:   90:
+        5:   91:}
+        5:   91-block  0
+call    0 returned 5
+    $$$$$:   91-block  1
+call    1 never executed
+    $$$$$:   91-block  2
+call    2 never executed
+        -:   92:
+function _Z9perteneceNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS5_IS4_SaIS4_EESaIS7_EE called 108 returned 100% blocks executed 100%
+      108:   93:bool pertenece(string s, vector<vector<string>> v){
+        -:   94:
+      108:   95:    bool pertenece = false;
+        -:   96:
+      428:   97:    for(int i = 0; i < v.size(); i++){
+      108:   97-block  0
+      320:   97-block  1
+      428:   97-block  2
+call    0 returned 428
+branch  1 taken 320
+branch  2 taken 108 (fallthrough)
+     1090:   98:        for(int j = 0; j < v[i].size(); j++){
+      320:   98-block  0
+      770:   98-block  1
+     1090:   98-block  2
+call    0 returned 1090
+call    1 returned 1090
+branch  2 taken 770
+branch  3 taken 320 (fallthrough)
+      770:   99:            if(v[i][j] == s) {
+      770:   99-block  0
+call    0 returned 770
+call    1 returned 770
+call    2 returned 770
+branch  3 taken 76 (fallthrough)
+branch  4 taken 694
+       76:  100:                pertenece = true;
+       76:  100-block  0
+        -:  101:            }
+        -:  102:        }
+        -:  103:    }
+        -:  104:
+      108:  105:    return pertenece;
+      108:  105-block  0
+        -:  106:}
+        -:  107:
+        -:  108:
+        -:  109:
+function _Z10esAnagramaNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES4_ called 428 returned 100% blocks executed 75%
+      428:  110:bool esAnagrama(string s, string t) {
+        -:  111:
+      428:  112:    bool anagrama = true;
+        -:  113:
+     2346:  114:    for(int i = 0; i < s.size(); i++){
+      428:  114-block  0
+     2346:  114-block  1
+call    0 returned 2346
+branch  1 taken 1918
+branch  2 taken 428 (fallthrough)
+     1918:  115:        anagrama = anagrama && cantidadApariciones(s, s[i]) == cantidadApariciones(t, s[i]);
+     1918:  115-block  0
+branch  0 taken 901 (fallthrough)
+branch  1 taken 1017
+      901:  115-block  1
+call    2 returned 901
+branch  3 taken 901 (fallthrough)
+branch  4 taken 0 (throw)
+      901:  115-block  2
+call    5 returned 901
+branch  6 taken 901 (fallthrough)
+branch  7 taken 0 (throw)
+      901:  115-block  3
+call    8 returned 901
+branch  9 taken 901 (fallthrough)
+branch 10 taken 0 (throw)
+      901:  115-block  4
+call   11 returned 901
+branch 12 taken 901 (fallthrough)
+branch 13 taken 0 (throw)
+      901:  115-block  5
+call   14 returned 901
+branch 15 taken 901 (fallthrough)
+branch 16 taken 0 (throw)
+      901:  115-block  6
+call   17 returned 901
+branch 18 taken 901 (fallthrough)
+branch 19 taken 0 (throw)
+      901:  115-block  7
+branch 20 taken 581 (fallthrough)
+branch 21 taken 320
+      581:  115-block  8
+     1337:  115-block  9
+     1918:  115-block 10
+branch 22 taken 901 (fallthrough)
+branch 23 taken 1017
+      901:  115-block 11
+call   24 returned 901
+     1918:  115-block 12
+branch 25 taken 901 (fallthrough)
+branch 26 taken 1017
+      901:  115-block 13
+call   27 returned 901
+     1918:  115-block 14
+    $$$$$:  115-block 15
+branch 28 never executed
+branch 29 never executed
+    $$$$$:  115-block 16
+call   30 never executed
+    $$$$$:  115-block 17
+    $$$$$:  115-block 18
+branch 31 never executed
+branch 32 never executed
+    $$$$$:  115-block 19
+call   33 never executed
+        -:  116:    }
+        -:  117:
+      428:  118:    return anagrama;
+      428:  118-block  0
+      428:  118-block  1
+        -:  119:}
+        -:  120:
+function _Z19cantidadAparicionesNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEc called 1810 returned 100% blocks executed 100%
+     1810:  121:int cantidadApariciones(string s, char x) {
+     1810:  122:    int cantidad = 0;
+        -:  123:
+    10444:  124:    for(int i = 0; i < s.size(); i++){
+     1810:  124-block  0
+     8634:  124-block  1
+    10444:  124-block  2
+call    0 returned 10444
+branch  1 taken 8634
+branch  2 taken 1810 (fallthrough)
+     8634:  125:        if (s[i] == x) {
+     8634:  125-block  0
+call    0 returned 8634
+branch  1 taken 1651 (fallthrough)
+branch  2 taken 6983
+     1651:  126:            cantidad++;
+     1651:  126-block  0
+        -:  127:        }
+        -:  128:    }
+        -:  129:
+     1810:  130:    return cantidad;
+     1810:  130-block  0
+        -:  131:}
+        -:  132:
+        -:  133:
+function _Z12esPalindromoNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 6 returned 100% blocks executed 86%
+        6:  134:bool esPalindromo(string s){
+        -:  135:
+        6:  136:    string palabraRotada;
+        6:  136-block  0
+call    0 returned 6
+        -:  137:
+       28:  138:    for(int i = s.size()-1; i >= 0; i--){
+call    0 returned 6
+       22:  138-block  0
+       28:  138-block  1
+branch  1 taken 22
+branch  2 taken 6 (fallthrough)
+       22:  139:        palabraRotada.push_back(s[i]);
+       22:  139-block  0
+call    0 returned 22
+branch  1 taken 22 (fallthrough)
+branch  2 taken 0 (throw)
+       22:  139-block  1
+call    3 returned 22
+branch  4 taken 22 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  140:    }
+        -:  141:
+       12:  142:    return s == palabraRotada;
+        6:  142-block  0
+call    0 returned 6
+        6:  142-block  1
+        6:  143:}
+call    0 returned 6
+    $$$$$:  143-block  0
+call    1 never executed
+        -:  144:
+function _Z14tieneRepetidosNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 4 returned 100% blocks executed 87%
+        4:  145:bool tieneRepetidos(string s){
+        4:  146:	bool distinto = true;
+        -:  147:
+       11:  148:    for(int i = 0; i < s.size(); i++){
+        4:  148-block  0
+        7:  148-block  1
+       11:  148-block  2
+call    0 returned 11
+branch  1 taken 8
+branch  2 taken 3 (fallthrough)
+        8:  149:        if(cantidadApariciones(s, s[i]) > 1){
+        8:  149-block  0
+call    0 returned 8
+call    1 returned 8
+call    2 returned 8
+branch  3 taken 8 (fallthrough)
+branch  4 taken 0 (throw)
+        8:  149-block  1
+call    5 returned 8
+branch  6 taken 1 (fallthrough)
+branch  7 taken 7
+    $$$$$:  149-block  2
+call    8 never executed
+        1:  150:            return true;
+        1:  150-block  0
+        -:  151:        }
+        -:  152:    }
+        3:  153:	return !distinto;
+        3:  153-block  0
+        -:  154:}
+        -:  155:
+function _Z5rotarNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 4 returned 100% blocks executed 94%
+        4:  156:string rotar(string s, int j) {
+        -:  157:
+        4:  158:    string t = s;
+        4:  158-block  0
+call    0 returned 4
+        -:  159:
+        5:  160:    while(j > s.size()){
+        5:  160-block  0
+call    0 returned 5
+branch  1 taken 1
+branch  2 taken 4 (fallthrough)
+        1:  161:        j = j - s.size();
+        1:  161-block  0
+call    0 returned 1
+        -:  162:    }
+        -:  163:
+       24:  164:    for(int i = 0; i < s.size(); i++){
+        4:  164-block  0
+       24:  164-block  1
+call    0 returned 24
+branch  1 taken 20
+branch  2 taken 4 (fallthrough)
+       20:  165:        t[i] = s[(s.size() - j + i) % s.size()];
+       20:  165-block  0
+call    0 returned 20
+call    1 returned 20
+call    2 returned 20
+branch  3 taken 20 (fallthrough)
+branch  4 taken 0 (throw)
+       20:  165-block  1
+call    5 returned 20
+branch  6 taken 20 (fallthrough)
+branch  7 taken 0 (throw)
+       20:  165-block  2
+        -:  166:    }
+        -:  167:
+        4:  168:    return t;
+        4:  168-block  0
+        4:  168-block  1
+    =====:  169:}
+    $$$$$:  169-block  0
+call    0 never executed
+        -:  170:
+        -:  171:// no se puede usar substring
+function _Z10darVueltaKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 4 returned 100% blocks executed 100%
+        4:  172:string darVueltaK(string s, int k){
+        4:  173:	string res(s);
+        4:  173-block  0
+call    0 returned 4
+        4:  174:	return res;
+        -:  175:}
+        -:  176:
+function _Z11abueloLainoNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 9 returned 100% blocks executed 100%
+        9:  177:string abueloLaino(string s){
+        9:  178:    string res;
+        9:  178-block  0
+call    0 returned 9
+        9:  179:    return res;
+        -:  180:}
+        -:  181:
+function _Z24cantidadDeFelicitacionesSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE called 11 returned 100% blocks executed 100%
+       11:  182:int cantidadDeFelicitaciones(vector<string> v){
+        -:  183:    int res;
+       11:  184:    return res;
+       11:  184-block  0
+        -:  185:}
+        -:  186:
+function _Z9middleOutNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES4_ called 13 returned 100% blocks executed 100%
+       13:  187:int middleOut(string s, string t){
+        -:  188:
+       13:  189:    return 0;
+       13:  189-block  0
+        -:  190:}

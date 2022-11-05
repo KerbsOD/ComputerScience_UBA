@@ -1,0 +1,17 @@
+# ninja log v5
+7	330	6890934724335620	CMakeFiles/strings.dir/src/ejercicios.cpp.obj	6b0dc9e903bd595b
+5	398	6890934725017938	CMakeFiles/strings.dir/src/risas.cpp.obj	7c76e61b262ed768
+1	894	6890934729982473	CMakeFiles/strings.dir/main.cpp.obj	53e70816771d3a2e
+16	941	6890934730455497	lib/googletest-master/googlemock/gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	a38a38326cf53bd3
+12	1190	6890934732926181	CMakeFiles/strings.dir/tests/risasTEST.cpp.obj	adc0a5037c608325
+10	1607	6890934737093558	CMakeFiles/strings.dir/tests/tests.cpp.obj	6e03aa0d9fdae92d
+20	3893	6890934759897364	lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	629d92378ca01ff1
+3894	4657	6890934767606535	lib/googletest-master/googlemock/gtest/libgtestd.a	d3e9f2802a0e085a
+4657	4696	6890934768013107	lib/googletest-master/googlemock/gtest/libgtest_maind.a	522b04b4e960cf16
+4696	5912	6890934780109064	../strings.exe	ef2f522ade402002
+4	276	6890944721187493	CMakeFiles/strings.dir/src/ejercicios.cpp.obj	6b0dc9e903bd595b
+276	1508	6890944733447889	../strings.exe	ef2f522ade402002
+3	265	6890947643633450	CMakeFiles/strings.dir/src/ejercicios.cpp.obj	6b0dc9e903bd595b
+266	1480	6890947655742528	../strings.exe	ef2f522ade402002
+3	245	6890956254695422	CMakeFiles/strings.dir/src/ejercicios.cpp.obj	6b0dc9e903bd595b
+245	1468	6890956266856471	../strings.exe	ef2f522ade402002

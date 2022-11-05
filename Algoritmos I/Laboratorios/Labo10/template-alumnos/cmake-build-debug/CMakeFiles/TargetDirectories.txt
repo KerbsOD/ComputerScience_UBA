@@ -1,0 +1,3 @@
+C:/Users/Octav/Desktop/Labo10/template-alumnos/cmake-build-debug/CMakeFiles/Complejidad.dir
+C:/Users/Octav/Desktop/Labo10/template-alumnos/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Octav/Desktop/Labo10/template-alumnos/cmake-build-debug/CMakeFiles/rebuild_cache.dir

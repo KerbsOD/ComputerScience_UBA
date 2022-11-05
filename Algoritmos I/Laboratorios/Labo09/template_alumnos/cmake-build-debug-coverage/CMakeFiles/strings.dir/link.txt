@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\strings.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ar.exe qc CMakeFiles\strings.dir/objects.a @CMakeFiles\strings.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE --coverage -g -Wl,--whole-archive CMakeFiles\strings.dir/objects.a -Wl,--no-whole-archive -o ..\strings.exe -Wl,--out-implib,..\libstrings.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\strings.dir\linklibs.rsp
