@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.rmd": "markdown",
+        "utility": "cpp",
+        "vector": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "algorithm": "cpp"
+    }
+}
