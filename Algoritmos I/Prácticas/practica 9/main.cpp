@@ -18,19 +18,24 @@ int ej6B(vector<int> v);
 int ej6C(vector<int> v);
 int ej6D(vector<int> s, int cota_inf, int cota_sup);
 bool ej7(vector<int> s);
+vector<char> ejercicio8(string s);
 vector<int> ejercicio9(vector<int> v, int k, int x);
 void ej10(vector<int> &v);
 void ej12A(vector<int> &v);
 
 int main(){
 
-    vector<int> v = {45, 78, 32, 22, 88, 12, 6};
-    
-    ej12A(v);
+    string s = "hola Homero!";
+
+    vector<char> v = ejercicio8(s);
 
     for(int i = 0; i < v.size(); i++){
-        cout << v[i] << ", ";
+        cout << v[i];
     }
+
+    
+
+    
 }
 
 ///////////////////// Ejercicio 1 ////////////////////////////
@@ -273,9 +278,42 @@ bool ej7(vector<int> s){
 
 
 ///////////////////// Ejercicio 8 ////////////////////////////
-void ejercicio8(string s){
+vector<char> ejercicio8(string s){ // O(n)
     
+    vector<int> asc(128, 0);
+    vector<int> numeros;
+    vector<char> res;
+
+    for(int i = 0; i < s.size(); i++){ // O(n)
+        int a = s[i];
+        for(int j = 0; j < asc.size(); j++){ // O(128)
+            if(a == j){
+                asc[j]++;
+            }
+        }
+    }
+
+    for(int i = 0; i < asc.size(); i++){ // O(128)
+        
+        if(asc[i] >= 1){
+            for(int j = 0; j < asc[i]; j++){
+                numeros.push_back(i);
+            }
+        }
+    }
+
+
+    for(int i = 0; i < numeros.size(); i++){
+        if(numeros[i] == 32){
+            continue;
+        } else {
+            res.push_back(numeros[i]);
+        }
+    }
+
     
+
+    return res;
 }
 
 
