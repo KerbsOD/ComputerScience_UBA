@@ -1,0 +1,1 @@
+ "lib/googletest-master/googlemock/gtest/libgtestd.a" "lib/googletest-master/googlemock/gtest/libgtest_maind.a" "lib/googletest-master/googlemock/gtest/libgtestd.a" -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

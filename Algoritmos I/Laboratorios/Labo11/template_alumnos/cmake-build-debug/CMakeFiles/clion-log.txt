@@ -1,0 +1,29 @@
+"C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\Octav\Desktop\Labo11\template_alumnos -B C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug
+CMake Deprecation Warning at lib/googletest-master/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Deprecation Warning at lib/googletest-master/googlemock/CMakeLists.txt:46 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Deprecation Warning at lib/googletest-master/googletest/CMakeLists.txt:53 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- Found PythonInterp: C:/Users/Octav/AppData/Local/Programs/Python/Python311/python.exe (found version "3.11") 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Octav/Desktop/Labo11/template_alumnos/cmake-build-debug
