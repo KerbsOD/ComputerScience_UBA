@@ -1,6 +1,6 @@
 CMakeFiles/Labo10.dir/tests/masCercanoKTEST.cpp.obj: \
- C:\Users\Octav\Desktop\Labo11\template_alumnos\tests\masCercanoKTEST.cpp \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/ejercicios.h \
+ C:\Archivos\Facultad\Algoritmos\ I\Laboratorios\Labo11\template_alumnos\tests\masCercanoKTEST.cpp \
+ C:/Archivos/Facultad/Algoritmos\ I/Laboratorios/Labo11/template_alumnos/ejercicios.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/vector \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_algobase.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -110,7 +110,7 @@ CMakeFiles/Labo10.dir/tests/masCercanoKTEST.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cerrno \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/charconv.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_string.tcc \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/gtest.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/gtest.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/limits \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
@@ -137,8 +137,8 @@ CMakeFiles/Labo10.dir/tests/masCercanoKTEST.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.tcc \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.tcc \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/internal/gtest-internal.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/internal/gtest-port.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/internal/gtest-internal.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/internal/gtest-port.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/x86_64-w64-mingw32/include/string.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/x86_64-w64-mingw32/include/sys/stat.h \
@@ -156,8 +156,8 @@ CMakeFiles/Labo10.dir/tests/masCercanoKTEST.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/sstream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/sstream.tcc \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/internal/gtest-port-arch.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/internal/custom/gtest-port.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/internal/gtest-port-arch.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/internal/custom/gtest-port.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/x86_64-w64-mingw32/include/direct.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tuple \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/array \
@@ -185,24 +185,24 @@ CMakeFiles/Labo10.dir/tests/masCercanoKTEST.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/set \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_set.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_multiset.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/gtest-message.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/internal/gtest-filepath.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/internal/gtest-string.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/internal/gtest-type-util.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/gtest-message.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/internal/gtest-filepath.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/internal/gtest-string.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/internal/gtest-type-util.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cxxabi.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/cxxabi_tweaks.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/gtest-death-test.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/internal/gtest-death-test-internal.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/gtest-param-test.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/internal/gtest-param-util.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/gtest-death-test.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/internal/gtest-death-test-internal.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/gtest-param-test.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/internal/gtest-param-util.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iterator \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stream_iterator.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/internal/gtest-linked_ptr.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/internal/gtest-linked_ptr.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/x86_64-w64-mingw32/include/assert.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/gtest-printers.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/internal/custom/gtest-printers.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/internal/gtest-param-util-generated.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/gtest_prod.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/gtest-test-part.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/gtest-typed-test.h \
- C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googletest/include/gtest/gtest_pred_impl.h
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/gtest-printers.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/internal/custom/gtest-printers.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/internal/gtest-param-util-generated.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/gtest_prod.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/gtest-test-part.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/gtest-typed-test.h \
+ C:/Archivos/Facultad/ALGORI~1/LABORA~1/Labo11/TEMPLA~1/lib/GOOGLE~1/GOOGLE~2/include/gtest/gtest_pred_impl.h

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Octav/Desktop/Labo11/template_alumnos
+# Install script for directory: C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo11/template_alumnos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/Octav/Desktop/Labo11/template_alumnos/cmake-build-debug/lib/googletest-master/cmake_install.cmake")
+  include("C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo11/template_alumnos/cmake-build-debug/lib/googletest-master/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Octav/Desktop/Labo11/template_alumnos/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo11/template_alumnos/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

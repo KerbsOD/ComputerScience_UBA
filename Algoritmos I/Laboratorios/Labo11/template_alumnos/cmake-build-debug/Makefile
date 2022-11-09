@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Octav\Desktop\Labo11\template_alumnos
+CMAKE_SOURCE_DIR = "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -131,9 +131,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug\CMakeFiles C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos\cmake-build-debug\CMakeFiles" "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos\cmake-build-debug\\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target

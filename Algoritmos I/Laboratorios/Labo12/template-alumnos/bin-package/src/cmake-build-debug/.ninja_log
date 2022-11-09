@@ -1,0 +1,5 @@
+# ninja log v5
+0	360	6897176273465011	CMakeFiles/bin-package.dir/main.cpp.obj	c9623b207bfd07a6
+362	430	6897176274133837	../bin-package.exe	57a5ee65c2956eba
+3	398	6897179457576485	CMakeFiles/bin-package.dir/main.cpp.obj	c9623b207bfd07a6
+398	471	6897179458283663	../bin-package.exe	57a5ee65c2956eba

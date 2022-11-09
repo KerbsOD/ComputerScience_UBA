@@ -6,39 +6,23 @@
 
 using namespace std;
 
-void insertionSort(vector< int > &v){
-
-    int vs = v.size();
-    int j, t;
-
-    for (int i = 1; i < vs; i++)
-    {
-        j = i;
-        t = v[j];
-        while (j > 0 && v[j-1] < t)
-        {
-            v[j] = v[j-1];
-            j--;
-        }
-        v[j] = t;
-    }
-}
-
-void selectionSort(vector< int > &v){
-    for(int i = 0; i < v.size() - 1; i++){
-        int min = i;
-        for(int j = i + 1; j < v.size(); j++){
-            if(v[j] < v[min]){
-                min = j;
-            }
-        }
-        swap(v[min], v[i]);
-    }
-}
-
 void ordenar(vector<int> &items){
-	//Poner aca una implementación de ordenar
-    selectionSort(items);
+    
+    vector<int> countingVector(150, 0);
+    for (int i = 0; i < items.size(); ++i) {
+        countingVector[items[i]] = countingVector[items[i]] + 1;
+    }
+
+    int i = 0;
+    for (int j = countingVector.size() - 1; j >= 0; --j)
+    {
+        while (countingVector[j] > 0)
+        {
+            items[i] = j;
+            countingVector[j] = countingVector[j] - 1;
+            i++;
+        }
+    }
 }
 
 

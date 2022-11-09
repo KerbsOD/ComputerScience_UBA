@@ -52,10 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Octav\Desktop\Labo11\template_alumnos
+CMAKE_SOURCE_DIR = "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/depend.make
@@ -72,16 +72,16 @@ lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj: lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/includes_CXX.rsp
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj: ../lib/googletest-master/googlemock/src/gmock_main.cc
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj: lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj"
-	cd /d C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug\lib\googletest-master\googlemock && C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj -MF CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj.d -o CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj -c C:\Users\Octav\Desktop\Labo11\template_alumnos\lib\googletest-master\googlemock\src\gmock_main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj"
+	cd /d C:\Archivos\Facultad\ALGORI~1\LABORA~1\Labo11\TEMPLA~1\CMAKE-~1\lib\GOOGLE~1\GOOGLE~1 && C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj -MF CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj.d -o CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj -c "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos\lib\googletest-master\googlemock\src\gmock_main.cc"
 
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gmock_main.dir/src/gmock_main.cc.i"
-	cd /d C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug\lib\googletest-master\googlemock && C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Octav\Desktop\Labo11\template_alumnos\lib\googletest-master\googlemock\src\gmock_main.cc > CMakeFiles\gmock_main.dir\src\gmock_main.cc.i
+	cd /d C:\Archivos\Facultad\ALGORI~1\LABORA~1\Labo11\TEMPLA~1\CMAKE-~1\lib\GOOGLE~1\GOOGLE~1 && C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos\lib\googletest-master\googlemock\src\gmock_main.cc" > CMakeFiles\gmock_main.dir\src\gmock_main.cc.i
 
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gmock_main.dir/src/gmock_main.cc.s"
-	cd /d C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug\lib\googletest-master\googlemock && C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Octav\Desktop\Labo11\template_alumnos\lib\googletest-master\googlemock\src\gmock_main.cc -o CMakeFiles\gmock_main.dir\src\gmock_main.cc.s
+	cd /d C:\Archivos\Facultad\ALGORI~1\LABORA~1\Labo11\TEMPLA~1\CMAKE-~1\lib\GOOGLE~1\GOOGLE~1 && C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos\lib\googletest-master\googlemock\src\gmock_main.cc" -o CMakeFiles\gmock_main.dir\src\gmock_main.cc.s
 
 # Object files for target gmock_main
 gmock_main_OBJECTS = \
@@ -93,19 +93,19 @@ gmock_main_EXTERNAL_OBJECTS =
 lib/googletest-master/googlemock/libgmock_maind.a: lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj
 lib/googletest-master/googlemock/libgmock_maind.a: lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/build.make
 lib/googletest-master/googlemock/libgmock_maind.a: lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgmock_maind.a"
-	cd /d C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug\lib\googletest-master\googlemock && $(CMAKE_COMMAND) -P CMakeFiles\gmock_main.dir\cmake_clean_target.cmake
-	cd /d C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug\lib\googletest-master\googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\gmock_main.dir\link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgmock_maind.a"
+	cd /d C:\Archivos\Facultad\ALGORI~1\LABORA~1\Labo11\TEMPLA~1\CMAKE-~1\lib\GOOGLE~1\GOOGLE~1 && $(CMAKE_COMMAND) -P CMakeFiles\gmock_main.dir\cmake_clean_target.cmake
+	cd /d C:\Archivos\Facultad\ALGORI~1\LABORA~1\Labo11\TEMPLA~1\CMAKE-~1\lib\GOOGLE~1\GOOGLE~1 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\gmock_main.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/build: lib/googletest-master/googlemock/libgmock_maind.a
 .PHONY : lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/build
 
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/clean:
-	cd /d C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug\lib\googletest-master\googlemock && $(CMAKE_COMMAND) -P CMakeFiles\gmock_main.dir\cmake_clean.cmake
+	cd /d C:\Archivos\Facultad\ALGORI~1\LABORA~1\Labo11\TEMPLA~1\CMAKE-~1\lib\GOOGLE~1\GOOGLE~1 && $(CMAKE_COMMAND) -P CMakeFiles\gmock_main.dir\cmake_clean.cmake
 .PHONY : lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/clean
 
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Octav\Desktop\Labo11\template_alumnos C:\Users\Octav\Desktop\Labo11\template_alumnos\lib\googletest-master\googlemock C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug\lib\googletest-master\googlemock C:\Users\Octav\Desktop\Labo11\template_alumnos\cmake-build-debug\lib\googletest-master\googlemock\CMakeFiles\gmock_main.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos" "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos\lib\googletest-master\googlemock" "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos\cmake-build-debug" "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos\cmake-build-debug\lib\googletest-master\googlemock" "C:\Archivos\Facultad\Algoritmos I\Laboratorios\Labo11\template_alumnos\cmake-build-debug\lib\googletest-master\googlemock\CMakeFiles\gmock_main.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/depend
 

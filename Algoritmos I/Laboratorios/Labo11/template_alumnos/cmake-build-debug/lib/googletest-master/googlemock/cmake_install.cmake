@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googlemock
+# Install script for directory: C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo11/template_alumnos/lib/googletest-master/googlemock
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,27 +38,27 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/Octav/Desktop/Labo11/template_alumnos/cmake-build-debug/lib/googletest-master/googlemock/libgmockd.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo11/template_alumnos/cmake-build-debug/lib/googletest-master/googlemock/libgmockd.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/Octav/Desktop/Labo11/template_alumnos/cmake-build-debug/lib/googletest-master/googlemock/libgmock_maind.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo11/template_alumnos/cmake-build-debug/lib/googletest-master/googlemock/libgmock_maind.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "C:/Users/Octav/Desktop/Labo11/template_alumnos/lib/googletest-master/googlemock/include/gmock")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo11/template_alumnos/lib/googletest-master/googlemock/include/gmock")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES
-    "C:/Users/Octav/Desktop/Labo11/template_alumnos/cmake-build-debug/gmock.pc"
-    "C:/Users/Octav/Desktop/Labo11/template_alumnos/cmake-build-debug/gmock_main.pc"
+    "C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo11/template_alumnos/cmake-build-debug/gmock.pc"
+    "C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo11/template_alumnos/cmake-build-debug/gmock_main.pc"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/Octav/Desktop/Labo11/template_alumnos/cmake-build-debug/lib/googletest-master/googlemock/gtest/cmake_install.cmake")
+  include("C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo11/template_alumnos/cmake-build-debug/lib/googletest-master/googlemock/gtest/cmake_install.cmake")
 
 endif()
 

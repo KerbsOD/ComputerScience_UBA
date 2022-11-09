@@ -284,21 +284,44 @@ int encontrarRotado(vector<int> v, int x) {
 
 int menorMasGrande(vector<int> v, int x) {
 
-    if (v.size() == 1) {
-     return 0;
+    // Casos donde esta en el borde del vector o
+    // que exista ya automaticamente devuelvo el siguiente
+    int indice = buscar(v,x);
+    if(indice != -1){
+        if(indice != v.size() - 1){
+            return buscar(v, x) + 1;
+        } else {
+            return -1;
+        }
     }
 
     int low = 0;
     int high = v.size() - 1;
 
-    while (low <= high) {
-
+    while(low <= high){
         int mid = (low + high) / 2;
 
-        if (v[mid] > x && v[mid-1] <= x) {
+        // Un Elemento
+        if(v.size() <= 1 && x < v[mid]){
             return mid;
         }
 
+        // Borde derecho
+        if(v[mid] < x && mid+1 == v.size()){
+            return -1;
+        }
+
+        // Borde Izquierdo
+        if(v[mid] > x && mid == 0){
+            return mid;
+        }
+
+        // En el medio
+        if((v[mid] < x && v[mid + 1] > x)){
+            return mid+1;
+        }
+
+        // Nada
         if(v[mid] < x){
             low = mid + 1;
         } else {
@@ -306,13 +329,56 @@ int menorMasGrande(vector<int> v, int x) {
         }
     }
 
-	return -1;
+    return -1;
 }
 
 vector<int> masCercanoK(vector<int> v, int k,  int x){
 
-    vector<int> res;
+    while(k > v.size()){
+        k--;
+    }
 
+    vector<int> res;
+    int indice;
+
+    if(buscar(v, x) == -1){
+        indice = menorMasGrande(v, x);
+    } else {
+        indice = buscar(v, x);
+    }
+
+    if(v[indice] == x){
+        int low = indice - 1;
+        int high = indice + 1;
+
+        while(k > 0){
+            if((abs(v[high] - x) < abs(v[low] - x) || low == 0) && high != v.size()){
+                res.push_back(v[high]);
+                high++;
+            } else {
+                res.push_back(v[low]);
+                low--;
+            }
+
+            k--;
+        }
+
+    } else {
+        int low = indice - 1;
+        int high = indice;
+
+        while(k > 0){
+            if((abs(v[high] - x) < abs(v[low] - x) || low == 0) && high != v.size()){
+                res.push_back(v[high]);
+                high++;
+            } else {
+                res.push_back(v[low]);
+                low--;
+            }
+
+            k--;
+        }
+    }
 
     return res;
 }

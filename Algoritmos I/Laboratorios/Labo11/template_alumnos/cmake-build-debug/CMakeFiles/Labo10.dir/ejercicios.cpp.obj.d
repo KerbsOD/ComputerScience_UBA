@@ -1,6 +1,6 @@
 CMakeFiles/Labo10.dir/ejercicios.cpp.obj: \
- C:\Users\Octav\Desktop\Labo11\template_alumnos\ejercicios.cpp \
- C:\Users\Octav\Desktop\Labo11\template_alumnos\ejercicios.h \
+ C:\Archivos\Facultad\Algoritmos\ I\Laboratorios\Labo11\template_alumnos\ejercicios.cpp \
+ C:\Archivos\Facultad\Algoritmos\ I\Laboratorios\Labo11\template_alumnos\ejercicios.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/vector \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_algobase.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \

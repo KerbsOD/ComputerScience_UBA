@@ -4,7 +4,7 @@
 
 TEST(menorMasGrande, unElemento){
 	vector<int> v = {20};
-	int x = 20;
+	int x = 19;
 	int res = menorMasGrande(v,x);
 	ASSERT_EQ(0, res);
 }
