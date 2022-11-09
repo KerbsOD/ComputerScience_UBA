@@ -22,12 +22,18 @@ vector<char> ejercicio8(string s);
 vector<int> ejercicio9(vector<int> v, int k, int x);
 void ej10(vector<int> &v);
 void ej12A(vector<int> &v);
+void ej13();
+void burbujeo(vector<int> &v);
+void insercion(vector<int> &v);
+void seleccion(vector<int> &v);
+void ej13(vector<int> &v);
+void bingoSort(vector<int> &v);
 
 int main(){
 
-    string s = "hola Homero!";
+    vector<int> v = {4,2,6,7,4,4,4,3,7,7,7};
 
-    vector<char> v = ejercicio8(s);
+    bingoSort(v);
 
     for(int i = 0; i < v.size(); i++){
         cout << v[i];
@@ -421,3 +427,135 @@ void ej12A(vector<int> &v){ // O(n^2)
         }
     }
 }
+
+
+///////////////////// Ejercicio 13 ////////////////////////////
+void ej13(){
+    vector<int> a = {1,2,3,4,5};
+    vector<int> b = {5,4,3,2,1};
+    vector<int> c = {1,3,5,2,4};
+    vector<int> d = {1,1,1,2,2,2};
+    vector<int> e = {1, 2, 1, 2, 1, 2, 1, 2};
+    vector<int> f = {1, 10, 50, 30, 25, 4, 6};
+
+
+    // A 
+    burbujeo(a);
+    insercion(a);
+    seleccion(a);
+
+    // B 
+    burbujeo(b);
+    insercion(b);
+    seleccion(b);
+
+    // C
+    burbujeo(c);
+    insercion(c);
+    seleccion(c);
+
+    // D 
+    burbujeo(d);
+    insercion(d);
+    seleccion(d);
+
+    // E
+    burbujeo(e);
+    insercion(e);
+    seleccion(e);
+
+    // F
+    burbujeo(f);
+    insercion(f);
+    seleccion(f);
+
+}
+
+void burbujeo(vector<int> &v){
+    
+    bool desordenado = true;
+
+    while(desordenado){
+        desordenado = false;
+        
+        for(int i = 0; i < v.size() - 1; i++){
+            if(v[i] > v[i + 1]){
+                swap(v[i], v[i+1]);
+                desordenado = true;
+            }
+        }
+    } 
+}
+
+
+void insercion(vector<int> &v){
+
+    for(int i = 1; i < v.size(); i++){
+        int key = v[i];
+        int j = i - 1;
+
+        while(j >= 0 && v[j] > key){
+            v[j+1] = v[j];
+            j--;
+            v[j+1] = key;
+        }
+    }
+}
+
+
+void seleccion(vector<int> &v){
+
+    for(int i = 0; i < v.size(); i++){
+        int min = i;
+        for(int j = i + 1; j < v.size(); j++){
+            if(v[j] < v[min]){
+                min = j;
+            }
+        }
+
+        swap(v[min], v[i]);
+    }
+}
+
+
+///////////////////// Ejercicio 14 ////////////////////////////
+void ej14(vector<int> &v){
+    bingoSort(v);
+}
+
+void bingoSort(vector<int> &v){
+
+    vector<int> newVec;
+
+    for(int i = 0; i < v.size(); i++){
+        int ph = i;
+        int min = i;
+        for(int j = i + 1; j < v.size(); j++){
+            if(v[j] < v[min]){
+                min = j;
+            }
+        }
+
+        for(int j = i + 1; j < v.size(); j++){
+            if(v[j] == v[min]){
+                swap(v[j], v[i]);
+                i++;
+            }
+        }
+
+        i = ph;
+    }
+}
+
+
+///////////////////// Ejercicio 15 ////////////////////////////
+// a) Burbujeo, en el peor caso lo recorre una vez para ver que este ordenado.
+// b) Insercion, seria mas facil meter elementos dentro de una secuncia.
+// c) selection sort, es ideal para buscar los minimos elementos de una secuencia.
+// d) selection, buscaria el minimo de cada secuencia, luego los compaero e inerto el minimo en el tercer vector.
+// e) selection sort seria el mas eficiente.
+// f) selection sort, cambio min por max.
+// g) buble sort, pues solo iteraria sobre los k desordenados.
+
+
+///////////////////// Ejercicio 16 ////////////////////////////

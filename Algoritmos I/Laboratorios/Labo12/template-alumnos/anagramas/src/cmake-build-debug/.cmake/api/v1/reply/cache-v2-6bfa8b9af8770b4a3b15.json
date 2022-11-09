@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Octav/Desktop/Labo12/template-alumnos/anagramas/src/cmake-build-debug"
+			"value" : "c:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo12/template-alumnos/anagramas/src/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -623,7 +623,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Octav/Desktop/Labo12/template-alumnos/anagramas/src"
+			"value" : "C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo12/template-alumnos/anagramas/src"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1239,7 +1239,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Octav/Desktop/Labo12/template-alumnos/anagramas/src/cmake-build-debug"
+			"value" : "C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo12/template-alumnos/anagramas/src/cmake-build-debug"
 		},
 		{
 			"name" : "anagramas_IS_TOP_LEVEL",
@@ -1263,7 +1263,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Octav/Desktop/Labo12/template-alumnos/anagramas/src"
+			"value" : "C:/Archivos/Facultad/Algoritmos I/Laboratorios/Labo12/template-alumnos/anagramas/src"
 		}
 	],
 	"kind" : "cache",

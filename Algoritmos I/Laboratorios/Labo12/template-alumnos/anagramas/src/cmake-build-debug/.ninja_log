@@ -1,9 +1,7 @@
 # ninja log v5
-0	310	6896327667237434	CMakeFiles/anagramas.dir/main.cpp.obj	a02edbb0b39b569d
-313	380	6896327667911447	../anagramas.exe	ea4e9d067abb525e
-2	399	6896627281011915	CMakeFiles/anagramas.dir/main.cpp.obj	a02edbb0b39b569d
-6	264	6896627873573569	CMakeFiles/anagramas.dir/anagramas.cpp.obj	61fca2315166e3b2
-2	385	6896627874782515	CMakeFiles/anagramas.dir/main.cpp.obj	a02edbb0b39b569d
-386	530	6896627876206117	../anagramas.exe	dfb8f9c3e21f04f8
 2	373	6896628912293429	CMakeFiles/anagramas.dir/main.cpp.obj	a02edbb0b39b569d
 373	447	6896628913024369	../anagramas.exe	dfb8f9c3e21f04f8
+6	264	6896627873573569	CMakeFiles/anagramas.dir/anagramas.cpp.obj	61fca2315166e3b2
+6	284	6896633738337853	CMakeFiles/anagramas.dir/anagramas.cpp.obj	14214e68fe4235c7
+2	409	6896633739572297	CMakeFiles/anagramas.dir/main.cpp.obj	7f1a345c9ab92021
+409	486	6896633740320764	../anagramas.exe	dfb8f9c3e21f04f8
