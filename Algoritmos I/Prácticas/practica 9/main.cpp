@@ -30,6 +30,7 @@ void ej14(vector<int> &v);
 void bingoSort(vector<int> &v);
 void ejercicio16(vector<int> &v);
 vector<int> ejercicio17(vector<int> a);
+void ejercicio18(vector<int> &v);
 
 int main(){
 
