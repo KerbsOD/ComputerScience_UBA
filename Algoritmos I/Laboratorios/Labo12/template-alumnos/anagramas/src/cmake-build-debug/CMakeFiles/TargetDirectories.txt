@@ -1,0 +1,3 @@
+C:/Users/Octav/Desktop/Labo12/template-alumnos/anagramas/src/cmake-build-debug/CMakeFiles/anagramas.dir
+C:/Users/Octav/Desktop/Labo12/template-alumnos/anagramas/src/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Octav/Desktop/Labo12/template-alumnos/anagramas/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir
