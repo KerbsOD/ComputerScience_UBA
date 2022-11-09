@@ -26,8 +26,10 @@ void ej13();
 void burbujeo(vector<int> &v);
 void insercion(vector<int> &v);
 void seleccion(vector<int> &v);
-void ej13(vector<int> &v);
+void ej14(vector<int> &v);
 void bingoSort(vector<int> &v);
+void ejercicio16(vector<int> &v);
+vector<int> ejercicio17(vector<int> a);
 
 int main(){
 
@@ -559,3 +561,51 @@ void bingoSort(vector<int> &v){
 
 
 ///////////////////// Ejercicio 16 ////////////////////////////
+void ejercicio16(vector<int> &v){
+    
+    int indiceDondeSeRompe;
+    for(int i = 0; i < v.size() - 1; i++){
+        if(v[i] > v[i+1]){
+            indiceDondeSeRompe = i + 1;
+        }
+    }
+
+
+    for(int i = indiceDondeSeRompe; i < v.size(); i++){
+        int min = i;
+        for(int j = i + 1; j < v.size(); j++){
+            if(v[j] < v[min]){
+                min = j;
+            }
+        }
+
+        swap(v[min], v[i]);
+    }
+}
+
+
+///////////////////// Ejercicio 17 ////////////////////////////
+vector<int> ejercicio17(vector<int> a){
+
+}
+
+///////////////////// Ejercicio 18 ////////////////////////////
+void ejercicio18(vector<int> &v){
+    vector<int> s(v.size(), 0);
+
+    for(int i = 0; i < v.size(); i++){
+        s[v[i]-1]++;
+    }
+
+    v.clear();
+
+    for(int i = s.size()-1; i >= 0; i--){
+        if(s[i]  == 1){
+            v.push_back(i+1);
+        } else if(s[i] > 1){
+            v.push_back(i+1);
+            s[i]--;
+            i++;
+        }
+    }
+}
