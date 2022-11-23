@@ -13,19 +13,10 @@ Teniendo una matriz de las jugadas la complejidad de checkear las jugadas baja a
 
 Asi que `JugarPlus` quedaría O(n^3)
 
-### sugerirAutomatico121: 
-SugerirAutomatico121 es O(n^3), 
-pues busca (itera) en "tablero"(O(n^2)) una posicion que no esté en "banderitas"(O(n)) o "Jugadas"(O(n)). En caso de que
-"Jugadas" sea una matriz nxn (n = jugadas.size()), entonces mi función "sugerirAutomatico121()" pasa 
-a ser de complejidad O(n^4). Tengo 2 casos donde se itera 
-por "Jugadas", en la función "esAdyacente121()" y en "esPosicionSinJugarYSinBanderita()"
-pero estas ya estan contenidas dentro de la iteracion por la matriz "tablero" en "hayPosicionSugerible()",
-Como mi nueva "Jugadas" contiene todas las posiciones (<pos, minas> en caso de casillero
-descubierto ó <pos, (-1)> en caso de casillero no descubierto) entonces la matriz "Jugadas" tiene la
-longitud (en largo y ancho) de "tablero". 
-Conclusión, la iteración por tablero es de O(n^2) y en cada iteración tengo dentro
-otra iteración de "EnJugadas()" de O(n^2), como n = tablero.size() = jugadas.size() queda entonces que en el peor caso
-que es cuando nuestra posicion sugerida esta en Jugadas[n-1][n-1], esto implica que "jugadas" es del tipo O(n^2) y por lo tanto
-la complejidad en el peor caso de "sugerirAutomatico121" es de O(n^2*O(n^2)) = O(n^4).
+### sugerirAutomatico121:
 
+sugerirAutomatico121 es de complejidad O(n^3) porque hay que recorrer todo el tablero y en cada iteracion hay que checkear las
+jugadas (O(n)) y las banderitas (O(n)).
 
+Teniendo la matriz la complejidad de las checkear las jugadas se transforma en O(1) (acceso aleatorio a una matriz) pero aun asi
+tenemos que checkear las banderitas por lo que `sugerirAutomatico121` seguiria siendo O(n^3)
