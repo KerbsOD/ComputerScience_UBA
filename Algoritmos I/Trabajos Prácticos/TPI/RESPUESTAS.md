@@ -4,15 +4,14 @@
 Seria como un tablero pero con las posiciones jugadas y no jugadas. 
 En el tablero ya sabemos donde se ubica cada bomba, en jugadas no.
 
-### JugarPlus: 
-"JugarPlus" es de complejidad O(n^2).
-En "jugarPlus" usamos la estructura "Jugadas", para buscar una 
-jugada en esta con la función "perteneceAJugadas()" que es de complejidad O(n) en caso de que la jugada esté en la posoción n del vector, 
-ademas de que pueden haber infinitas posiciones libres por lo que al final del primer while, se agregarian mas posiciones para revisar.
-Si "Jugadas" fuera una matriz, deberíamos buscar por fila
-y por columna (nxn) en un 'tablero' cuadrado. Tenemos entonces una complejidad
-O(n^3) (por ejemplo si la jugada que buscamos está en la posición Jugadas[n][n].
-Siendo n = Jugadas.size())
+### JugarPlus:
+
+"JugarPlus" es de complejidad O(n^3) actualmente, la mayor complejidad actualmente es checkear las banderitas (lineal en
+la cantidad de banderitas) y checkear las jugadas ya realizadas (lineal en la cantidad de jugadas realizadas).
+
+Teniendo una matriz de las jugadas la complejidad de checkear las jugadas baja a constante (acceso aleatorio a una matriz)
+
+Asi que `JugarPlus` quedaría O(n^3)
 
 ### sugerirAutomatico121: 
 SugerirAutomatico121 es O(n^3), 
