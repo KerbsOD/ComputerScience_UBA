@@ -1,0 +1,3 @@
+- Para buildear un Proyecto: cmake .
+- Para compilar: make
+- Para correr Valgrind: valgrind ./ejecutable

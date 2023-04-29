@@ -1,0 +1,19 @@
+Para usar Testing en nuestros proyectos personales debemos:
+
+- Tener un CMakeLists.txt con las siguientes lineas:
+add_subdirectory(googletest)
+include_directories(googletest/include)
+add_executable(mytests mytests.cpp)
+target_link_libraries(mytests PRIVATE gtest)
+
+- Agregar #include <gtest/gtest.h> a nuestro mytests.cpp
+
+- Tener un main con las lineas:
+int main(int argc, char* argv[]) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+
+- add_executable() tiene que tener a el mytests.cpp y los cpp de donde vienen los objetos a testear (se tienen que compilar juntos)
+
+-
