@@ -30,12 +30,7 @@ FinDividir:
 call_sumar_extender: # a0:accum, a1:a, a2:b
     # Hago el shifting
     slli a1, a1, 16 # Hacemos 16 shifts a la izquierda logico
-    srai a1, a1, 16 # Hacemos 16 shifts a la derecha aritmetico, me mantiene el negativo
-
-    # Verifico si a == 0 o b == 0 o b < 0    
-    beqz a1, FinExtender
-    beqz a2, FinExtender
-    blt a2, zero, FinExtender 
+    srai a1, a1, 16 # Hacemos 16 shifts a la derecha aritmetico, me mantiene el negativo 
     
     # sumo a + b y luego b + accum
     add a2, a2, a1
