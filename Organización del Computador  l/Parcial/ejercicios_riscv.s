@@ -5,26 +5,49 @@ jal zero, main
 # NO TOCAR HASTA AQUI
 #=================================
 
-
-###COMPLETEN CON SUS ENUNCIADOS
-
-
+# EJERCICIO 1 - Dividir
 # Devuelve accum + a / b 
 # int32_t dividir(int32_t accum, int32_t a, int32_t b)
 call_dividir: # a0:accum, a1:a, a2:b
-    # Terminamos si a==0 o b==0 o b<0
-    beqz a1, FinDividir
-    beqz a2, FinDividir
-    blt a2, zero, FinDividir
+    
+    # Termina si a==0 o b <= 0
+    beqz a1, finDividir
+    blez a2, finDividir
+    
+    # En t0 guardamos nuestro cociente, inicializamos en 0.
+    li t0, 0
 
-    # accum = accum + a/b 
-    div t0, a1, a2
-    add a0, a0, t0 
+    # Si A es mayor o igual a B, saltamos a LoopDivision.
+    bge a1, a2, LoopDivision
+    
+    # Si A es negativo, lo hacemos positivo y si es mayor o igual a B, saltamos a LoopDivisionNegativa.
+    neg a1, a1
+    bge a1, a2, LoopDivision
+    
+    j finDividir
+    
+LoopDivisionNegativa:
+    sub a1, a1, a2                      # A = A - B
+    addi, t0, t0, -1                    # t0--
+    bge a1, a2, LoopDivisionNegativa    # while A >= B
 
-FinDividir:
-	ret	
+    j finDividir
+
+LoopDivision:
+    sub a1, a1, a2              # A = A - B
+    addi, t0, t0, 1             # t0++
+    bge a1, a2, LoopDivision    # while A >= B
+
+    j finDividir
+    
+finDividir:
+    add a0, a0, t0
+    ret
 
 
+
+
+# EJERCICIO 2 - Sumar_Extender
 # Extiende el signo de a de 16 a 32 bits y devuelve accum + ext_sign(a) + b 
 # int32_t sumar_extender(int32_t accum, int32_t a, int32_t b)
 call_sumar_extender: # a0:accum, a1:a, a2:b
@@ -39,28 +62,40 @@ call_sumar_extender: # a0:accum, a1:a, a2:b
 FinExtender:
 	ret	
 
+
+
+# EJERCICIO 3 - Segunda_Mitad
 # Devuelve 1 si index >= length/2
 # int32_t segunda_mitad(int32_t a, int32_t index, int32_t length)
 call_segunda_mitad: # a0 a, a1 index, a2 length
-    # a0 a, a1 index, a2 length
-    li t0, 0
+    # Por las dudas inicializo a en 0
+    li a0, 0
+    # Shift para la derecha divide por 2
     srai a2, a2, 1
-    bge a1, a2, SetToOne
-    j FinMitad
+    # Si index >= length/ 2 entonces a = 1
+    bge a1, a2, setOne
+    # terminar
+    j FinSM
+    
+setOne:
+    li a0, 1
+    j FinSM
+    
+FinSM:
+    ret
 
-SetToOne:
-    addi t0, t0, 1
-
-FinMitad:
-	ret
 
 
+# EJERCICIO 4 - Numero_Impar
 # Devuelve 1 si a es impar, 0 en caso contario
 # int32_t numero_impar(int32_t a, int32_t index, int32_t length)
 call_numero_impar: # a0 a, a1 index, a2 length
     #completar
     andi a0, a0, 1
 	ret
+
+
+
 
 #=================================
 # NO TOCAR DESDE AQUI

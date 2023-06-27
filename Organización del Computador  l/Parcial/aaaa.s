@@ -1,25 +1,45 @@
-li a0, 0
-li a1, 0
-li a2, -1  # (0xffffffff)
-# a0:accum, a1:a, a2:b
+.equ acumulado, 3
+.equ a, 39
+.equ b,  187
 
-# Hago el shifting
-slli a1, a1, 16 # Hacemos 16 shifts a la izquierda logico.
-srai a1, a1, 16 # Hacemos 16 shifts a la derecha aritmetico, me mantiene el negativo.
+li a0, acumulado
+li a1, a
+li a2, b
 
-# sumo a + b y luego b + accum
-add a2, a2, a1
-add a0, a0, a2
-
-# Verifico si a == 0 o b == 0 o b < 0    
-beqz a1, SetZero
-beqz a2, SetZero
-blt a2, zero, SetZero 
+main:
+    # Termina si a==0 o b <= 0
+    beqz a1, finDividir
+    blez a2, finDividir
     
-FinExtender:
-    j FinExtender
-    
-SetZero:
-    li a0, 0
-    j FinExtender
+    # En t0 guardamos nuestro cociente.
+    li t0, 0
 
+    # Si A es positivo saltamos a LoopDivision
+    # Si A es negativo, lo hacemos positivo y procedemos al loop negativo.
+    bge a1, a2, LoopDivision
+    
+    neg a1, a1
+    
+
+
+LoopDivisionNegativa:
+    sub a1, a1, a2                      # A = A - B
+    addi, t0, t0, -1                    # t0--
+    bge a1, a2, LoopDivisionNegativa    # while A >= B
+
+    j finDividir
+
+LoopDivision:
+    sub a1, a1, a2              # A = A - B
+    addi, t0, t0, 1             # t0++
+    bge a1, a2, LoopDivision    # while A >= B
+
+    j finDividir
+    
+finDividir:
+    add a0, a0, t0
+    j finFinal
+    
+    
+finFinal:
+    j finFinal
