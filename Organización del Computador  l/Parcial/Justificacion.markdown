@@ -61,18 +61,103 @@ La division va a ser exactamente igual que cuando *a* es positiva pero en vez de
         j finDividir 
         ``` 
 
-3. Etiqueta "finDividir"
+3. Etiqueta "FinDividir"
     1. Contiene el ret del programa.
         ```riscv
         ret
         ```
 
 ---
+
 # Ejercicio 2 - Sumar_Extender
+Para este ejercicio vamos a usar los siguentes registros:
 
+- __a0__: Guarda el valor de *accum*.
+- __a1__: Guarda el valor de *a*.
+- __a2__: Guarda el valor de *b*.
+
+Si necesito pasar *a* de 16bits a 32bits complemento a 2 entonces necesito preservar el signo si es que *a* es negativo. Para esto hago 16 shifts logicos a la izquierda, de esta manera estoy moviendo el valor de *a* hasta la parte "alta" de los 32bits poniendole unicamente 0s atras (tambien pudo ser logico pero en el paquete basico de riscv no se encuentra la funcion).
+Luego hago 16 shifts aritmeticos a la derecha, como *a* se encuentra en la parte "alta", su signo se encuentra en el bit mas significativo y el shift aritmetico nos conserva el signo, entonces toda la parte "alta" de *a* se va a llenar de su bit mas significativo.
+
+
+1. Etiqueta "call_sumar_extender"
+   1. Hago 16 shifts logicos a la izquierda sobre *a* y luego 16 shifts aritmeticos a la derecha sobre *a*.
+        ```riscv
+        slli a1, a1, 16 
+        srai a1, a1, 16  
+        ```
+   2. A *b* le sumo *a* y luego a *accum* le sumo *b*.
+        ```riscv
+        add a2, a2, a1
+        add a0, a0, a2
+        ```
+
+2. Etiqueta "FinExtender"
+    1. Contiene el ret del programa.
+        ```riscv
+        ret
+        ```
+   
 ---
+
 # Ejercicio 3 - Segunda_Mitad
+Para este ejercicio vamos a usar los siguentes registros:
+
+- __a0__: Guarda el valor de *a*.
+- __a1__: Guarda el valor de *index*.
+- __a2__: Guarda el valor de *length*.
+
+Para dividir lenght hacemos un shift aritmetico a la derecha, esto lo divide por 2 y al ser aritmetico conserva el signo. Luego comparamos length/2 con el index, si index es mayor saltamos a la etiqueta que setea *a* a 1, otherwise terminamos el programa.
+
+
+1. Etiqueta "call_segunda_mitad"
+   1. Inicializo a = 0, se supone que por defecto es 0 y vale 1 si y solo si Index >= Length/2. Divido Length por 2 con un shift aritmetico a la derecha.
+        ```riscv
+        li a0, 0            
+        srai a2, a2, 1 
+        ```
+    2. Si Index >= Length/2, entonces saltamos a la etiqueta que modifica *a*.
+        ```riscv
+        bge a1, a2, setOne
+        ```
+    3. En el caso donde Index < Length/2 simplemente termino.
+        ```riscv
+        j FinSegundaMitad
+        ```
+
+2. Etiqueta "setOne"
+    1. Seteamos a = 1 y terminamos.
+        ```riscv
+        li a0, 1            
+        j FinSegundaMitad   
+        ```
+
+3. Etiqueta "FinSegundaMitad"
+    1. Contiene el ret del programa.
+        ```riscv
+        ret
+        ```
+
+
 
 ---
+
 # Ejercicio 4 - Numero_Impar
+Para este ejercicio vamos a usar los siguentes registros:
+
+- __a0__: Guarda el valor de *a*.
+- __a1__: Guarda el valor de *index*.
+- __a2__: Guarda el valor de *length*.
+
+El operador ANDi hace la interseccion bit a bit de un registro y un numero. Si en la misma posicion hay un 1, entonces se guarda un 1. Si en la misma posicion uno tiene un 1 y el otro 0, se guarda el 0.
+
+Para saber si el valor de un registro es impar puedo usar esta operacion con el valor del registro y el numero 0x00000001. Si el valor del registro es impar, su primer bit es 1. Se guarda el 1 y como el resto de 0x00000001 son 0s, simplemente me queda 0x00000001 en el registro. Si el numero es par entonces la interseccion entre 1 y 0 me deja el registro en 0x00000000.
+
+
+1. Etiqueta "call_numero_impar"
+   1. Comparo a bit a bit con el numero 0x00000001, guardo 1 si es impar, 0 si no y termino el programa.
+        ```riscv
+        li a0, 0            
+        srai a2, a2, 1 
+        ```
 ---

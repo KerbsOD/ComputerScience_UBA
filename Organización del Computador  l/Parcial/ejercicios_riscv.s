@@ -36,53 +36,53 @@ finDividir:
 
 
 # EJERCICIO 2 - Sumar_Extender
+
 # Extiende el signo de a de 16 a 32 bits y devuelve accum + ext_sign(a) + b 
 # int32_t sumar_extender(int32_t accum, int32_t a, int32_t b)
-call_sumar_extender: # a0:accum, a1:a, a2:b
-    # Hago el shifting
-    slli a1, a1, 16 # Hacemos 16 shifts a la izquierda logico
-    srai a1, a1, 16 # Hacemos 16 shifts a la derecha aritmetico, me mantiene el negativo 
+# a0:accum, a1:a, a2:b
+
+call_sumar_extender: 
+    slli a1, a1, 16     # Hacemos 16 shifts logicos a la izquierda.
+    srai a1, a1, 16     # Hacemos 16 shifts aritmeticos a la derecha.
     
-    # sumo a + b y luego b + accum
-    add a2, a2, a1
-    add a0, a0, a2
+    add a2, a2, a1      # b = b + a.
+    add a0, a0, a2      # accum = accum + b.
     
 FinExtender:
 	ret	
 
 
-
 # EJERCICIO 3 - Segunda_Mitad
+
 # Devuelve 1 si index >= length/2
 # int32_t segunda_mitad(int32_t a, int32_t index, int32_t length)
-call_segunda_mitad: # a0 a, a1 index, a2 length
-    # Por las dudas inicializo a en 0
-    li a0, 0
-    # Shift para la derecha divide por 2
-    srai a2, a2, 1
-    # Si index >= length/ 2 entonces a = 1
-    bge a1, a2, setOne
-    # terminar
-    j FinSM
+# a0 a, a1 index, a2 length
+
+call_segunda_mitad: 
+    li a0, 0            # Inicializo a = 0.
+    srai a2, a2, 1      # Hacemos 1 shift aritmetico a derecha.
+    
+    bge a1, a2, setOne  # Si Index >= Length/2, a = 1.
+    
+    j FinSegundaMitad   # Termino porque Index < Lenght/2.
     
 setOne:
-    li a0, 1
-    j FinSM
+    li a0, 1            # a = 1
+    j FinSegundaMitad   # Termino.
     
-FinSM:
+FinSegundaMitad:
     ret
 
 
-
 # EJERCICIO 4 - Numero_Impar
+
 # Devuelve 1 si a es impar, 0 en caso contario
 # int32_t numero_impar(int32_t a, int32_t index, int32_t length)
-call_numero_impar: # a0 a, a1 index, a2 length
-    #completar
-    andi a0, a0, 1
+# a0 a, a1 index, a2 length
+
+call_numero_impar: 
+    andi a0, a0, 1  # AND bit a bit.
 	ret
-
-
 
 
 #=================================
