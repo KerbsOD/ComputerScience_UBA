@@ -1,19 +1,19 @@
 #include "Puesto.h"
 
 PuestoDeComida::PuestoDeComida(Menu menu, Stock stock, Promociones promociones)
-    : m_menu(menu), m_stock(stock), m_promociones(promociones) {            // O(I) + O(I) + O(I)*O(cant)
+    : m_menu(menu), m_stock(stock), m_promociones(promociones) {             // O(I) + O(I) + O(I)*O(cant)
 
-    for (auto itemYPrecio : m_menu) {                                       // O(I)
-        Producto item = itemYPrecio.first;                                  // O(1)
+    for (auto itemYPrecio : m_menu) {                                        // O(I)
+        Producto item = itemYPrecio.first;                                   // O(1)
 
         if (m_promociones.count(item) == 1) {
-            Nat promocionAnterior = 0;                                      // O(1)
-            Nat mayorCantidadConDescuento = (--m_promociones.end())->first; // O(1)
-            for (int i = 0; i < mayorCantidadConDescuento; i++) {           // O(cant)
-                if (m_promociones.at(item).count(i) == 1) {                 // O(log(I)) + O(log(cant))
-                    promocionAnterior = m_promociones[item][i];             // O(log(I)) + O(log(cant))
+            Nat promocionAnterior = 0;                                       // O(1)
+            Nat mayorCantidadConDescuento = (m_promociones.rbegin())->first; // O(1)
+            for (int i = 0; i < mayorCantidadConDescuento; i++) {            // O(cant)
+                if (m_promociones.at(item).count(i) == 1) {                  // O(log(I)) + O(log(cant))
+                    promocionAnterior = m_promociones[item][i];              // O(log(I)) + O(log(cant))
                 }else {                                                    
-                    m_promociones.at(item).insert({i, promocionAnterior});  // O(log(I)) + O(log(cant))
+                    m_promociones.at(item).insert({i, promocionAnterior});   // O(log(I)) + O(log(cant))
                 }
             }
         }        
@@ -114,20 +114,19 @@ Nat PuestoDeComida::getStock(Producto item) const {
 
 
 Nat PuestoDeComida::getPromocion(Producto item, Nat cantidad) const {
-    if (m_promociones.count(item) == 0){                                    // O(log(cant))
-        return 0;                                                           // O(1)
+    if (m_promociones.count(item) == 0){                                       // O(log(cant))
+        return 0;                                                              // O(1)
     }
     
-    auto iteradorMayorCantidadConPromocion = m_promociones.at(item).end();  // O(log(cant))
-    iteradorMayorCantidadConPromocion--;                                    // O(1)
+    auto iteradorMayorCantidadConPromocion = m_promociones.at(item).rbegin();  // O(log(cant))
     
-    Nat mayorCantidad = iteradorMayorCantidadConPromocion->first;           // O(1)
-    Nat promocion     = iteradorMayorCantidadConPromocion->second;          // O(1)
+    Nat mayorCantidad = iteradorMayorCantidadConPromocion->first;              // O(1)
+    Nat promocion     = iteradorMayorCantidadConPromocion->second;             // O(1)
     
-    if (cantidad > mayorCantidad) {                                         // O(1)
-        return promocion;                                                   // O(1)
+    if (cantidad > mayorCantidad) {                                            // O(1)
+        return promocion;                                                      // O(1)
     } else { 
-        return m_promociones.at(item).at(cantidad);                         // O(log(I)) + O(log(cant))
+        return m_promociones.at(item).at(cantidad);                            // O(log(I)) + O(log(cant))
     }   
 }
 /*
