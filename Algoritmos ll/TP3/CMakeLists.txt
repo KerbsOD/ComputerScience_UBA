@@ -16,7 +16,7 @@ add_library(gtest_main STATIC tests/gtest-1.8.1/gtest_main.cc)
 file(GLOB SOURCE_FILES src/*.cpp src/*.h src/*.hpp)
 file(GLOB TESTS tests/*.cpp)
 
-add_executable(correrTests ${SOURCE_FILES} ${TESTS} src/Puesto.cpp src/Puesto.h src/Lollapatuza.cpp src/Lollapatuza.h)
+add_executable(correrTests ${SOURCE_FILES} ${TESTS} src/Puesto.cpp)
 
 # Necesitamos asociar los archivos del framework de testing
 target_link_libraries(correrTests gtest gtest_main)

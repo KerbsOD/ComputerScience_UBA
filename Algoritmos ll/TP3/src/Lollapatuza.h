@@ -4,36 +4,36 @@
 #include "tipos.h"
 #include "Puesto.h"
 
-using Puestos = map<IdPuesto, PuestoDeComida*>;
-
 class Lollapatuza {
 public:
-    Lollapatuza(Puestos puestos, Personas personas);
+    Lollapatuza(const set<Persona> &personas, const map<IdPuesto, Puesto> &infoPuestos);
+
+    // Generadores.
     void Vender(IdPuesto idpuesto, Persona persona, Producto item, Nat cantidad);
     void Hackear(Persona persona, Producto item);
-    Nat GastoTotal(Persona persona);
-    Persona MasGasto();
-    IdPuesto MenorStock(Producto item);
-    Personas& ObtenerPersonas();
-    Puestos& ObtenerPuestos();
+    
+    // Observadores.
+    Nat getGastoTotal(Persona persona) const;
+    Persona getMasGasto() const;
+    IdPuesto getMenorStock(Producto item) const;
+    const set<Persona>& getPersonas() const;
+    const set<IdPuesto>& getPuestos() const;
+    static Nat aplicarDescuento(Nat precio, Nat cantidad, Nat descuento);
+
+    // Observadores Puesto.
+    Nat getStock (IdPuesto idPuesto, Producto item) const;
+    Nat getDescuento (IdPuesto idPuesto, Producto item, Nat cantidad) const;
+    Nat getgastoEnPuesto (IdPuesto idPuesto, Persona persona) const;
+    Nat getPrecio (Producto item) const;
 
 private:
-    struct ClienteINFO {
-        Nat gastoTotal;
-        map<Producto, Puestos> ComprasSinPromocion;
-        /* El arbol se recorre inOrder, el menorID es un puntero al puesto donde
-         * el cliente compro el item dado sin descuento.
-         * Preguntamos la cantidad, si la cantidad es 0, entonces no es hackeable y lo eliminamos del arbol
-         * en O(log(P)). Necesitamos saber la cantidad comprada en el puesto. (Lo hacemos en el puesto).
-         * */
-    };
-
-    Puestos  m_Puestos;
-    Personas m_Personas;
-    map<Persona, ClienteINFO> m_Clientes;
-    Persona PersonaQueMasGasto;
+    set<IdPuesto>                                               m_puestosID;          
+    set<Persona>                                                m_personasID;         
+    map<IdPuesto, PuestoDeComida>                               m_puestosPorID;       
+    map<Persona, PersonaINFO>                                   m_personasPorID;
+    map<PersonaINFO, Persona>                                   m_personasGasto; 
+    map<Persona, map<Producto,map<IdPuesto, PuestoDeComida*>>>  m_comprasSinPromocion;
+    
 };
 
-
-
-#endif //TP_LOLLA_LOLLAPATUZA_H
+#endif

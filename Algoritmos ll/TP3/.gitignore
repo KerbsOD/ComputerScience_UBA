@@ -1,0 +1,10 @@
+*
+!src
+!src/*
+!tests/*
+!Especificacion
+!.gitignore
+!src/estructuras/ColaPrior.h
+!src/estructuras/ColaPrior.hpp
+!CMakeLists.txt
+!readme.md

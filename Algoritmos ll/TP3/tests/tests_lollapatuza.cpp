@@ -11,8 +11,8 @@ protected:
     set<IdPuesto> idsPuestos;
     Stock stock2, stock6, stock7;
     Promociones descuentos2, descuentos6, descuentos7;
-    aed2_Puesto puesto2, puesto6, puesto7;
-    map<IdPuesto, aed2_Puesto> puestos;
+    Puesto puesto2, puesto6, puesto7;
+    map<IdPuesto, Puesto> puestos;
 
     void SetUp() {
         menu = {{3, 500}, {4, 1000}, {5, 2500}, {7, 2000}};
@@ -672,4 +672,16 @@ TEST_F(LollaTest, hackear_altera_puesto_menor_id) {
     EXPECT_EQ(l.gastoEnPuesto(7, 8), 6000);
     EXPECT_EQ(l.gastoEnPuesto(7, 9), 0);
     EXPECT_EQ(l.idsDePuestos(), idsPuestos);
+}
+
+TEST_F(LollaTest, hackear_altera_persona_que_mas_gasto) {
+    FachadaLollapatuza l(personas, puestos);
+    l.registrarCompra(8, 4, 2, 2);
+    l.registrarCompra(4, 4, 2, 2);
+
+    EXPECT_EQ(l.mayorGastador(), 4);
+
+    l.hackear(4, 4);
+
+    EXPECT_EQ(l.mayorGastador(), 8);
 }

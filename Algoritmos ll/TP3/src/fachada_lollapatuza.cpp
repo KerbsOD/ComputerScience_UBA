@@ -1,46 +1,46 @@
 #include "fachada_lollapatuza.h"
 
-
-FachadaLollapatuza::FachadaLollapatuza(const set<Persona> &personas, const map<IdPuesto, aed2_Puesto> &infoPuestos) {
-    // TODO: Completar
+FachadaLollapatuza::FachadaLollapatuza(const set<Persona> &personas, const map<IdPuesto, Puesto> &infoPuestos) :
+lolla(personas, infoPuestos) {
+        
 }
 
 void FachadaLollapatuza::registrarCompra(Persona persona, Producto producto, Nat cant, IdPuesto idPuesto) {
-    // TODO: Completar
+    lolla.Vender(idPuesto, persona, producto, cant);
 }
 
 void FachadaLollapatuza::hackear(Persona persona, Producto producto) {
-    // TODO: Completar
+   lolla.Hackear(persona, producto);
 }
 
 Nat FachadaLollapatuza::gastoTotal(Persona persona) const {
-    // TODO: Completar
+   return lolla.getGastoTotal(persona);
 }
 
 Persona FachadaLollapatuza::mayorGastador() const {
-    // TODO: Completar
+    return lolla.getMasGasto();
 }
 
 IdPuesto FachadaLollapatuza::menorStock(Producto producto) const {
-   // TODO: Completar
+    return lolla.getMenorStock(producto);
 }
 
 const set<Persona> &FachadaLollapatuza::personas() const {
-    // TODO: Completar
+    return lolla.getPersonas();
 }
 
 Nat FachadaLollapatuza::stockEnPuesto(IdPuesto idPuesto, const Producto &producto) const {
-    // TODO: Completar
+    return lolla.getStock(idPuesto, producto);
 }
 
 Nat FachadaLollapatuza::descuentoEnPuesto(IdPuesto idPuesto, const Producto &producto, Nat cantidad) const {
-    // TODO: Completar
+    return lolla.getDescuento(idPuesto, producto, cantidad);
 }
 
 Nat FachadaLollapatuza::gastoEnPuesto(IdPuesto idPuesto, Persona persona) const {
-    // TODO: Completar
+    return lolla.getgastoEnPuesto(idPuesto, persona);
 }
 
 set<IdPuesto> FachadaLollapatuza::idsDePuestos() const {
-    // TODO: Completar
+    return lolla.getPuestos();
 }
