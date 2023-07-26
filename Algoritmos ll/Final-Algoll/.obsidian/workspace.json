@@ -4,41 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "1d384e54779e215b",
+        "id": "d84dc4866ce178d6",
         "type": "tabs",
         "children": [
           {
-            "id": "ecd637c0a05ab2cd",
+            "id": "c678d7648cc74238",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "Pasted image 20230713234602.png"
-              }
-            }
-          },
-          {
-            "id": "ffb48f3f3f4e9b9e",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Pasted image 20230714052016.png"
-              }
-            }
-          },
-          {
-            "id": "3fcfa53fff0f0cfb",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Pasted image 20230714052411.png"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -88,7 +65,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "ed8c4f885aa2a445",
@@ -104,7 +82,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pasted image 20230714052411.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +98,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Pasted image 20230714052411.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,9 +119,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Pasted image 20230714052411.png"
-              }
+              "state": {}
             }
           }
         ]
@@ -166,12 +140,20 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "3fcfa53fff0f0cfb",
+  "active": "c678d7648cc74238",
   "lastOpenFiles": [
+    "Heapify.md",
+    "Algoritmos.md",
+    "Final 08-03-23.md",
+    "Pasted image 20230726043921.png",
+    "Excalidraw/Drawing 2023-07-26 04.38.08.excalidraw.md",
+    "Final 00-12-13.md",
+    "apunte_diseno.pdf",
+    "apunte_especificacion.pdf",
+    "Pasted image 20230714052411.png",
     "Pasted image 20230714052016.png",
     "Pasted image 20230713234602.png",
     "Hashing.md",
-    "Heapify.md",
     "Pasted image 20230717002254.png",
     "Pasted image 20230717001905.png",
     "Pasted image 20230717001839.png",
@@ -179,15 +161,9 @@
     "Pasted image 20230716221328.png",
     "Pasted image 20230716203352.png",
     "Pasted image 20230716195024.png",
-    "Pasted image 20230716195007.png",
-    "Pasted image 20230716190749.png",
-    "Pasted image 20230716190700.png",
-    "Algoritmos.md",
-    "Final 08-03-23.md",
     "Excalidraw/Drawing 2023-07-16 03.16.03.excalidraw.md",
     "Funcion Abstraccion.md",
     "Final 25-02-16.md",
-    "Final 00-12-13.md",
     "Final 01-12-13.md",
     "Excalidraw/Drawing 2023-07-14 17.33.46.excalidraw.md",
     "Final 30-07-15.md",
@@ -206,13 +182,10 @@
     "Excalidraw/Drawing 2023-07-12 17.52.04.excalidraw.md",
     "apunte_tads_basicos.pdf",
     "Unconfirmed 493190.crdownload",
-    "apunte_diseno.pdf",
     "Unconfirmed 28659.crdownload",
-    "apunte_especificacion.pdf",
     "Unconfirmed 825513.crdownload",
     "Teoricas/Algo2 T03 - Complejidad.pdf",
     "Excalidraw",
-    "Complejidad.md",
-    "Diseno.md"
+    "Complejidad.md"
   ]
 }

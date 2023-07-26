@@ -1,22 +1,18 @@
 {
   "main": {
-    "id": "1196d09e5217d334",
+    "id": "6ef71e4bd0106a2a",
     "type": "split",
     "children": [
       {
-        "id": "3d878fd3395449f5",
+        "id": "63ced0fddab61ffb",
         "type": "tabs",
         "children": [
           {
-            "id": "1b8d3b23eda9ae2d",
+            "id": "34e55f01f715725b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Entrada-Salida.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -25,15 +21,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "11c70eb9fd3fcfb8",
+    "id": "26d4ee1785854bdc",
     "type": "split",
     "children": [
       {
-        "id": "a53c05252f451015",
+        "id": "932615984d3484b2",
         "type": "tabs",
         "children": [
           {
-            "id": "5581e22cd4aac97c",
+            "id": "e341185d7bcff479",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +39,7 @@
             }
           },
           {
-            "id": "ea47b81c81cc20ab",
+            "id": "54af4f896c9dcb2b",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +54,7 @@
             }
           },
           {
-            "id": "5e6274bd1937595b",
+            "id": "d3457053cbbfbab8",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -72,20 +68,20 @@
     "width": 300
   },
   "right": {
-    "id": "9d3dce024af93195",
+    "id": "8b44c9e19bb1e3d6",
     "type": "split",
     "children": [
       {
-        "id": "7d2be6fcf89152c1",
+        "id": "6b21d4659068624b",
         "type": "tabs",
         "children": [
           {
-            "id": "0fb11b0d924223cd",
+            "id": "caac83038331dc5f",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Entrada-Salida.md",
+                "file": "Apuntes CubaWiki/Orga1_apunte.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +93,19 @@
             }
           },
           {
-            "id": "13263a886697c121",
+            "id": "e6f694ef0ec04123",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Entrada-Salida.md",
+                "file": "Apuntes CubaWiki/Orga1_apunte.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "e25cedfaa1ee646c",
+            "id": "d00dcdf419b4acf3",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,12 +116,12 @@
             }
           },
           {
-            "id": "aec7f17931f4947a",
+            "id": "0ef65f7ce7c35bb8",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Entrada-Salida.md"
+                "file": "Apuntes CubaWiki/Orga1_apunte.pdf"
               }
             }
           }
@@ -146,8 +142,6 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1b8d3b23eda9ae2d",
-  "lastOpenFiles": [
-    "Entrada-Salida.md"
-  ]
+  "active": "e341185d7bcff479",
+  "lastOpenFiles": []
 }
