@@ -11,7 +11,7 @@ public:
     // Generadores.
     void Vender(IdPuesto idpuesto, Persona persona, Producto item, Nat cantidad);
     void Hackear(Persona persona, Producto item);
-    
+
     // Observadores.
     Nat getGastoTotal(Persona persona) const;
     Persona getMasGasto() const;
@@ -27,13 +27,12 @@ public:
     Nat getPrecio (Producto item) const;
 
 private:
-    set<IdPuesto>                                               m_puestosID;          
-    set<Persona>                                                m_personasID;         
-    map<IdPuesto, PuestoDeComida>                               m_puestosPorID;       
+    set<IdPuesto>                                               m_puestosID;
+    set<Persona>                                                m_personasID;
+    map<IdPuesto, PuestoDeComida>                               m_puestosPorID;
     map<Persona, PersonaINFO>                                   m_personasPorID;
-    map<PersonaINFO, Persona>                                   m_personasGasto; 
+    map<PersonaINFO, Persona>                                   m_personasGasto;
     map<Persona, map<Producto,map<IdPuesto, PuestoDeComida*>>>  m_comprasSinPromocion;
-    
 };
 
 #endif

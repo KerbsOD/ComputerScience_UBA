@@ -9,7 +9,7 @@ public:
 
     // Generadores.
     void RegistrarVenta(Persona persona, Producto item, Nat cantidad);
-    bool Hackeo(Persona persona, Producto item); 
+    bool Hackeo(Persona persona, Producto item);
 
     // Observadores.
     Nat getStock(Producto item) const;
@@ -17,13 +17,12 @@ public:
     Nat getGasto(Persona persona) const;
     Nat getPrecio(Producto item) const;
     static Nat aplicarDescuento(Nat precio,Nat cantidad,Nat descuento);
-    
+
 private:
     Menu                             m_menu;
     Stock                            m_stock;
     Promociones                      m_promociones;
     map<Persona, ClienteINFO>        m_clientes;
-    
 };
 
-#endif 
+#endif
