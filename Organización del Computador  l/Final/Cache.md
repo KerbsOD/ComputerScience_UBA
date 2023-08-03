@@ -40,17 +40,6 @@ Modos de actuacion:
 Donde la memoria del cache l2 es mayor a la del cache l1.
 La velocidad del cache l1 es mayor a la del cache l2
 
-**Ejemplo del Supermercado**
-- Supermercado -> _memoria ram_
-- Heladera -> _cache L2_
-- Mesa -> _cache L1_
-- Procesador -> _la persona que quiere almorzar_
-
-La idea es que en el supermercado (_memoria_) esta todo lo que podemos almorzar. En nuestra heladera guardamos lo que probablemente vamos a almorzar. En nuestra mesa tenemos lo mas probable que vamos a almorzar.
-
-No vamos a ir al supermercado a buscar item por item lo que queremos almorzar. Agarramos un subconjunto de items y los traemos a casa. (_caching_)
-
-Una tipica computadora personal tiene la cache L1 en el procesador y la cache L2 entre el procesador y la ram.
 
 
 

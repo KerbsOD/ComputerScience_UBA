@@ -1,5 +1,5 @@
 # Buses
-Un _BUS_ es un conjunto de cables conectado entre componentes para transferir informacion. Los Componentes deben sincronizarse para no mover distinta informacion al mismo tiempo por un mismo bus.
+Un _BUS_ es un conjunto de cables conectado entre componentes para transferir informacion. 
 La velocidad del bus se ve afectada por su longitud y por la cantidad de componentes conectados. Generalmente los componentes se dividen entre _masters_ y _slaves_.
 
 **Master**: Inicializador de acciones.

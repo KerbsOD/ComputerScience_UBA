@@ -2,5 +2,7 @@
   "accentColor": "",
   "cssTheme": "Atom",
   "showViewHeader": true,
-  "nativeMenus": true
+  "nativeMenus": true,
+  "theme": "moonstone",
+  "baseFontSize": 25
 }

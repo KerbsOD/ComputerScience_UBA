@@ -4,22 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "95c4c55374ad0f3b",
+        "id": "2256e31ae4fc2b60",
         "type": "tabs",
         "children": [
           {
-            "id": "221230b5fb4f4726",
+            "id": "44bf4466d0aaa349",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Entrada-Salida.md",
-                "mode": "preview",
+                "file": "Buses.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0064b68af653fc8d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cache.md",
+                "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Entrada-Salida.md",
+                "file": "Cache.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Entrada-Salida.md",
+                "file": "Cache.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Entrada-Salida.md"
+                "file": "Cache.md"
               }
             }
           }
@@ -147,14 +160,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "221230b5fb4f4726",
+  "active": "0064b68af653fc8d",
   "lastOpenFiles": [
-    "Arquitectura Von Neumman.md",
-    "Memoria.md",
-    "Entrada-Salida.md",
-    "Conversion-AD-DA.md",
-    "Cache.md",
+    "Temas/T11_Buses_y_almacenamiento.pdf",
     "Buses.md",
+    "Cache.md",
+    "Conversion-AD-DA.md",
+    "Entrada-Salida.md",
+    "Memoria.md",
+    "Temas/T10_Memorias_y_Cache.pdf",
+    "Excalidraw/Drawing 2023-08-01 18.16.47.excalidraw.md",
+    "Arquitectura Von Neumman.md",
     "Excalidraw/Drawing 2023-07-28 15.49.19.excalidraw.md",
     "Pasted image 20230728155243.png",
     "Pasted image 20230728155036.png",
@@ -162,11 +178,9 @@
     "Pasted image 20230728122441.png",
     "Excalidraw/Drawing 2023-07-28 11.54.06.excalidraw.md",
     "Pasted image 20230728111739.png",
-    "Temas/T10_Memorias_y_Cache.pdf",
     "Excalidraw/Drawing 2023-07-27 15.11.00.excalidraw.md",
     "Apuntes CubaWiki/Orga1_apunte.pdf",
     "Screenshot_20230727_123238.png",
-    "Temas/T11_Buses_y_almacenamiento.pdf",
     "Excalidraw/Drawing 2023-07-26 15.47.09.excalidraw.md",
     "Pasted image 20230726162809.png",
     "Pasted image 20230726155851.png",
