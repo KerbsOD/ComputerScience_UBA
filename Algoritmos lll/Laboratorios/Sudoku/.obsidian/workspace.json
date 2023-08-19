@@ -1,0 +1,170 @@
+{
+  "main": {
+    "id": "843fd93cb984ec58",
+    "type": "split",
+    "children": [
+      {
+        "id": "5bdb51078c6c6b69",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "32655bfc2dfc8f3a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Sudoku.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7297e9f20b8545ca",
+    "type": "split",
+    "children": [
+      {
+        "id": "d8fd1512f0c93c71",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "534d5df674075d11",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "25b9374be4813446",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "93cd93b750bae5fe",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4f7d63c19d60e84f",
+    "type": "split",
+    "children": [
+      {
+        "id": "d39fefc239efa22e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0a91cacdee967892",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Sudoku.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "61188532579c95e6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Sudoku.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0a91682872842e64",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "472a4589630767d8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Sudoku.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "active": "32655bfc2dfc8f3a",
+  "lastOpenFiles": [
+    "Excalidraw/Drawing 2023-08-19 06.41.04.excalidraw.md",
+    "Sudoku.md",
+    "Pasted Image 20230819061659_731.png",
+    "Drawing 2023-08-19 06.41.29.excalidraw.md",
+    "Pasted image 20230819044740.png",
+    "Pasted image 20230819051340.png",
+    "Pasted Image 20230819064257_713.png",
+    "Pasted image 20230819043927.png",
+    "Pasted Image 20230819044257_277.png",
+    "Pasted Image 20230819060325_059.png",
+    "Pasted Image 20230819060412_054.png",
+    "Pasted image 20230819061452.png",
+    "Pasted Image 20230819061600_774.png",
+    "SudokuSolver-V2.md",
+    "Excalidraw/Drawing 2023-08-19 06.15.56.excalidraw.md",
+    "Excalidraw/Drawing 2023-08-19 04.42.42.excalidraw.md",
+    "Excalidraw"
+  ]
+}
