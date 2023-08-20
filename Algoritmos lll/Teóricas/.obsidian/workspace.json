@@ -13,19 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Teorica01-Complejidad_Computacional/Apunte.md",
-                "mode": "preview",
+                "file": "Teorica02-Tecnicas_De_Diseños/Apunte.md",
+                "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "8131bd0d5fba223c",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Drawing 2023-08-20 04.10.51.excalidraw.md"
               }
             }
           }
@@ -95,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Teorica01-Complejidad_Computacional/Apunte.md",
+                "file": "Teorica02-Tecnicas_De_Diseños/Apunte.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Teorica01-Complejidad_Computacional/Apunte.md",
+                "file": "Teorica02-Tecnicas_De_Diseños/Apunte.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Teorica01-Complejidad_Computacional/Apunte.md"
+                "file": "Teorica02-Tecnicas_De_Diseños/Apunte.md"
               }
             }
           }
@@ -159,11 +149,13 @@
   },
   "active": "b3690036e0124019",
   "lastOpenFiles": [
+    "Teorica01-Complejidad_Computacional/Apunte.md",
+    "Teorica02-Tecnicas_De_Diseños/Apunte.md",
+    "Excalidraw/Drawing 2023-08-20 04.10.51.excalidraw.md",
+    "Teorica02-Tecnicas_De_Diseños/Teórica02-apunte.pdf",
     "Pasted image 20230820054507.png",
     "Pasted image 20230820044419.png",
     "Resources",
-    "Excalidraw/Drawing 2023-08-20 04.10.51.excalidraw.md",
-    "Teorica01-Complejidad_Computacional/Apunte.md",
     "Resources/Pasted image 20230820042111.png",
     "Excalidraw",
     "Teorica01-Complejidad_Computacional/Teórica01-slides.pdf",

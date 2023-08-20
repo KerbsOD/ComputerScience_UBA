@@ -1,8 +1,9 @@
 # Maquina RAM
+---
 ![[Pasted image 20230820042111.png]]
 > Los puntos en "Entrada", "Salida" y "Memoria" implican que estos arreglos de celdas **no** tienen fin. "Programa" si tiene fin. Pues un algoritmo es una serie finita de instrucciones.
-
 # Complejidad Computacional
+---
 Una operacion es **elemental** si su tiempo de ejecucion puede ser acotado por una constante independientemente de los operandos sobre las cuales se esté aplicando.
 ![[Pasted image 20230820044419.png]]
 No es realista asumir que *resu* va a estar siempre acotado por una constante y que la operacion *resu $\texttimes$ i* va a ser *elemental*. 
