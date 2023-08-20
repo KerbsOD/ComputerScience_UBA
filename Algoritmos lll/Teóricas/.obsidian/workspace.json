@@ -1,21 +1,31 @@
 {
   "main": {
-    "id": "843fd93cb984ec58",
+    "id": "c7d6dc87c2e80e1a",
     "type": "split",
     "children": [
       {
-        "id": "5bdb51078c6c6b69",
+        "id": "d995e4524a9e5d30",
         "type": "tabs",
         "children": [
           {
-            "id": "32655bfc2dfc8f3a",
+            "id": "b3690036e0124019",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sudoku.md",
+                "file": "Teorica01-Complejidad_Computacional/Apunte.md",
                 "mode": "preview",
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "8131bd0d5fba223c",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2023-08-20 04.10.51.excalidraw.md"
               }
             }
           }
@@ -25,15 +35,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "7297e9f20b8545ca",
+    "id": "bf68199458daca4e",
     "type": "split",
     "children": [
       {
-        "id": "d8fd1512f0c93c71",
+        "id": "eaebee4eaae45bd1",
         "type": "tabs",
         "children": [
           {
-            "id": "534d5df674075d11",
+            "id": "610df7c86f5bca0f",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +53,7 @@
             }
           },
           {
-            "id": "25b9374be4813446",
+            "id": "c6ebf4895f5396ea",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +68,7 @@
             }
           },
           {
-            "id": "93cd93b750bae5fe",
+            "id": "291dfb251080fd92",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -69,24 +79,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
-    "id": "4f7d63c19d60e84f",
+    "id": "5e97b950dac6dac1",
     "type": "split",
     "children": [
       {
-        "id": "d39fefc239efa22e",
+        "id": "0d49c00deb44515f",
         "type": "tabs",
         "children": [
           {
-            "id": "0a91cacdee967892",
+            "id": "80cf8eae3bd4c8a9",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Sudoku.md",
+                "file": "Teorica01-Complejidad_Computacional/Apunte.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,19 +107,19 @@
             }
           },
           {
-            "id": "61188532579c95e6",
+            "id": "40cbc187c0d2a367",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Sudoku.md",
+                "file": "Teorica01-Complejidad_Computacional/Apunte.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "0a91682872842e64",
+            "id": "ec91ffa7fd2a0283",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -121,12 +130,12 @@
             }
           },
           {
-            "id": "472a4589630767d8",
+            "id": "172df432e18c4825",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Sudoku.md"
+                "file": "Teorica01-Complejidad_Computacional/Apunte.md"
               }
             }
           }
@@ -148,24 +157,17 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "32655bfc2dfc8f3a",
+  "active": "b3690036e0124019",
   "lastOpenFiles": [
-    "Excalidraw/Drawing 2023-08-19 06.41.04.excalidraw.md",
-    "Sudoku.md",
-    "Pasted Image 20230819061659_731.png",
-    "Drawing 2023-08-19 06.41.29.excalidraw.md",
-    "Pasted image 20230819044740.png",
-    "Pasted image 20230819051340.png",
-    "Pasted Image 20230819064257_713.png",
-    "Pasted image 20230819043927.png",
-    "Pasted Image 20230819044257_277.png",
-    "Pasted Image 20230819060325_059.png",
-    "Pasted Image 20230819060412_054.png",
-    "Pasted image 20230819061452.png",
-    "Pasted Image 20230819061600_774.png",
-    "SudokuSolver-V2.md",
-    "Excalidraw/Drawing 2023-08-19 06.15.56.excalidraw.md",
-    "Excalidraw/Drawing 2023-08-19 04.42.42.excalidraw.md",
-    "Excalidraw"
+    "Pasted image 20230820054507.png",
+    "Pasted image 20230820044419.png",
+    "Resources",
+    "Excalidraw/Drawing 2023-08-20 04.10.51.excalidraw.md",
+    "Teorica01-Complejidad_Computacional/Apunte.md",
+    "Resources/Pasted image 20230820042111.png",
+    "Excalidraw",
+    "Teorica01-Complejidad_Computacional/Teórica01-slides.pdf",
+    "Teorica01-Complejidad_Computacional/Teórica01-apunte.pdf",
+    "sexooo.md"
   ]
 }
