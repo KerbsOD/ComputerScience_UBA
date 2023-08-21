@@ -18,6 +18,16 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "6b3c12dda856238c",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2023-08-21 01.43.37.excalidraw.md"
+              }
+            }
           }
         ]
       }
@@ -149,14 +159,21 @@
   },
   "active": "b3690036e0124019",
   "lastOpenFiles": [
-    "Teorica01-Complejidad_Computacional/Apunte.md",
+    "Pasted image 20230821015604.png",
+    "Pasted image 20230821014711.png",
+    "Excalidraw/Drawing 2023-08-21 01.43.37.excalidraw.md",
     "Teorica02-Tecnicas_De_Diseños/Apunte.md",
+    "Pasted image 20230821014613.png",
+    "Pasted image 20230821014453.png",
+    "Pasted Image 20230821014420_879.png",
     "Excalidraw/Drawing 2023-08-20 04.10.51.excalidraw.md",
-    "Teorica02-Tecnicas_De_Diseños/Teórica02-apunte.pdf",
-    "Pasted image 20230820054507.png",
-    "Pasted image 20230820044419.png",
-    "Resources",
+    "Resources/Pasted image 20230819044740.png",
+    "Teorica01-Complejidad_Computacional/Apunte.md",
     "Resources/Pasted image 20230820042111.png",
+    "Resources/Pasted image 20230820054507.png",
+    "Resources/Pasted image 20230820044419.png",
+    "Teorica02-Tecnicas_De_Diseños/Teórica02-apunte.pdf",
+    "Resources",
     "Excalidraw",
     "Teorica01-Complejidad_Computacional/Teórica01-slides.pdf",
     "Teorica01-Complejidad_Computacional/Teórica01-apunte.pdf",
