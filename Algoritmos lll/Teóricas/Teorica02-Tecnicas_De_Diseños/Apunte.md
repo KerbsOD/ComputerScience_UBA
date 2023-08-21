@@ -20,8 +20,8 @@ Consiste en elegir la mejor opcion dada la instancia actual. Esto **no** me gara
 > - Mayor beneficio: De mis elementos disponibles elijo primero el que me da mas beneficio.
 > - Mejor proporcion beneficio/peso: De mis elementos disponibles elijo primero el que tenga la mejor relacion beneficio/peso. (tener en cuenta que estamos en el problema continuo y puedo elegir el porcentaje necesario para llegar con el peso eligiendo al de mayor beneficio si o si)
 
----
 # Backtracking
+---
 Consiste en recorrer todas las configuraciones e ir *podando* las ramas que no me van a llevar a una solucion.
 
 Se utiliza un vector a = ($a_{1}, a_{2}, ..., a_{n}$) para representar una **solucion candidata** 
@@ -67,12 +67,26 @@ Sabemos que el vector de soluciones empieza vacio $\implies$ a = ().
 Luego, en el primer nivel, a nuestro vector se le agrega una solucion $c_{i}$ $\implies$ a = ($c_{i}$). Pero en otra rama que sale de la misma raiz se le agrega una solucion parcial $c_{j}$ $\implies$ a' = ($c_{j}$).
 - a = ($c_{i}$)
 - a' = ($c_{j}$)
+
 Que pasa cuando ambas soluciones parciales van al nivel 2?
 Supongamos que en el nivel 2 del arbol se agrega las siguientes soluciones parciales a nuestros vectores:
+
 - a = ($c_{i}, c_{j}$)
 - a' = ($c_{j}, c_{i}$)
+
 > Si importa el orden en el vector entonces no pasa nada, son diferentes. Pero si hablamos de un conjunto estos dos vectores **son iguales**.
 
+En este caso no queremos procesar 2 veces la misma instancia.
+Solucion: Para los hijos de $c_{i}$, $i < j$. De esta forma nos evitamos una solucion parcial donde se repitan indices. **Solo cuando el orden no importa!**
+
+![[Pasted image 20230821032110.png]]
+Suponiendo que los numeros son positivos, si me paso de k, todas las extensiones de esa suma que pasa k son soluciones incorrectas por lo que no las sigo extendiendo.
+
+*Dada una solucion parcial, que elementos puedo agregar atras del vector?*
+![[Pasted image 20230821032459.png]]
+Traduccion: Si la ultima solucion parcial del vector ($a_{k}$) tiene el indice $i$ ($c_{i}$) entonces la proxima solucion parcial que agregue al final del vector ($a_{k+1}$) va a tener que tener un indice $j$ ($c_{j}$) con $i < j$. De esta manera no repetimos sub-conjuntos.
+
+Luego, la suma de soluciones parciales desde el inicio del vector hasta el final tiene que ser menor a k (si solo contamos con numeros positivos).
 
 #### Por que se le llama 'backtracking'?
 Notemos que en la primera opcion pusimos un '1' en el sudoku, al detectar que ya existe un '1' en esa columna, lo que hacemos es "volver para atras". O sea, esta *solucion parcial* se descarta para siempre y mi *raiz* sigue con la siguiente. Fuimos para atras porque subimos por donde bajamos. 
@@ -85,3 +99,39 @@ Con un algoritmos de fuerza bruta hubieramos desarrollado todas las combinacione
 
 > Todas las hojas en *backtracking* son soluciones. No todas las hojas en *fuerza bruta* son soluciones.
 
+# Programacion Dinamica
+---
+Similar a Divide & Conquer pero es **bottom-up**. En D&C nos centrabamos en dividir la instancia actual en casos mas pequeños para que sea más sencillo resolverlos. 
+En DP resolvemos los problemas pequeños primero y guardamos esa resolucion para usarla a futuro.
+
+Para resolver un problema con un algoritmo de programacion dinamica se tiene que cumplir el **Principio de Optimalidad de Bellman**.
+
+### Principio de Optimalidad de Bellman
+Un problema satisface el principio de Bellman si en una solución óptima cada subsolución es a su vez óptima del subproblema correspondiente.
+
+> La idea es que mediante subsoluciones yo puedo construir la solucion final. Para que esto pase, las subsoluciones deben separarse del contexto. En el ejemplo del camino maximo, al cambiar el contexto del problema cambia la subsolucion y esto es algo que **no nos sirve**
+
+
+#### Problema del Camino Minimo
+Sabemos que el camino mas corto desde A hasta B pasa por C. Para transitar el camino mas corto desde A hasta B tenemos que transitar el camino mas corto desde A hasta C y luego desde C hasta B. 
+**Cumple** el principio porque estamos *concatenando* subsoluciones optimas para llegar a una solucion optima.
+
+Subsoluciones $\implies$ A->C y C->B
+Solucion $\implies$ A->C + C->B $\equiv$ A->C->B
+
+#### Problema del Camino Maximo
+El camino mas largo entre A y B es A->F->E->D->C->B. 
+![[Pasted image 20230821061331.png]]
+
+Para que este problema cumpla el principio de Bellman el camino mas largo entre A y E deberia ser *A->F->E* pues es una subsolucion a la solucion del problema (Solucion: **A->F->E**->D->C->B). 
+
+Sin embargo esto **no es cierto**. 
+
+El camino mas largo entre A y E es A->B->C->D->E. Por lo tanto este problema *no puede ser resuelto* medianto programacion dinamica.
+
+#### Subsecuencia comun mas larga
+![[Pasted image 20230821064243.png]]
+![[Pasted image 20230821064553.png]]
+
+# Heuristicas
+---
