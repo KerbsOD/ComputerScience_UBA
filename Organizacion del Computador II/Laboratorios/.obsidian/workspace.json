@@ -1,19 +1,19 @@
 {
   "main": {
-    "id": "c7d6dc87c2e80e1a",
+    "id": "44fa6238c0f8d647",
     "type": "split",
     "children": [
       {
-        "id": "d995e4524a9e5d30",
+        "id": "df945625cdd3cbc8",
         "type": "tabs",
         "children": [
           {
-            "id": "b3690036e0124019",
+            "id": "4b420b70dcd891f3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Teorica02-Tecnicas_De_Diseños/Apunte.md",
+                "file": "Taller-2/Apunte.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "bf68199458daca4e",
+    "id": "e1ca7bf379187f35",
     "type": "split",
     "children": [
       {
-        "id": "eaebee4eaae45bd1",
+        "id": "c1724269aacf7ecd",
         "type": "tabs",
         "children": [
           {
-            "id": "610df7c86f5bca0f",
+            "id": "08a9d3f47cff0f97",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +43,7 @@
             }
           },
           {
-            "id": "c6ebf4895f5396ea",
+            "id": "5358e29c2ee8db8e",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +58,7 @@
             }
           },
           {
-            "id": "291dfb251080fd92",
+            "id": "b456e4b8770443bf",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -72,20 +72,20 @@
     "width": 300
   },
   "right": {
-    "id": "5e97b950dac6dac1",
+    "id": "39a79c8a641e16b1",
     "type": "split",
     "children": [
       {
-        "id": "0d49c00deb44515f",
+        "id": "b04ff737100dbc61",
         "type": "tabs",
         "children": [
           {
-            "id": "80cf8eae3bd4c8a9",
+            "id": "aec0ff9468506d4e",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Teorica02-Tecnicas_De_Diseños/Apunte.md",
+                "file": "Taller-2/Apunte.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +97,19 @@
             }
           },
           {
-            "id": "40cbc187c0d2a367",
+            "id": "f60896aff5a52984",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Teorica02-Tecnicas_De_Diseños/Apunte.md",
+                "file": "Taller-2/Apunte.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "ec91ffa7fd2a0283",
+            "id": "45e2346798401f92",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,12 +120,12 @@
             }
           },
           {
-            "id": "172df432e18c4825",
+            "id": "e67fe6c860f65d11",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Teorica02-Tecnicas_De_Diseños/Apunte.md"
+                "file": "Taller-2/Apunte.md"
               }
             }
           }
@@ -147,29 +147,24 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b3690036e0124019",
+  "active": "4b420b70dcd891f3",
   "lastOpenFiles": [
-    "Resources/Pasted image 20230821014453.png",
-    "Teorica02-Tecnicas_De_Diseños/Apunte.md",
-    "Resources/Pasted Image 20230821014420_879.png",
-    "Excalidraw/Drawing 2023-08-21 06.13.20.excalidraw.md",
-    "Resources/Pasted image 20230821064553.png",
-    "Resources/Pasted image 20230821064243.png",
-    "Resources/Pasted image 20230821064159.png",
-    "Resources/Pasted image 20230821061331.png",
-    "Resources/Pasted Image 20230821061323_102.png",
-    "Excalidraw/Drawing 2023-08-21 01.43.37.excalidraw.md",
-    "Resources/Pasted image 20230821032459.png",
-    "Resources/Pasted image 20230821032110.png",
-    "Resources/Pasted image 20230821015604.png",
-    "Resources/Pasted image 20230821014711.png",
-    "Excalidraw/Drawing 2023-08-20 04.10.51.excalidraw.md",
-    "Teorica01-Complejidad_Computacional/Apunte.md",
-    "Teorica02-Tecnicas_De_Diseños/Teórica02-apunte.pdf",
+    "Pasted image 20230823161217.png",
+    "Resources/Pasted image 20230823134821.png",
+    "Taller-2/Apunte.md",
+    "Resources/Pasted image 20230823155917.png",
+    "Resources/Pasted image 20230823153943.png",
+    "Resources/Pasted image 20230823143908.png",
+    "Resources/Pasted image 20230823135136.png",
+    "Resources/Pasted image 20230823084324.png",
     "Resources",
+    "Resources/Pasted image 20230823134713.png",
+    "Resources/Pasted image 20230823133803.png",
+    "Excalidraw/Drawing 2023-08-23 13.26.50.excalidraw.md",
+    "Resources/Pasted Image 20230823133538_940.png",
+    "Resources/Pasted Image 20230823133453_907.png",
+    "Drawing 2023-08-23 13.34.12.excalidraw.md",
     "Excalidraw",
-    "Teorica01-Complejidad_Computacional/Teórica01-slides.pdf",
-    "Teorica01-Complejidad_Computacional/Teórica01-apunte.pdf",
-    "sexooo.md"
+    "Taller-2"
   ]
 }
