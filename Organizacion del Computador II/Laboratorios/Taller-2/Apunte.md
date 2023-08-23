@@ -105,4 +105,5 @@ Los estaticos pueden ser constantes.. Los dinamicos son los que se allocan en el
 
 ![[Pasted image 20230823161217.png]]
 
+![[Pasted image 20230823170714.png]]
 
