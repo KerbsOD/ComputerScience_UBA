@@ -4,33 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "01f1d55a8fef6c7e",
+        "id": "58a660615bdad9fa",
         "type": "tabs",
         "children": [
           {
-            "id": "9482d7da78d1334c",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Teorica01-Arquitectura/Teorica01-ArquitecturaBásica.pdf"
-              }
-            }
-          },
-          {
-            "id": "cf0cf2a1a8f8a0bb",
+            "id": "b5ed49300881401e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Teorica01-Arquitectura/Apunte.md",
+                "file": "Teorica02-Pila/Apunte.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -96,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Teorica01-Arquitectura/Apunte.md",
+                "file": "Teorica02-Pila/Apunte.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Teorica01-Arquitectura/Apunte.md",
+                "file": "Teorica02-Pila/Apunte.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Teorica01-Arquitectura/Apunte.md"
+                "file": "Teorica02-Pila/Apunte.md"
               }
             }
           }
@@ -157,15 +146,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "cf0cf2a1a8f8a0bb",
+  "active": "b5ed49300881401e",
   "lastOpenFiles": [
+    "Pasted image 20230824171552.png",
+    "Pasted image 20230824165450.png",
+    "Teorica02-Pila/Apunte.md",
+    "Teorica01-Arquitectura/Apunte.md",
+    "Teorica01-Arquitectura/Teorica01-ArquitecturaBásica.pdf",
     "Pasted image 20230821220648.png",
     "Pasted image 20230821214831.png",
     "Pasted image 20230821205743.png",
     "Pasted image 20230821204822.png",
     "Pasted image 20230821202159.png",
-    "Teorica01-Arquitectura/Teorica01-ArquitecturaBásica.pdf",
-    "Teorica01-Arquitectura/Apunte.md",
     "Teorica01-Arquitectura"
   ]
 }

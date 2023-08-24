@@ -62,6 +62,13 @@ Lo que podemos leer es que para acceder al dato del arr[0] simplemente hacemos l
  La diferencia de los punteros es que no guardan informacion, guardan otra direccion! 
  Si yo desreferencio un puntero le estoy diciendo que vaya a otra direccion y que lea eso.
 
+
+### Como sabe el pointer cuantos bytes moverse?
+![[Pasted image 20230824114200.png]]
+En esta funcion vemos que creamos un pointer char llamado iterador. En el while, hacemos iterador++. Por que iterador + 1 es igual a la siguiente posicion de memoria????
+- Al ser un char\*, C le suma 1 byte cada vez que le sumo 1 al iterador.
+![[Pasted image 20230824163844.png]]
+
 # Alineacion de los datos en Memoria
 ![[Pasted image 20230823114000.png]]
 ![[Pasted image 20230823114131.png]]
@@ -107,3 +114,20 @@ Los estaticos pueden ser constantes.. Los dinamicos son los que se allocan en el
 
 ![[Pasted image 20230823170714.png]]
 
+![[Pasted image 20230824115447.png]]
+
+Las direcciones de 32bits normalmente se leen en Hexadecimal.
+![[Pasted image 20230824115825.png]]
+> Notar que cada 4 bits representamos un numero hexadecimal.
+
+Que la computadora pueda direccionar como minimo de a byte no significa que las direcciones sean de a byte.
+
+En una arquitectura de 32 bits. Como 1 byte(8bits) es la unidad mas pequeña direccionable, se divide en 4 celdas de 1 byte.
+Luego para direccionar memoria, esas 4 celdas se dividen en 8 celdas de 4 bits para representarlas de manera hexadecimal.
+![[Pasted image 20230824121403.png]]
+
+![[Pasted image 20230824121807.png]]
+1. 4 bytes (32 bits)
+2. 8 celdas de 4 bits (para representarlos hexadecimal, 2$^{4}-1$, del 0 al 15)
+3. Cada celda te da un numero
+4. Juntamos todos los numeros y tenemos una direccion en memoria.
