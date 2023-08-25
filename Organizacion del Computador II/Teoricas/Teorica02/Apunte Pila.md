@@ -103,3 +103,63 @@ handler_int:
 
 El iret es el *interrupt return*. Cuando llamamos al iret carga la direccion guardada en el stack en el *instruction pointer* y poppea. Carga el segmento en el *code segment* y poppea. Carga los flags y poppea.
 ![[Pasted image 20230824193849.png]]
+
+# Stack Frame
+![[Pasted image 20230824201004.png]]
+
+Cuando se entra a una funcion se pushea el ebp al stack y se mueve el esp al ebp. El nuevo base pointer va a ser el actual stack pointer.
+Esto es para dividir el stack en pedazos de calls.
+
+![[Pasted image 20230824201145.png]]
+
+- Se pushea de derecha a izquierda.
+- Hay 2 C's porque es un double por lo que ocupa 8 bytes en vez de 4 bytes (estamos en 32 bits).
+- Se llama a la funcion.
+- Cuando la funcion retorna nos desasemos de los datos. Recordemos que se agregan datos al stack restando al esp y se sacan elementos del stack sumando al esp. Como son 6 elementos, sumamos 6 posicion por 4 bytes.
+
+Por ultimo agregamos la direccion de retorno, o sea, la siguiente direccion de la funcion que fue llamada.
+![[Pasted image 20230824203245.png]]
+
+"Funcion" pushea ebp al stack. Siendo nuestro nuevo base pointer. 
+![[Pasted image 20230824212224.png]]
+
+Hacemos que ESP apunte al EBP. O sea, nuestro stack *esta limpio* y empezamos con el base pointer *abajo de todo*.
+![[Pasted image 20230824212319.png]]
+
+Supongamos que *funcion* crea char i, j, k. Estas variables locales tambien van a estar guardadas en el stack. Cada vez que se crean variables se pushea al stack 4 bytes. La cantidad de push es equivalente a cuantas veces se achica el **Stack pointer**.
+![[Pasted image 20230824212840.png]]
+
+Cuando se llama al *Ret* de *funcion*. Limpiamos todas las variables locales y el ebp toma el valor que tenia antes de entrar en la funcion. Esto se pusheo al stack. Ahora el stack pointer se encuentra en el push a. 
+![[Pasted image 20230824213633.png]]
+
+Luego del call achicamos el ESP en la cantidad que pusheamos en un principio.
+![[Pasted image 20230824214057.png]]
+
+## LLamar Funciones de C a Assembly
+![[Pasted image 20230824214417.png]]
+### Ilustracion de un stack frame
+Como podemos ver sobre la dir de retorno tenemos el viejo ebp.
+![[Pasted image 20230824214312.png]]
+
+# Stack Frame 64 bits
+Como sabemos en 64 bits los saltos son de a 8bytes alineado.
+
+![[Pasted image 20230824215134.png]]
+
+1. Llamamos a fun por lo que se pushea al stack la direccion de retorno.
+   ![[Pasted image 20230824215246.png]]
+2. Pusheamos la direccion del *base pointer* actual. Cuando volvamos hacemos que el stack pointer tenga esta direccion.
+   ![[Pasted image 20230824215439.png]]
+   > Como se puede ver, **el RSP esta apuntando a lo que sera el nuevo RBP**.
+   > El **Stack Pointer** apunta a el ultimo elemento agregado al stack.
+
+3. Le ponemos el valor del stack pointer al stack pointer. Ahora esta es la nueva base. La base del recien creado stack frame.
+   ![[Pasted image 20230824215952.png]]
+
+4. Procedemos a realizar las instrucciones del procesador.
+   ![[Pasted image 20230824234446.png]]![[Pasted image 20230824234538.png]]
+   ![[Pasted image 20230824235052.png]]
+   ![[Pasted image 20230824235119.png]]
+   ![[Pasted image 20230825000805.png]]
+   ![[Pasted image 20230825000910.png]]
+   ![[Pasted image 20230825000924.png]]

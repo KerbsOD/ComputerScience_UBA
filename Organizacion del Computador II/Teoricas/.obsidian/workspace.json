@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "58a660615bdad9fa",
+        "id": "f2adece6d0aa8b5f",
         "type": "tabs",
         "children": [
           {
-            "id": "b5ed49300881401e",
+            "id": "f15bafef949de7a8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Teorica02-Pila/Apunte.md",
+                "file": "Teorica02/Apunte Pila.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Teorica02-Pila/Apunte.md",
+                "file": "Teorica02/Apunte Pila.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Teorica02-Pila/Apunte.md",
+                "file": "Teorica02/Apunte Pila.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Teorica02-Pila/Apunte.md"
+                "file": "Teorica02/Apunte Pila.md"
               }
             }
           }
@@ -146,20 +146,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b5ed49300881401e",
+  "active": "f15bafef949de7a8",
   "lastOpenFiles": [
-    "Pasted image 20230824193849.png",
-    "Pasted image 20230824192117.png",
-    "Pasted image 20230824191707.png",
-    "Pasted image 20230824191242.png",
-    "Pasted image 20230824190323.png",
-    "Pasted image 20230824185345.png",
-    "Pasted image 20230824185212.png",
-    "Pasted image 20230824182314.png",
-    "Pasted image 20230824181429.png",
-    "Pasted image 20230824175602.png",
-    "Pasted image 20230824171552.png",
-    "Teorica02-Pila/Apunte.md",
+    "Teorica02/Apunte Herramientas de Desarrollo.md",
+    "Teorica02/Apunte Pila.md",
+    "Teorica02/T01B_Pila.pdf",
+    "Resources/Pasted image 20230824234446.png",
+    "Resources/Pasted image 20230825000924.png",
+    "Resources/Pasted image 20230825000910.png",
+    "Resources/Pasted image 20230825000824.png",
+    "Resources/Pasted image 20230825000805.png",
+    "Resources/Pasted image 20230824235119.png",
+    "Resources/Pasted image 20230824235052.png",
+    "Resources/Pasted image 20230824234538.png",
+    "Resources/Pasted image 20230824201004.png",
+    "Resources/Pasted image 20230824215952.png",
     "Teorica01-Arquitectura/Apunte.md",
     "Teorica01-Arquitectura/Teorica01-ArquitecturaBásica.pdf",
     "Teorica01-Arquitectura"
