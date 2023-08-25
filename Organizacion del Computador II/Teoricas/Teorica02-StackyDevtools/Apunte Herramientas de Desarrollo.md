@@ -15,14 +15,21 @@
    
    
    En este caso:
-- char \*dest se guarda en RDI
-- char \*src se guarda en RSI
-- size_t n se guarda en RDX
+- char \*dest se guarda en RDI. Destination register.
+- char \*src se guarda en RSI. Source register.
+- size_t n se guarda en RDX. Data register.
    
    ![[Pasted image 20230825161918.png]]
+   1. Pusheamos rcx al stack para preservar su valor previo.
+   2. Limpiamos el directions flag. (cld=clear direccion flags, o sea, ponerlo en 0. con std lo ponemos en 1). 
+      - Si direction flag = 0 $\implies$ movs incrementa en n bytes rsi y rdi.
+      - Si direction flag = 1 $\implies$ movs decrementa en n bytes rsi y rdi.
+   1. Movemos el valor de rdx (n) a rcx (registro contador de intel)
+   2. REPE repite la accion hasta que el registro rcx valga 0.
+   3. movsb mover el byte de rsi a rdi. Luego incrementa los punteros rsi y rdi. Los puede incrementar o decrementar de acuerdo a lo que este en el *directions flag*.
 
-La instruccion *movs* me deja mover algo de una posicion de memoria a otra.
-- **movsb:** mover byte.
-- **movsw:** mover words(2bytes)
-- **movsd:** mover doblewords(4bytes)
-- **movsq:** mover cuadruplewords(8bytes)
+> **movs** automaticamente mueve byte a byte (movesb) desde RSi hasta RDI. Luego incrementa o decrementa la direccion a la que apuntan ambos registros. 
+> - Si usamos movsb los incrementa o decrementa en 1 byte.
+> - Si usamos movsw los incrementa o decrementa en 2 bytes.
+> - Si usamos movesd los incrementa o decrementa en 4 bytes.
+> - Si usamos movesq los incrementa o decrementa en 8 bytes.
