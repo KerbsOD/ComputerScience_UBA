@@ -27,6 +27,7 @@ uint32_t contar_espacios(char* string) {
     return espacios;
 }  
 
+
 // Pueden probar acá su código (recuerden comentarlo antes de ejecutar los tests!)
 
 // int main() {
