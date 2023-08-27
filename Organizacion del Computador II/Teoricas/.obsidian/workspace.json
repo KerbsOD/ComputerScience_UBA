@@ -4,43 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "f2adece6d0aa8b5f",
+        "id": "bf067ddd7bfaf0c7",
         "type": "tabs",
         "children": [
           {
-            "id": "f15bafef949de7a8",
+            "id": "480d344c81cee023",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Teorica02-StackyDevtools/Apunte Herramientas de Desarrollo.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b2d7a9ac493abe28",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Teorica02-StackyDevtools/Apunte Pila.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "49e03f3899a55e70",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Teorica02-StackyDevtools/Apunte Pila.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -109,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Teorica02-StackyDevtools/Apunte Herramientas de Desarrollo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Teorica02-StackyDevtools/Apunte Herramientas de Desarrollo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Teorica02-StackyDevtools/Apunte Herramientas de Desarrollo.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -167,26 +135,31 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f15bafef949de7a8",
+  "active": "d537c4ab3877c683",
   "lastOpenFiles": [
-    "Teorica02-StackyDevtools/Apunte Pila.md",
+    "Pasted image 20230827015618.png",
+    "Pasted image 20230827015602.png",
+    "Pasted image 20230827015456.png",
+    "Pasted image 20230827015341.png",
+    "Pasted image 20230827015326.png",
+    "Pasted image 20230827015322.png",
+    "Pasted image 20230827015311.png",
+    "Pasted image 20230827015254.png",
+    "Pasted image 20230827015017.png",
+    "Pasted image 20230827013229.png",
+    "Pasted image 20230827012950.png",
+    "classify_chars.md",
+    "Excalidraw/Drawing 2023-08-26 19.46.32.excalidraw.md",
+    "Excalidraw",
     "Teorica02-StackyDevtools/Apunte Herramientas de Desarrollo.md",
-    "Pasted image 20230825165604.png",
-    "Pasted image 20230825163616.png",
-    "Pasted image 20230825161918.png",
-    "Pasted image 20230825153704.png",
+    "Teorica02-StackyDevtools/Apunte Pila.md",
     "Teorica02/Apunte Herramientas de Desarrollo.md",
     "Teorica02/Apunte Pila.md",
     "Teorica02/T01B_Pila.pdf",
-    "Resources/Pasted image 20230824234446.png",
-    "Resources/Pasted image 20230825000924.png",
-    "Resources/Pasted image 20230825000910.png",
-    "Resources/Pasted image 20230825000824.png",
-    "Resources/Pasted image 20230825000805.png",
-    "Resources/Pasted image 20230824235119.png",
     "Teorica01-Arquitectura/Apunte.md",
     "Teorica01-Arquitectura/Teorica01-ArquitecturaBásica.pdf",
     "Teorica01-Arquitectura"
