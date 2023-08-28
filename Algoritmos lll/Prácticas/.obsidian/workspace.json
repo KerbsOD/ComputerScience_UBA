@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5eab1e01d235d7ea",
+            "id": "60c8c260ec39c0d0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Practica01-Tecnicas_Algoritmicas/Soluciones-Practica01.md",
+                "file": "Practica01-Tecnicas_Algoritmicas/Apunte.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Practica01-Tecnicas_Algoritmicas/Soluciones-Practica01.md",
+                "file": "Practica01-Tecnicas_Algoritmicas/Apunte.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Practica01-Tecnicas_Algoritmicas/Soluciones-Practica01.md",
+                "file": "Practica01-Tecnicas_Algoritmicas/Apunte.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Practica01-Tecnicas_Algoritmicas/Soluciones-Practica01.md"
+                "file": "Practica01-Tecnicas_Algoritmicas/Apunte.md"
               }
             }
           }
@@ -146,10 +146,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5eab1e01d235d7ea",
+  "active": "60c8c260ec39c0d0",
   "lastOpenFiles": [
-    "Pasted image 20230822134021.png",
+    "Practica01-Tecnicas_Algoritmicas/Diapos.pdf",
+    "Practica01-Tecnicas_Algoritmicas/Apunte.md",
+    "Resources",
+    "Practica01-Tecnicas_Algoritmicas/prac-tecnicas-algo.pdf",
     "Practica01-Tecnicas_Algoritmicas/Soluciones-Practica01.md",
+    "Resources/Pasted image 20230822134021.png",
     "Práctica1/ej01/README.md"
   ]
 }

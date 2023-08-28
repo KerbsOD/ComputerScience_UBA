@@ -1,4 +1,6 @@
 {
   "accentColor": "",
-  "showViewHeader": false
+  "showViewHeader": false,
+  "theme": "moonstone",
+  "cssTheme": "Minimal"
 }

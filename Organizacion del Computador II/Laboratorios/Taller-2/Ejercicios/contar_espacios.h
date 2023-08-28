@@ -14,9 +14,9 @@
 */
 
 // Dado un string, retorna su longitud, es decir la cantidad de caracteres que este tiene. No se permite el uso de 'strlen'.
-uint32_t longitud_de_string(char* string);
+uint32_t longitud_de_string(const char* string);
 
 // Dado un string, retorna la cantidad de espacios que hay en él.
-uint32_t contar_espacios(char* string);
+uint32_t contar_espacios(const char* string);
 
 #endif // __CONTAR_ESPACIOS_H__

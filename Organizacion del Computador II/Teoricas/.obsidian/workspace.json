@@ -14,8 +14,21 @@
               "type": "empty",
               "state": {}
             }
+          },
+          {
+            "id": "b0509b52b07cf005",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Aounte.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -81,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Aounte.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Aounte.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +133,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Aounte.md"
+              }
             }
           }
         ]
@@ -139,8 +156,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "d537c4ab3877c683",
+  "active": "b0509b52b07cf005",
   "lastOpenFiles": [
+    "Pasted image 20230827232236.png",
+    "Aounte.md",
     "Pasted image 20230827015618.png",
     "Pasted image 20230827015602.png",
     "Pasted image 20230827015456.png",
@@ -151,7 +170,6 @@
     "Pasted image 20230827015254.png",
     "Pasted image 20230827015017.png",
     "Pasted image 20230827013229.png",
-    "Pasted image 20230827012950.png",
     "classify_chars.md",
     "Excalidraw/Drawing 2023-08-26 19.46.32.excalidraw.md",
     "Excalidraw",
