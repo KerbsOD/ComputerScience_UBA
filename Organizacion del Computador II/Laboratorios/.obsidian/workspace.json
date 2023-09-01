@@ -1,39 +1,50 @@
 {
   "main": {
-    "id": "44fa6238c0f8d647",
+    "id": "aeeccc22fb9566be",
     "type": "split",
     "children": [
       {
-        "id": "df945625cdd3cbc8",
+        "id": "b0f78b65147b9757",
         "type": "tabs",
         "children": [
           {
-            "id": "4b420b70dcd891f3",
+            "id": "f957031e4ab690e4",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Taller-2/enunciado.pdf"
+              }
+            }
+          },
+          {
+            "id": "ff555e585e7db67e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Taller-2/Apunte.md",
-                "mode": "source",
+                "file": "Taller-3/Apunte.md",
+                "mode": "preview",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "e1ca7bf379187f35",
+    "id": "ef858bb648a7699b",
     "type": "split",
     "children": [
       {
-        "id": "c1724269aacf7ecd",
+        "id": "ad4761a0ccdcb863",
         "type": "tabs",
         "children": [
           {
-            "id": "08a9d3f47cff0f97",
+            "id": "223a66468450983e",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +54,7 @@
             }
           },
           {
-            "id": "5358e29c2ee8db8e",
+            "id": "042d6af097adb9b7",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +69,7 @@
             }
           },
           {
-            "id": "b456e4b8770443bf",
+            "id": "95b0b703750daa11",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -72,20 +83,20 @@
     "width": 300
   },
   "right": {
-    "id": "39a79c8a641e16b1",
+    "id": "71f8b962186d313c",
     "type": "split",
     "children": [
       {
-        "id": "b04ff737100dbc61",
+        "id": "0015b5e9fc50d623",
         "type": "tabs",
         "children": [
           {
-            "id": "aec0ff9468506d4e",
+            "id": "374cb4e1729214ee",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Taller-2/Apunte.md",
+                "file": "Taller-3/Apunte.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +108,19 @@
             }
           },
           {
-            "id": "f60896aff5a52984",
+            "id": "8e54586315850225",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Taller-2/Apunte.md",
+                "file": "Taller-3/Apunte.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "45e2346798401f92",
+            "id": "3c1e9dc152d87fdd",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,12 +131,12 @@
             }
           },
           {
-            "id": "e67fe6c860f65d11",
+            "id": "59a067998203ff2e",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Taller-2/Apunte.md"
+                "file": "Taller-3/Apunte.md"
               }
             }
           }
@@ -147,24 +158,20 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "4b420b70dcd891f3",
+  "active": "ff555e585e7db67e",
   "lastOpenFiles": [
-    "Resources/Pasted image 20230824114200.png",
-    "Excalidraw/Drawing 2023-08-24 11.44.38.excalidraw.md",
-    "Taller-2/Apunte.md",
-    "Resources/Pasted image 20230824163844.png",
-    "Resources/Pasted image 20230824121807.png",
-    "Resources/Pasted image 20230824121403.png",
-    "Resources/Pasted image 20230824115825.png",
-    "Resources/Pasted image 20230824115447.png",
-    "Pasted image 20230823170714.png",
-    "Pasted image 20230823161217.png",
-    "Resources/Pasted image 20230823134821.png",
-    "Resources/Pasted image 20230823155917.png",
-    "Resources",
-    "Excalidraw/Drawing 2023-08-23 13.26.50.excalidraw.md",
-    "Drawing 2023-08-23 13.34.12.excalidraw.md",
+    "Excalidraw/Drawing 2023-08-31 05.48.17.excalidraw.md",
+    "Taller-3/Apunte.md",
+    "Pasted image 20230831060729.png",
+    "Pasted image 20230831060116.png",
+    "Taller-2/p01-c02c-Structs.pdf",
+    "Taller-2/enunciado.pdf",
+    "Pasted Image 20230831054820_516.png",
+    "Taller-3/p01-c03c-StackFrame.pdf",
+    "Taller-3/p01-c03-x86programming.pdf",
+    "Pasted image 20230831053337.png",
+    "Excalidraw/Drawing 2023-08-31 05.20.25.excalidraw.md",
     "Excalidraw",
-    "Taller-2"
+    "Taller-2/Apunte.md"
   ]
 }

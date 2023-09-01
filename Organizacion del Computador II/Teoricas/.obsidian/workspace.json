@@ -1,48 +1,39 @@
 {
   "main": {
-    "id": "ded28b9ea532e83b",
+    "id": "d547cc97c37c4f08",
     "type": "split",
     "children": [
       {
-        "id": "bf067ddd7bfaf0c7",
+        "id": "08d9dee802970a0d",
         "type": "tabs",
         "children": [
           {
-            "id": "480d344c81cee023",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "b0509b52b07cf005",
+            "id": "a7f3671329eda1f5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Aounte.md",
+                "file": "Teorica01-Arquitectura/Apunte.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "91844840678eab18",
+    "id": "abefb7b9f68ce4b0",
     "type": "split",
     "children": [
       {
-        "id": "eba4f25ddf363a93",
+        "id": "77861026c4029d67",
         "type": "tabs",
         "children": [
           {
-            "id": "d537c4ab3877c683",
+            "id": "147d1a87a34e0ee1",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -52,7 +43,7 @@
             }
           },
           {
-            "id": "2816c757c147b1fc",
+            "id": "b9576d557e1d6a7e",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -67,7 +58,7 @@
             }
           },
           {
-            "id": "d79a04d6e9d8afd7",
+            "id": "9bf5621bc7076448",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -81,20 +72,20 @@
     "width": 300
   },
   "right": {
-    "id": "0b9f751d95240ce2",
+    "id": "ea08b9706261faca",
     "type": "split",
     "children": [
       {
-        "id": "c784ed346843d860",
+        "id": "af6ab00b00b971f3",
         "type": "tabs",
         "children": [
           {
-            "id": "7b5c568382c33c28",
+            "id": "5c2e97bc860517f1",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Aounte.md",
+                "file": "Teorica01-Arquitectura/Apunte.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,19 +97,19 @@
             }
           },
           {
-            "id": "e97e238f81fbc5eb",
+            "id": "443f37e98b5a288d",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Aounte.md",
+                "file": "Teorica01-Arquitectura/Apunte.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "bb91a4bc20dda564",
+            "id": "7e2b7c283e840795",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -129,12 +120,12 @@
             }
           },
           {
-            "id": "b40f0b6d50fd1bbb",
+            "id": "39d19ed9cd8c5245",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Aounte.md"
+                "file": "Teorica01-Arquitectura/Apunte.md"
               }
             }
           }
@@ -152,34 +143,15 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "b0509b52b07cf005",
+  "active": "a7f3671329eda1f5",
   "lastOpenFiles": [
-    "Pasted image 20230827232236.png",
-    "Aounte.md",
-    "Pasted image 20230827015618.png",
-    "Pasted image 20230827015602.png",
-    "Pasted image 20230827015456.png",
-    "Pasted image 20230827015341.png",
-    "Pasted image 20230827015326.png",
-    "Pasted image 20230827015322.png",
-    "Pasted image 20230827015311.png",
-    "Pasted image 20230827015254.png",
-    "Pasted image 20230827015017.png",
-    "Pasted image 20230827013229.png",
-    "classify_chars.md",
-    "Excalidraw/Drawing 2023-08-26 19.46.32.excalidraw.md",
-    "Excalidraw",
-    "Teorica02-StackyDevtools/Apunte Herramientas de Desarrollo.md",
     "Teorica02-StackyDevtools/Apunte Pila.md",
-    "Teorica02/Apunte Herramientas de Desarrollo.md",
-    "Teorica02/Apunte Pila.md",
-    "Teorica02/T01B_Pila.pdf",
     "Teorica01-Arquitectura/Apunte.md",
-    "Teorica01-Arquitectura/Teorica01-ArquitecturaBásica.pdf",
-    "Teorica01-Arquitectura"
+    "Resources/Pasted image 20230821205743.png",
+    "Teorica02-StackyDevtools/Apunte Herramientas de Desarrollo.md",
+    "Teorica03-SIMD/Aounte.md"
   ]
 }
