@@ -58,6 +58,8 @@ Posibles podas:
 - Si hay 2 consonantes juntas solo probamos con vocales.
 - Siempre empezamos los comodines para consonantes con L.
 # Dynamic Programming - Top Down
+
+![[Pasted image 20230903055843.png]]
 ## King Army
 
 ![[Pasted image 20230901105056.png]]
@@ -91,30 +93,14 @@ Posibles podas:
 
 
 ![[Pasted image 20230901151318.png]]
+![[Pasted image 20230903053455.png]]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Caesar’s Legions
-
-## Fire
-
-## Farmer
-
+Notar que en este caso cargamos en la matriz cuantos descansos nos lleva cada decision. Con DP esta carga de parametros es mucho mas rapida para la toma de decisiones. Con sombreado verde estan las decisiones posibles y con borde verde las que se eligen.
 # Dynamic Programming - Bottom Up
 
 
+![[Pasted image 20230903055854.png]]
 
-
+![[Pasted image 20230903055916.png]]
 
 
