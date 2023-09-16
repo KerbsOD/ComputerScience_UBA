@@ -1,0 +1,154 @@
+{
+  "main": {
+    "id": "a78824d2b2d8fbd3",
+    "type": "split",
+    "children": [
+      {
+        "id": "b29d40abc81d8cd5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3ba4a34645c2d964",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "2-Laboratorios/Taller-1/p01-c01b-Assemblerx86.pdf"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "db15c3c88a1f15fe",
+    "type": "split",
+    "children": [
+      {
+        "id": "cefc1e582c525d64",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a31b80cbae01103d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0d0cb3691d0b14a6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a47e104766e94bf3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "664ea6309a400289",
+    "type": "split",
+    "children": [
+      {
+        "id": "34f84f6ad279a346",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "94d952b1becf8863",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2-Laboratorios/Taller-1/p01-c01b-Assemblerx86.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4d696f2fb09dfcdb",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "2-Laboratorios/Taller-1/p01-c01b-Assemblerx86.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f501b2b955f2d9b1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "3b6add37c891ce87",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "2-Laboratorios/Taller-1/p01-c01b-Assemblerx86.pdf"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "a31b80cbae01103d",
+  "lastOpenFiles": [
+    "2-Laboratorios/Taller-4-SIMD",
+    "2-Laboratorios/Taller-1/p01-c01a-Introduccion.pdf",
+    "2-Laboratorios/Taller-3-ABI/p01-c03-x86programming.pdf",
+    "1-Teoricas/Teorica02-StackyDevtools/Apunte Herramientas de Desarrollo.md"
+  ]
+}
