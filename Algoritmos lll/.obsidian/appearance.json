@@ -2,5 +2,6 @@
   "accentColor": "",
   "cssTheme": "Atom",
   "showViewHeader": false,
-  "theme": "moonstone"
+  "theme": "moonstone",
+  "baseFontSize": 18
 }

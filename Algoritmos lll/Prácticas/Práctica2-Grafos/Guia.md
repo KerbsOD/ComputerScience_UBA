@@ -59,6 +59,27 @@ Teniendo $G_{n} \cup K_{1}$ por HI sabemos que $G_{n}$ tiene un unico par de ver
 
 Sea G mi grafo con $n = 2(k+1)$ vertices y $m > (k+1)^{2}$ aristas.
 Ahora supongamos que creamos un grafo G' a partir de G pero sin 2 vertices $v, w \in V(G)$.
+
+**HI** 
+$G'$ n' = 2(k+1) y m' > (k+1)$^{2}$
+n' = 2k + 2 y m' > $k^{2}$ + 2k + 1
+n' = 2k +2 -2 y m > $k^2$ + 2k + 1 - (k-1) - (k-2) = $k^2$ + 2k + 1 -k +1 - k + 2
+n' =2k y m' > $k^2$ +  4
+
+2k vertices y que tengo mas de $k^2$ +4 aristas 
+
+Si cuando tengo mas de k^2 aristas, tengo un triangulo
+Entonces al tener mas de k^2 + 4 aristas, claramente tengo un triangulo.
+
+Como en mi grafo sin 2 vertices tengo un triangulo por HI entonces, este mismo grafo con los 2 vertices de mas tiene un triangulo. Porque es el mismo k3 con vertices y aristas extra.
+
+$G' - 2$ 
+$|V(G'-2)| = 2k$ 
+$|E(G'-2)| > k^{2} + 4 > k^2$ 
+Por HI como tenemos un grafo con $k^2$ aristas + 4 aristas y sabiamos que con m > $k^2$ se cumplia que tiene un triangulo entonces tiene un triangulo. Es un k3 con mas boludeces arriba.
+
+m > $k^2$ $\implies$ m' > $k^2$ + 4 
+
 $|V(G')| = 2(k+1) - 2$ y $|E(G')| > (k+1)^{2} - ((k-1) + (k-2))$. 
 
 > Recordar que cada nodo puede conectarse con como mucho k-1 nodos en el grafo. Como no sabemos el grado de los nodos que sacamos. Asumimos el peor caso. Sacamos el primer nodo que podia tener k-1 aristas. Sacamos el segundo nodo y como asumimos que el primero estaba conectado a este, cuando sacamos el primer nodo perdimos la arista que conectaba a este segundo asi que como mucho puede tener k-2 aristas. (estamso en grafos no direccionados).
