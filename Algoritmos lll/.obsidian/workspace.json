@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b9dd8a9a918c735e",
+            "id": "28441bcb53ccb552",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -16,16 +16,6 @@
                 "file": "Prácticas/Práctica2-Grafos/Guia.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "1f75f7f0c4b971e2",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Drawing 2023-09-18 04.13.46.excalidraw.md"
               }
             }
           }
@@ -157,22 +147,26 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b9dd8a9a918c735e",
+  "active": "ac7f0d0fc802c4f8",
   "lastOpenFiles": [
-    "Pasted image 20230918064359.png",
-    "Pasted image 20230918052842.png",
-    "Excalidraw/Drawing 2023-09-18 04.13.46.excalidraw.md",
+    "Recursos/Pasted image 20230918222006.png",
+    "Recursos/Pasted image 20230919032102.png",
     "Prácticas/Práctica2-Grafos/Guia.md",
-    "Pasted image 20230918052505.png",
-    "Pasted image 20230918052034.png",
-    "Pasted image 20230918043320.png",
-    "Pasted image 20230918041939.png",
-    "Pasted image 20230918041610.png",
+    "Excalidraw/Drawing 2023-09-19 03.18.58.excalidraw.md",
+    "Excalidraw/Drawing 2023-09-19 02.03.27.excalidraw.md",
+    "Recursos/Pasted image 20230919013844.png",
+    "Recursos/Pasted image 20230919020530.png",
+    "Recursos/Pasted Image 20230919020331_911.png",
+    "Excalidraw/Drawing 2023-09-18 20.37.46.excalidraw.md",
+    "Recursos/Pasted image 20230919012932.png",
+    "Recursos/Pasted image 20230919011148.png",
+    "Recursos/Pasted image 20230919001236.png",
+    "Recursos/Pasted image 20230919000038.png",
+    "Recursos/Pasted image 20230918235943.png",
+    "Recursos/Pasted image 20230918235716.png",
+    "Excalidraw/Drawing 2023-09-18 17.36.44.excalidraw.md",
+    "Excalidraw/Drawing 2023-09-18 04.13.46.excalidraw.md",
     "Excalidraw/Drawing 2023-09-18 02.50.35.excalidraw.md",
-    "Pasted image 20230918034659.png",
-    "Pasted image 20230918034516.png",
-    "Pasted image 20230918032658.png",
-    "Pasted image 20230918032522.png",
     "Excalidraw",
     "Recursos.md",
     "Recursos"

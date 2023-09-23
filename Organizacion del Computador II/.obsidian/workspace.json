@@ -8,16 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3ba4a34645c2d964",
+            "id": "45ef6635397e7076",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "2-Laboratorios/Taller-1/p01-c01b-Assemblerx86.pdf"
+                "file": "1-Teoricas/Teorica02-StackyDevtools/Apunte Herramientas de Desarrollo.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1dccfac24cd85214",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "a.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -83,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2-Laboratorios/Taller-1/p01-c01b-Assemblerx86.pdf",
+                "file": "a.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2-Laboratorios/Taller-1/p01-c01b-Assemblerx86.pdf",
+                "file": "a.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +138,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2-Laboratorios/Taller-1/p01-c01b-Assemblerx86.pdf"
+                "file": "a.md"
+              }
+            }
+          },
+          {
+            "id": "9fca2d5241ff829d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
               }
             }
           }
@@ -141,14 +166,28 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "a31b80cbae01103d",
+  "active": "1dccfac24cd85214",
   "lastOpenFiles": [
-    "2-Laboratorios/Taller-4-SIMD",
-    "2-Laboratorios/Taller-1/p01-c01a-Introduccion.pdf",
+    "1-Teoricas/Teorica02-StackyDevtools/Apunte Herramientas de Desarrollo.md",
+    "a.md",
+    "1-Teoricas/Teorica03-SIMD/Aounte.md",
+    "1-Teoricas/Teorica03-SIMD/T03-Modelo_SIMD_IA32.pdf",
+    "2-Laboratorios/Taller-3-ABI/p01-c03-cheatsheet.pdf",
     "2-Laboratorios/Taller-3-ABI/p01-c03-x86programming.pdf",
-    "1-Teoricas/Teorica02-StackyDevtools/Apunte Herramientas de Desarrollo.md"
+    "2-Laboratorios/Taller-3-ABI/p01-c03b-CyASM.pdf",
+    "1-Teoricas/Teorica02-StackyDevtools/Apunte Pila.md",
+    "1-Teoricas/Teorica02-StackyDevtools/T02_A_Devtools.pdf",
+    "2-Laboratorios/Taller-4-SIMD/Apunte.md",
+    "2-Laboratorios/Taller-1/p01-c01b-Assemblerx86.pdf",
+    "Pasted image 20230920065442.png",
+    "Excalidraw/Drawing 2023-09-20 06.51.43.excalidraw.md",
+    "Pasted Image 20230920065345_099.png",
+    "Excalidraw",
+    "2-Laboratorios/Taller-4-SIMD",
+    "2-Laboratorios/Taller-1/p01-c01a-Introduccion.pdf"
   ]
 }
