@@ -11,11 +11,9 @@
             "id": "45ef6635397e7076",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "1-Teoricas/Teorica02-StackyDevtools/Apunte Herramientas de Desarrollo.md",
-                "mode": "source",
-                "source": false
+                "file": "2-Laboratorios/Taller-4-SIMD/p01c04-SIMD.pdf"
               }
             }
           },
@@ -25,7 +23,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "a.md",
+                "file": "1-Teoricas/Teorica02-StackyDevtools/Apunte Pila.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "a.md",
+                "file": "1-Teoricas/Teorica02-StackyDevtools/Apunte Pila.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "a.md",
+                "file": "1-Teoricas/Teorica02-StackyDevtools/Apunte Pila.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "a.md"
+                "file": "1-Teoricas/Teorica02-StackyDevtools/Apunte Pila.md"
               }
             }
           },
@@ -172,22 +170,31 @@
   },
   "active": "1dccfac24cd85214",
   "lastOpenFiles": [
-    "1-Teoricas/Teorica02-StackyDevtools/Apunte Herramientas de Desarrollo.md",
-    "a.md",
     "1-Teoricas/Teorica03-SIMD/Aounte.md",
+    "2-Laboratorios/Taller-4-SIMD/SIMD_Conversiones_Shuffle_Blend.pdf",
+    "Intel-SystemProgramming.pdf",
+    "Intel-ISA.pdf",
+    "Intel-BasicArquitecture.pdf",
+    "Computer-Arquitecture.pdf",
+    "Resources/Pasted image 20230920065442.png",
+    "Resources/Pasted Image 20230920065345_099.png",
+    "2-Laboratorios/Taller-4-SIMD/src/tests/data/resultados_nuestros/Wargames.64x37.bmp.temperature.ASM.bmp",
+    "2-Laboratorios/Taller-4-SIMD/src/tests/data/resultados_catedra/Wargames.64x37.bmp.temperature.C.bmp",
+    "2-Laboratorios/Taller-4-SIMD/src/tests/data/resultados_nuestros/Wargames.512x300.bmp.temperature.ASM.bmp",
+    "2-Laboratorios/Taller-4-SIMD/src/tests/data/resultados_catedra/Wargames.512x300.bmp.temperature.C.bmp",
+    "2-Laboratorios/Taller-4-SIMD/src/tests/data/resultados_nuestros/Wargames.32x18.bmp.temperature.ASM.bmp",
+    "2-Laboratorios/Taller-4-SIMD/src/tests/data/resultados_catedra/Wargames.32x18.bmp.temperature.C.bmp",
+    "2-Laboratorios/Taller-4-SIMD/src/tests/data/resultados_nuestros/Wargames.256x150.bmp.temperature.ASM.bmp",
+    "2-Laboratorios/Taller-4-SIMD/src/tests/data/resultados_catedra/Wargames.256x150.bmp.temperature.C.bmp",
+    "2-Laboratorios/Taller-4-SIMD/p01c04-SIMD.pdf",
+    "1-Teoricas/Teorica02-StackyDevtools/Apunte Herramientas de Desarrollo.md",
     "1-Teoricas/Teorica03-SIMD/T03-Modelo_SIMD_IA32.pdf",
+    "a.md",
     "2-Laboratorios/Taller-3-ABI/p01-c03-cheatsheet.pdf",
     "2-Laboratorios/Taller-3-ABI/p01-c03-x86programming.pdf",
     "2-Laboratorios/Taller-3-ABI/p01-c03b-CyASM.pdf",
     "1-Teoricas/Teorica02-StackyDevtools/Apunte Pila.md",
-    "1-Teoricas/Teorica02-StackyDevtools/T02_A_Devtools.pdf",
     "2-Laboratorios/Taller-4-SIMD/Apunte.md",
-    "2-Laboratorios/Taller-1/p01-c01b-Assemblerx86.pdf",
-    "Pasted image 20230920065442.png",
-    "Excalidraw/Drawing 2023-09-20 06.51.43.excalidraw.md",
-    "Pasted Image 20230920065345_099.png",
-    "Excalidraw",
-    "2-Laboratorios/Taller-4-SIMD",
-    "2-Laboratorios/Taller-1/p01-c01a-Introduccion.pdf"
+    "Excalidraw/Drawing 2023-09-20 06.51.43.excalidraw.md"
   ]
 }

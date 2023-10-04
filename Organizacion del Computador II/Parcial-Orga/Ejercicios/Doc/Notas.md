@@ -1,0 +1,1 @@
+x/s $rdi        -> Para ver el string en un registro. 

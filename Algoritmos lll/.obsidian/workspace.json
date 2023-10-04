@@ -11,15 +11,36 @@
             "id": "28441bcb53ccb552",
             "type": "leaf",
             "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Prácticas/Práctica3-Arboles/prac-recorridos-arboles.pdf"
+              }
+            }
+          },
+          {
+            "id": "7a0b352fb411fd31",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "Prácticas/Práctica2-Grafos/Guia.md",
+                "file": "Prácticas/Práctica3-Arboles/Apuntes.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "dc967b16015b88c1",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Pasted image 20230924091237.png"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -85,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Prácticas/Práctica2-Grafos/Guia.md",
+                "file": "Pasted image 20230924091237.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Prácticas/Práctica2-Grafos/Guia.md",
+                "file": "Pasted image 20230924091237.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Prácticas/Práctica2-Grafos/Guia.md"
+                "file": "Pasted image 20230924091237.png"
               }
             }
           }
@@ -147,23 +168,24 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "ac7f0d0fc802c4f8",
+  "active": "dc967b16015b88c1",
   "lastOpenFiles": [
+    "Prácticas/Práctica3-Arboles/Apuntes.md",
+    "Pasted image 20230924091256.png",
+    "Pasted image 20230924091237.png",
+    "Pasted image 20230924091115.png",
+    "Pasted image 20230924085735.png",
+    "Pasted image 20230924085646.png",
+    "Pasted image 20230924082619.png",
+    "Prácticas/Práctica3-Arboles/prac-recorridos-arboles.pdf",
+    "Prácticas/Práctica2-Grafos/Guia.md",
     "Recursos/Pasted image 20230918222006.png",
     "Recursos/Pasted image 20230919032102.png",
-    "Prácticas/Práctica2-Grafos/Guia.md",
     "Excalidraw/Drawing 2023-09-19 03.18.58.excalidraw.md",
     "Excalidraw/Drawing 2023-09-19 02.03.27.excalidraw.md",
     "Recursos/Pasted image 20230919013844.png",
     "Recursos/Pasted image 20230919020530.png",
-    "Recursos/Pasted Image 20230919020331_911.png",
     "Excalidraw/Drawing 2023-09-18 20.37.46.excalidraw.md",
-    "Recursos/Pasted image 20230919012932.png",
-    "Recursos/Pasted image 20230919011148.png",
-    "Recursos/Pasted image 20230919001236.png",
-    "Recursos/Pasted image 20230919000038.png",
-    "Recursos/Pasted image 20230918235943.png",
-    "Recursos/Pasted image 20230918235716.png",
     "Excalidraw/Drawing 2023-09-18 17.36.44.excalidraw.md",
     "Excalidraw/Drawing 2023-09-18 04.13.46.excalidraw.md",
     "Excalidraw/Drawing 2023-09-18 02.50.35.excalidraw.md",
