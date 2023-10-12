@@ -23,7 +23,7 @@ int puentes;
 void dfs(int v, int padre, int nivel, Arista &evitar) {
     padreDe[v]        = padre;
     nivelDe[v]        = nivel;
-    minimoNivelDe[v] = nivel;
+    minimoNivelDe[v]  = nivel;
     
     for (int u : vecinosDe[v]) {
         if ((v == evitar.first && u == evitar.second) || (v == evitar.second && u == evitar.first)) {
