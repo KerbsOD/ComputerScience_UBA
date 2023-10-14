@@ -1,13 +1,12 @@
 #include<iostream>
-#include<cstring>
 #include<vector>
 #include<climits>
 #include<cmath>
-#include<queue>
-#include<algorithm>
-#include<fstream>
-#include<string>
 using namespace std;
+#define MINFLOAT  -10000000000000.0
+#define n 10000
+#define m 100000
+
 struct CostoDyR {
     float costo;
     int   D;
@@ -15,29 +14,35 @@ struct CostoDyR {
 };
 int T, N, M;
 vector<pair<int, int>> res;
-vector<int> u;
-vector<int> v;
-vector<int> D;
-vector<int> R;
-vector<float> W;
-vector<vector<int>> numeroDeArista;
-vector<bool> visited;
-vector<vector<CostoDyR>> adyacencia;
-vector<CostoDyR> minimoPesoParaCadaNodo;
+int   u[m], v[m], D[m], R[m];
+float W[m];
+bool  visited[n];
+CostoDyR adyacencia[n][n], maximoPesoParaCadaNodo[n];
 
 void solucion() {
     float high  = 1000000;
     float low   = 0.00001;
-    float ratio;
+    float ratio = 1.0;
     int Dist;
     int Reps;
     
-    while (high-low > 0.0001) {
+    while (high-low > 0.00001 && fabs(ratio) > 0.00001) {
         float mid = (high+low) / 2.0;
-        visited   = vector<bool>(N+1, false);
         ratio     = 0.0;
         Dist      = 0;
         Reps      = 0;
+
+        /* Inicializo adyacencia */
+        for (int i = 1; i < N+1; i++) {
+            for (int j = 1; j < N+1; j++) {
+                adyacencia[i][j] = {MINFLOAT, 0, 0};
+            }
+        }
+
+        /* Inicializo maximoPeso */
+        for (int i = 1; i < N+1; i++) {
+            maximoPesoParaCadaNodo[i] = {MINFLOAT, 0, 0};
+        }
 
         /* Calculo los pesos para cada Arista y populamos la matriz de adyacencia*/
         for (int i = 0; i < M; i++) {
@@ -45,21 +50,22 @@ void solucion() {
             adyacencia[u[i]][v[i]] = {W[i], D[i], R[i]};
             adyacencia[v[i]][u[i]] = {W[i], D[i], R[i]};
         }
-        
+
         /* Empezamos por el nodo 1 */
         for (int i = 1; i < N+1; i++) {
-            minimoPesoParaCadaNodo[i] = adyacencia[1][i];
+            maximoPesoParaCadaNodo[i] = adyacencia[1][i];
+            visited[i] = false;
         }
         visited[1] = true;
 
         for (int i = 2; i < N+1; i++) {
             int nodoMinimoPeso = 0;
-            CostoDyR minimoPeso = {MAXFLOAT, 0, 0};
+            CostoDyR minimoPeso = {MINFLOAT, 0, 0};
             int numArista = -1;
 
             for (int j = 1; j < N+1; j++) {
-                if (visited[j] == false && minimoPesoParaCadaNodo[j].costo < minimoPeso.costo) {
-                    minimoPeso = minimoPesoParaCadaNodo[j];
+                if (visited[j] == false && maximoPesoParaCadaNodo[j].costo > minimoPeso.costo) {
+                    minimoPeso = maximoPesoParaCadaNodo[j];
                     nodoMinimoPeso = j;
                 }
             }
@@ -70,8 +76,8 @@ void solucion() {
             visited[nodoMinimoPeso] = true;
 
             for (int j = 1; j < N+1; j++) {
-                if (adyacencia[nodoMinimoPeso][j].costo < minimoPesoParaCadaNodo[j].costo) {
-                    minimoPesoParaCadaNodo[j] = adyacencia[nodoMinimoPeso][j];
+                if (adyacencia[nodoMinimoPeso][j].costo > maximoPesoParaCadaNodo[j].costo) {
+                    maximoPesoParaCadaNodo[j] = adyacencia[nodoMinimoPeso][j];
                 }
             }            
         }
@@ -93,17 +99,6 @@ int main () {
 
     while (T > 0) {
         cin >> N >> M;
-        
-        /* Para cada arista tenemos su u, v, D, R, W */
-        u                      = vector<int>(M, -1);
-        v                      = vector<int>(M, -1);
-        D                      = vector<int>(M, -1);
-        R                      = vector<int>(M, -1);
-        W                      = vector<float>(M, -1);
-        numeroDeArista         = vector<vector<int>>(N+1, vector<int>(N+1, -1));
-        adyacencia             = vector<vector<CostoDyR>>(N+1, vector<CostoDyR>(N+1, {MAXFLOAT, 0, 0}));
-        minimoPesoParaCadaNodo = vector<CostoDyR>(N+1, {MAXFLOAT, 0, 0});
-
         /* Inicializamos las variables */
         for (int i = 0; i < M; i++) {
             int orig, dest, dist, rep;
@@ -113,9 +108,7 @@ int main () {
             v[i] = dest;
             D[i] = dist;
             R[i] = rep;
-            W[i] = MAXFLOAT;
-            numeroDeArista[orig][dest] = i;
-            numeroDeArista[dest][orig] = i;
+            W[i] = MINFLOAT;
         }
         solucion();
         T--;
@@ -124,4 +117,5 @@ int main () {
     for (auto r : res) {
         cout << r.first << " " << r.second << endl;
     }
+    
 }

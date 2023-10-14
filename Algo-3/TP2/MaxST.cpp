@@ -8,8 +8,8 @@ using namespace std;
 
 
 struct Arista {
-    int nodoA;
-    int nodoB;
+    int v;
+    int u;
     int peso;
 
     bool operator<(const Arista &a) const {
@@ -21,57 +21,67 @@ struct Arista {
     }
 };
 
-vector<Arista> Kruskal(int N, vector<Arista> &aristas) {
 
-    /* Inicializamos las variables */
-    int nodosConectados  = 0;
-    vector<Arista> AGM   = {};
-    vector<bool> visited = vector<bool>(N+1, false);
+vector<Arista> Prim(int N, vector<vector<Arista>> &vecinos) {
     
-    /* Queremos las aristas ordenadas de mayor a menor */
-    sort(aristas.begin(), aristas.end(), greater<Arista>());  
+    /* Inicializacion de variables */
+    vector<Arista> AGM = {};
+    vector<bool> visited(N, false);
+    priority_queue<Arista, vector<Arista>, greater<Arista> > heap;
 
-    /* Recorremos todas las aristas */
-    while (nodosConectados < N) {
-        Arista minima = aristas.back();
-        aristas.pop_back();
+    /* Insertamos una arista al azar */
+    heap.push(vecinos[0][0]);
+    visited[vecinos[0][0].u] = true;
 
-        int v = minima.nodoA;
-        int u = minima.nodoB;
+    /* Loopeamos */
+    while (heap.empty() == false) {
 
-        /* Agregamos los 2 nodos si es que ambos no fueron visitados */
-        if (visited[v] == false && visited[u] == false) {
-            visited[v] = true;
-            visited[u] = true;
-            nodosConectados += 2;
-            AGM.push_back(minima);
+        /* Elegimos la arista de costo minimo */
+        Arista actual = heap.top();
+        heap.pop();
+
+        /* Lo separamos en nodo destino y  peso de la arista */
+        int nodo = actual.v;
+        int peso = actual.peso;
+
+        /* Si no lo visite, lo agrego */        
+        if (visited[nodo] == false) {
+            visited[nodo] = true;
+            AGM.push_back(actual);
+
+            for (Arista adyacente : vecinos[nodo]) {
+                int nodoAdyacente = adyacente.v;
+                if (visited[nodoAdyacente] == false) {
+                    heap.push(adyacente);
+                }
+            }
         }
 
-        /* Agregamos el primer nodo si este no fue visitado */
-        if (visited[v] == false) {
-            visited[v] = true;
-            nodosConectados += 1;
-            AGM.push_back(minima);
-        }
-        
-        /* Agregamos el segundo nodo si este no fue visitado */
-        if (visited[u] == false) {
-            visited[u] = true;
-            nodosConectados += 1;
-            AGM.push_back(minima);
-        }
-    }    
-
+    }
+    
     return AGM;
 }
 
 
-int main() {
-    int N = 3;
-    vector<Arista> aristas = {{1, 2, 0}, {1, 3, 2}, {2, 3, 1}};
-    vector<Arista> a = Kruskal(N, aristas);
 
-    for (auto ar : a) {
-        cout << ar.nodoA << "-" << ar.nodoB << ": " << ar.peso << endl;
+int main() {
+    int N = 11;
+    vector<vector<int>> aristas = {{'i', 'j', 0}, {'a', 'e', 1}, {'c', 'i', 1}, {'e', 'f', 1}, {'g', 'h', 1}, {'b', 'd', 2}, {'c', 'j', 2}, {'d', 'e', 2}, 
+                                   {'d', 'h', 2}, {'a', 'd', 4}, {'b', 'c', 4}, {'c', 'h', 4}, {'g', 'i', 4}, {'a', 'b', 5}, {'d', 'f', 5}, {'h', 'i', 6}, 
+                                   {'f', 'g', 7}, {'d', 'g', 11}};
+    vector<vector<Arista>> vecinos(N);
+    for (int i = 0; i < aristas.size(); i++) {
+        int v = aristas[i][0]-97;
+        int u = aristas[i][1]-97;
+        int w = aristas[i][2];
+
+        vecinos[v].push_back({u, v, w});
+        vecinos[u].push_back({v, u, w});
+    }
+
+    vector<Arista> a = Prim(N, vecinos);
+
+    for (auto arista : a) {
+        cout << (char)(arista.v+97) << "-" << (char)(arista.u+97) << ": " << arista.peso << endl;
     }
 }
