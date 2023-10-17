@@ -1,3 +1,5 @@
 {
-  "spellcheck": false
+  "readableLineLength": true,
+  "spellcheck": false,
+  "promptDelete": false
 }

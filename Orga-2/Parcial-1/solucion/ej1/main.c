@@ -11,66 +11,66 @@ int main (void){
   list_t* list=listNew();
   
   pago_t p1;
-  p1.monto=1;
+  p1.monto=24;
   p1.cobrador="susan";
-  p1.pagador="bob";
-  p1.aprobado=0;
+  p1.pagador="a";
+  p1.aprobado=1;
 
   pago_t p2;
   p2.monto=10;
   p2.cobrador="susan";
-  p2.pagador="bob";
-  p2.aprobado=0;
+  p2.pagador="b";
+  p2.aprobado=1;
 
   pago_t p3;
   p3.monto=10;
   p3.cobrador="susan";
-  p3.pagador="octo";
+  p3.pagador="c";
   p3.aprobado=1;
 
   pago_t p4;
   p4.monto=5;
   p4.cobrador="susan";
-  p4.pagador="nicolas";
-  p4.aprobado=0;
+  p4.pagador="d";
+  p4.aprobado=1;
 
   pago_t p5;
   p5.monto=50;
-  p5.cobrador="bob";
-  p5.pagador="paul";
-  p5.aprobado=0;
+  p5.cobrador="susan";
+  p5.pagador="e";
+  p5.aprobado=1;
 
 
   pago_t p6;
   p6.monto=50;
-  p6.cobrador="bob";
-  p6.pagador="paul";
+  p6.cobrador="susan";
+  p6.pagador="f";
   p6.aprobado=1;
 
 
   pago_t p7;
   p7.monto=5;
-  p7.cobrador="bob";
-  p7.pagador="josh";
+  p7.cobrador="susan";
+  p7.pagador="g";
   p7.aprobado=1;
 
   pago_t p8;
   p8.monto=25;
-  p8.cobrador="nicolas";
-  p8.pagador="susan";
+  p8.cobrador="susan";
+  p8.pagador="h";
   p8.aprobado=1;
 
   pago_t p9;
   p9.monto=25;
-  p9.cobrador="paul";
-  p9.pagador="susan";
+  p9.cobrador="susan";
+  p9.pagador="i";
   p9.aprobado=1;
 
   pago_t p10;
   p10.monto=25;
   p10.cobrador="susan";
-  p10.pagador="bob";
-  p10.aprobado=0;
+  p10.pagador="j";
+  p10.aprobado=1;
 
 
   listAddLast(list,&p1);
