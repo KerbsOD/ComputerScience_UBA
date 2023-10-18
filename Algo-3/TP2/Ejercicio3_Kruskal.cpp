@@ -74,11 +74,11 @@ RatioTotal Kruskal(double C, vector<Arista> aristas) {
 }
 
 vector<Arista> conexiones;
-pair<int, int> solucion() {
+pair<int, int> solucion(int sumD, int sumR) {
     pair<int, int> sol = {0, 0};
     double ratio       = 1.0;
-    double maxC        = 1000000;
-    double minC        = 0.00001;
+    double maxC        = (float)sumD;
+    double minC        = 1.0/(float)sumR;
 
     while (maxC-minC > 0.0001 && fabs(ratio) > 0.0001) {
         double midC = (maxC+minC)/2.0;
@@ -102,15 +102,20 @@ int main () {
 
     while (T > 0) {
         cin >> N >> M;
+        int sumD = 0;
+        int sumR = 0;
 
         conexiones = {};
         for (int i = 0; i < M; i++) {
             int u, v, d, r;
             cin >> u >> v >> d >> r;
+
+            sumD+=d;
+            sumR+=r;
             conexiones.push_back({u, v, d, r});
         }
         
-        pair<int, int> Distancia_Y_Ratio = solucion();
+        pair<int, int> Distancia_Y_Ratio = solucion(sumD, sumR);
         res.push_back(Distancia_Y_Ratio);
 
         T--;

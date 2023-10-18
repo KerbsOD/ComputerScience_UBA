@@ -181,8 +181,9 @@ split_pagos_usuario_asm:
         cmp rax, 0          ; Si no tienen el mismo nombre, anda al siguiente nodo.
         jne .siguiente
 
-        mov rdi, [r8+1]     ; Guardo en rdi si fue aprobado o no.
-        cmp rdi, 1          ; Si es 1 fue aprobado, si no es 1 fue rechazado.
+        xor rdi, rdi
+        mov dil, [r8+1]     ; Guardo en rdi si fue aprobado o no.
+        cmp dil, 1          ; Si es 1 fue aprobado, si no es 1 fue rechazado.
         jne .rechazado        
 
     .aprobado:

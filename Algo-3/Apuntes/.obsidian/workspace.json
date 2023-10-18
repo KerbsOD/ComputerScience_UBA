@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "b987aa2eec31c8e3",
+        "id": "b751e0c7e27028bd",
         "type": "tabs",
         "children": [
           {
-            "id": "64aa7c452a7f3d40",
+            "id": "c3e61817623bda1a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Apuntes.md",
+                "file": "Camino Minimo.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Apuntes.md",
+                "file": "Camino Minimo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Apuntes.md",
+                "file": "Camino Minimo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Apuntes.md"
+                "file": "Camino Minimo.md"
               }
             }
           }
@@ -146,9 +146,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "64aa7c452a7f3d40",
+  "active": "c3e61817623bda1a",
   "lastOpenFiles": [
-    "Untitled Diagram.svg",
-    "Apuntes.md"
+    "Pasted image 20231018131925.png",
+    "Pasted image 20231018131306.png",
+    "Camino Minimo.md",
+    "Pasted image 20231018101741.png",
+    "Pasted image 20231018101328.png",
+    "Pasted image 20231018093848.png",
+    "Pasted image 20231018092500.png",
+    "Pasted image 20231018083050.png",
+    "Pasted image 20231018082632.png",
+    "Pasted image 20231017161309.png",
+    "Pasted image 20231017160100.png",
+    "Pasted image 20231017144001.png"
   ]
 }

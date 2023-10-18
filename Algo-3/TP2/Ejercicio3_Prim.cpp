@@ -77,7 +77,7 @@ RatioTotal Prim(float C) {
     return {costoTotal, D, R};
 }
 
-pair<int, int> solucion() {
+pair<int, int> solucion(int sd, int sr) {
    
     /* Inicializamos las variables */
     pair<int, int> mejorSolucion = {0, 0};
@@ -105,8 +105,8 @@ int main () {
     res = {};
 
     while (T > 0) {
-        cin >> N >> M;
-
+        cin >> N >> M;  
+        int sumD = 0, sumR = 0;
         vecinos = vector<vector<Arista>>(N+1);
         for (int i = 0; i < M; i++) {
             int u, v, d, r;
@@ -115,7 +115,7 @@ int main () {
             vecinos[v].push_back({u, d, r, 0});
         }
         
-        pair<int, int> Distancia_Y_Ratio = solucion();
+        pair<int, int> Distancia_Y_Ratio = solucion(sumD, sumR);
         res.push_back(Distancia_Y_Ratio);
 
         T--;

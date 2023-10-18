@@ -25,9 +25,9 @@ vector<bool> visited;
 vector<vector<CostoDyR>> adyacencia;
 vector<CostoDyR> minimoPesoParaCadaNodo;
 
-void solucion() {
-    float high  = 1000000;
-    float low   = 0.00001;
+void solucion(int sd, int sr) {
+    float high  = (float)sd;
+    float low   = (float)sr / 1.0;
     float ratio;
     int Dist;
     int Reps;
@@ -93,6 +93,7 @@ int main () {
 
     while (T > 0) {
         cin >> N >> M;
+        int sd=0, sr=0;
         
         /* Para cada arista tenemos su u, v, D, R, W */
         u                      = vector<int>(M, -1);
@@ -108,7 +109,10 @@ int main () {
         for (int i = 0; i < M; i++) {
             int orig, dest, dist, rep;
             cin >> orig >> dest >> dist >> rep;
-
+            
+            sd += dist;
+            sr += rep;
+            
             u[i] = orig;
             v[i] = dest;
             D[i] = dist;
@@ -117,7 +121,7 @@ int main () {
             numeroDeArista[orig][dest] = i;
             numeroDeArista[dest][orig] = i;
         }
-        solucion();
+        solucion(sd, sr);
         T--;
     }
 
