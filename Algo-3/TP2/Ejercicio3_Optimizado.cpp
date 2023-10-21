@@ -19,9 +19,9 @@ float W[m];
 bool  visited[n];
 CostoDyR adyacencia[n][n], maximoPesoParaCadaNodo[n];
 
-void solucion() {
-    float high  = 1000000;
-    float low   = 0.00001;
+void solucion(int sumD, int sumC) {
+    float high  = sumD;
+    float low   = 0.0001;
     float ratio = 1.0;
     int Dist;
     int Reps;
@@ -99,18 +99,23 @@ int main () {
 
     while (T > 0) {
         cin >> N >> M;
+        int sumD = 0, sumC = 0;
+
         /* Inicializamos las variables */
         for (int i = 0; i < M; i++) {
             int orig, dest, dist, rep;
             cin >> orig >> dest >> dist >> rep;
+            
 
+            sumD += dist;
+            sumC += rep;
             u[i] = orig;
             v[i] = dest;
             D[i] = dist;
             R[i] = rep;
             W[i] = MINFLOAT;
         }
-        solucion();
+        solucion(sumD, sumC);
         T--;
     }
 

@@ -129,7 +129,7 @@ split_pagos_usuario_asm:
     push r15                ; Guardo en el stack el nombre de usuario.
     ; Alineado
     
-    mov rax, 24 
+    mov rax, 8 
     mov rcx, r12
     mul rcx
 
@@ -137,7 +137,7 @@ split_pagos_usuario_asm:
     call malloc
     mov r14, rax
 
-    mov rax, 24 
+    mov rax, 8 
     mov rcx, r13
     mul rcx
 
@@ -177,7 +177,7 @@ split_pagos_usuario_asm:
         pop r11
         pop r10
         pop r8
-
+idea detras de la modificacion es correcta o v
         cmp rax, 0          ; Si no tienen el mismo nombre, anda al siguiente nodo.
         jne .siguiente
 
@@ -195,7 +195,7 @@ split_pagos_usuario_asm:
     .rechazado:
         mov r8, [r10]    ; Guardo en el nodo recahzadps la data.
         mov [r15], r8
-        add r15, 24         ; Avanza al siguiente nodo.
+        add r15, 8         ; Avanza al siguiente nodo.
         jmp .siguiente
 
     .siguiente:
@@ -203,7 +203,7 @@ split_pagos_usuario_asm:
         jmp .loopData
 
     .finsplit:
-        mov rdi, 24     ; Muevo a rdi el tamaño de pago splited
+        mov rdi, 8     ; Muevo a rdi el tamaño de pago splited
         call malloc
 
         pop r15     ; Le devolvemos a r15 la direccion de rechazados.
