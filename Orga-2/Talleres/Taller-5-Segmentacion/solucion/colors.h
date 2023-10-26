@@ -27,6 +27,7 @@
 #define C_FG_LIGHT_MAGENTA (0xD)
 #define C_FG_LIGHT_BROWN   (0xE)
 #define C_FG_WHITE         (0xF)
+#define NFB                (0x94)
 
 #define C_BG_BLACK      (0x0 << 4)
 #define C_BG_BLUE       (0x1 << 4)

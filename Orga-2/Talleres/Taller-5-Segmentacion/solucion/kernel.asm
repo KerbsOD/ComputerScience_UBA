@@ -93,9 +93,9 @@ modo_protegido:
     print_text_pm start_pm_msg, start_pm_len, 0x5, 0, 0
 
     ; COMPLETAR - Inicializar pantalla
+    call screen_draw_layout
     ; Ciclar infinitamente 
     .inicioCiclo:
-    call screen_draw_layout
     mov eax, 0xFFFF
     mov ebx, 0xFFFF
     mov ecx, 0xFFFF

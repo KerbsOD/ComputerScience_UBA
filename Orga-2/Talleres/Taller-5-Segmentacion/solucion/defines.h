@@ -12,7 +12,7 @@
 /* Misc */
 /* -------------------------------------------------------------------------- */
 // Y Filas
-#define SIZE_N 40
+#define SIZE_N 50
 #define ROWS   SIZE_N
 
 // X Columnas
@@ -68,7 +68,7 @@
 
 /* COMPLETAR - Tamaños de segmentos */ 
 #define FLAT_SEGM_SIZE   1024*1024*817 
-#define VIDEO_SEGM_SIZE  50*80*2
+#define VIDEO_SEGM_SIZE  ROWS*COLS*2
 
 
 /* Direcciones de memoria */

@@ -18,7 +18,6 @@
 #include "stdint.h"
 #include <unistd.h> 
 
-
 /* Estructura de para acceder a memoria de video */
 // Cada posicion de memoria tiene 2 bytes, c es el caracter y a los atributos 
 typedef struct ca_s {
