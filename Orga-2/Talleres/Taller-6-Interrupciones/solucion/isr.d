@@ -1,0 +1,2 @@
+isr.o : isr.asm
+
