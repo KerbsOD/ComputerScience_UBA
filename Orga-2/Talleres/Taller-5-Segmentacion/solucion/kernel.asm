@@ -94,6 +94,7 @@ modo_protegido:
 
     ; COMPLETAR - Inicializar pantalla
     call screen_draw_layout
+    
     ; Ciclar infinitamente 
     .inicioCiclo:
     mov eax, 0xFFFF
