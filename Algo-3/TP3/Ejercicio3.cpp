@@ -141,7 +141,6 @@ int main() {
                 adj[u].push_back(v); 
                 adj[v].push_back(u); 
                 capacity[u][v] = 1;
-                capacity[v][u] = 1; 
 
                 /* Conecto un nodo source a todas las filas */
                 adj[s].push_back(u);
