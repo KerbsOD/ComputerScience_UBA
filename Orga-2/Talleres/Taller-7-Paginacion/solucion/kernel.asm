@@ -15,6 +15,9 @@ extern screen_draw_layout
 extern pic_reset
 extern pic_enable
 extern idt_init
+extern mmu_init
+extern mmu_init_kernel_dir
+extern mmu_init_task_dir
 
 
 ; COMPLETAR - Definan correctamente estas constantes cuando las necesiten
@@ -89,6 +92,16 @@ modo_protegido:
     mov fs, eax
     mov ss, eax 
 
+    ; Inicializar la MMU
+    call mmu_init
+    call mmu_init_kernel_dir;
+    mov cr3, eax
+
+    ; Activar paginacion
+    mov eax, cr0
+    add eax, 0x80000000
+    mov cr0, eax
+
     ; COMPLETAR - Establecer el tope y la base de la pila
     mov esp, 0x25000
     mov ebp, esp
@@ -106,6 +119,27 @@ modo_protegido:
 
     ; COMPLETAR - Inicializar pantalla
     call screen_draw_layout
+
+    mov eax, cr3
+    push eax
+    push 0x18000
+    call mmu_init_task_dir
+    add esp, 4; 0x18000; break
+    mov cr3, eax
+    mov eax, 420
+    mov ecx, 69
+    mov [0x7000000], eax ;me salta quise editar sin exito isr.asm para atenderm salta luego a GP :(
+    ;mov [0x7001000], ecx
+    pop ebx; cr3 viejo
+    mov cr3, ebx
+
+
+
+
+
+
+
+
     ; Ciclar infinitamente 
     .inicioCiclo:
     mov eax, 0xFFFF

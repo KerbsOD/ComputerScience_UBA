@@ -1,0 +1,6 @@
+1. Necesitamos crear 2 TSS (Task State Segment), agregar los 2 segment descriptor de las TSS a la gdt, un directorio y una tabla para cada tarea e inicializar la TSS. La TSS tiene 0x67 bytes y se encuentra almacenada en la memoria.
+2. modificacion de los registros con informacion de la tarea justo donde se paro. Se produce cuando el scheduler lo dice. Modifica los registros con informacion de una nueva tarea. En el TR se almacena un selector de segmento para la gdt, asi encontramos el task state segment descriptor. Obtiene la informacion con los atributos del descriptor de la gdt.
+3. Que el byte B del descriptor al que queremos saltar no este en 1. O sea, que no este busy. Esto generaria un task anidado.Que el limite de la TSS a usar sea mayor a 0x67.
+4. Se dedica a administrar los cambios de tareas. Su politica es como decide cuando cambiar de tarea.
+5. El cambio de tarea es cada muy poco tiempo por lo que sentimos que se esta ejecutando todo a la vez.
+11. Se guardan los registros en el stack. Se llama al pic para que se apague. Se llama al scheduler para que cambie el contexto a la siguiente tarea. Se guarda el task register (str = store task register) en cx. Se compara ax con cx. Si son iguales se termina. caso contrario se mueve lo que esta en ax al task selector. se salta a la tarea. se termina la funcion. (b) 
