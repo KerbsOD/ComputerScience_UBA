@@ -1,2 +1,0 @@
-kernel.o : kernel.asm
-

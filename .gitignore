@@ -1,0 +1,6 @@
+*.o
+*.tsk
+*.d
+*.elf
+*.sym
+*.bin

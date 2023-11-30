@@ -54,6 +54,7 @@ gdt_entry_t tss_gdt_entry_for_task(tss_t* tss) {
  */
 void tss_set(tss_t tss, int8_t task_id) {
   kassert(task_id >= 0 && task_id < MAX_TASKS, "Invalid task_id");
+
   tss_tasks[task_id] = tss;
 }
 
@@ -71,8 +72,8 @@ tss_t tss_create_user_task(paddr_t code_start) {
   //COMPLETAR: pedir pagina de kernel para la pila de nivel cero
   vaddr_t stack0 = mmu_next_free_kernel_page();
   //COMPLETAR: a donde deberia apuntar la pila de nivel cero?
-  vaddr_t esp0 = stack0 + 0x1000;
-
+  vaddr_t esp0 = stack0 + PAGE_SIZE;
+  
   return (tss_t) {
     .cr3 = cr3,
     .esp = stack,
@@ -88,6 +89,8 @@ tss_t tss_create_user_task(paddr_t code_start) {
     .esp0 = esp0,
     .eflags = EFLAGS_IF,
   };
+
+
 }
 
 /**
@@ -99,6 +102,7 @@ void tss_init(void) {
   gdt[GDT_IDX_TASK_IDLE] = tss_gdt_entry_for_task(??);
   gdt[GDT_IDX_TASK_INITIAL] = ??;
 END*/
-  gdt[GDT_IDX_TASK_IDLE] = tss_gdt_entry_for_task(&tss_idle);
+
   gdt[GDT_IDX_TASK_INITIAL] = tss_gdt_entry_for_task(&tss_initial);
+  gdt[GDT_IDX_TASK_IDLE]    = tss_gdt_entry_for_task(&tss_idle);
 }
