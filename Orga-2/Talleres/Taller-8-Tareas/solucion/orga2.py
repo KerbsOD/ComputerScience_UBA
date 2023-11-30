@@ -2,6 +2,26 @@ from dataclasses import dataclass
 import os
 import gdb
 
+from contextlib import contextmanager
+
+@contextmanager
+def physical_memory(*args, **kwds):
+    is_virtual = 'received: "0"\n'
+    is_physical = 'received: "1"\n'
+    try:
+        previous_mode = gdb.execute('maintenance packet qqemu.PhyMemMode', to_string=True)
+        assert previous_mode.endswith(is_virtual) or previous_mode.endswith(is_physical)
+        previous_mode = int(previous_mode == is_physical)
+
+        # Change to physical mode
+        response = gdb.execute('maintenance packet Qqemu.PhyMemMode:1', to_string=True)
+        assert response == 'sending: Qqemu.PhyMemMode:1\nreceived: "OK"\n'
+        # Run code
+        yield
+    finally:
+        response = gdb.execute(f'maintenance packet Qqemu.PhyMemMode:{previous_mode}', to_string=True)
+        assert response.endswith('received: "OK"\n')
+
 def load_descriptor_table(name, identifier):
     # Cargo todos los registros según qemu
     qemu_registers = gdb.execute('monitor info registers', to_string=True)
@@ -339,7 +359,7 @@ class KernelReloadCommand(gdb.Command):
         gdb.execute('make')
         gdb.execute(f'file {elf}')
         gdb.execute('directory')
-        gdb.execute(f'monitor change floppy0 {diskette} raw')
+        gdb.execute(f'monitor change floppy0 {diskette}')
         gdb.execute('monitor system_reset')
 
 """
@@ -628,12 +648,13 @@ class InfoPageCommand(gdb.Command):
     def invoke(self, argument, from_tty):
         cr3 = load_control_register('cr3', 'CR3')
 
-        if argument == '':
-            print_mappings(cr3)
-        else:
-            u32 = gdb.lookup_type('unsigned int')
-            virtual_addr = int(gdb.parse_and_eval(argument).cast(u32))
-            print_translation(cr3, virtual_addr)
+        with physical_memory():
+            if argument == '':
+                print_mappings(cr3)
+            else:
+                u32 = gdb.lookup_type('unsigned int')
+                virtual_addr = int(gdb.parse_and_eval(argument).cast(u32))
+                print_translation(cr3, virtual_addr)
 
 class InfoPageDirectoryCommand(gdb.Command):
     """Shows present entries in the given page frame"""
@@ -649,15 +670,16 @@ class InfoPageDirectoryCommand(gdb.Command):
             'Attributes:', (format_flags([pcd, pwt], ['PCD', 'PWT']) or 'None set')
         )]
 
-        for i in range(1024):
-            phy, a, pcd, pwt, u_s, r_w, p = get_pd_entry(base, i)
-            if not p:
-                continue
-            rows.append((
-                f'pd[{i:#x}]', '=',
-                'Page Table:', format_address(phy) + ',',
-                'Attributes:', format_flags([a, pcd, pwt, u_s, r_w], ["Accessed", "PCD", "PWT", ["System", "User"], ["Read-Only", "Read/Write"]])
-            ))
+        with physical_memory():
+            for i in range(1024):
+                phy, a, pcd, pwt, u_s, r_w, p = get_pd_entry(base, i)
+                if not p:
+                    continue
+                rows.append((
+                    f'pd[{i:#x}]', '=',
+                    'Page Table:', format_address(phy) + ',',
+                    'Attributes:', format_flags([a, pcd, pwt, u_s, r_w], ["Accessed", "PCD", "PWT", ["System", "User"], ["Read-Only", "Read/Write"]])
+                ))
 
         print_table(rows)
 
@@ -677,26 +699,27 @@ class InfoPageTableCommand(gdb.Command):
             'Attributes:', (format_flags([pcd, pwt], ['PCD', 'PWT']) or 'None set')
         )]
 
-        pd_phy, a, pcd, pwt, u_s, r_w, p = get_pd_entry(base, pd_index)
-        if not p:
-            rows.append((f'pd[{pd_index:#x}]', '--' , 'Not present'))
-            print_table(rows)
-            return
-        rows.append((
-            f'pd[{pd_index:#x}]', '=',
-            'Page Table:', format_address(pd_phy) + ',',
-            'Attributes:', format_flags([a, pcd, pwt, u_s, r_w], ["Accessed", "PCD", "PWT", ["System", "User"], ["Read-Only", "Read/Write"]])
-        ))
-
-        for i in range(1024):
-            phy, g, pat, d, a, pcd, pwt, u_s, r_w, p = get_pt_entry(pd_phy, i)
+        with physical_memory():
+            pd_phy, a, pcd, pwt, u_s, r_w, p = get_pd_entry(base, pd_index)
             if not p:
-                continue
+                rows.append((f'pd[{pd_index:#x}]', '--' , 'Not present'))
+                print_table(rows)
+                return
             rows.append((
-                f'pt[{i:#x}]', '=',
-                'Physical Address:', format_address(phy) + ',',
-                'Attributes:', format_flags([g, d, a, pcd, pwt, u_s, r_w], ["Global", "Dirty", "Accessed", "PCD", "PWT", ["System", "User"], ["Read-Only", "Read/Write"]])
+                f'pd[{pd_index:#x}]', '=',
+                'Page Table:', format_address(pd_phy) + ',',
+                'Attributes:', format_flags([a, pcd, pwt, u_s, r_w], ["Accessed", "PCD", "PWT", ["System", "User"], ["Read-Only", "Read/Write"]])
             ))
+
+            for i in range(1024):
+                phy, g, pat, d, a, pcd, pwt, u_s, r_w, p = get_pt_entry(pd_phy, i)
+                if not p:
+                    continue
+                rows.append((
+                    f'pt[{i:#x}]', '=',
+                    'Physical Address:', format_address(phy) + ',',
+                    'Attributes:', format_flags([g, d, a, pcd, pwt, u_s, r_w], ["Global", "Dirty", "Accessed", "PCD", "PWT", ["System", "User"], ["Read-Only", "Read/Write"]])
+                ))
 
         print_table(rows)
 
@@ -710,20 +733,7 @@ class XPCommand(gdb.Command):
         super().__init__('xp', gdb.COMMAND_STATUS, gdb.COMPLETE_EXPRESSION, False)
 
     def invoke(self, arguments, from_tty):
-        u32 = gdb.lookup_type('unsigned int')
-
-        previous_mode = gdb.execute('maintenance packet qqemu.PhyMemMode', to_string=True)
-        is_virtual = 'sending: qqemu.PhyMemMode\nreceived: "0"\n'
-        is_physical = 'sending: qqemu.PhyMemMode\nreceived: "1"\n'
-        assert previous_mode == is_virtual or previous_mode == is_physical
-        previous_mode = int(previous_mode == is_physical)
-
-        # Change to physical mode
-        response = gdb.execute('maintenance packet Qqemu.PhyMemMode:1', to_string=True)
-        assert response == 'sending: Qqemu.PhyMemMode:1\nreceived: "OK"\n'
-        # Run X
-        gdb.execute(f'x {arguments}')
-        response = gdb.execute(f'maintenance packet Qqemu.PhyMemMode:{previous_mode}', to_string=True)
-        assert response == f'sending: Qqemu.PhyMemMode:{previous_mode}\nreceived: "OK"\n'
+        with physical_memory():
+            gdb.execute(f'x {arguments}')
 
 XPCommand()

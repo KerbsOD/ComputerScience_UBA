@@ -143,27 +143,31 @@ ISRNE 20
 global _isr14
 
 _isr14:
-    ; Estamos en un page fault.
-    pushad
-    mov eax,cr2
+	; Estamos en un page fault.
+	pushad
+    mov eax, cr2
     push eax
     call page_fault_handler
-    cmp byte al,1 
-    je .fin
-    ;COMPLETAR: llamar rutina de atención de page fault, pasandole la dirección que se intentó acceder
+    add esp, 4
+    cmp al, 0
+    je .ring0_exception
+    popad
+    add esp, 4
+    iret
     .ring0_exception:
-
-    ; Si llegamos hasta aca es que cometimos un page fault fuera del area compartida.
-    pop eax
+	; Si llegamos hasta aca es que cometimos un page fault fuera del area compartida.
     call kernel_exception
-
+    add esp, 10*4
+    popad
+    xchg bx, bx
     jmp $
 
-   .fin:
-   pop eax
-   popad
-   add esp, 4 ; error code
-   iret
+    .fin:
+	popad
+	add esp, 4 ; error code
+	iret
+
+
 
 ;; Rutina de atención del RELOJ
 ;; -------------------------------------------------------------------------- ;;

@@ -15,26 +15,19 @@ extern screen_draw_layout
 extern pic_reset
 extern pic_enable
 extern idt_init
-extern mmu_init
 extern mmu_init_kernel_dir
-extern mmu_init_task_dir
 extern tss_init
 extern tasks_screen_draw
 extern sched_init
 extern tasks_init
-extern tasks_screen_update
+
 
 ; COMPLETAR - Definan correctamente estas constantes cuando las necesiten
 %define CS_RING_0_SEL (1<<3) 
 %define DS_RING_0_SEL (3<<3)  
-%define GDT_TASK_INITIAL (11<<3)
-%define GDT_TASK_IDLE (12<<3)
 ; Cada selector ocupa 8 bytes.
 ; Si yo quiero ir al descritor 1 tengo que ir a 1x8bytes.
 ; Si yo quiero ir al descriptor 3 tengo que ir a 3x8bytes
-
-DIVISOR equ 0x300
-
 
 BITS 16
 ;; Saltear seccion de datos
@@ -48,6 +41,8 @@ start_rm_len equ    $ - start_rm_msg
 
 start_pm_msg db     'Iniciando kernel en Modo Protegido'
 start_pm_len equ    $ - start_pm_msg
+
+DIVISOR equ 0x600
 
 ;;
 ;; Seccion de código.
@@ -105,15 +100,6 @@ modo_protegido:
     mov esp, 0x25000
     mov ebp, esp
 
-    ; Inicializar la MMU
-    call mmu_init_kernel_dir;
-    mov cr3, eax
-
-    ; Activar paginacion
-    mov eax, cr0
-    add eax, 0x80000000
-    mov cr0, eax
-
     ; COMPLETAR - Imprimir mensaje de bienvenida - MODO PROTEGIDO
     print_text_pm start_pm_msg, start_pm_len, 0x5, 0, 0
 
@@ -124,28 +110,36 @@ modo_protegido:
     call pic_reset
     call pic_enable
 
-    ; COMPLETAR - Inicializar pantalla
-    call screen_draw_layout
+    ; Inicializar antes del cr0 xd
+    call mmu_init_kernel_dir
+    mov cr3, eax
+    
+    ; Activamos Paginacion
+    mov eax, cr0
+    or  eax, 0x80000000
+    mov cr0, eax
 
-    ; Inicializamos tareas
     call tss_init
     call sched_init
     call tasks_screen_draw
+    call tasks_init
 
+    ; Modificamos velocidad del pic
     mov ax, DIVISOR
     out 0x40, al
     rol ax, 8
     out 0x40, al
 
-    call tasks_init
-    
-    mov  ax, GDT_TASK_INITIAL       ; Posible error. enunciado 7
-    ltr  ax
-    
+    xor eax, eax
+    mov ax, (11<<3)
+    ltr ax
+
     sti
 
-    jmp  GDT_TASK_IDLE:0
-    
+    jmp (12<<3):0
+
+    ; COMPLETAR - Inicializar pantalla
+    call screen_draw_layout
     ; Ciclar infinitamente 
     .inicioCiclo:
     mov eax, 0xFFFF

@@ -92,16 +92,15 @@ CR3_TO_PAGE_DIR(X)  devuelve el page directory, donde X es el contenido del regi
 MMU_ENTRY_PADDR(X)  devuelve la dirección física de la base de un page frame o de un page table, donde X es el campo de 20 bits en una PTE o PDE
 */
 
-#define VIRT_PAGE_OFFSET(X) (X & 0xFFF)
-#define VIRT_PAGE_TABLE(X)  ((X>>12)&0x3FF)
-#define VIRT_PAGE_DIR(X)    ((X>>22)&0x3FF)
-#define CR3_TO_PAGE_DIR(X)  (X&0xFFFFF000)
-#define MMU_ENTRY_PADDR(X)  ((X<<12) & 0xFFFFF000)
+#define VIRT_PAGE_OFFSET(X) (X & 0x00000FFF)        // Offset en la pagina.
+#define VIRT_PAGE_TABLE(X)  ((X>>12) & 0x000003FF)  // Index en la Page Table.
+#define VIRT_PAGE_DIR(X)    ((X>>22) & 0x000003FF)  // Index en la Page Directoy.
+#define CR3_TO_PAGE_DIR(X)  (X & 0xFFFFF000)        // Direccion fisica del page directory.
+#define MMU_ENTRY_PADDR(X)  (X<<12)                 // Direccion fisica de la pagina Lo usamos cuando nos dan el directory index y el table index.
 
 #define MMU_P (1 << 0)
 #define MMU_W (1 << 1)
 #define MMU_U (1 << 2)
-#define MMU_R (0 << 1)
 
 #define PAGE_SIZE 4096
 
@@ -121,7 +120,5 @@ MMU_ENTRY_PADDR(X)  devuelve la dirección física de la base de un page frame o
 #define KERNEL_PAGE_DIR     (0x00025000)
 #define KERNEL_PAGE_TABLE_0 (0x00026000)
 #define KERNEL_STACK        (0x00025000)
-
-
 
 #endif //  __DEFINES_H__
