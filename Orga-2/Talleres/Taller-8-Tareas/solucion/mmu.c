@@ -220,3 +220,37 @@ bool page_fault_handler(vaddr_t virt) {
   return false;  
 }
 
+
+void copiar(uint8_t otra_ID, uint32_t virt) {
+  tss_t* actual_tss = &tss_tasks[current_task];
+  tss_t* otra_tss   = &tss_tasks[otra_ID];
+
+  pd_entry_t* actual_dir = CR3_TO_PAGE_DIR(actual_tss->cr3);
+  pd_entry_t* otra_dir   = CR3_TO_PAGE_DIR(otra_tss->cr3);
+
+  uint32_t actual_dir_index = VIRT_PAGE_DIR(virt);
+  uint32_t otra_dir_index   = VIRT_PAGE_DIR(virt);
+
+  if (((actual_dir[actual_dir_index].attrs & MMU_P) == 1) && 
+      ((otra_dir[otra_dir_index].attrs & MMU_P)     == 1)) 
+  {
+    pt_entry_t* actual_table = actual_dir[actual_dir_index].pt << 12;
+    pt_entry_t* otra_table = otra_dir[otra_dir_index].pt << 12;
+    
+    uint32_t actual_table_index = VIRT_PAGE_TABLE(virt);
+    uint32_t otra_table_index   = VIRT_PAGE_TABLE(virt);
+
+    if ( ( (actual_table[actual_table_index].attrs & MMU_P) == 1 ) && 
+         ( (otra_table[otra_table_index].attrs & MMU_P)     == 1 )) 
+    {
+      paddr_t actual_page = actual_table[actual_table_index].page << 12;
+      paddr_t otra_page   = otra_table[otra_table_index].page << 12;
+
+      copy_page(actual_page, otra_page);
+      // Pero ambas direcciones en virt.
+      // copy_page(actual_page, otra_page, virt);
+    }
+
+  }
+}
+
