@@ -109,15 +109,16 @@ std::pair<Contenedor, Contenedor> split(const Contenedor & c, const typename Con
 
 template <class Contenedor>
 void merge(const Contenedor& c1, const Contenedor & c2, Contenedor & res) {
-    typename Contenedor::const_iterator it_A = c1.begin();
-    typename Contenedor::const_iterator it_B = c2.begin();
-    while(it_A != c1.end() && it_B != c2.end()) {
-        if(*it_A < *it_B) {
-            res.insert(res.end(), *it_A);
-            it_A++;
-        } else {
-            res.insert(res.end(), *it_B);
-            it_B++;
+  typename Contenedor::const_iterator it_A = c1.begin();
+  typename Contenedor::const_iterator it_B = c2.begin();
+ 
+  while(it_A != c1.end() && it_B != c2.end()) {
+      if(*it_A < *it_B) {
+          res.insert(res.end(), *it_A);
+          it_A++;
+      } else {
+          res.insert(res.end(), *it_B);
+          it_B++;
         }
     }
 
