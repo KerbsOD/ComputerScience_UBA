@@ -85,34 +85,34 @@ int binarySearch(int left, int right, int N, int personas) {
 }
 
 int main() {
-    cin >> C;
+  cin >> C;
 
-    while (C > 0) { 
-        cin >> N >> M >> x;
+while (C > 0) { 
+  cin >> N >> M >> x;
 
-        /* Inicializamos las cotas de BS y las estructuras */
-        int right = 1;
-        adj = vector<vector<int>>(N+1);
-        capacity = vector<vector<int>>(N+1, vector<int>(N+1, 0));
-        personasPorCalle = vector<vector<int>>(N+1, vector<int>(N+1, 0));
-        for (int i = 0; i < M; i++) {
-            int u, v, c;
-            cin >> u >> v >> c;
+  /* Inicializamos las cotas de BS y las estructuras */
+  int right = 1;
+  adj = vector<vector<int>>(N+1);
+  capacity = vector<vector<int>>(N+1, vector<int>(N+1, 0));
+  personasPorCalle = vector<vector<int>>(N+1, vector<int>(N+1, 0));
+  for (int i = 0; i < M; i++) {
+    int u, v, c;
+    cin >> u >> v >> c;
 
-            if (u == 1) {
-                right += c;
-            }
-            adj[u].push_back(v);
-            adj[v].push_back(u);
-            capacity[u][v] = c;
-        }
-        
-        int maximaCantidadDeHerramientas = binarySearch(1,right, N, x);
-        res.push_back(maximaCantidadDeHerramientas);
-        C--;
+    if (u == 1) {
+      right += c;
     }
+    adj[u].push_back(v);
+    adj[v].push_back(u);
+    capacity[u][v] = c;
+  }
+  
+  int maximaCantidadDeHerramientas = binarySearch(1,right, N, x);
+    res.push_back(maximaCantidadDeHerramientas);
+    C--;
+  }
 
-    for (int i = 0; i < res.size(); i++) {
-        cout << res[i] << endl;
-    }
+  for (int i = 0; i < res.size(); i++) {
+    cout << res[i] << endl;
+  }
 }
