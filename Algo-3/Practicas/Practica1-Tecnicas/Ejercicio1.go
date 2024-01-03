@@ -55,9 +55,11 @@ Tipos de soluciones:
 	solucion valida.
 
 (i)
-  - Si j == 0, guardar solucion.
-  - Si la sumatoria de todo el resto de elementos que faltan mas la suma actual es menor a k, return.
+  - Si la sumatoria de todo lo que falta menos lo actual es mayor a 0 entonces no vale la pena seguir
+  porque si nos falta j y lo que nos queda en el array no suma lo suficiente para que j-suma = 0 entonces no
+  vale la pena seguir con la rama.
 */
+
 package main
 
 import "fmt"
@@ -65,8 +67,12 @@ import "fmt"
 var soluciones = [][]int{}
 var solucion_parcial []int
 
-func subset_sum(C []int, i int, j int) {
+func subset_sum(C []int, i int, j int, sufijo int) {
 	if j < 0 {
+		return
+	}
+
+	if j-sufijo > 0 {
 		return
 	}
 
@@ -79,15 +85,20 @@ func subset_sum(C []int, i int, j int) {
 		return
 	}
 
-	solucion_parcial[i] = 1
-	subset_sum(C, i-1, j-C[i])
-	solucion_parcial[i] = 0
-	subset_sum(C, i-1, j)
+	solucion_parcial = append(solucion_parcial, C[i])
+	subset_sum(C, i-1, j-C[i], sufijo-C[i])
+	solucion_parcial = solucion_parcial[:len(solucion_parcial)-1]
+	subset_sum(C, i-1, j, sufijo)
 }
 
 func main() {
 	ejemplo := []int{6, 12, 6}
-	solucion_parcial = []int{0, 0, 0}
-	subset_sum(ejemplo, len(ejemplo)-1, 12)
+
+	sufijo := 0
+	for _, v := range ejemplo {
+		sufijo += v
+	}
+
+	subset_sum(ejemplo, len(ejemplo)-1, 12, sufijo)
 	fmt.Println(soluciones)
 }
