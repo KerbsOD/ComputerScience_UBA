@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	Ejercicio2()
+	Ejercicio3()
 }
 
 /* Funciones Utiles que usare a lo largo de las guias */
