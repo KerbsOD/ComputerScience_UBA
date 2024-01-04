@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	Ejercicio3()
+	Ejercicio4()
 }
 
 /* Funciones Utiles que usare a lo largo de las guias */
@@ -22,5 +22,16 @@ func ImprimirMatriz(matriz [][]int) {
 			fmt.Print(matriz[i][j], " ")
 		}
 		fmt.Print("\n")
+	}
+}
+
+func ImprimirVector(vector []int, offset int) {
+	fmt.Printf("(")
+	for i := 0; i < len(vector); i++ {
+		if i == len(vector)-1 {
+			fmt.Printf("%v)\n", vector[i]+offset)
+			continue
+		}
+		fmt.Printf("%v, ", vector[i]+offset)
 	}
 }
