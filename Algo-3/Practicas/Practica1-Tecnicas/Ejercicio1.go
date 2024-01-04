@@ -62,43 +62,50 @@ Tipos de soluciones:
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-var soluciones = [][]int{}
-var solucion_parcial []int
-
-func subset_sum(C []int, i int, j int, sufijo int) {
-	if j < 0 {
-		return
+func subset_sum(conjunto []int, i int, k int, sufijo int, solucion_parcial []int) [][]int {
+	var soluciones [][]int
+	if len(conjunto) == 0 {
+		return soluciones
 	}
 
-	if j-sufijo > 0 {
-		return
+	if k < 0 {
+		return soluciones
+	}
+
+	if k-sufijo > 0 {
+		return soluciones
 	}
 
 	if i == -1 {
-		if j == 0 {
+		if k == 0 {
 			copiedSlice := make([]int, len(solucion_parcial))
 			copy(copiedSlice, solucion_parcial)
 			soluciones = append(soluciones, copiedSlice)
 		}
-		return
+		return soluciones
 	}
 
-	solucion_parcial = append(solucion_parcial, C[i])
-	subset_sum(C, i-1, j-C[i], sufijo-C[i])
+	solucion_parcial = append(solucion_parcial, conjunto[i])
+	soluciones = append(soluciones, subset_sum(conjunto, i-1, k-conjunto[i], sufijo-conjunto[i], solucion_parcial)...)
 	solucion_parcial = solucion_parcial[:len(solucion_parcial)-1]
-	subset_sum(C, i-1, j, sufijo)
+	soluciones = append(soluciones, subset_sum(conjunto, i-1, k, sufijo, solucion_parcial)...)
+
+	return soluciones
 }
 
 func Ejercicio1() {
-	ejemplo := []int{6, 12, 6}
-
+	conjunto := []int{6, 12, 6}
 	sufijo := 0
-	for _, v := range ejemplo {
+	for _, v := range conjunto {
 		sufijo += v
 	}
+	result := subset_sum(conjunto, 2, 12, sufijo, []int{})
 
-	subset_sum(ejemplo, len(ejemplo)-1, 12, sufijo)
-	fmt.Println(soluciones)
+	if result[0][0] != 6 || result[0][1] != 6 || result[1][0] != 12 {
+		fmt.Printf("Incorrect result: expected [[6,6],[12]], got %v \n", result)
+	}
 }

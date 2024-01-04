@@ -17,11 +17,7 @@ package main
 
 import "fmt"
 
-var minPi []int
-var sumaMin int
-var D [][]int
-
-func permutacionPi(n int, sumaActual int, pi []int) {
+func permutacionPi(n int, sumaActual int, pi []int, minPi []int, sumaMin int, D [][]int, numeroUsado []bool) ([]int, int) {
 	if len(pi) == n {
 		sumaActual += D[pi[n-1]][pi[0]]
 		if sumaMin == -1 || sumaMin > sumaActual {
@@ -30,11 +26,11 @@ func permutacionPi(n int, sumaActual int, pi []int) {
 			minPi = copiedSlice
 			sumaMin = sumaActual
 		}
-		return
+		return minPi, sumaMin
 	}
 
 	if sumaMin != -1 && sumaActual > sumaMin {
-		return
+		return minPi, sumaMin
 	}
 
 	for i := 0; i < n; i++ {
@@ -51,17 +47,18 @@ func permutacionPi(n int, sumaActual int, pi []int) {
 			suma += D[pi[long-2]][pi[long-1]]
 		}
 
-		permutacionPi(n, suma+sumaActual, pi)
+		minPi, sumaMin = permutacionPi(n, suma+sumaActual, pi, minPi, sumaMin, D, numeroUsado)
 
 		numeroUsado[i] = false
 		pi = pi[:len(pi)-1]
 	}
 
+	return minPi, sumaMin
 }
 
 func Ejercicio4() {
 	n := 4
-	D = [][]int{
+	D := [][]int{
 		{0, 1, 10, 10},
 		{10, 0, 3, 15},
 		{21, 17, 0, 2},
@@ -69,12 +66,11 @@ func Ejercicio4() {
 	}
 
 	pi := []int{}
-	minPi = []int{}
-	sumaMin = -1
-	numeroUsado = make([]bool, n)
-	permutacionPi(n, 0, pi)
+	minPi := []int{}
+	sumaMin := -1
+	numeroUsado := make([]bool, n)
+	minPi, sumaMin = permutacionPi(n, 0, pi, minPi, sumaMin, D, numeroUsado)
 
 	ImprimirVector(minPi, 1)
 	fmt.Printf("Suma: %v\n", sumaMin)
-
 }

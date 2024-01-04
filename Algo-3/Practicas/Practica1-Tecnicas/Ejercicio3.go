@@ -25,11 +25,7 @@ package main
 
 import "fmt"
 
-var matriz [][]int
-var maxConju []int
-var maxValor int
-
-func maximize(i int, k int, valorConjI int, conjI []int) {
+func maximize(i int, k int, valorConjI int, conjI []int, maxConju []int, maxValor int, matriz [][]int) ([]int, int) {
 	if k == 0 {
 		if valorConjI > maxValor {
 			copiedSlice := make([]int, len(conjI))
@@ -37,15 +33,15 @@ func maximize(i int, k int, valorConjI int, conjI []int) {
 			maxConju = copiedSlice
 			maxValor = valorConjI
 		}
-		return
+		return maxConju, maxValor
 	}
 
 	if k > i {
-		return
+		return maxConju, maxValor
 	}
 
 	if i == -1 {
-		return
+		return maxConju, maxValor
 	}
 
 	conjI = append(conjI, i)
@@ -54,22 +50,26 @@ func maximize(i int, k int, valorConjI int, conjI []int) {
 		suma += matriz[v][i] + matriz[i][v]
 	}
 
-	maximize(i-1, k-1, valorConjI+suma, conjI)
+	maxConju, maxValor = maximize(i-1, k-1, valorConjI+suma, conjI, maxConju, maxValor, matriz)
 
 	conjI = conjI[:len(conjI)-1]
-	maximize(i-1, k, valorConjI, conjI)
+	maxConju, maxValor = maximize(i-1, k, valorConjI, conjI, maxConju, maxValor, matriz)
+
+	return maxConju, maxValor
 }
 
 func Ejercicio3() {
 	n := 4
 	k := 3
-	maxValor = 0
-	matriz = [][]int{
+	matriz := [][]int{
 		{0, 10, 10, 1},
 		{0, 0, 5, 7},
 		{0, 0, 0, 100},
 		{0, 0, 0, 0}}
-	maximize(n-1, k, 0, []int{})
+	maxValor := 0
+	maxConju := []int{}
+
+	maxConju, _ = maximize(n-1, k, 0, []int{}, maxConju, maxValor, matriz)
 
 	for i := k - 1; i >= 0; i-- {
 		fmt.Printf("%v ", maxConju[i]+1)

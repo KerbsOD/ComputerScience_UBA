@@ -57,12 +57,7 @@ import (
 	"time"
 )
 
-var solucionParcial [][]int
-var numeroUsado []bool
-var sumaParcialFilas []int
-var sumaParcialColumnas []int
-
-func esCuadrado(n int) int {
+func esCuadrado(n int, solucionParcial [][]int) int {
 	magicNumber := 0
 	for i := range solucionParcial {
 		magicNumber += solucionParcial[i][0]
@@ -95,13 +90,13 @@ func esCuadrado(n int) int {
 	return 1
 }
 
-func cuadradoMagico1(i int, j int, n int) int {
+func cuadradoMagico1(i int, j int, n int, numeroUsado []bool, solucionParcial [][]int) int {
 	if j == n {
-		return cuadradoMagico1(i+1, 0, n)
+		return cuadradoMagico1(i+1, 0, n, numeroUsado, solucionParcial)
 	}
 
 	if i == n {
-		return esCuadrado(n)
+		return esCuadrado(n, solucionParcial)
 	}
 
 	res := 0
@@ -112,7 +107,7 @@ func cuadradoMagico1(i int, j int, n int) int {
 
 		numeroUsado[x] = true
 		solucionParcial[i][j] = x + 1
-		res += cuadradoMagico1(i, j+1, n)
+		res += cuadradoMagico1(i, j+1, n, numeroUsado, solucionParcial)
 
 		numeroUsado[x] = false
 	}
@@ -120,13 +115,13 @@ func cuadradoMagico1(i int, j int, n int) int {
 	return res
 }
 
-func cuadradoMagico2(i int, j int, n int, magicNumber int) int {
+func cuadradoMagico2(i int, j int, n int, magicNumber int, solucionParcial [][]int, numeroUsado []bool, sumaParcialFilas []int, sumaParcialColumnas []int) int {
 	if j == n {
-		return cuadradoMagico2(i+1, 0, n, magicNumber)
+		return cuadradoMagico2(i+1, 0, n, magicNumber, solucionParcial, numeroUsado, sumaParcialFilas, sumaParcialColumnas)
 	}
 
 	if i == n {
-		return esCuadrado(n)
+		return esCuadrado(n, solucionParcial)
 	}
 
 	res := 0
@@ -148,7 +143,7 @@ func cuadradoMagico2(i int, j int, n int, magicNumber int) int {
 		sumaParcialFilas[i] += x + 1
 		sumaParcialColumnas[j] += x + 1
 
-		res += cuadradoMagico2(i, j+1, n, magicNumber)
+		res += cuadradoMagico2(i, j+1, n, magicNumber, solucionParcial, numeroUsado, sumaParcialFilas, sumaParcialColumnas)
 
 		numeroUsado[x] = false
 		solucionParcial[i][j] = 0
@@ -163,11 +158,11 @@ func Ejercicio2() {
 	n := 3
 
 	// Cuadrado magico backtracking
-	solucionParcial = InicializarMatriz(n, n)
-	numeroUsado = make([]bool, n*n)
+	solucionParcial := InicializarMatriz(n, n)
+	numeroUsado := make([]bool, n*n)
 
 	start := time.Now()
-	res := cuadradoMagico1(0, 0, n)
+	res := cuadradoMagico1(0, 0, n, numeroUsado, solucionParcial)
 	elapsed := time.Since(start)
 
 	fmt.Printf("Result: %v Time: %v \n", res, elapsed)
@@ -175,14 +170,13 @@ func Ejercicio2() {
 	// Cuadrado magico backtracking con podas facheras
 	solucionParcial = InicializarMatriz(n, n)
 	numeroUsado = make([]bool, n*n)
-	sumaParcialFilas = make([]int, n)
-	sumaParcialColumnas = make([]int, n)
+	sumaParcialFilas := make([]int, n)
+	sumaParcialColumnas := make([]int, n)
 	magicNumber := (n*n*n + n) / 2
 
 	start = time.Now()
-	res = cuadradoMagico2(0, 0, n, magicNumber)
+	res = cuadradoMagico2(0, 0, n, magicNumber, solucionParcial, numeroUsado, sumaParcialFilas, sumaParcialColumnas)
 	elapsed = time.Since(start)
 
 	fmt.Printf("Result: %v Time: %v \n", res, elapsed)
-
 }
