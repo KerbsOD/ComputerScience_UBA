@@ -91,7 +91,7 @@ func subset_sum(C []int, i int, j int, sufijo int) {
 	subset_sum(C, i-1, j, sufijo)
 }
 
-func main() {
+func Ejercicio1() {
 	ejemplo := []int{6, 12, 6}
 
 	sufijo := 0
