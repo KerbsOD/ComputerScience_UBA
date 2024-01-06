@@ -15,8 +15,6 @@ In Spanish: Parece que pi es una funcion que mapea indices. Por ejemplo si tengo
 */
 package main
 
-import "fmt"
-
 func permutacionPi(n int, sumaActual int, pi []int, minPi []int, sumaMin int, D [][]int, numeroUsado []bool) ([]int, int) {
 	if len(pi) == n {
 		sumaActual += D[pi[n-1]][pi[0]]
@@ -54,23 +52,4 @@ func permutacionPi(n int, sumaActual int, pi []int, minPi []int, sumaMin int, D 
 	}
 
 	return minPi, sumaMin
-}
-
-func Ejercicio4() {
-	n := 4
-	D := [][]int{
-		{0, 1, 10, 10},
-		{10, 0, 3, 15},
-		{21, 17, 0, 2},
-		{3, 22, 30, 0},
-	}
-
-	pi := []int{}
-	minPi := []int{}
-	sumaMin := -1
-	numeroUsado := make([]bool, n)
-	minPi, sumaMin = permutacionPi(n, 0, pi, minPi, sumaMin, D, numeroUsado)
-
-	ImprimirVector(minPi, 1)
-	fmt.Printf("Suma: %v\n", sumaMin)
 }

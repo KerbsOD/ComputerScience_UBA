@@ -52,11 +52,6 @@ ponerle.
 
 package main
 
-import (
-	"fmt"
-	"time"
-)
-
 func esCuadrado(n int, solucionParcial [][]int) int {
 	magicNumber := 0
 	for i := range solucionParcial {
@@ -152,31 +147,4 @@ func cuadradoMagico2(i int, j int, n int, magicNumber int, solucionParcial [][]i
 	}
 
 	return res
-}
-
-func Ejercicio2() {
-	n := 3
-
-	// Cuadrado magico backtracking
-	solucionParcial := InicializarMatriz(n, n)
-	numeroUsado := make([]bool, n*n)
-
-	start := time.Now()
-	res := cuadradoMagico1(0, 0, n, numeroUsado, solucionParcial)
-	elapsed := time.Since(start)
-
-	fmt.Printf("Result: %v Time: %v \n", res, elapsed)
-
-	// Cuadrado magico backtracking con podas facheras
-	solucionParcial = InicializarMatriz(n, n)
-	numeroUsado = make([]bool, n*n)
-	sumaParcialFilas := make([]int, n)
-	sumaParcialColumnas := make([]int, n)
-	magicNumber := (n*n*n + n) / 2
-
-	start = time.Now()
-	res = cuadradoMagico2(0, 0, n, magicNumber, solucionParcial, numeroUsado, sumaParcialFilas, sumaParcialColumnas)
-	elapsed = time.Since(start)
-
-	fmt.Printf("Result: %v Time: %v \n", res, elapsed)
 }

@@ -23,8 +23,6 @@ Output:
 
 package main
 
-import "fmt"
-
 func maximize(i int, k int, valorConjI int, conjI []int, maxConju []int, maxValor int, matriz [][]int) ([]int, int) {
 	if k == 0 {
 		if valorConjI > maxValor {
@@ -56,23 +54,4 @@ func maximize(i int, k int, valorConjI int, conjI []int, maxConju []int, maxValo
 	maxConju, maxValor = maximize(i-1, k, valorConjI, conjI, maxConju, maxValor, matriz)
 
 	return maxConju, maxValor
-}
-
-func Ejercicio3() {
-	n := 4
-	k := 3
-	matriz := [][]int{
-		{0, 10, 10, 1},
-		{0, 0, 5, 7},
-		{0, 0, 0, 100},
-		{0, 0, 0, 0}}
-	maxValor := 0
-	maxConju := []int{}
-
-	maxConju, _ = maximize(n-1, k, 0, []int{}, maxConju, maxValor, matriz)
-
-	for i := k - 1; i >= 0; i-- {
-		fmt.Printf("%v ", maxConju[i]+1)
-	}
-	fmt.Printf("\n")
 }
