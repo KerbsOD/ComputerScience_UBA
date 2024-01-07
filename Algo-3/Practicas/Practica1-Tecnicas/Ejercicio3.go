@@ -21,7 +21,7 @@ Output:
 	si los elementos que quedan son menos de los que necesito, no me sirve la rama.
 */
 
-package main
+package Tecnicas
 
 func maximize(i int, k int, valorConjI int, conjI []int, maxConju []int, maxValor int, matriz [][]int) ([]int, int) {
 	if k == 0 {

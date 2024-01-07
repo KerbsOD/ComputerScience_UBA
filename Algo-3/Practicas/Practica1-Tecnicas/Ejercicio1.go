@@ -60,11 +60,7 @@ Tipos de soluciones:
   vale la pena seguir con la rama.
 */
 
-package main
-
-import (
-	"fmt"
-)
+package Tecnicas
 
 func subset_sum(conjunto []int, i int, k int, sufijo int, solucion_parcial []int) [][]int {
 	var soluciones [][]int
@@ -95,17 +91,4 @@ func subset_sum(conjunto []int, i int, k int, sufijo int, solucion_parcial []int
 	soluciones = append(soluciones, subset_sum(conjunto, i-1, k, sufijo, solucion_parcial)...)
 
 	return soluciones
-}
-
-func Ejercicio1() {
-	conjunto := []int{6, 12, 6}
-	sufijo := 0
-	for _, v := range conjunto {
-		sufijo += v
-	}
-	result := subset_sum(conjunto, 2, 12, sufijo, []int{})
-
-	if result[0][0] != 6 || result[0][1] != 6 || result[1][0] != 12 {
-		fmt.Printf("Incorrect result: expected [[6,6],[12]], got %v \n", result)
-	}
 }

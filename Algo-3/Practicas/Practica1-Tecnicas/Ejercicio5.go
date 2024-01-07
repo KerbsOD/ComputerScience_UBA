@@ -1,4 +1,4 @@
-package main
+package Tecnicas
 
 /*
 (A) O(2^n) llamadas recursivas
