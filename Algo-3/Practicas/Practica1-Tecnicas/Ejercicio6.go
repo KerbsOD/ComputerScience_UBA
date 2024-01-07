@@ -45,6 +45,10 @@ import (
 		3 y 2 para sumar 5). Pero la solucion que nos va a dar es exceso=0 y cantidad=3 (porque usamos
 		los billetes 1, 1 y 3) Tener en cuenta que es un MULTI-conjunto.
 
+		Por como se recorre, siempre vamos a usar la minima cantidad de billetes. Porque el enunciado
+		especifica que se recorre de derecha a izquierda pero no te pide que el arreglo de billetes este
+		ordenado. Deberian especificarlo.
+
 (C)
 
 	Complejidad de billetesBT(B,i,j,q): O(2^n)
@@ -109,6 +113,10 @@ func billetesDP(B []int, i int, j int, q int, M [][]costo) costo {
 
 	return M[i][j]
 }
+
+/*
+(G) Nuestro algoritmo topdown tiene complejidad espacial O(nk).
+*/
 
 func billetesBU() {
 
