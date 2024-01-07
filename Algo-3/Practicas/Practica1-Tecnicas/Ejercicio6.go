@@ -11,10 +11,7 @@ Output:
 */
 package main
 
-import (
-	"fmt"
-	"math"
-)
+import "math"
 
 /*
 (A)
@@ -91,7 +88,7 @@ type costo struct {
 func billetesDP(B []int, i int, j int, q int, M [][]costo) costo {
 	if j <= 0 {
 		if q == 0 {
-			return costo{math.MaxInt32, math.MaxInt32}
+			return costo{math.MaxInt32, math.MaxInt32} // Es un caso borde. Sin esta guarda, devuelve siempre {0,0}
 		}
 		return costo{(-1) * j, q}
 	}
@@ -115,24 +112,44 @@ func billetesDP(B []int, i int, j int, q int, M [][]costo) costo {
 }
 
 /*
+	Esta es otra implementacion de billetes.
+	En este caso podemos apreciar mas la recursion, donde tenemos un caso baso que es 'el primer paso'.
+	Con estas implementaciones es mas facil luego pasar a bottom-up.
+
+	Hay 2 tipos de algoritmos recursivos para resolver problemas.
+	(A) Agregar las cosas a la siguiente llamada y procesar todo junto en el caso base.
+	(B) Ir al caso base y a partir del return ir construyendo la solucion 'para arriba'.
+*/
+
+const inf = math.MaxInt32 - 10000
+
+func billetesBT2(B []int, i int, j int) costo {
+	if j <= 0 {
+		return costo{0, 0}
+	}
+
+	if i == -1 {
+		return costo{inf, inf}
+	}
+
+	agrego := billetesBT2(B, i-1, j-B[i])
+	agrego.exceso += B[i]
+	agrego.cantidad += 1
+
+	noAgrego := billetesBT2(B, i-1, j)
+
+	return func(A costo, B costo) costo {
+		if A.exceso < B.exceso || (A.exceso == B.exceso && A.cantidad < B.cantidad) {
+			return A
+		}
+		return B
+	}(agrego, noAgrego)
+}
+
+/*
 (G) Nuestro algoritmo topdown tiene complejidad espacial O(nk).
 */
 
-func billetesBU() {
+// func main() {
 
-}
-
-func main() {
-	B := []int{3, 2, 1, 1}
-	c := 5
-
-	M := make([][]costo, len(B)+1)
-	for i := 0; i < len(B)+1; i++ {
-		M[i] = make([]costo, c+1)
-		for j := 0; j < c+1; j++ {
-			M[i][j] = costo{-1, -1}
-		}
-	}
-
-	fmt.Println(billetesDP(B, len(B)-1, c, 0, M))
-}
+// }
