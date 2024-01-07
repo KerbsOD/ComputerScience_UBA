@@ -52,6 +52,10 @@ type costo struct {
 	cantidad int
 }
 
+/*
+Nueva complejidad O(nc)
+La llamada que resuelve el problema es billetesDP(0, 0)
+*/
 func billetesDP(i int, j int, q int, memo [][]costo, c int, B []int) costo {
 	if i == len(B) {
 		return costo{math.MaxInt32, math.MaxInt32}
@@ -81,6 +85,7 @@ func billetesDP(i int, j int, q int, memo [][]costo, c int, B []int) costo {
 			}
 		}
 	}
+
 	return memo[i][j]
 }
 
@@ -89,16 +94,13 @@ func main() {
 	k := 14
 	n := len(B)
 
-	memo := make([][]costo, n)
-	for i := 0; i < n; i++ {
-		memo[i] = make([]costo, 14)
-		for j := 0; j < k; j++ {
+	memo := make([][]costo, n+1)
+	for i := 0; i <= n; i++ {
+		memo[i] = make([]costo, k+1)
+		for j := 0; j <= k; j++ {
 			memo[i][j] = costo{-1, -1}
 		}
 	}
 
 	fmt.Println(billetesDP(0, 0, 0, memo, k, B))
-
-	// Probando git
-
 }
