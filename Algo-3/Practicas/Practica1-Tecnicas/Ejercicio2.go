@@ -50,7 +50,7 @@ ponerle.
 
 */
 
-package Tecnicas
+package main
 
 func esCuadrado(n int, solucionParcial [][]int) int {
 	magicNumber := 0

@@ -9,12 +9,122 @@ Output:
   - Pagar con el minimo tiempo posible (minimizar tiempo)
   - Tupla (exceso, cantidad) Primero se ordenan por exceso y luego por cantidad de billetes
 */
-package Tecnicas
+package main
 
-func billetesBT(B []int, c int) (int, int) {
+import (
+	"fmt"
+	"math"
+)
+
+/*
+(A)
+
+	En vez de q podemos optar por un arreglo de soluciones parciales binarias, luego una funcion lineal
+	que nos diga el valor. Es medio ineficiente. No se si los profes no tuvieron en cuenta el parametro
+	q o querian que lo hagamos de esa manera. Ademas, siento que el problema con programacion dinamica
+	esta mal planteado porque en esta funcion hay 3 parametros. i, j y q. Luego hay i*j*q estados.
+	Ejemplo:
+		B  = {1,1,2,3}
+		c  = 5
+
+		Supongamos ahora p y p' siendo los valores binarios del arreglo B. Donde i = 2 y c = 5.
+		p  = {1,1,0} -> cc(B, i, j) = cc(B, 2, 3)
+		p' = {0,0,1} -> cc(B, i, j) = cc(B, 2, 3)
+		A ojos de la funcion son la misma instancia pero los vectores binarios p y p' son completamente
+		diferentes.
+
+		Supongamos ahora que llamamos, con memoization, M[2][3]. En vez e la instancias p' = {0,0,1}
+		podriamos caer en la instancia p = {1,1,0}.
+		En ese caso q = 2 en vez de q = 1.
+
+		Hay una inconsistencia por no tener en cuenta el parametro q en la memoization.
+
+		En mi funcion van a ver que corre bien y van a decir "Fuaa, alto mentiroso este Octo!" pero
+		lo que pasa es que mi funcion lo recorre de derecha a izquierda. Si en el test escriben:
+		B = {3, 2, 1, 1} y c = 5. La solucion deberia ser exceso=0 y cantidad=2 (porque usamos los billetes
+		3 y 2 para sumar 5). Pero la solucion que nos va a dar es exceso=0 y cantidad=3 (porque usamos
+		los billetes 1, 1 y 3) Tener en cuenta que es un MULTI-conjunto.
+
+(C)
+
+	Complejidad de billetesBT(B,i,j,q): O(2^n)
+	Cantidad de instancias: O(n*c)
+
+	O(n*c) << 2^n cuando n tiende a infinito.
+
+	Hay superposicion de subproblemas.
+*/
+func billetesBT(B []int, i int, j int, q int) (int, int) {
+	if j <= 0 {
+		if q == 0 {
+			return math.MaxInt32, math.MaxInt32
+		}
+		return (-1) * j, q
+	}
+
+	if i == -1 {
+		return math.MaxInt32, math.MaxInt32
+	}
+
+	excesoAgrego, cantidadAgrego := billetesBT(B, i-1, j-B[i], q+1)
+	excesoNoAgrego, cantidadNoAgrego := billetesBT(B, i-1, j, q)
+
+	if excesoAgrego < excesoNoAgrego || (excesoAgrego == excesoNoAgrego && cantidadAgrego < cantidadNoAgrego) {
+		return excesoAgrego, cantidadAgrego
+	}
+
+	return excesoNoAgrego, cantidadNoAgrego
+}
+
+/*
+Se resuelve con billetesDP(B, n, j, 0)
+*/
+type costo struct {
+	exceso   int
+	cantidad int
+}
+
+func billetesDP(B []int, i int, j int, q int, M [][]costo) costo {
+	if j <= 0 {
+		if q == 0 {
+			return costo{math.MaxInt32, math.MaxInt32}
+		}
+		return costo{(-1) * j, q}
+	}
+
+	if i == -1 {
+		return costo{math.MaxInt32, math.MaxInt32}
+	}
+
+	if M[i][j].cantidad == -1 {
+		agrego := billetesDP(B, i-1, j-B[i], q+1, M)
+		noAgrego := billetesDP(B, i-1, j, q, M)
+
+		if agrego.exceso < noAgrego.exceso || (agrego.exceso == noAgrego.exceso && agrego.cantidad < noAgrego.cantidad) {
+			M[i][j] = agrego
+		} else {
+			M[i][j] = noAgrego
+		}
+	}
+
+	return M[i][j]
+}
+
+func billetesBU() {
 
 }
 
 func main() {
+	B := []int{3, 2, 1, 1}
+	c := 5
 
+	M := make([][]costo, len(B)+1)
+	for i := 0; i < len(B)+1; i++ {
+		M[i] = make([]costo, c+1)
+		for j := 0; j < c+1; j++ {
+			M[i][j] = costo{-1, -1}
+		}
+	}
+
+	fmt.Println(billetesDP(B, len(B)-1, c, 0, M))
 }

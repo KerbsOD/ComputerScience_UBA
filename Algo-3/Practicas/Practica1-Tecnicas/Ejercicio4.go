@@ -13,7 +13,7 @@ In Spanish: Parece que pi es una funcion que mapea indices. Por ejemplo si tengo
 	pi(3) = 1
 	Todo esto de los mapeos parece ser solo para romper las bolas. Algo3, te odio!
 */
-package Tecnicas
+package main
 
 func permutacionPi(n int, sumaActual int, pi []int, minPi []int, sumaMin int, D [][]int, numeroUsado []bool) ([]int, int) {
 	if len(pi) == n {

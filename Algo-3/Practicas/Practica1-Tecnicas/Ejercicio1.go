@@ -60,7 +60,7 @@ Tipos de soluciones:
   vale la pena seguir con la rama.
 */
 
-package Tecnicas
+package main
 
 func subset_sum(conjunto []int, i int, k int, sufijo int, solucion_parcial []int) [][]int {
 	var soluciones [][]int
