@@ -11,7 +11,9 @@ Output:
 */
 package main
 
-import "math"
+import (
+	"math"
+)
 
 /*
 (A)
@@ -138,18 +140,79 @@ func billetesBT2(B []int, i int, j int) costo {
 
 	noAgrego := billetesBT2(B, i-1, j)
 
-	return func(A costo, B costo) costo {
-		if A.exceso < B.exceso || (A.exceso == B.exceso && A.cantidad < B.cantidad) {
-			return A
+	if agrego.exceso < noAgrego.exceso || (agrego.exceso == noAgrego.exceso && agrego.cantidad < noAgrego.cantidad) {
+		return agrego
+	}
+
+	return noAgrego
+}
+
+func billetesDP2(B []int, i int, j int, M [][]costo) costo {
+	if i == 0 && j > 0 {
+		return costo{inf, inf}
+	}
+
+	if j <= 0 {
+		return costo{0, 0}
+	}
+
+	if M[i][j].cantidad == -1 {
+		agrego := billetesDP2(B, i-1, j-B[i], M)
+		agrego.exceso += B[i]
+		agrego.cantidad += 1
+
+		noAgrego := billetesDP2(B, i-1, j, M)
+
+		if agrego.exceso < noAgrego.exceso || (agrego.exceso == noAgrego.exceso && agrego.cantidad < noAgrego.cantidad) {
+			M[i][j] = agrego
+		} else {
+			M[i][j] = noAgrego
+
 		}
-		return B
-	}(agrego, noAgrego)
+	}
+
+	return M[i][j]
 }
 
 /*
-(G) Nuestro algoritmo topdown tiene complejidad espacial O(nk).
+(f) Nuestro algoritmo topdown tiene complejidad espacial O(nk), temporal O(nk) y se resuelve con
+	cc(i, j) = cc(n-1, c).
 */
 
-// func main() {
+/*
+(g)
 
-// }
+	Estos son todos los estados de la matriz M:
+
+	M[0][0] = {0,0}
+	M[0][j] = {0,0}     									<-> j <= 0
+	M[0][j] = {inf, inf} 									<-> j > 0
+	M[i][j] = min(M[i-1][j], M[i-1][j-B[i]] + {B[i], 1})	cc
+
+*/
+
+func billetesBU(B []int, c int, n int, M [][]costo) costo {
+	M[0][0] = costo{0, 0}
+
+	for i := 1; i <= n; i++ {
+		for j := c; j >= 0; j-- {
+			agrego := M[i-1][0]
+
+			if j-B[i] > 0 {
+				agrego = M[i-1][j-B[i]]
+			}
+
+			agrego.exceso += B[i]
+			agrego.cantidad += 1
+
+			noAgrego := M[i-1][j]
+
+			if agrego.exceso < noAgrego.exceso || (agrego.exceso == noAgrego.exceso && agrego.cantidad < noAgrego.cantidad) {
+				M[i][j] = agrego
+			} else {
+				M[i][j] = noAgrego
+			}
+		}
+	}
+	return M[n][c]
+}
