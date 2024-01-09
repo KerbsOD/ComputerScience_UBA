@@ -99,16 +99,16 @@ func AstroVoidBU(M [][]int, p []int, n int) int {
 
 	for j := 1; j <= n; j++ {
 		for c := 0; c <= j; c++ {
-			comprar := M[j-1][c-1] - p[j-1]
+			comprar := menosInfinito
 			pasar := M[j-1][c]
-			vender := M[j-1][c+1] + p[j-1]
+			vender := menosInfinito
 
-			if c+1 > j {
-				vender = menosInfinito
+			if c-1 >= 0 {
+				comprar = M[j-1][c-1] - p[j-1]
 			}
 
-			if c-1 < 0 {
-				comprar = menosInfinito
+			if c+1 <= j {
+				vender = M[j-1][c+1] + p[j-1]
 			}
 
 			M[j][c] = max(comprar, pasar, vender)
