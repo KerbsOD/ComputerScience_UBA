@@ -88,22 +88,26 @@ func AstroVoid(j int, c int, p []int, M [][]int) int {
 		- M[j][c] = -inf 						<---> c < 0 o c > j
 		- M[j][c] = 0 							<---> j == 0 y c == 0
 		- M[j][c] = max(comprar, pasar, vender) caso contrario
+
+	1 <= j <= n: Necesitamos cubrir todos los valores desde 0 a n.
+	0 <= c <= j: Necesitamos que c valga 0 y valga n, especialmente los casos donde c = 0. No queremos,
+	             por enunciado, que c sea negativo o que sea mayor a j. Por eso las restricciones.
 */
 
 func AstroVoidBU(M [][]int, p []int, n int) int {
 	M[0][0] = 0
 	for j := 1; j <= n; j++ {
 		for c := 0; c <= j; c++ {
-			comprar := menosInfinito
+			comprar := M[j-1][c-1] - p[j-1]
 			pasar := M[j-1][c]
-			vender := menosInfinito
+			vender := M[j-1][c+1] + p[j-1]
 
-			if c+1 <= j {
-				vender = M[j-1][c+1] + p[j-1]
+			if c+1 > j {
+				vender = menosInfinito
 			}
 
-			if c-1 >= 0 {
-				comprar = M[j-1][c-1] - p[j-1]
+			if c-1 < 0 {
+				comprar = menosInfinito
 			}
 
 			M[j][c] = max(comprar, pasar, vender)
