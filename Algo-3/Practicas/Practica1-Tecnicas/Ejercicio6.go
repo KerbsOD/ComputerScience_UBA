@@ -53,7 +53,7 @@ import (
 	Complejidad de billetesBT(B,i,j,q): O(2^n)
 	Cantidad de instancias: O(n*c)
 
-	O(n*c) << 2^n cuando n tiende a infinito.
+	O(n*c) << 2^n cuando n tiende a infinitoinito.
 
 	Hay superposicion de subproblemas.
 */
@@ -123,7 +123,7 @@ func billetesDP(B []int, i int, j int, q int, M [][]costo) costo {
 	(B) Ir al caso base y a partir del return ir construyendo la solucion 'para arriba'.
 */
 
-const inf = math.MaxInt32 - 10000
+const infinito = math.MaxInt32 - 10000
 
 func billetesBT2(B []int, i int, j int) costo {
 	if j <= 0 {
@@ -131,7 +131,7 @@ func billetesBT2(B []int, i int, j int) costo {
 	}
 
 	if i == -1 {
-		return costo{inf, inf}
+		return costo{infinito, infinito}
 	}
 
 	agrego := billetesBT2(B, i-1, j-B[i])
@@ -149,7 +149,7 @@ func billetesBT2(B []int, i int, j int) costo {
 
 func billetesDP2(B []int, i int, j int, M [][]costo) costo {
 	if i == 0 && j > 0 {
-		return costo{inf, inf}
+		return costo{infinito, infinito}
 	}
 
 	if j <= 0 {
@@ -186,7 +186,7 @@ func billetesDP2(B []int, i int, j int, M [][]costo) costo {
 
 	M[0][0] = {0,0}
 	M[0][j] = {0,0}     									<-> j <= 0
-	M[0][j] = {inf, inf} 									<-> j > 0
+	M[0][j] = {infinito, infinito} 									<-> j > 0
 	M[i][j] = min(M[i-1][j], M[i-1][j-B[i]] + {B[i], 1})	cc
 
 */

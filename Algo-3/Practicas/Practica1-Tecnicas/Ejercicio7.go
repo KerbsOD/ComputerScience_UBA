@@ -29,21 +29,85 @@ import (
 	"math"
 )
 
+const menosInfinito = math.MinInt32 + 10000
+
+/*
+	Parametros:
+		- j representa al dia
+		- c representa a la cantidad de asteroides en posesion de AstroVoid
+		- p es nuestra lista de precios de tamaño n.
+		- M tiene que ser una matriz de (n+1)*(n+1) con el valor menosInfinito.
+
+	Llamada:
+		El problema se soluciona con la llamada AstroVoid(n,0).
+		Como se calcula por dia, llamamos a la funcion con n. Luego nos dara el maximo entre
+		AstroVoid(n-1,0-1)-p[n-1], Astrovoid(n-1,0) y AstroVoid(n-1,0+1)+p[n-1],
+		y lo guardara en M[n][0].
+
+		Recordemos que la lista de precios es 0-indexada por lo que va desde 0 a n-1.
+
+		comprar := AstroVoid(j-1, c-1, p, M) - p[j-1].
+		Ayer (j-1) compramos un asteroide por lo que la cantidad de asteroides que TENIAMOS AYER
+		es uno menos que la que tenemos hoy.
+		Entonces hoy tenemos menos plata porque ayer compramos.
+
+		vender := AstroVoid(j-1, c+1, p, M) + p[j-1].
+		Ayer (j-1) vendimos un asteroide por lo que la cantidad de asteroides que TENIAMOS AYER
+		es uno mas que la que tenemos hoy.
+		Entonces hoy tenemos mas plata porque ayer vendimos.
+
+	Indefinidos:
+		- c < 0: La cantidad de asteroides que tenemos es negativa. Absurdo, no podemos vender
+		asteroides que no tenemos. (Por enunciado)
+		- c > j: La cantidad de asteroides que tenemos es mayor a el dia actual. Absurdo, solo se puede
+		comprar un asteroide por dia por lo que es imposible tener mas asteroides que dias.
+*/
+
 func AstroVoid(j int, c int, p []int, M [][]int) int {
 	if c < 0 || c > j {
-		return math.MinInt32 + 10000 // Inifinito y evitamos overflow (en go hay overflow?)
+		return menosInfinito
 	}
 
-	if j == 0 {
+	if j == 0 && c == 0 {
 		return 0
 	}
 
-	if M[j-1][c] == -1 {
+	if M[j][c] == menosInfinito {
 		comprar := AstroVoid(j-1, c-1, p, M) - p[j-1]
-		vender := AstroVoid(j-1, c+1, p, M) + p[j-1]
 		pasar := AstroVoid(j-1, c, p, M)
-		M[j-1][c] = max(comprar, vender, pasar)
+		vender := AstroVoid(j-1, c+1, p, M) + p[j-1]
+		M[j][c] = max(comprar, pasar, vender)
 	}
 
-	return M[j-1][c]
+	return M[j][c]
+}
+
+/*
+	Siendo comprar = M[j-1][c-1]-p[j-1], vender = M[j-1][c+1]+p[j-1] y pasar = M[j-1][c]. Los
+	estados posibles de la matriz son los siguientes:
+		- M[j][c] = -inf 						<---> c < 0 o c > j
+		- M[j][c] = 0 							<---> j == 0 y c == 0
+		- M[j][c] = max(comprar, pasar, vender) caso contrario
+*/
+
+func AstroVoidBU(M [][]int, p []int, n int) int {
+	M[0][0] = 0
+	for j := 1; j <= n; j++ {
+		for c := 0; c <= j; c++ {
+			comprar := menosInfinito
+			pasar := M[j-1][c]
+			vender := menosInfinito
+
+			if c+1 <= j {
+				vender = M[j-1][c+1] + p[j-1]
+			}
+
+			if c-1 >= 0 {
+				comprar = M[j-1][c-1] - p[j-1]
+			}
+
+			M[j][c] = max(comprar, pasar, vender)
+		}
+	}
+	return M[n][0]
 }
