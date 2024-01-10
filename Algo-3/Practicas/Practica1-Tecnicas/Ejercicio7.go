@@ -25,18 +25,12 @@
 
 package main
 
-import (
-	"math"
-)
-
-const menosInfinito = math.MinInt32 + 10000
-
 /*
 	Parametros:
 		- j representa al dia
 		- c representa a la cantidad de asteroides en posesion de AstroVoid
 		- p es nuestra lista de precios de tamaño n.
-		- M tiene que ser una matriz de (n+1)*(n+1) con el valor menosInfinito.
+		- M tiene que ser una matriz de (n+1)*(n+1) con el valor menosInf.
 
 	Llamada:
 		El problema se soluciona con la llamada AstroVoid(n,0).
@@ -65,14 +59,14 @@ const menosInfinito = math.MinInt32 + 10000
 
 func AstroVoid(j int, c int, p []int, M [][]int) int {
 	if c < 0 || c > j {
-		return menosInfinito
+		return menosInf
 	}
 
 	if j == 0 && c == 0 {
 		return 0
 	}
 
-	if M[j][c] == menosInfinito {
+	if M[j][c] == menosInf {
 		comprar := AstroVoid(j-1, c-1, p, M) - p[j-1]
 		pasar := AstroVoid(j-1, c, p, M)
 		vender := AstroVoid(j-1, c+1, p, M) + p[j-1]
@@ -99,9 +93,9 @@ func AstroVoidBU(M [][]int, p []int, n int) int {
 
 	for j := 1; j <= n; j++ {
 		for c := 0; c <= j; c++ {
-			comprar := menosInfinito
+			comprar := menosInf
 			pasar := M[j-1][c]
-			vender := menosInfinito
+			vender := menosInf
 
 			if c-1 >= 0 {
 				comprar = M[j-1][c-1] - p[j-1]

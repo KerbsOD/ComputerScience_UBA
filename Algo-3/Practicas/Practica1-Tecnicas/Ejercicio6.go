@@ -11,10 +11,6 @@ Output:
 */
 package main
 
-import (
-	"math"
-)
-
 /*
 (A)
 
@@ -53,20 +49,20 @@ import (
 	Complejidad de billetesBT(B,i,j,q): O(2^n)
 	Cantidad de instancias: O(n*c)
 
-	O(n*c) << 2^n cuando n tiende a infinitoinito.
+	O(n*c) << 2^n cuando n tiende a infinito.
 
 	Hay superposicion de subproblemas.
 */
 func billetesBT(B []int, i int, j int, q int) (int, int) {
 	if j <= 0 {
 		if q == 0 {
-			return math.MaxInt32, math.MaxInt32
+			return inf, inf
 		}
 		return (-1) * j, q
 	}
 
 	if i == -1 {
-		return math.MaxInt32, math.MaxInt32
+		return inf, inf
 	}
 
 	excesoAgrego, cantidadAgrego := billetesBT(B, i-1, j-B[i], q+1)
@@ -90,13 +86,13 @@ type costo struct {
 func billetesDP(B []int, i int, j int, q int, M [][]costo) costo {
 	if j <= 0 {
 		if q == 0 {
-			return costo{math.MaxInt32, math.MaxInt32} // Es un caso borde. Sin esta guarda, devuelve siempre {0,0}
+			return costo{inf, inf} // Es un caso borde. Sin esta guarda, devuelve siempre {0,0}
 		}
 		return costo{(-1) * j, q}
 	}
 
 	if i == -1 {
-		return costo{math.MaxInt32, math.MaxInt32}
+		return costo{inf, inf}
 	}
 
 	if M[i][j].cantidad == -1 {
@@ -123,15 +119,13 @@ func billetesDP(B []int, i int, j int, q int, M [][]costo) costo {
 	(B) Ir al caso base y a partir del return ir construyendo la solucion 'para arriba'.
 */
 
-const infinito = math.MaxInt32 - 10000
-
 func billetesBT2(B []int, i int, j int) costo {
 	if j <= 0 {
 		return costo{0, 0}
 	}
 
 	if i == -1 {
-		return costo{infinito, infinito}
+		return costo{inf, inf}
 	}
 
 	agrego := billetesBT2(B, i-1, j-B[i])
@@ -149,7 +143,7 @@ func billetesBT2(B []int, i int, j int) costo {
 
 func billetesDP2(B []int, i int, j int, M [][]costo) costo {
 	if i == 0 && j > 0 {
-		return costo{infinito, infinito}
+		return costo{inf, inf}
 	}
 
 	if j <= 0 {
@@ -186,7 +180,7 @@ func billetesDP2(B []int, i int, j int, M [][]costo) costo {
 
 	M[0][0] = {0,0}
 	M[0][j] = {0,0}     									<-> j <= 0
-	M[0][j] = {infinito, infinito} 									<-> j > 0
+	M[0][j] = {inf, inf} 									<-> j > 0
 	M[i][j] = min(M[i-1][j], M[i-1][j-B[i]] + {B[i], 1})	cc
 
 */
