@@ -1,11 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"math"
-	"time"
-)
-
 /*
 	Se resta para saber cuantas vidas necesitamos, si la cuenta es negativa (M[i][j] <= 0) entonces implica que no se necesitan vidas
 	para pasar por la casilla [i][j] hasta la [n][m]. Por eso escribimos M[i][j] = 1. Necesitamos COMO MUCHO 1 vida para hacer el camino
@@ -20,7 +14,7 @@ import (
 	1 vida mas para poder pasarlo y no quedar en 0.
 */
 
-const inf int = math.MaxInt32 >> 8
+// const inf int = math.MaxInt32 >> 8
 
 func minVida(i int, j int, n int, m int, A [][]int, M [][]int) int {
 	if (i == n && j+1 == m) || (i+1 == n && j == m) {
@@ -208,54 +202,54 @@ func minVidaBUV2(n int, m int, A [][]int) int {
 	return M[0] + 1
 }
 
-func main() {
-	n := 1000
-	m := 500
+// func main() {
+// 	n := 1000
+// 	m := 500
 
-	A := make([][]int, n+1)
-	for i := 0; i <= n; i++ {
-		A[i] = make([]int, m+1)
-		for j := 0; j <= m; j++ {
-			A[i][j] = (j + 1) * (i + 1) * (-1 + ((j % 2) * 2))
-			if A[i][j]%4 == 0 {
-				A[i][j] *= 6
-			} else {
-				A[i][j] *= 12
-			}
-		}
-	}
+// 	A := make([][]int, n+1)
+// 	for i := 0; i <= n; i++ {
+// 		A[i] = make([]int, m+1)
+// 		for j := 0; j <= m; j++ {
+// 			A[i][j] = (j + 1) * (i + 1) * (-1 + ((j % 2) * 2))
+// 			if A[i][j]%4 == 0 {
+// 				A[i][j] *= 6
+// 			} else {
+// 				A[i][j] *= 12
+// 			}
+// 		}
+// 	}
 
-	// A := [][]int{{-2, -3, 3}, {-5, -10, 1}, {10, 30, -5}}
+// 	// A := [][]int{{-2, -3, 3}, {-5, -10, 1}, {10, 30, -5}}
 
-	M := make([][]int, n+1)
-	for i := 0; i <= n; i++ {
-		M[i] = make([]int, m+1)
-		for j := 0; j <= m; j++ {
-			M[i][j] = -1
-		}
-	}
+// 	M := make([][]int, n+1)
+// 	for i := 0; i <= n; i++ {
+// 		M[i] = make([]int, m+1)
+// 		for j := 0; j <= m; j++ {
+// 			M[i][j] = -1
+// 		}
+// 	}
 
-	timeStart := time.Now()
-	resultado := minVida(0, 0, n, m, A, M)
-	timeStop := time.Since(timeStart)
-	fmt.Printf("MinimasVidas Top-Down \nResultado: %v \nTiempo: %v \n", resultado, timeStop)
+// 	timeStart := time.Now()
+// 	resultado := minVida(0, 0, n, m, A, M)
+// 	timeStop := time.Since(timeStart)
+// 	fmt.Printf("MinimasVidas Top-Down \nResultado: %v \nTiempo: %v \n", resultado, timeStop)
 
-	fmt.Println()
-	for i := 0; i <= n; i++ {
-		for j := 0; j <= m; j++ {
-			M[i][j] = -1
-		}
-	}
+// 	fmt.Println()
+// 	for i := 0; i <= n; i++ {
+// 		for j := 0; j <= m; j++ {
+// 			M[i][j] = -1
+// 		}
+// 	}
 
-	timeStart = time.Now()
-	resultado = minVidaBU(n, m, A, M)
-	timeStop = time.Since(timeStart)
-	fmt.Printf("MinimasVidas Bottom-Up \nResultado: %v \nTiempo: %v \n", resultado, timeStop)
+// 	timeStart = time.Now()
+// 	resultado = minVidaBU(n, m, A, M)
+// 	timeStop = time.Since(timeStart)
+// 	fmt.Printf("MinimasVidas Bottom-Up \nResultado: %v \nTiempo: %v \n", resultado, timeStop)
 
-	fmt.Println()
+// 	fmt.Println()
 
-	timeStart = time.Now()
-	resultado = minVidaBUV2(n, m, A)
-	timeStop = time.Since(timeStart)
-	fmt.Printf("MinimasVidas Bottom-Up Optimizado \nResultado: %v \nTiempo: %v \n", resultado, timeStop)
-}
+// 	timeStart = time.Now()
+// 	resultado = minVidaBUV2(n, m, A)
+// 	timeStop = time.Since(timeStart)
+// 	fmt.Printf("MinimasVidas Bottom-Up Optimizado \nResultado: %v \nTiempo: %v \n", resultado, timeStop)
+// }
