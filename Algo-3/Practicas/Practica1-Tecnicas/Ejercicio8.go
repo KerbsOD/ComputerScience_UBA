@@ -19,11 +19,7 @@
 
 package main
 
-import (
-	"math"
-)
-
-const inf int = math.MaxInt32 >> 8
+// const inf int = math.MaxInt32 >> 8
 
 func cortarVara(i int, j int, C []int, M [][]int) int {
 	if j <= i {
