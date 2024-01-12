@@ -27,7 +27,7 @@ func dadosDist(n int, s int, k int, M [][]int) int {
 		return 0
 	}
 
-	if s < 0 {
+	if s <= 0 {
 		return 0
 	}
 
@@ -41,7 +41,7 @@ func dadosDist(n int, s int, k int, M [][]int) int {
 	return M[n][s]
 }
 
-// No voy a hacer el B, ya estoy re quemado con programacion dinamica y odio la combinatoria. Tal vez otro año :p
+// No voy a hacer el B, ya estoy re quemado con programacion dinamica y odio combinatoria. Tal vez otro año :p
 
 func main() {
 	n := 3
