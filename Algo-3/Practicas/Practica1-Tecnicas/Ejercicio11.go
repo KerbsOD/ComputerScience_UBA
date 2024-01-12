@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 func PowInts(x, n int) int {
 	if n == 0 {
 		return 1
@@ -73,26 +69,26 @@ func intercalarBU(n int, w int, v []int, M [][]bool) bool {
 	return M[0][0]
 }
 
-func main() {
-	v := []int{3, 1, 5, 2, 1}
-	n := len(v)
-	w := 400
-	M := make([][]int, n+1)
-	for i := 0; i <= n; i++ {
-		M[i] = make([]int, w+1)
-		for j := 0; j <= w; j++ {
-			M[i][j] = -1
-		}
-	}
+// func main() {
+// 	v := []int{3, 1, 5, 2, 1}
+// 	n := len(v)
+// 	w := 400
+// 	M := make([][]int, n+1)
+// 	for i := 0; i <= n; i++ {
+// 		M[i] = make([]int, w+1)
+// 		for j := 0; j <= w; j++ {
+// 			M[i][j] = -1
+// 		}
+// 	}
 
-	fmt.Println(intercalar(0, 0, v, w, n, M))
+// 	fmt.Println(intercalar(0, 0, v, w, n, M))
 
-	MBU := make([][]bool, len(v)+1)
-	for i := 0; i <= len(v); i++ {
-		MBU[i] = make([]bool, w+1)
-		for j := 0; j <= w; j++ {
-			MBU[i][j] = false
-		}
-	}
-	fmt.Println(intercalarBU(n, w, v, MBU))
-}
+// 	MBU := make([][]bool, len(v)+1)
+// 	for i := 0; i <= len(v); i++ {
+// 		MBU[i] = make([]bool, w+1)
+// 		for j := 0; j <= w; j++ {
+// 			MBU[i][j] = false
+// 		}
+// 	}
+// 	fmt.Println(intercalarBU(n, w, v, MBU))
+// }
