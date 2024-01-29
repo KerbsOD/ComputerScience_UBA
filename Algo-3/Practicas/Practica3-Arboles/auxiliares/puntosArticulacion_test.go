@@ -1,11 +1,10 @@
 package auxiliares
 
 import (
-	"fmt"
 	"testing"
 )
 
-func TestPuntosMuchos(t *testing.T) {
+func TestMuchosPuntosDeArticulacion(t *testing.T) {
 	n := 11
 	visitado := make([]bool, n+1)
 	nivelDe := make([]int, n+1)
@@ -25,18 +24,22 @@ func TestPuntosMuchos(t *testing.T) {
 		{10, 6},         // 11
 	}
 
+    answer := []bool{false, true, false, true, false, true, true, false, false, false, false, false}
 	puntos := make([]bool, n+1)
-
 	DFS(1, -1, 0, visitado, nivelDe, minimoNivelDe, vecinosDe, puntos)
+    
+    for i := 0; i < n+1; i++ {
+        if answer[i] == false && puntos[i] == true {
+            t.Errorf("%v no es un punto de articulacion!", i)
+        }
 
-	for n, t := range puntos {
-		if t == true {
-			fmt.Printf("%v es punto de articulacion\n", n)
-		}
-	}
+        if answer[i] == true && puntos[i] == false {
+            t.Errorf("%v es un punto de articulacion!", i)
+        }
+    }
 }
 
-func TestPuntosPocos(t *testing.T) {
+func TestPocosPuntosDeArticulacion(t *testing.T) {
 	n := 8
 	visitado := make([]bool, n+1)
 	nivelDe := make([]int, n+1)
@@ -52,13 +55,18 @@ func TestPuntosPocos(t *testing.T) {
 		{5},          // 7
 		{5, 6},       // 8
 	}
-	puntos := make([]bool, n+1)
 
+    answer := []bool{false, false, false, true, false, true, false, false, false}
+	puntos := make([]bool, n+1)
 	DFS(1, -1, 0, visitado, nivelDe, minimoNivelDe, vecinosDe, puntos)
 
-	for n, t := range puntos {
-		if t == true {
-			fmt.Printf("%v es punto de articulacion\n", n)
-		}
-	}
+    for i := 0; i < n+1; i++ {
+        if answer[i] == false && puntos[i] == true {
+            t.Errorf("%v no es un punto de articulacion!", i)
+        }
+
+        if answer[i] == true && puntos[i] == false {
+            t.Errorf("%v es un punto de articulacion!", i)
+        }
+    }
 }

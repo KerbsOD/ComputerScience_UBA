@@ -4,27 +4,52 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2b1af3f-7813-45f6-80d9-0d1f16eb7eb5" name="Changes" comment="" />
+    <list default="true" id="d2b1af3f-7813-45f6-80d9-0d1f16eb7eb5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Ejercicio1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ejercicio1_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ejercicio2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auxiliares/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auxiliares/puntosArticulacion.go" beforeDir="false" afterPath="$PROJECT_DIR$/auxiliares/puntosArticulacion.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auxiliares/puntosArticulacion_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/auxiliares/puntosArticulacion_test.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
   <component name="GOROOT" url="file:///usr/lib/go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2bQIXQ0l1mmb9D7Q01nZiSziPju" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Go Test.TestGrafoBipartito in github.com/KerbsOD/Algo-3/Practicas/Practica3.executor": "Run",
+    "Go Test.TestGrafoNoBipartito in github.com/KerbsOD/Algo-3/Practicas/Practica3.executor": "Debug",
+    "Go Test.TestHayPuentes in github.com/KerbsOD/Algo-3/Practicas/Practica3.executor": "Debug",
+    "Go Test.TestOrientar in github.com/KerbsOD/Algo-3/Practicas/Practica3.executor": "Debug",
+    "Go Test.TestOrientarCalles in github.com/KerbsOD/Algo-3/Practicas/Practica3.executor": "Debug",
     "Go Test.TestPuntosDeArticulacion in github.com/KerbsOD/Algo-3/Practicas/Practica3/auxiliares.executor": "Run",
+    "Go Test.TestVacio in github.com/KerbsOD/Algo-3/Practicas/Practica3.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
@@ -41,22 +66,69 @@
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="TestPuntosDeArticulacion in github.com/KerbsOD/Algo-3/Practicas/Practica3/auxiliares" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestOrientarCalles in github.com/KerbsOD/Algo-3/Practicas/Practica3">
+    <configuration name="TestGrafoBipartito in github.com/KerbsOD/Algo-3/Practicas/Practica3" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Practica3-Arboles" />
-      <working_directory value="$PROJECT_DIR$/auxiliares" />
-      <root_directory value="$PROJECT_DIR$" />
+      <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/KerbsOD/Algo-3/Practicas/Practica3/auxiliares" />
+      <package value="github.com/KerbsOD/Algo-3/Practicas/Practica3" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestPuntosDeArticulacion\E$" />
+      <pattern value="^\QTestGrafoBipartito\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGrafoNoBipartito in github.com/KerbsOD/Algo-3/Practicas/Practica3" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Practica3-Arboles" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/KerbsOD/Algo-3/Practicas/Practica3" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestGrafoNoBipartito\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestHayPuentes in github.com/KerbsOD/Algo-3/Practicas/Practica3" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Practica3-Arboles" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/KerbsOD/Algo-3/Practicas/Practica3" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestHayPuentes\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestOrientar in github.com/KerbsOD/Algo-3/Practicas/Practica3" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Practica3-Arboles" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/KerbsOD/Algo-3/Practicas/Practica3" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestOrientar\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestOrientarCalles in github.com/KerbsOD/Algo-3/Practicas/Practica3" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Practica3-Arboles" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/KerbsOD/Algo-3/Practicas/Practica3" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestOrientarCalles\E$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestPuntosDeArticulacion in github.com/KerbsOD/Algo-3/Practicas/Practica3/auxiliares" />
+        <item itemvalue="Go Test.TestOrientarCalles in github.com/KerbsOD/Algo-3/Practicas/Practica3" />
+        <item itemvalue="Go Test.TestOrientar in github.com/KerbsOD/Algo-3/Practicas/Practica3" />
+        <item itemvalue="Go Test.TestHayPuentes in github.com/KerbsOD/Algo-3/Practicas/Practica3" />
+        <item itemvalue="Go Test.TestGrafoBipartito in github.com/KerbsOD/Algo-3/Practicas/Practica3" />
+        <item itemvalue="Go Test.TestGrafoNoBipartito in github.com/KerbsOD/Algo-3/Practicas/Practica3" />
       </list>
     </recent_temporary>
   </component>
@@ -79,7 +151,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/auxiliares/puntosArticulacion.go</url>
-          <line>5</line>
+          <line>4</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -87,6 +159,7 @@
     <watches-manager>
       <configuration name="GoTestRunConfiguration">
         <watch expression="v" />
+        <watch expression="u" />
       </configuration>
     </watches-manager>
   </component>
