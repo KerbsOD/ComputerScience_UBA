@@ -31,7 +31,7 @@ init
 	energia := 28! !
 
 
-!Bill class methodsFor: '--** private fileout/in **--' stamp: 'KerbsOctavio 3/21/2024 12:00:40'!
+!Bill class methodsFor: '--** private fileout/in **--' stamp: 'KerbsOctavio 3/24/2024 13:30:52'!
 initializeCollaboratorsFromFile
 	"Auto generated method for loading purposes - Do not modify it"
 

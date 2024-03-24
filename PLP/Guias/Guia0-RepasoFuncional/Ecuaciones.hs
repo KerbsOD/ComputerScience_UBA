@@ -54,6 +54,3 @@ productoAB :: AB Int -> Int
 productoAB Nil = 1
 productoAB (Nodo left raiz right) = raiz * productoAB left * productoAB right
 
-
-
-

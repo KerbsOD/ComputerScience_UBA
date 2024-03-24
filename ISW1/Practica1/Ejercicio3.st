@@ -23,6 +23,26 @@ testVerdaderoOFalsoEsVerdadero
 testVerdaderoOVerdaderoEsVerdadero
 	Assert that: (Verdadero o: Verdadero) isEqualTo: Verdadero.! !
 
+!Ejercicio3Test class methodsFor: 'Verdadero' stamp: 'KerbsOctavio 3/21/2024 21:12:02'!
+testVerdaderoSiFalso
+	| Accion | 
+	
+	Accion := #NoSeRealizaAccion.
+	
+	Verdadero siFalso: [Accion := #SeRealizaAccion].
+	
+	Assert that: Accion isEqualTo: #NoSeRealizaAccion! !
+
+!Ejercicio3Test class methodsFor: 'Verdadero' stamp: 'KerbsOctavio 3/21/2024 21:12:48'!
+testVerdaderoSiVerdadero
+	| accion | 
+	
+	accion := #NoSeRealizaAccion.
+	
+	Verdadero siVerdadero: [accion := #SeRealizaAccion].
+	
+	Assert that: accion isEqualTo: #SeRealizaAccion! !
+
 !Ejercicio3Test class methodsFor: 'Verdadero' stamp: 'OK 3/21/2024 11:11:49'!
 testVerdaderoYFalsoEsFalso
 	Assert that: (Verdadero y: Falso) isEqualTo: Falso! !
@@ -43,6 +63,26 @@ testFalsoOFalsoEsFalso
 !Ejercicio3Test class methodsFor: 'Falso' stamp: 'OK 3/21/2024 10:53:50'!
 testFalsoOVerdaderoEsVerdadero
 	Assert that: (Falso o: Verdadero) isEqualTo: Verdadero ! !
+
+!Ejercicio3Test class methodsFor: 'Falso' stamp: 'KerbsOctavio 3/21/2024 21:17:25'!
+testFalsoSiFalso 
+	| Accion | 
+	
+	Accion := #NoSeRealizaAccion.
+	
+	Falso siFalso: [Accion := #SeRealizaAccion].
+	
+	Assert that: Accion isEqualTo: #SeRealizaAccion.! !
+
+!Ejercicio3Test class methodsFor: 'Falso' stamp: 'KerbsOctavio 3/21/2024 21:17:34'!
+testFalsoSiVerdadero
+	| Accion | 
+	
+	Accion := #NoSeRealizaAccion.
+	
+	Falso siVerdadero: [Accion := #SeRealizaAccion].
+	
+	Assert that: Accion isEqualTo: #NoSeRealizaAccion.! !
 
 !Ejercicio3Test class methodsFor: 'Falso' stamp: 'OK 3/21/2024 10:57:15'!
 testFalsoYFalsoEsFalso
@@ -74,9 +114,9 @@ no
 o: unBooleano
 	^unBooleano! !
 
-!Falso class methodsFor: 'as yet unclassified' stamp: 'OK 3/21/2024 11:06:27'!
+!Falso class methodsFor: 'as yet unclassified' stamp: 'KerbsOctavio 3/21/2024 20:41:54'!
 siFalso: unaAccionARealizarUIgnorar
-	unaAccionARealizarUIgnorar ! !
+	unaAccionARealizarUIgnorar value ! !
 
 !Falso class methodsFor: 'as yet unclassified' stamp: 'OK 3/21/2024 11:05:32'!
 siVerdadero: unaAccionARealizarUIgnorar
@@ -112,9 +152,26 @@ o: unBooleano
 siFalso: unaAccionARealizarUIgnorar
 	! !
 
-!Verdadero class methodsFor: 'as yet unclassified' stamp: 'OK 3/21/2024 11:06:20'!
+!Verdadero class methodsFor: 'as yet unclassified' stamp: 'OK 3/20/2024 23:47:24'!
+y: unBooleano
+	^unBooleano! !
+
+
+!Verdadero class methodsFor: 'as yet unclassified' stamp: 'OK 3/20/2024 23:46:47'!
+no
+	^Falso! !
+
+!Verdadero class methodsFor: 'as yet unclassified' stamp: 'OK 3/20/2024 23:47:11'!
+o: unBooleano
+	^self! !
+
+!Verdadero class methodsFor: 'as yet unclassified' stamp: 'OK 3/21/2024 11:05:56'!
+siFalso: unaAccionARealizarUIgnorar
+	! !
+
+!Verdadero class methodsFor: '-- all --' stamp: 'KerbsOctavio 3/21/2024 20:50:42'!
 siVerdadero: unaAccionARealizarUIgnorar
-	unaAccionARealizarUIgnorar ! !
+	unaAccionARealizarUIgnorar value! !
 
 !Verdadero class methodsFor: 'as yet unclassified' stamp: 'OK 3/20/2024 23:47:24'!
 y: unBooleano

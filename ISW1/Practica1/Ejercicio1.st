@@ -11,6 +11,6 @@ DenotativeObject subclass: #Pepe
 Pepe class
 	instanceVariableNames: ''!
 
-!Pepe class methodsFor: 'as yet unclassified' stamp: 'OK 3/20/2024 23:10:51'!
+!Pepe class methodsFor: 'as yet unclassified' stamp: 'KerbsOctavio 3/21/2024 21:18:54'!
 hola 
-	^ 'Chau' printOn: Transcript.             ! !
+	^ #Chau.             ! !
