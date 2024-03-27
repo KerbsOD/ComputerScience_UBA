@@ -89,6 +89,8 @@ func subset_sum(conjunto []int, i int, k int, sufijo int, solucion_parcial []int
 	soluciones = append(soluciones, subset_sum(conjunto, i-1, k-conjunto[i], sufijo-conjunto[i], solucion_parcial)...)
 	solucion_parcial = solucion_parcial[:len(solucion_parcial)-1]
 	soluciones = append(soluciones, subset_sum(conjunto, i-1, k, sufijo, solucion_parcial)...)
+    
+    aaa
 
 	return soluciones
 }

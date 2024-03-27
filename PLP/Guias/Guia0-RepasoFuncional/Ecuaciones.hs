@@ -36,7 +36,7 @@ limpiar (x:xs) (y:ys) = [c | c <- y:ys, c `notElem` (x:xs)]
 difPromedio :: [Float] -> [Float]
 difPromedio lista = map (\i -> i - promedio lista) lista
     where promedio lista =  sum lista / fromIntegral(length lista)
-
+    
 todosIguales :: [Int] -> Bool 
 todosIguales (x:xs) = null (limpiar [x] (x:xs) ) 
 
@@ -53,8 +53,6 @@ negacionAB (Nodo left raiz right) = Nodo (negacionAB left) (not raiz) (negacionA
 productoAB :: AB Int -> Int
 productoAB Nil = 1
 productoAB (Nodo left raiz right) = raiz * productoAB left * productoAB right
-
-
 
 agregar :: a -> [a]
 agregar = (:[]) 
