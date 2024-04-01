@@ -39,8 +39,8 @@ evaluar n = foldPoli n id (+) (*)
 -- X representa la variable independiente en un polinomio. Es un constructor que no lleva ningun argumento y simplemente indica la presencia de la variable independiente en el polinomio. Por eso X es simplemente el valor con el que evaluamos el polinomio (n).
 -- Cte representa un termino constante en un polinomio donde 'a' es el TIPO del coeficiente. Usamos id porque queremos que nos devuelva el numero de la constante. Abajo leemos Cte 2 ~> casoCte 2 ~> id n ~> n. (leer todas las definiciones para que cobre sentido)
 -- Suma representa la suma de 2 polinomios. Aca es donde viene el paso recursivo. La suma entre dos polinomios es igual a la suma de la evaluacion de ambos. Cuando se suman p y q se llama recursivamente foldPoli con p y con q. 
--- Suma p q -> casoSuma (acc p) (acc q) ~> (+) (acc p) (acc q) 
-
+-- Suma p q -> casoSuma (acc p) (acc q) ~> (+) (acc p) (acc q) ~> (+) (foldPoli casoX casoCte casoSuma casoProd  p) (foldPoli casoX casoCte casoSuma casoProd q) 
+-- Prod p q -> casoProd (acc p) (acc q) ~> (*) (acc p) (acc q) ~> (*) (foldPoli casoX casoCte casoSuma casoProd  p) (foldPoli casoX casoCte casoSuma casoProd q) 
 
 -- Definimos un polinomio 2x^2 + 3x + 1
 polinomioEjemplo :: Polinomio Int
@@ -49,6 +49,3 @@ polinomioEjemplo = Suma (Prod (Cte 2) (Prod X X)) (Suma (Prod (Cte 3) X) (Cte 1)
 main :: IO ()
 main = print (evaluar 5 polinomioEjemplo)
 
-
-
--- O sea yo le doy cualquier polinomio y lo va a tratar de resolver recursivamente.
