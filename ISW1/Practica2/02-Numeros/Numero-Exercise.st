@@ -221,13 +221,15 @@ test10FraccionDividesFraccionCorrectly
 
 	self assert: oneHalf / oneFifth equals: fiveHalfs! !
 
-!NumeroTest methodsFor: 'tests' stamp: 'HernanWilkinson 5/7/2016 21:07'!
+!NumeroTest methodsFor: 'tests' stamp: 'Ok 4/18/2024 19:38:25'!
 test11EnteroAddsFraccionCorrectly
 "
 	Ahora empieza la diversion!!
 "
 
-	self assert: one + oneFifth equals: (Entero with: 6) / (Entero with: 5)! !
+	self assert: one + oneFifth equals: (Entero with: 6) / (Entero with: 5)
+	
+	" 1 + 1/5"! !
 
 !NumeroTest methodsFor: 'tests' stamp: 'HernanWilkinson 5/7/2016 21:07'!
 test12FraccionAddsEnteroCorrectly
@@ -486,6 +488,9 @@ isZero
 	self subclassResponsibility ! !
 
 
+!Numero methodsFor: 'nueva?' stamp: 'Ok 4/18/2024 20:09:44'!
+m! !
+
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
 !classDefinition: 'Numero class' category: #'Numero-Exercise'!
@@ -671,63 +676,63 @@ hash
 	^0 hash! !
 
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 07:14:16'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 07:14:16'!
 addToCero: anInteger
 	^ self.! !
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 07:14:10'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 07:14:10'!
 addToFraccion: aFraccion
 	^ aFraccion .! !
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 07:14:27'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 07:14:27'!
 addToNegativo: aNegativo
 	^ aNegativo .! !
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 07:14:36'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 07:14:36'!
 addToPositivoDistintoDeUno: aPositivo
 	^ aPositivo .! !
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 07:14:57'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 07:14:57'!
 addToUno: anInteger
 	^ Uno new.! !
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 09:14:58'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 09:14:58'!
 divideToCero: anInteger
 	self error: Numero canNotDivideByZeroErrorDescription.! !
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 09:14:53'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 09:14:53'!
 divideToFraccion: anInteger
 	self error: Numero canNotDivideByZeroErrorDescription.! !
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 09:14:49'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 09:14:49'!
 divideToNegativo: anInteger
 	self error: Numero canNotDivideByZeroErrorDescription.! !
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 09:14:45'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 09:14:45'!
 divideToPositivosDistintosDeCeroYUno: anInteger
 	self error: Numero canNotDivideByZeroErrorDescription.! !
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 09:12:38'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 09:12:38'!
 divideToUno: anInteger
 	self error: Numero canNotDivideByZeroErrorDescription.! !
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 05:22:36'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 05:22:36'!
 multiplyToCero: anInteger
 	^ self .! !
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 05:27:18'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 05:27:18'!
 multiplyToFraccion: anInteger
 	^ self .! !
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 05:22:54'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 05:22:54'!
 multiplyToNegativo: anInteger
 	^ self .! !
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 07:03:37'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 07:03:37'!
 multiplyToPositivoDistintoDeUno: anInteger
 	^ self.! !
 
-!Cero methodsFor: 'arithmetic interface' stamp: 'Ok 4/18/2024 05:23:01'!
+!Cero methodsFor: 'arithmetic operations - private' stamp: 'Ok 4/18/2024 05:23:01'!
 multiplyToUno: anInteger
 	^ self .! !
 
@@ -1357,10 +1362,13 @@ numerator
 	^ numerator! !
 
 
-!Fraccion methodsFor: 'initialization' stamp: 'Ok 4/18/2024 10:15:18'!
+!Fraccion methodsFor: 'initialization' stamp: 'Ok 4/18/2024 16:56:07'!
 initializeWith: aNumerator over: aDenominator
 	numerator := aNumerator.
-	denominator := aDenominator ! !
+	denominator := aDenominator. 
+	
+	
+	! !
 
 
 !Fraccion methodsFor: 'testing' stamp: 'NR 9/23/2018 23:41:38'!
@@ -1473,21 +1481,20 @@ substractToUno: aOne
 wholeDivideToEntero: anInteger
 	^ Entero with: (anInteger * denominator) / numerator.! !
 
+
+!Fraccion methodsFor: 'nuevaaaa' stamp: 'Ok 4/18/2024 20:09:10'!
+m! !
+
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
 !classDefinition: 'Fraccion class' category: #'Numero-Exercise'!
 Fraccion class
 	instanceVariableNames: ''!
 
-!Fraccion class methodsFor: 'intance creation' stamp: 'NR 9/23/2018 23:45:19'!
+!Fraccion class methodsFor: 'intance creation' stamp: 'Ok 4/25/2024 09:46:07'!
 with: aDividend over: aDivisor
 
 	| greatestCommonDivisor numerator denominator |
-	
-	aDivisor isZero ifTrue: [ self error: self canNotDivideByZeroErrorDescription ].
-	aDividend isZero ifTrue: [ ^aDividend ].
-	
-	aDivisor isNegative ifTrue:[ ^aDividend negated / aDivisor negated].
 	
 	greatestCommonDivisor := aDividend greatestCommonDivisorWith: aDivisor. 
 	numerator := aDividend // greatestCommonDivisor.
@@ -1496,4 +1503,6 @@ with: aDividend over: aDivisor
 	denominator isOne ifTrue: [ ^numerator ].
 
 	^self new initializeWith: numerator over: denominator
+	
+	"buscar donde se implementa with over. La idea es que en Entero, cuando dividis, invertis el mensaje. SI el denominador es 0 devolver error. Y lo mismo con otros pasos"
 	! !
