@@ -305,6 +305,133 @@ test07AccountKnowsItsTransactions
 ! !
 
 
+!classDefinition: #ReportTest category: #'Portfolio-Solucion'!
+TestCase subclass: #ReportTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Solucion'!
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:28:09'!
+test01DepositOnReceptiveAccountDisplaysCorrectly
+	
+	| accountA summary| 
+	
+	accountA := ReceptiveAccount new.
+	
+	Deposit register: 100 on: accountA.
+	
+	summary := AccountSummary from: accountA.
+	
+	self assert: summary = 'Deposito por 100.Balance = 100'.! !
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:28:36'!
+test02ExtractionOnReceptiveAccountDisplaysCorrectly
+	
+	| accountA summary| 
+	
+	accountA := ReceptiveAccount new.
+	
+	Deposit register: 100 on: accountA.
+	Withdraw register: 50 on: accountA.
+	
+	summary := AccountSummary from: accountA.
+	
+	self assert: summary = 'Deposito por 100.Extraccion por 50.Balance = 50'.! !
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:28:55'!
+test03WithdrawTransferOnReceptiveAccountDisplaysCorrectly
+	
+	| accountA accountB summaryA summaryB| 
+	
+	accountA := ReceptiveAccount new.
+	accountB := ReceptiveAccount new.
+	
+	Deposit register: 100 on: accountA.
+	Withdraw register: 50 on: accountA.
+	
+	WireTransfer from: accountA to: accountB byAmount: 20.
+	
+	summaryA := AccountSummary from: accountA.
+	summaryB := AccountSummary from: accountB.
+	
+	self assert: summaryA = 'Deposito por 100.Extraccion por 50.Salida por transferencia de 20.Balance = 30'.
+	self assert: summaryB = 'Entrada por transferencia de 20.Balance = 20'.! !
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:29:14'!
+test04DepositTransferOnReceptiveAccountDisplaysCorrectly
+	
+	| accountA accountB summaryA summaryB| 
+	
+	accountA := ReceptiveAccount new.
+	accountB := ReceptiveAccount new.
+	
+	Deposit register: 100 on: accountA.
+	Withdraw register: 50 on: accountA.
+	
+	WireTransfer from: accountA to: accountB byAmount: 20.
+	WireTransfer from: accountB to: accountA byAmount: 30.
+	
+	summaryA := AccountSummary from: accountA.
+	summaryB := AccountSummary from: accountB.
+	
+	self assert: summaryA = 'Deposito por 100.Extraccion por 50.Salida por transferencia de 20.Entrada por transferencia de 30.Balance = 60'.
+	self assert: summaryB = 'Entrada por transferencia de 20.Salida por transferencia de 30.Balance = -10'.
+	
+	
+	
+	! !
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:29:43'!
+test05TransferNetOnReceptiveAccountDisplaysCorrectly
+	
+	| accountA accountB | 
+	
+	accountA := ReceptiveAccount new.
+	accountB := ReceptiveAccount new.
+	
+	Deposit register: 100 on: accountA.
+	Withdraw register: 50 on: accountA.
+	
+	WireTransfer from: accountA to: accountB byAmount: 20.
+	WireTransfer from: accountB to: accountA byAmount: 30.
+	
+	self assert: (TransferNet from: accountA) = 10.
+	self assert: (TransferNet from: accountB) = -10.
+	
+	
+	
+	! !
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:42:00'!
+test06TransferNetOnPortfolioAccountDisplaysCorrectly
+	
+	| accountA accountB portfolio summary | 
+	
+	accountA := ReceptiveAccount new.
+	accountB := ReceptiveAccount new.
+	
+	portfolio := Portfolio new.
+	
+	Deposit register: 100 on: accountA.
+	Withdraw register: 50 on: accountA.
+	
+	WireTransfer from: accountA to: accountB byAmount: 20.
+	WireTransfer from: accountB to: accountA byAmount: 30.
+	
+	portfolio add: accountA.
+	portfolio add: accountB.
+	
+	summary := AccountSummary from: portfolio.
+	
+	self assert:  summary = 'Deposito por 100.Extraccion por 50.Salida por transferencia de 20.Entrada por transferencia de 30.Entrada por transferencia de 20.Salida por transferencia de 30.Balance = 50'.
+	
+	
+	
+	
+	! !
+
+
 !classDefinition: #WireTransferTest category: #'Portfolio-Solucion'!
 TestCase subclass: #WireTransferTest
 	instanceVariableNames: ''
@@ -545,6 +672,12 @@ signalCanNotAddAccount
 	
 	self error: self class canNotAddAccountErrorMessage! !
 
+
+!Portfolio methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:39:32'!
+doReportWith: aReporter 
+	
+	accounts do: [ :anAccount | anAccount doReportWith: aReporter ].! !
+
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
 !classDefinition: 'Portfolio class' category: #'Portfolio-Solucion'!
@@ -628,10 +761,18 @@ addedTo: aPortfolio
 	
 	! !
 
+
+!ReceptiveAccount methodsFor: 'reports' stamp: 'OK 5/26/2024 19:51:25'!
+doReportWith: aReporter
+
+	transactions do: [ :aTransaction | aTransaction doReportWith: aReporter ].
+	
+! !
+
 
 !classDefinition: #AccountTransaction category: #'Portfolio-Solucion'!
 Object subclass: #AccountTransaction
-	instanceVariableNames: ''
+	instanceVariableNames: 'value'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Portfolio-Solucion'!
@@ -666,7 +807,7 @@ register: aValue on: account
 
 !classDefinition: #Deposit category: #'Portfolio-Solucion'!
 AccountTransaction subclass: #Deposit
-	instanceVariableNames: 'value'
+	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Portfolio-Solucion'!
@@ -676,6 +817,11 @@ initializeFor: aValue
 
 	value := aValue ! !
 
+
+!Deposit methodsFor: 'value' stamp: 'OK 5/26/2024 19:51:56'!
+doReportWith: aReporter
+
+	aReporter doReportForDeposit: value! !
 
 !Deposit methodsFor: 'value' stamp: 'HernanWilkinson 7/13/2011 18:38'!
 value
@@ -702,7 +848,7 @@ for: aValue
 
 !classDefinition: #Withdraw category: #'Portfolio-Solucion'!
 AccountTransaction subclass: #Withdraw
-	instanceVariableNames: 'value'
+	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Portfolio-Solucion'!
@@ -712,6 +858,11 @@ initializeFor: aValue
 
 	value := aValue ! !
 
+
+!Withdraw methodsFor: 'value' stamp: 'OK 5/26/2024 19:51:51'!
+doReportWith: aReporter
+
+	aReporter doReportForWithdraw: value! !
 
 !Withdraw methodsFor: 'value' stamp: 'HernanWilkinson 7/13/2011 18:33'!
 value
@@ -736,6 +887,140 @@ for: aValue
 	^ self new initializeFor: aValue ! !
 
 
+!classDefinition: #Report category: #'Portfolio-Solucion'!
+Object subclass: #Report
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Solucion'!
+
+!Report methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:43:27'!
+doReportForDeposit: anAmountOfMoney
+	
+	self subclassResponsibility ! !
+
+!Report methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:43:43'!
+doReportForDepositLeg: anAmountOfMoney
+	
+	self subclassResponsibility ! !
+
+!Report methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:43:33'!
+doReportForWithdraw: anAmountOfMoney
+	
+	self subclassResponsibility ! !
+
+!Report methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:43:38'!
+doReportForWithdrawLeg: anAmountOfMoney
+	
+	self subclassResponsibility ! !
+
+!Report methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:44:00'!
+initializeFrom: anAccount 
+	
+	self subclassResponsibility ! !
+
+!Report methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:44:11'!
+report
+	
+	self subclassResponsibility ! !
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+!classDefinition: 'Report class' category: #'Portfolio-Solucion'!
+Report class
+	instanceVariableNames: ''!
+
+!Report class methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:10:21'!
+from: aReceptiveAccount 
+	
+	^self new initializeFrom: aReceptiveAccount ! !
+
+
+!classDefinition: #AccountSummary category: #'Portfolio-Solucion'!
+Report subclass: #AccountSummary
+	instanceVariableNames: 'account summary'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Solucion'!
+
+!AccountSummary methodsFor: 'private - report' stamp: 'OK 5/26/2024 19:38:23'!
+report
+
+	account doReportWith: self.
+	summary := summary, 'Balance = ',(account balance asString).
+	^summary.! !
+
+
+!AccountSummary methodsFor: 'initialization' stamp: 'OK 5/26/2024 19:56:15'!
+doReportForDeposit: anAmountOfMoney
+	
+	summary := summary,'Deposito por ', anAmountOfMoney asString, '.'.! !
+
+!AccountSummary methodsFor: 'initialization' stamp: 'OK 5/26/2024 19:56:06'!
+doReportForDepositLeg: anAmountOfMoney
+
+	summary := summary,'Entrada por transferencia de ', anAmountOfMoney asString, '.'.! !
+
+!AccountSummary methodsFor: 'initialization' stamp: 'OK 5/26/2024 20:02:32'!
+doReportForWithdraw: anAmountOfMoney
+
+	summary := summary,'Extraccion por ', anAmountOfMoney asString, '.'.! !
+
+!AccountSummary methodsFor: 'initialization' stamp: 'OK 5/26/2024 19:55:55'!
+doReportForWithdrawLeg: anAmountOfMoney
+
+	summary := summary,'Salida por transferencia de ', anAmountOfMoney asString, '.'.! !
+
+!AccountSummary methodsFor: 'initialization' stamp: 'OK 5/26/2024 19:58:13'!
+initializeFrom: anAccount 
+	
+	account := anAccount.
+	summary := ''.
+	
+	^self report.! !
+
+
+
+!classDefinition: #TransferNet category: #'Portfolio-Solucion'!
+Report subclass: #TransferNet
+	instanceVariableNames: 'account transferNet'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Solucion'!
+
+!TransferNet methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:22:17'!
+doReportForDeposit: anAmountOfMoney
+	! !
+
+!TransferNet methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:22:33'!
+doReportForDepositLeg: anAmountOfMoney
+
+	transferNet := transferNet + anAmountOfMoney.! !
+
+!TransferNet methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:13:52'!
+doReportForWithdraw: anAmountOfMoney! !
+
+!TransferNet methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:22:42'!
+doReportForWithdrawLeg: anAmountOfMoney
+
+	transferNet := transferNet - anAmountOfMoney.! !
+
+!TransferNet methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:12:35'!
+initializeFrom: anAccount 
+	
+	account := anAccount.
+	transferNet := 0.
+	
+	^ self report.
+! !
+
+!TransferNet methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:24:45'!
+report
+	
+	account doReportWith: self.
+	^ transferNet.! !
+
+
 !classDefinition: #WireTransfer category: #'Portfolio-Solucion'!
 Object subclass: #WireTransfer
 	instanceVariableNames: 'value sourceLeg destinationLeg'
@@ -753,6 +1038,14 @@ withdrawLegGetTransfer
 	
 	^ destinationLeg getTransfer.! !
 
+
+!WireTransfer methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 16:39:08'!
+initializeFor: aSourceLeg and: aDestinationLeg byAmount: anAmountOfMoney
+	
+	sourceLeg := aSourceLeg.
+	destinationLeg := aDestinationLeg.
+	value := anAmountOfMoney.
+	! !
 
 !WireTransfer methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 10:17:32'!
 initializeFor: aSourceAccount transferingTo: aDestinationAccount byAmount: anAmountOfMoney
@@ -788,7 +1081,7 @@ assertTransferingFrom: aSourceAccount isDifferentFrom: aDestinationAccount
 	
 	( aSourceAccount = aDestinationAccount ) ifTrue: [ self signalTransferingToItself ].! !
 
-!WireTransfer class methodsFor: 'instance creation' stamp: 'OK 5/26/2024 10:17:54'!
+!WireTransfer class methodsFor: 'instance creation' stamp: 'OK 5/26/2024 16:40:56'!
 from: aSourceAccount to: aDestinationAccount byAmount: anAmountOfMoney 
 
 	self assertAmountOfMoneyIsPositive: anAmountOfMoney.
@@ -839,6 +1132,11 @@ initializeFor: aWireTransfer onAccount: aReceptiveAccount
 	
 	aReceptiveAccount register: self.! !
 
+!WireTransferLeg methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 19:50:43'!
+value
+	
+	^ transfer value! !
+
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
 !classDefinition: 'WireTransferLeg class' category: #'Portfolio-Solucion'!
@@ -862,6 +1160,11 @@ WireTransferLeg subclass: #DepositLeg
 affectBalance: currentBalance 
 	^ currentBalance + transfer value.! !
 
+!DepositLeg methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 19:49:28'!
+doReportWith: aReporter
+
+	aReporter doReportForDepositLeg: self value.! !
+
 
 !classDefinition: #WithdrawLeg category: #'Portfolio-Solucion'!
 WireTransferLeg subclass: #WithdrawLeg
@@ -873,3 +1176,8 @@ WireTransferLeg subclass: #WithdrawLeg
 !WithdrawLeg methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 10:21:58'!
 affectBalance: currentBalance 
 	^ currentBalance - transfer value.! !
+
+!WithdrawLeg methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 19:50:18'!
+doReportWith: aReporter
+
+	aReporter doReportForWithdrawLeg: self value.! !
