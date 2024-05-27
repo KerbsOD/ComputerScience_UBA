@@ -312,7 +312,18 @@ TestCase subclass: #ReportTest
 	poolDictionaries: ''
 	category: 'Portfolio-Solucion'!
 
-!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:28:09'!
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 10:27:08'!
+test00EmptyReceptiveAccountDisplaysZeroBalance
+	
+	| accountA summary| 
+	
+	accountA := ReceptiveAccount new.
+	
+	summary := AccountSummary of: accountA.
+	
+	self assert: summary = 'Balance = 0'.! !
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 07:34:28'!
 test01DepositOnReceptiveAccountDisplaysCorrectly
 	
 	| accountA summary| 
@@ -321,11 +332,11 @@ test01DepositOnReceptiveAccountDisplaysCorrectly
 	
 	Deposit register: 100 on: accountA.
 	
-	summary := AccountSummary from: accountA.
+	summary := AccountSummary of: accountA.
 	
 	self assert: summary = 'Deposito por 100.Balance = 100'.! !
 
-!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:28:36'!
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 07:34:40'!
 test02ExtractionOnReceptiveAccountDisplaysCorrectly
 	
 	| accountA summary| 
@@ -335,11 +346,11 @@ test02ExtractionOnReceptiveAccountDisplaysCorrectly
 	Deposit register: 100 on: accountA.
 	Withdraw register: 50 on: accountA.
 	
-	summary := AccountSummary from: accountA.
+	summary := AccountSummary of: accountA.
 	
 	self assert: summary = 'Deposito por 100.Extraccion por 50.Balance = 50'.! !
 
-!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:28:55'!
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 07:34:50'!
 test03WithdrawTransferOnReceptiveAccountDisplaysCorrectly
 	
 	| accountA accountB summaryA summaryB| 
@@ -352,13 +363,13 @@ test03WithdrawTransferOnReceptiveAccountDisplaysCorrectly
 	
 	WireTransfer from: accountA to: accountB byAmount: 20.
 	
-	summaryA := AccountSummary from: accountA.
-	summaryB := AccountSummary from: accountB.
+	summaryA := AccountSummary of: accountA.
+	summaryB := AccountSummary of: accountB.
 	
 	self assert: summaryA = 'Deposito por 100.Extraccion por 50.Salida por transferencia de 20.Balance = 30'.
 	self assert: summaryB = 'Entrada por transferencia de 20.Balance = 20'.! !
 
-!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:29:14'!
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 07:34:57'!
 test04DepositTransferOnReceptiveAccountDisplaysCorrectly
 	
 	| accountA accountB summaryA summaryB| 
@@ -372,8 +383,8 @@ test04DepositTransferOnReceptiveAccountDisplaysCorrectly
 	WireTransfer from: accountA to: accountB byAmount: 20.
 	WireTransfer from: accountB to: accountA byAmount: 30.
 	
-	summaryA := AccountSummary from: accountA.
-	summaryB := AccountSummary from: accountB.
+	summaryA := AccountSummary of: accountA.
+	summaryB := AccountSummary of: accountB.
 	
 	self assert: summaryA = 'Deposito por 100.Extraccion por 50.Salida por transferencia de 20.Entrada por transferencia de 30.Balance = 60'.
 	self assert: summaryB = 'Entrada por transferencia de 20.Salida por transferencia de 30.Balance = -10'.
@@ -382,7 +393,7 @@ test04DepositTransferOnReceptiveAccountDisplaysCorrectly
 	
 	! !
 
-!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:29:43'!
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 07:35:02'!
 test05TransferNetOnReceptiveAccountDisplaysCorrectly
 	
 	| accountA accountB | 
@@ -396,17 +407,17 @@ test05TransferNetOnReceptiveAccountDisplaysCorrectly
 	WireTransfer from: accountA to: accountB byAmount: 20.
 	WireTransfer from: accountB to: accountA byAmount: 30.
 	
-	self assert: (TransferNet from: accountA) = 10.
-	self assert: (TransferNet from: accountB) = -10.
+	self assert: (TransferNet of: accountA) = 10.
+	self assert: (TransferNet of: accountB) = -10.
 	
 	
 	
 	! !
 
-!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:42:00'!
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 11:53:33'!
 test06TransferNetOnPortfolioAccountDisplaysCorrectly
 	
-	| accountA accountB portfolio summary | 
+	| accountA accountB portfolio | 
 	
 	accountA := ReceptiveAccount new.
 	accountB := ReceptiveAccount new.
@@ -417,14 +428,201 @@ test06TransferNetOnPortfolioAccountDisplaysCorrectly
 	Withdraw register: 50 on: accountA.
 	
 	WireTransfer from: accountA to: accountB byAmount: 20.
-	WireTransfer from: accountB to: accountA byAmount: 30.
+	WireTransfer from: accountB to: (ReceptiveAccount new) byAmount: 30.
 	
 	portfolio add: accountA.
 	portfolio add: accountB.
 	
-	summary := AccountSummary from: portfolio.
+	self assert: (TransferNet of: portfolio) = -30.
 	
-	self assert:  summary = 'Deposito por 100.Extraccion por 50.Salida por transferencia de 20.Entrada por transferencia de 30.Entrada por transferencia de 20.Salida por transferencia de 30.Balance = 50'.
+	
+	
+	
+	! !
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 09:12:47'!
+test07EmptyPortfolioTree
+	
+	| portfolioFamilia treeStructure |
+	
+	portfolioFamilia := Portfolio named: 'Portfolio de la familia.'.
+	
+	treeStructure := PortfolioStructure of: portfolioFamilia.
+	
+	self assert: treeStructure = 'Portfolio de la familia.'
+	
+	 
+	
+	
+	
+	
+	
+	
+	! !
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 09:13:08'!
+test08PortfolioTreeWithOneAccount
+	
+	| familyPortfolio myAccount treeStructure |
+	
+	myAccount := ReceptiveAccount named: 'Cuenta mia.'.
+	familyPortfolio := Portfolio named: 'Portfolio de la familia.' with: myAccount.
+	
+	
+	treeStructure := PortfolioStructure of: familyPortfolio.
+	
+	self assert: treeStructure = 'Portfolio de la familia.Cuenta mia.'
+	
+	 
+	
+	
+	
+	
+	
+	
+	! !
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 09:24:52'!
+test09PortfolioTreeWithWholeFamily
+	
+	| familyPortfolio myAccount treeStructure johnsAccount angiesAccount childrenPortfolio|
+	
+	johnsAccount := ReceptiveAccount named: 'Cuenta de Juan.'.
+	angiesAccount := ReceptiveAccount named: 'Cuenta de Angeles.'.
+	childrenPortfolio := Portfolio named: 'Portfolio de hijos.' with: johnsAccount with: angiesAccount.
+	myAccount := ReceptiveAccount named: 'Cuenta Mia.'.
+	familyPortfolio := Portfolio named: 'Portfolio de la familia.' with: myAccount with: childrenPortfolio.
+	
+	treeStructure := PortfolioStructure of: familyPortfolio.
+	
+	self assert: treeStructure = 'Portfolio de la familia.Cuenta Mia.Portfolio de hijos.Cuenta de Juan.Cuenta de Angeles.'
+	
+	 
+	
+	
+	
+	
+	
+	
+	! !
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 09:24:56'!
+test10PortfolioTreeWithWholeFamily
+	
+	| familyPortfolio myAccount treeStructure johnsAccount angiesAccount childrenPortfolio|
+	
+	johnsAccount := ReceptiveAccount named: 'Cuenta de Juan.'.
+	angiesAccount := ReceptiveAccount named: 'Cuenta de Angeles.'.
+	childrenPortfolio := Portfolio named: 'Portfolio de hijos.' with: johnsAccount with: angiesAccount.
+	myAccount := ReceptiveAccount named: 'Cuenta Mia.'.
+	familyPortfolio := Portfolio named: 'Portfolio de la familia.' with: myAccount with: childrenPortfolio.
+	
+	treeStructure := PortfolioStructure of: familyPortfolio.
+	
+	self assert: treeStructure = 'Portfolio de la familia.Cuenta Mia.Portfolio de hijos.Cuenta de Juan.Cuenta de Angeles.'
+	
+	 
+	
+	
+	
+	
+	
+	
+	! !
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 09:23:36'!
+test11
+	
+	| familyPortfolio treeStructure |
+	
+	familyPortfolio := Portfolio named: 'Portfolio de la familia.'.
+	
+	treeStructure := PortfolioTransactions of: familyPortfolio.
+	
+	self assert: treeStructure = 'Portfolio de la familia.Balance = 0'
+	
+	 
+	
+	
+	
+	
+	
+	
+	! !
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 09:31:43'!
+test12
+	
+	| familyPortfolio myAccount treeStructure |
+	
+	myAccount := ReceptiveAccount named: 'Cuenta Mia.'.
+	familyPortfolio := Portfolio named: 'Portfolio de la familia.' with: myAccount.
+	
+	treeStructure := PortfolioTransactions of: familyPortfolio.
+	
+	self assert: treeStructure = 'Portfolio de la familia.Cuenta Mia.Balance = 0Balance = 0'
+	
+	 
+	
+	
+	
+	
+	
+	
+	! !
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 09:34:27'!
+test13
+	
+	| familyPortfolio myAccount treeStructure |
+	
+	myAccount := ReceptiveAccount named: 'Cuenta Mia.'.
+	
+	Deposit register: 100 on: myAccount.
+	Withdraw register: 50 on: myAccount.
+	
+	familyPortfolio := Portfolio named: 'Portfolio de la familia.' with: myAccount.
+	
+	treeStructure := PortfolioTransactions of: familyPortfolio.
+	
+	self assert: treeStructure = 'Portfolio de la familia.Cuenta Mia.Deposito por 100.Extraccion por 50.Balance = 50Balance = 50'
+	
+	 
+	
+	
+	
+	
+	
+	
+	! !
+
+!ReportTest methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 10:08:20'!
+test14
+	
+	| johnsAccount angiesAccount childrenPortfolio myAccount familyPortfolio treeStructure |
+	
+	johnsAccount := ReceptiveAccount named: 'Cuenta de Juan.'.
+	angiesAccount := ReceptiveAccount named: 'Cuenta de Angeles.'.
+	childrenPortfolio := Portfolio named: 'Portfolio de hijos.' with: johnsAccount with: angiesAccount.
+	
+	myAccount := ReceptiveAccount named: 'Cuenta Mia.'.
+	familyPortfolio := Portfolio named: 'Portfolio de la familia.' with: myAccount with: childrenPortfolio.
+	
+	Deposit register: 100 on: myAccount.
+	Withdraw register: 50 on: myAccount.
+	
+	Deposit register: 200 on: johnsAccount.
+	Withdraw register: 70 on: johnsAccount.
+	
+	WireTransfer from: angiesAccount to: (ReceptiveAccount new) byAmount: 20.
+	
+	treeStructure := PortfolioTransactions of: familyPortfolio.
+	
+	self assert: treeStructure = 'Portfolio de la familia.Cuenta Mia.Deposito por 100.Extraccion por 50.Balance = 50Portfolio de hijos.Cuenta de Juan.Deposito por 200.Extraccion por 70.Balance = 130Cuenta de Angeles.Salida por transferencia de 20.Balance = -20Balance = 110Balance = 160'
+	
+	 
+	
+	
 	
 	
 	
@@ -522,7 +720,7 @@ test05CanNavigateFromSourceLegToTransferToDestinationLegAndInReverse
 
 !classDefinition: #Account category: #'Portfolio-Solucion'!
 Object subclass: #Account
-	instanceVariableNames: ''
+	instanceVariableNames: 'name'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Portfolio-Solucion'!
@@ -549,6 +747,11 @@ addTransactionsTo: aCollectionOfTransactions
 
 	self subclassResponsibility ! !
 
+!Account methodsFor: 'transactions' stamp: 'OK 5/27/2024 09:28:53'!
+name
+
+	^name.! !
+
 !Account methodsFor: 'transactions' stamp: 'HAW 5/25/2019 12:23:15'!
 transactions
 
@@ -559,6 +762,17 @@ transactions
 addedTo: aPortfolio
 
 	self subclassResponsibility ! !
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+!classDefinition: 'Account class' category: #'Portfolio-Solucion'!
+Account class
+	instanceVariableNames: ''!
+
+!Account class methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 08:14:35'!
+named: aName
+
+	^self new initializeWith: aName.! !
 
 
 !classDefinition: #Portfolio category: #'Portfolio-Solucion'!
@@ -603,11 +817,18 @@ rootParents
 	^ rootParents! !
 
 
-!Portfolio methodsFor: 'initialization' stamp: 'HAW 5/25/2019 12:03:18'!
+!Portfolio methodsFor: 'initialization' stamp: 'OK 5/27/2024 07:22:34'!
 initialize
 
 	accounts := OrderedCollection new.
 	parents := OrderedCollection new.! !
+
+!Portfolio methodsFor: 'initialization' stamp: 'OK 5/27/2024 07:21:55'!
+initializeWith: aName
+
+	accounts := OrderedCollection new.
+	parents := OrderedCollection new.
+	name := aName.! !
 
 
 !Portfolio methodsFor: 'balance' stamp: 'HAW 5/25/2019 11:19:36'!
@@ -673,10 +894,17 @@ signalCanNotAddAccount
 	self error: self class canNotAddAccountErrorMessage! !
 
 
-!Portfolio methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:39:32'!
+!Portfolio methodsFor: 'report' stamp: 'OK 5/27/2024 12:06:33'!
+doReportOverAccountsWith: aReporter 
+
+	accounts do: [ :anAccount | anAccount doReportWith: aReporter ].! !
+
+!Portfolio methodsFor: 'report' stamp: 'OK 5/27/2024 11:42:06'!
 doReportWith: aReporter 
 	
-	accounts do: [ :anAccount | anAccount doReportWith: aReporter ].! !
+	aReporter doReportForPortfolio: self.
+	
+	! !
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
@@ -688,6 +916,21 @@ Portfolio class
 canNotAddAccountErrorMessage
 	
 	^'Can not add repeated account to a portfolio'! !
+
+!Portfolio class methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 07:47:32'!
+named: aName with: anAccount
+
+	^(self new initializeWith: aName) 
+		add: anAccount; 
+		yourself.! !
+
+!Portfolio class methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 07:47:27'!
+named: aName with: anAccount with: anotherAccount
+
+	^(self new initializeWith: aName) 
+		add: anAccount;
+		add: anotherAccount;
+		yourself.! !
 
 !Portfolio class methodsFor: 'as yet unclassified' stamp: 'HAW 5/25/2019 11:18:21'!
 with: anAccount
@@ -717,6 +960,12 @@ initialize
 
 	super initialize.
 	transactions := OrderedCollection new.! !
+
+!ReceptiveAccount methodsFor: 'initialization' stamp: 'OK 5/27/2024 07:24:36'!
+initializeWith: aName
+
+	transactions := OrderedCollection new.
+	name := aName.! !
 
 
 !ReceptiveAccount methodsFor: 'transactions' stamp: 'HAW 5/25/2019 11:38:52'!
@@ -762,10 +1011,18 @@ addedTo: aPortfolio
 	! !
 
 
-!ReceptiveAccount methodsFor: 'reports' stamp: 'OK 5/26/2024 19:51:25'!
+!ReceptiveAccount methodsFor: 'report' stamp: 'OK 5/27/2024 12:06:13'!
+doReportOverTransactionsWith: aReporter
+	
+	transactions do: [ :aTransaction | aTransaction doReportWith: aReporter ].
+	
+! !
+
+!ReceptiveAccount methodsFor: 'report' stamp: 'OK 5/27/2024 11:41:13'!
 doReportWith: aReporter
 
-	transactions do: [ :aTransaction | aTransaction doReportWith: aReporter ].
+	aReporter doReportForReceptiveAccount: self.
+
 	
 ! !
 
@@ -904,6 +1161,16 @@ doReportForDepositLeg: anAmountOfMoney
 	
 	self subclassResponsibility ! !
 
+!Report methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 08:08:13'!
+doReportForPortfolio: aPortfolioName
+	
+	self subclassResponsibility ! !
+
+!Report methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 08:08:17'!
+doReportForReceptiveAccount: aReceptiveAccountName
+	
+	self subclassResponsibility ! !
+
 !Report methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:43:33'!
 doReportForWithdraw: anAmountOfMoney
 	
@@ -914,8 +1181,8 @@ doReportForWithdrawLeg: anAmountOfMoney
 	
 	self subclassResponsibility ! !
 
-!Report methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:44:00'!
-initializeFrom: anAccount 
+!Report methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 08:09:41'!
+initializeFor: anAccount 
 	
 	self subclassResponsibility ! !
 
@@ -930,10 +1197,10 @@ report
 Report class
 	instanceVariableNames: ''!
 
-!Report class methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:10:21'!
-from: aReceptiveAccount 
+!Report class methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 07:37:19'!
+of: anAccount 
 	
-	^self new initializeFrom: aReceptiveAccount ! !
+	^self new initializeFor: anAccount. ! !
 
 
 !classDefinition: #AccountSummary category: #'Portfolio-Solucion'!
@@ -961,6 +1228,15 @@ doReportForDepositLeg: anAmountOfMoney
 
 	summary := summary,'Entrada por transferencia de ', anAmountOfMoney asString, '.'.! !
 
+!AccountSummary methodsFor: 'initialization' stamp: 'OK 5/27/2024 09:30:39'!
+doReportForPortfolio: aPortfolio
+	! !
+
+!AccountSummary methodsFor: 'initialization' stamp: 'OK 5/27/2024 12:06:13'!
+doReportForReceptiveAccount: aReceptiveAccount
+	
+	aReceptiveAccount doReportOverTransactionsWith: self.! !
+
 !AccountSummary methodsFor: 'initialization' stamp: 'OK 5/26/2024 20:02:32'!
 doReportForWithdraw: anAmountOfMoney
 
@@ -971,14 +1247,118 @@ doReportForWithdrawLeg: anAmountOfMoney
 
 	summary := summary,'Salida por transferencia de ', anAmountOfMoney asString, '.'.! !
 
-!AccountSummary methodsFor: 'initialization' stamp: 'OK 5/26/2024 19:58:13'!
-initializeFrom: anAccount 
+!AccountSummary methodsFor: 'initialization' stamp: 'OK 5/27/2024 07:36:33'!
+initializeFor: anAccount 
 	
 	account := anAccount.
 	summary := ''.
 	
 	^self report.! !
 
+
+!classDefinition: #PortfolioStructure category: #'Portfolio-Solucion'!
+Report subclass: #PortfolioStructure
+	instanceVariableNames: 'tree account'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Solucion'!
+
+!PortfolioStructure methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 08:08:37'!
+doReportForDeposit: anAmountOfMoney! !
+
+!PortfolioStructure methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 08:08:50'!
+doReportForDepositLeg: anAmountOfMoney! !
+
+!PortfolioStructure methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 12:07:53'!
+doReportForPortfolio: aPortfolio
+	
+	tree := tree,(aPortfolio name).
+	aPortfolio doReportOverAccountsWith: self.! !
+
+!PortfolioStructure methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 12:07:53'!
+doReportForReceptiveAccount: aReceptiveAccount
+	
+	tree := tree,(aReceptiveAccount name).
+! !
+
+!PortfolioStructure methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 08:09:06'!
+doReportForWithdraw: anAmountOfMoney! !
+
+!PortfolioStructure methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 08:09:19'!
+doReportForWithdrawLeg: anAmountOfMoney! !
+
+!PortfolioStructure methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 12:07:53'!
+initializeFor: anAccount 
+	
+	tree := ''.
+	account := anAccount.
+	
+	^ self report	
+! !
+
+!PortfolioStructure methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 12:07:53'!
+report
+	
+	account doReportWith: self.
+	^ tree.
+	! !
+
+
+!classDefinition: #PortfolioTransactions category: #'Portfolio-Solucion'!
+Report subclass: #PortfolioTransactions
+	instanceVariableNames: 'accountDetails account'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Solucion'!
+
+!PortfolioTransactions methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 09:48:50'!
+doReportForDeposit: anAmountOfMoney
+
+	! !
+
+!PortfolioTransactions methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 09:48:55'!
+doReportForDepositLeg: anAmountOfMoney
+
+	! !
+
+!PortfolioTransactions methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 12:09:23'!
+doReportForPortfolio: aPortfolio
+	
+	accountDetails := accountDetails,(aPortfolio name).
+	aPortfolio doReportOverAccountsWith: self.
+	accountDetails := accountDetails,'Balance = ',(aPortfolio balance) asString.! !
+
+!PortfolioTransactions methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 12:09:23'!
+doReportForReceptiveAccount: aReceptiveAccount
+
+	accountDetails := accountDetails,(aReceptiveAccount name).
+	accountDetails := accountDetails,(AccountSummary of: aReceptiveAccount).! !
+
+!PortfolioTransactions methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 09:49:00'!
+doReportForWithdraw: anAmountOfMoney
+
+! !
+
+!PortfolioTransactions methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 09:49:04'!
+doReportForWithdrawLeg: anAmountOfMoney
+
+	! !
+
+!PortfolioTransactions methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 12:09:23'!
+initializeFor: anAccount 
+
+	accountDetails := ''.
+	account := anAccount.
+	
+	^ self report	
+! !
+
+!PortfolioTransactions methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 12:09:23'!
+report
+	
+	account doReportWith: self.
+	
+	^ accountDetails.! !
 
 
 !classDefinition: #TransferNet category: #'Portfolio-Solucion'!
@@ -997,6 +1377,16 @@ doReportForDepositLeg: anAmountOfMoney
 
 	transferNet := transferNet + anAmountOfMoney.! !
 
+!TransferNet methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 12:06:33'!
+doReportForPortfolio: aPortfolio
+
+	aPortfolio doReportOverAccountsWith: self.! !
+
+!TransferNet methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 12:06:13'!
+doReportForReceptiveAccount: aReceptiveAccount
+	
+	aReceptiveAccount doReportOverTransactionsWith: self.! !
+
 !TransferNet methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:13:52'!
 doReportForWithdraw: anAmountOfMoney! !
 
@@ -1005,8 +1395,8 @@ doReportForWithdrawLeg: anAmountOfMoney
 
 	transferNet := transferNet - anAmountOfMoney.! !
 
-!TransferNet methodsFor: 'as yet unclassified' stamp: 'OK 5/26/2024 20:12:35'!
-initializeFrom: anAccount 
+!TransferNet methodsFor: 'as yet unclassified' stamp: 'OK 5/27/2024 07:36:51'!
+initializeFor: anAccount 
 	
 	account := anAccount.
 	transferNet := 0.
