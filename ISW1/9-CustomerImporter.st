@@ -60,19 +60,22 @@ parsedLine
 
 	^ stream parsedLineData ! !
 
-!ImportTest methodsFor: 'database' stamp: 'OK 6/15/2024 02:49:45'!
+!ImportTest methodsFor: 'database' stamp: 'OK 6/15/2024 08:42:53'!
 persistNewAddressToLastCustomer
 
-	lastPersistedCustomer addAddress: 
-	( Address 
+	self validFieldsAre: 6.
+
+	lastPersistedCustomer addAddress: ( Address 
 		street: self parsedLine second
 		atNumber: self parsedLine third asNumber
 		atCity:  self parsedLine fourth
 		withZipCode:  self parsedLine fifth asNumber
 		onProvince: self parsedLine sixth )! !
 
-!ImportTest methodsFor: 'database' stamp: 'OK 6/15/2024 02:42:42'!
+!ImportTest methodsFor: 'database' stamp: 'OK 6/15/2024 08:43:08'!
 persistNewCustomer
+
+	self validFieldsAre: 5.
 
 	lastPersistedCustomer := Customer 
 		firstName: self parsedLine second 
@@ -103,16 +106,27 @@ requestCustomerWithIdentificationType: anIdentificationType andNumber: anIdentif
 	
 	! !
 
-!ImportTest methodsFor: 'database' stamp: 'OK 6/15/2024 02:30:31'!
+!ImportTest methodsFor: 'database' stamp: 'OK 6/15/2024 07:05:35'!
 requestObjectThatMeets: aBlock ofType: aType
 
-	^ ( session select: [ :anObject | aBlock value: anObject ] ofType: aType ) anyOne! !
+	| set |
+
+	set := session select: [ :anObject | aBlock value: anObject ] ofType: aType.
+	
+	set  ifNotEmpty: [ ^set anyOne ]
+		ifEmpty: [ self error: self noObjectMatchesDescriptionErrorMessage ] ! !
+
+!ImportTest methodsFor: 'database' stamp: 'OK 6/15/2024 08:42:53'!
+validFieldsAre: aNumberOfFields
+
+	self assertNumberOfFieldsEquals: aNumberOfFields.
+	self assertFieldsDoNotBeginOrFinishWithSpaces! !
 
 
-!ImportTest methodsFor: 'assertions' stamp: 'OK 6/14/2024 21:33:32'!
+!ImportTest methodsFor: 'assertions' stamp: 'OK 6/15/2024 08:35:18'!
 assertCustomer: aCustomer hasStreet: aStreet atNumber: aStreetNumber andZipCode: aZipCode   
 
-	^ self assert: aCustomer addresses includes: ( self requestAddressWithStreet: aStreet atNumber: aStreetNumber andZipCode: aZipCode )! !
+	^ self assert: ( aCustomer hasAddress: ( self requestAddressWithStreet: aStreet atNumber: aStreetNumber andZipCode: aZipCode ) )! !
 
 !ImportTest methodsFor: 'assertions' stamp: 'OK 6/14/2024 21:28:30'!
 assertCustomer: aCustomer name: aName andLastName: aLastName   
@@ -120,17 +134,36 @@ assertCustomer: aCustomer name: aName andLastName: aLastName
 	self assert: aCustomer firstName = aName.
 	self assert: aCustomer lastName = aLastName! !
 
+!ImportTest methodsFor: 'assertions' stamp: 'OK 6/15/2024 08:41:49'!
+assertFieldsDoNotBeginOrFinishWithSpaces
+
+	^ ( self parsedLine select: [ :aField |  self fieldBeginsOrEndsWithASpaceChar: aField  ] ) ifNotEmpty: [ self error: self fieldsCanNotBeginOrEndWithSpacesErrorMessage ].! !
+
 !ImportTest methodsFor: 'assertions' stamp: 'OK 6/14/2024 20:00:34'!
 assertNumberOfCustomers: aQuantity
 
 	^ self assert: self numberOfCustomers = aQuantity! !
 
+!ImportTest methodsFor: 'assertions' stamp: 'OK 6/15/2024 08:32:56'!
+assertNumberOfFieldsEquals: aNumberOfFields
 
-!ImportTest methodsFor: 'setUp/tearDown' stamp: 'OK 6/15/2024 01:46:53'!
+	^ self parsedLine size = aNumberOfFields  ifFalse: [ self error: self invalidNumberOfFieldsErrorMessage ]! !
+
+!ImportTest methodsFor: 'assertions' stamp: 'OK 6/15/2024 08:39:38'!
+fieldBeginsOrEndsWithASpaceChar: aField
+
+	^ ( aField beginsWith: self space )  or: ( aField endsWith: self space )! !
+
+!ImportTest methodsFor: 'assertions' stamp: 'OK 6/15/2024 08:37:11'!
+space
+
+	^ Character space  asString! !
+
+
+!ImportTest methodsFor: 'setUp/tearDown' stamp: 'OK 6/15/2024 06:48:05'!
 setUp
 	
 	self startDatabaseSession.
-	self importStream. 
 	! !
 
 !ImportTest methodsFor: 'setUp/tearDown' stamp: 'OK 6/14/2024 19:30:51'!
@@ -152,20 +185,10 @@ terminateDatabaseSession
 	session close! !
 
 
-!ImportTest methodsFor: 'dataStream' stamp: 'OK 6/15/2024 01:14:31'!
-dataStream
+!ImportTest methodsFor: 'dataStream' stamp: 'OK 6/15/2024 06:47:57'!
+importStream: aDataStream
 
-	^ 
-'C,Pepe,Sanchez,D,22333444
-A,San Martin,3322,Olivos,1636,BsAs
-A,Maipu,888,Florida,1122,Buenos Aires
-C,Juan,Perez,C,23-25666777-9
-A,Alem,1122,CABA,1001,CABA'! !
-
-!ImportTest methodsFor: 'dataStream' stamp: 'OK 6/15/2024 02:03:07'!
-importStream
-
-	stream := InputStream forResource: self dataStream.! !
+	stream := InputStream forResource: aDataStream.! !
 
 !ImportTest methodsFor: 'dataStream' stamp: 'OK 6/15/2024 01:20:11'!
 jumpToNextLine
@@ -182,11 +205,13 @@ lineRepresentsCustomer
 
 	^ stream line beginsWith: 'C'.! !
 
-!ImportTest methodsFor: 'dataStream' stamp: 'OK 6/15/2024 02:22:30'!
+!ImportTest methodsFor: 'dataStream' stamp: 'OK 6/15/2024 07:42:53'!
 processLineAndPersistOnDatabase
 
-	self lineRepresentsCustomer ifTrue: [ self persistNewCustomer ].
-	self lineRepresentsAddress    ifTrue: [ self persistNewAddressToLastCustomer ]! !
+	self lineRepresentsCustomer ifTrue: [ ^ self persistNewCustomer ].
+	self lineRepresentsAddress    ifTrue: [ ^ self persistNewAddressToLastCustomer ].
+	
+	self error: self invalidDataFormatErrorMessage! !
 
 !ImportTest methodsFor: 'dataStream' stamp: 'OK 6/15/2024 01:20:59'!
 readableLine
@@ -194,8 +219,31 @@ readableLine
 	^ stream readableLine! !
 
 
-!ImportTest methodsFor: 'test' stamp: 'OK 6/15/2024 01:20:59'!
-importCustomers
+!ImportTest methodsFor: 'testFactoryObjects' stamp: 'OK 6/15/2024 06:55:00'!
+validCustomerOne
+
+	^ self requestCustomerWithIdentificationType: 'D' andNumber: '22333444'! !
+
+!ImportTest methodsFor: 'testFactoryObjects' stamp: 'OK 6/15/2024 06:55:18'!
+validCustomerTwo
+
+	^ self requestCustomerWithIdentificationType: 'C' andNumber: '23-25666777-9'! !
+
+!ImportTest methodsFor: 'testFactoryObjects' stamp: 'OK 6/15/2024 06:48:56'!
+validDataStream
+
+	^ 
+'C,Pepe,Sanchez,D,22333444
+A,San Martin,3322,Olivos,1636,BsAs
+A,Maipu,888,Florida,1122,Buenos Aires
+C,Juan,Perez,C,23-25666777-9
+A,Alem,1122,CABA,1001,CABA'! !
+
+
+!ImportTest methodsFor: 'test' stamp: 'OK 6/15/2024 06:53:16'!
+importCustomersFrom: aDataStream
+
+	self importStream: aDataStream.
 
 	[ self readableLine ] whileTrue: [
 		self processLineAndPersistOnDatabase.
@@ -204,25 +252,118 @@ importCustomers
 
 ! !
 
-!ImportTest methodsFor: 'test' stamp: 'OK 6/14/2024 22:20:28'!
+!ImportTest methodsFor: 'test' stamp: 'OK 6/15/2024 06:55:33'!
 test01Import
 
-	| customer1 customer2 |
-	
-	self importCustomers.
-	
-	customer1 := self requestCustomerWithIdentificationType: 'D' andNumber: '22333444'.
-	customer2 := self requestCustomerWithIdentificationType: 'C' andNumber: '23-25666777-9'.
+	self importCustomersFrom: ( self validDataStream ).
 	
 	self assertNumberOfCustomers: 2.
 	
-	self assertCustomer: customer1 name: 'Pepe' andLastName: 'Sanchez'.
-	self assertCustomer: customer1 hasStreet: 'San Martin' atNumber: 3322 andZipCode: 1636.
-	self assertCustomer: customer1 hasStreet: 'Maipu' atNumber: 888 andZipCode: 1122.
+	self assertCustomer: self validCustomerOne name: 'Pepe' andLastName: 'Sanchez'.
+	self assertCustomer: self validCustomerOne hasStreet: 'San Martin' atNumber: 3322 andZipCode: 1636.
+	self assertCustomer: self validCustomerOne hasStreet: 'Maipu' atNumber: 888 andZipCode: 1122.
 	
-	self assertCustomer: customer2 name: 'Juan' andLastName: 'Perez'.
-	self assertCustomer: customer2 hasStreet: 'Alem' atNumber: 1122 andZipCode: 1001.
+	self assertCustomer: self validCustomerTwo name: 'Juan' andLastName: 'Perez'.
+	self assertCustomer: self validCustomerTwo hasStreet: 'Alem' atNumber: 1122 andZipCode: 1001.
 	! !
+
+!ImportTest methodsFor: 'test' stamp: 'OK 6/15/2024 07:43:17'!
+test02ThereIsDataOnFIleButIsNotImported
+
+	| dataStream |
+	
+	dataStream := 9.
+
+	self 
+		should: [ self importCustomersFrom: dataStream ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError | 
+			self assert: anError messageText = InputStream invalidStreamFormatErrorMessage.
+		].
+		
+	
+
+	
+	! !
+
+!ImportTest methodsFor: 'test' stamp: 'OK 6/15/2024 07:45:34'!
+test03SometimesANilIsGenerated
+
+	| dataStream |
+	
+	dataStream := 
+	'
+	C,Pepe,Sanchez,D,22333444'.
+
+	self 
+		should: [ self importCustomersFrom: dataStream ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError | 
+			self assert: anError messageText = self invalidDataFormatErrorMessage.
+		].
+	
+
+	
+	! !
+
+!ImportTest methodsFor: 'test' stamp: 'OK 6/15/2024 08:30:42'!
+test04OutOfRangeAccesses
+
+	| dataStream |
+	
+	dataStream := 
+	'C,Sanchez,D,22333444'.
+
+	self 
+		should: [ self importCustomersFrom: dataStream ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError | 
+			self assert: anError messageText = self invalidNumberOfFieldsErrorMessage.
+		].
+	
+
+	
+	! !
+
+!ImportTest methodsFor: 'test' stamp: 'OK 6/15/2024 08:30:22'!
+test05FieldsCanNotStartOrEndWithSpaces
+
+	| dataStream |
+	
+	dataStream := 
+	'C, Pepe,Sanchez,D,22333444,'.
+
+	self 
+		should: [ self importCustomersFrom: dataStream ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError | 
+			self assert: anError messageText = self fieldsCanNotBeginOrEndWithSpacesErrorMessage.
+		].
+	
+
+	
+	! !
+
+
+!ImportTest methodsFor: 'errormessages' stamp: 'OK 6/15/2024 08:30:22'!
+fieldsCanNotBeginOrEndWithSpacesErrorMessage
+	
+	^ 'Can not have fields with spaces!!'! !
+
+!ImportTest methodsFor: 'errormessages' stamp: 'OK 6/15/2024 07:42:53'!
+invalidDataFormatErrorMessage
+	
+	^ 'All lines must start with a C or an A. Invalid string format!!'.! !
+
+!ImportTest methodsFor: 'errormessages' stamp: 'OK 6/15/2024 08:30:42'!
+invalidNumberOfFieldsErrorMessage
+	
+	^ 'Columns on database must be five for costumers and six for addresses!!'! !
+
+!ImportTest methodsFor: 'errormessages' stamp: 'OK 6/15/2024 07:03:30'!
+noObjectMatchesDescriptionErrorMessage
+	
+	^ 'No object that meets description has been found!!'! !
 
 
 !classDefinition: #Address category: #CustomerImporter!
@@ -324,6 +465,11 @@ addAddress: anAddress
 addresses
 
 	^ addresses! !
+
+!Customer methodsFor: 'addresses' stamp: 'OK 6/15/2024 08:35:08'!
+hasAddress: anAddress 
+	
+	^ addresses includes: anAddress.! !
 
 
 !Customer methodsFor: 'name' stamp: 'HAW 5/22/2022 00:19:29'!
@@ -591,10 +737,22 @@ for: aDataStream
 
 	^ self new initializeWith: aDataStream ! !
 
-!InputStream class methodsFor: 'as yet unclassified' stamp: 'OK 6/15/2024 02:04:26'!
+!InputStream class methodsFor: 'as yet unclassified' stamp: 'OK 6/15/2024 07:43:17'!
 forResource: aDataStream
 
-	^ (self subclasses detect: [:aDataStreamClass | aDataStreamClass canHandle: aDataStream ]) for: aDataStream! !
+	| dataFormat |
+	
+	dataFormat := self subclasses detect: [ :aDataStreamClass | aDataStreamClass canHandle: aDataStream ] ifNone: [ self error: self invalidStreamFormatErrorMessage ].
+	
+	^ dataFormat for: aDataStream.
+	
+
+	! !
+
+!InputStream class methodsFor: 'as yet unclassified' stamp: 'OK 6/15/2024 07:43:17'!
+invalidStreamFormatErrorMessage
+	
+	^ 'Format nos supported!!'! !
 
 
 !classDefinition: #TextStream category: #CustomerImporter!
@@ -636,10 +794,10 @@ readableLine
 TextStream class
 	instanceVariableNames: ''!
 
-!TextStream class methodsFor: 'as yet unclassified' stamp: 'OK 6/15/2024 02:05:40'!
+!TextStream class methodsFor: 'as yet unclassified' stamp: 'OK 6/15/2024 07:35:05'!
 canHandle: aDataStream
 
-	^ aDataStream isString.! !
+	^ aDataStream isKindOf: String! !
 
 
 !classDefinition: #UniFiLeStream category: #CustomerImporter!
@@ -681,7 +839,7 @@ readableLine
 UniFiLeStream class
 	instanceVariableNames: ''!
 
-!UniFiLeStream class methodsFor: 'as yet unclassified' stamp: 'OK 6/15/2024 02:06:49'!
+!UniFiLeStream class methodsFor: 'as yet unclassified' stamp: 'OK 6/15/2024 07:34:55'!
 canHandle: aDataStream
 
-	^ aDataStream isFile.! !
+	^ aDataStream isKindOf: UniFileStream! !
