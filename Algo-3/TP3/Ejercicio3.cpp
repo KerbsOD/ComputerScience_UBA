@@ -152,9 +152,6 @@ int main() {
             }
         } 
 
-        /*   Hasta aca anda joya   */
-
-
         /* Calculo MAX-FLOW */
         int mf = maxflow(s,t, tagger);
         res.push_back(mf);
