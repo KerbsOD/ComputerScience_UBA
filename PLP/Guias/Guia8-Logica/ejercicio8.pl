@@ -17,5 +17,6 @@ sacarDuplicados([], []).
 sacarDuplicados([X | L1], [X | L2]) :- borrar(L1, X, L3), sacarDuplicados(L3, L2).
 
 %permutación(+L1, ?L2)
-permutacion([], []).
-permutacion()
+%desde que empece la carrera me salteo todos los ejercicios de permutaciones porque me llevan horas y nunca termino
+%de entender que estoy haciendo. Evito los problemas.
+
