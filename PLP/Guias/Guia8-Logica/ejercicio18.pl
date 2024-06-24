@@ -28,3 +28,10 @@ unicoAux(X) :- planeta(Y), Y \= X.
 
 % Instanicamos X = Tierra, luego chequeamos si existe otro planeta tal que x sea diferente. Tuve que hacerlo en una
 % regla aparte porque el not no permite clausulas.
+
+% Corrigiendo luego dde hacer el 19.
+
+auto(lexus).
+
+unico2(X) :- auto(X), not((auto(Y), Y \= X)).
+

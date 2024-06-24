@@ -4,10 +4,9 @@
 %%corteMásParejo([1,2,1],L1,L2). → L1 = [1], L2 = [2, 1] ; L1 = [1, 2], L2 = [1] ; false.
 
 %% corteMásParejo(+L,-L1,-L2)
-corteMasParejo(L,L1,L2) :- append(L1, L2, L), sum_list(L1,S1), sum_list(L2,S2), D is abs(S1-S2),
-    not((existeDiferenciaMenor(L, _, _, D3), D3 < D)).
+corteMasParejo(L,L1,L2) :- unCorte(L, L1, L2, D), not(( unCorte(L,_,_,D2), D2 < D )).
 
-existeDiferenciaMenor(L, L1, L2, D3) :- append(L1, L2, L), sum_list(L1, SA), sum_list(L2, SB), D3 is abs(SA-SB).
+unCorte(L, L1, L2, D) :- append(L1, L2, L), sum_list(L1,S1), sum_list(L2,S2), D is abs(S1-S2).
 
 
 % Cuando hice el ejercicio lo escribi como: 
