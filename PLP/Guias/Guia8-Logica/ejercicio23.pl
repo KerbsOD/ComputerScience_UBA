@@ -1,10 +1,20 @@
 %%esNodo(+G, ?X)
-esNodo(grafo([V | _],_), V).
-esNodo(grafo([_ | VS],_), X) :- esNodo(grafo(VS,_),X).
+esNodo(grafo(V,_), X) :- ground(V), member(X, V).
 
 %%esArista(+G,?X,?Y)
-esArista(grafo(_, [arista(E1,E2) | _]), X, Y) :- var(X), var(Y), X = E1, Y = E2.
-esArista(grafo(_, [arista(E1,E2) | _]), X, Y) :- nonvar(X), nonvar(Y), X is E1, Y is E2.
-esArista(grafo(_, [arista(E1,E2) | _]), Y, X) :- nonvar(X), nonvar(Y), X is E1, Y is E2.
-esArista(grafo(V, [_ | ES]), X, Y) :- esNodo(grafo(V, _), X), esNodo(grafo(V, _), Y), esArista(grafo(V,ES),X,Y).
+esArista(grafo(_,E), X, Y) :- member(arista(X,Y), E).
+esArista(grafo(_,E), Y, X) :- nonvar(X), nonvar(Y), member(arista(X,Y), E). 
+% solo preguntamos la inversa cuando nos dan la arista, caso contrario se va a instanciar en X y en Y ambos lados. 
+
+%%caminoSimple(+G,+D,+H,?L)
+caminoSimple(G, D, H, L) :- 
+    ground(G),
+    append([D],_,L),
+    append(_,[H],L).    
+
+%% Ejemplos.
+grafoGen(0, grafo([], [])).
+grafoGen(1, grafo([1,2,3], [])).
+grafoGen(2, grafo([1,2,3], [arista(1,2), arista(2,3)])).
+
 
