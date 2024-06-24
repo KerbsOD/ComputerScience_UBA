@@ -24,6 +24,7 @@ caminoDeAristas(G, [X |[Y | LS]]) :- esNodo(G,X), esNodo(G,Y), esArista(G,X,Y), 
 % funciona en ambos sentidos. El problema es que si instanciamos en un solo sentido, existen caminos que la
 % consulta no tiene en cuenta.
 
+
 %% Ejemplos.
 grafoGen(0, grafo([], [])).
 grafoGen(1, grafo([1,2,3], [])).
