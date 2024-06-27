@@ -2,32 +2,49 @@
 esNodo(grafo(V,_), X) :- ground(V), member(X, V).
 
 %%esArista(+G,?X,?Y)
-esArista(grafo(V,E), X, Y) :- ground(E), ground(V), member(arista(X,Y), E).
-esArista(grafo(V,E), Y, X) :- ground(E), ground(V), nonvar(X), nonvar(Y), member(arista(X,Y), E). 
-% solo preguntamos la inversa cuando nos dan la arista, caso contrario se va a instanciar en X y en Y ambos lados. 
+esArista(grafo(V,E), X, Y) :- ground(E), ground(V), nonvar(X), member(arista(X,Y), E).  % Dame en Y los nodos que instancian arista con X.
+esArista(grafo(V,E), Y, X) :- ground(E), ground(V), nonvar(Y), member(arista(X,Y), E).  % Dame en X los nodos que instancian arista con Y.
+esArista(grafo(V,E), X, Y) :- ground(E), ground(V), var(X), var(Y), member(arista(X,Y), E). % Dame todas las aristas del grafo sin repetidos. O aparece (X,Y) o aparece (Y,X).
 
 %%caminoSimple(+G,+D,+H,?L)
-caminoSimple(G, D, H, L) :- 
-    ground(G),
-    append([D],_,L),
-    append(_,[H],L),
-    caminoDeAristas(G, L).
+caminoSimple(Grafo,Inicio,Fin,Camino) :- esNodo(Grafo,Inicio), esNodo(Grafo,Fin), Inicio \= Fin, caminoConHistorial(Grafo,Inicio,Fin,Camino,[]).
+    
+caminoConHistorial(_,Fin,Fin,[Fin],Historial) :- not(member(Fin,Historial)).
+caminoConHistorial(Grafo,Actual,Fin,[Actual|XS],Historial) :- 
+    Actual \= Fin,
+    esArista(Grafo,Actual,Siguiente),
+    not(member(Siguiente,Historial)),
+    caminoConHistorial(Grafo,Siguiente,Fin,XS,[Actual|Historial]).
 
+% caminoHamiltoniano(+G,?L) - Existe un camino L tal que no existe otro camino que tenga una longitud mayor.
+caminoHamiltoniano(Grafo,L) :- caminoSimple(Grafo,_,_,L), length(L,N), not((caminoSimple(Grafo,_,_,L2), length(L2,N2), N2 > N)).
 
-caminoDeAristas(_,[]).
-caminoDeAristas(_,[_ | []]).
-caminoDeAristas(G, [X |[Y | LS]]) :- esNodo(G,X), esNodo(G,Y), esArista(G,X,Y), caminoDeAristas(G,[Y|LS]). 
+%esConexo(+G) - No existe un par de nodos tal que no haya camino entre ellos
+esConexo(G) :- not((esNodo(G,X), esNodo(G,Y), X \= Y, not( caminoSimple(G,X,Y,_) ))).
 
-% Como aristas se comporta diferente para instanciar que para preguntar, si X e Y no estan instanciadas
-% (en este caso las instanciamos con esNodo), entonces se van a tratar de instanciar EN UN SOLO SENTIDO.
-% Porque asi lo definimos, si queremos instanciar se hace en un sentido arbitrario. Si queremos consultar
-% funciona en ambos sentidos. El problema es que si instanciamos en un solo sentido, existen caminos que la
-% consulta no tiene en cuenta.
-
+%esEstrella(+G) - Para toda arista, hay un nodo en comun. No existe una arista tal que ambos de sus nodos sean diferentes al resto de aristas.
+esEstrella(G) :- esConexo(G), not((esArista(G,X,Y), esArista(G,Z,W), X \= Z, Y \= W, X \= W, Y \= Z)).
 
 %% Ejemplos.
 grafoGen(0, grafo([], [])).
 grafoGen(1, grafo([1,2,3], [])).
 grafoGen(2, grafo([1,2,3], [arista(1,2), arista(2,3)])).
+grafoGen(conexo, 
+    grafo(
+        [1, 2, 3, 4, 5],
+        [arista(1, 2), arista(2, 3), arista(2, 4), arista(3, 5),arista(4, 5)]
+    )
+).
+grafoGen(disconexo, 
+    grafo(
+        [1, 2, 3, 4, 5, 6, 7],
+        [arista(1, 2), arista(2, 3), arista(2, 4), arista(3, 5),arista(4, 5), arista(6,7)]
+    )
+).
 
-
+grafoGen(estrella, 
+    grafo(
+        [1, 2, 3, 4, 5, 6, 7],
+        [arista(1, 2), arista(1, 3), arista(1, 4), arista(1, 5),arista(1, 6), arista(1,7)]
+    )
+).
