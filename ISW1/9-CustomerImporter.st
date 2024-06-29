@@ -12,10 +12,10 @@ initializeOn: aSession from: aNonPersistentSet
 	self addAll: aNonPersistentSet ! !
 
 
-!PersistentSet methodsFor: 'adding' stamp: 'HAW 11/14/2023 08:23:40'!
-add: newObject
+!PersistentSet methodsFor: 'adding' stamp: 'OK 6/28/2024 14:23:25'!
+addCustomer: newObject
 
-	super add: newObject.
+	super addCustomer: newObject.
 	session persist: newObject.
 	
 	^newObject! !
@@ -38,32 +38,33 @@ on: aSession from: aNonPersistentSet
 ! !
 
 
-!classDefinition: #ImportTest category: #CustomerImporter!
-TestCase subclass: #ImportTest
-	instanceVariableNames: 'customerSystem'
+!classDefinition: #CustomerTest category: #CustomerImporter!
+TestCase subclass: #CustomerTest
+	instanceVariableNames: 'system'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'CustomerImporter'!
 
-!ImportTest methodsFor: 'tests' stamp: 'OK 6/27/2024 10:34:17'!
+!CustomerTest methodsFor: 'tests' stamp: 'OK 6/29/2024 00:00:21'!
 test01ValidDataIsImportedCorrectly
 
-	CustomerImporter valueFrom: self validImportData into:  customerSystem.
+	CustomerImporter valueFrom: self validImportData into: system.
+
 	self assertImportedRightNumberOfCustomers.
 	self assertPepeSanchezWasImportedCorrecty.
 	self assertJuanPerezWasImportedCorrectly ! !
 
-!ImportTest methodsFor: 'tests' stamp: 'OK 6/27/2024 10:33:31'!
+!CustomerTest methodsFor: 'tests' stamp: 'OK 6/28/2024 23:59:26'!
 test02CanNotImportAddressWithoutCustomer
 
 	self
-		should: [ CustomerImporter valueFrom: self addressWithoutCustomerData into: customerSystem. ]
+		should: [ CustomerImporter valueFrom: self addressWithoutCustomerData into: ( system customerSystem). ]
 		raise: Error - MessageNotUnderstood
 		withMessageText: CustomerImporter canNotImportAddressWithoutCustomerErrorDescription
 
 	! !
 
-!ImportTest methodsFor: 'tests' stamp: 'HAW 5/22/2022 19:56:58'!
+!CustomerTest methodsFor: 'tests' stamp: 'HAW 5/22/2022 19:56:58'!
 test03DoesNotImportRecordsStartingWithCButMoreCharacters
 
 	self
@@ -73,7 +74,7 @@ test03DoesNotImportRecordsStartingWithCButMoreCharacters
 
 	! !
 
-!ImportTest methodsFor: 'tests' stamp: 'HAW 5/22/2022 19:49:03'!
+!CustomerTest methodsFor: 'tests' stamp: 'HAW 5/22/2022 19:49:03'!
 test04DoesNotImportRecordsStartingWithAButMoreCharacters
 
 	self
@@ -83,7 +84,7 @@ test04DoesNotImportRecordsStartingWithAButMoreCharacters
 
 	! !
 
-!ImportTest methodsFor: 'tests' stamp: 'HAW 5/22/2022 19:49:36'!
+!CustomerTest methodsFor: 'tests' stamp: 'HAW 5/22/2022 19:49:36'!
 test05CanNotImportAddressRecordWithLessThanSixFields
 
 	self
@@ -93,7 +94,7 @@ test05CanNotImportAddressRecordWithLessThanSixFields
 
 	! !
 
-!ImportTest methodsFor: 'tests' stamp: 'HAW 5/22/2022 19:51:14'!
+!CustomerTest methodsFor: 'tests' stamp: 'HAW 5/22/2022 19:51:14'!
 test06CanNotImportAddressRecordWithMoreThanSixFields
 
 	self
@@ -103,7 +104,7 @@ test06CanNotImportAddressRecordWithMoreThanSixFields
 
 	! !
 
-!ImportTest methodsFor: 'tests' stamp: 'HAW 5/22/2022 19:56:58'!
+!CustomerTest methodsFor: 'tests' stamp: 'HAW 5/22/2022 19:56:58'!
 test07CanNotImportCustomerRecordWithLessThanFiveFields
 
 	self
@@ -113,7 +114,7 @@ test07CanNotImportCustomerRecordWithLessThanFiveFields
 
 	! !
 
-!ImportTest methodsFor: 'tests' stamp: 'HAW 5/22/2022 19:56:58'!
+!CustomerTest methodsFor: 'tests' stamp: 'HAW 5/22/2022 19:56:58'!
 test08CanNotImportCustomerRecordWithMoreThanFiveFields
 
 	self
@@ -123,7 +124,7 @@ test08CanNotImportCustomerRecordWithMoreThanFiveFields
 
 	! !
 
-!ImportTest methodsFor: 'tests' stamp: 'HAW 5/22/2022 20:01:43'!
+!CustomerTest methodsFor: 'tests' stamp: 'HAW 5/22/2022 20:01:43'!
 test09CannotImportEmptyLine
 
 	self
@@ -134,7 +135,7 @@ test09CannotImportEmptyLine
 	! !
 
 
-!ImportTest methodsFor: 'assertions' stamp: 'HAW 5/22/2022 18:22:05'!
+!CustomerTest methodsFor: 'assertions' stamp: 'HAW 5/22/2022 18:22:05'!
 assertAddressOf: importedCustomer at: aStreetName hasNumber: aNumber town: aTown zipCode: aZipCode province: aProvince
 
 	| importedAddress |
@@ -148,12 +149,12 @@ assertAddressOf: importedCustomer at: aStreetName hasNumber: aNumber town: aTown
 
 	! !
 
-!ImportTest methodsFor: 'assertions' stamp: 'HAW 5/22/2022 18:27:57'!
+!CustomerTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 23:59:26'!
 assertCustomerWithIdentificationType: anIdType number: anIdNumber hasFirstName: aFirstName lastName: aLastName
 
 	| importedCustomer |
 
-	importedCustomer := self customerWithIdentificationType: anIdType number: anIdNumber.
+	importedCustomer := ( system customerSystem) customerWithIdentificationType: anIdType number: anIdNumber.
 
 	self assert: aFirstName equals: importedCustomer firstName.
 	self assert: aLastName equals: importedCustomer lastName.
@@ -164,22 +165,22 @@ assertCustomerWithIdentificationType: anIdType number: anIdNumber hasFirstName: 
 
 	! !
 
-!ImportTest methodsFor: 'assertions' stamp: 'HAW 5/22/2022 19:45:10'!
+!CustomerTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 23:59:26'!
 assertImportedOneCustomerWithoutAddress
 
 	| importedCustomer |
 
-	self assert: 1 equals: self numberOfCustomers.
-	importedCustomer := self customerWithIdentificationType: 'D' number: '22333444'.
+	self assert: 1 equals: ( system customerSystem) numberOfCustomers.
+	importedCustomer := ( system customerSystem) customerWithIdentificationType: 'D' number: '22333444'.
 	self assert: importedCustomer isAddressesEmpty
 	! !
 
-!ImportTest methodsFor: 'assertions' stamp: 'HAW 5/22/2022 19:24:40'!
+!CustomerTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 23:59:26'!
 assertImportedRightNumberOfCustomers
 
-	^ self assert: 2 equals: self numberOfCustomers! !
+	^ self assert: 2 equals: ( system customerSystem) numberOfCustomers! !
 
-!ImportTest methodsFor: 'assertions' stamp: 'HAW 5/22/2022 18:28:45'!
+!CustomerTest methodsFor: 'assertions' stamp: 'HAW 5/22/2022 18:28:45'!
 assertJuanPerezWasImportedCorrectly
 
 	| importedCustomer |
@@ -188,12 +189,12 @@ assertJuanPerezWasImportedCorrectly
 	self assertAddressOf: importedCustomer at: 'Alem' hasNumber: 1122 town: 'CABA' zipCode: 1001 province: 'CABA'
 	! !
 
-!ImportTest methodsFor: 'assertions' stamp: 'HAW 5/22/2022 19:56:58'!
+!CustomerTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 23:59:26'!
 assertNoCustomerWasImported
 
-	^ self assert: 0 equals: self numberOfCustomers! !
+	^ self assert: 0 equals: ( system customerSystem) numberOfCustomers! !
 
-!ImportTest methodsFor: 'assertions' stamp: 'HAW 5/22/2022 18:28:05'!
+!CustomerTest methodsFor: 'assertions' stamp: 'HAW 5/22/2022 18:28:05'!
 assertPepeSanchezWasImportedCorrecty
 
 	| importedCustomer |
@@ -205,11 +206,11 @@ assertPepeSanchezWasImportedCorrecty
 
 	! !
 
-!ImportTest methodsFor: 'assertions' stamp: 'OK 6/27/2024 10:34:17'!
+!CustomerTest methodsFor: 'assertions' stamp: 'OK 6/29/2024 00:00:45'!
 shouldFailImporting: aReadStream messageText: anErrorMessageText asserting: anAssertionBlock
 
 	self
-		should: [ CustomerImporter valueFrom: aReadStream into:  customerSystem. ]
+		should: [ CustomerImporter valueFrom: aReadStream into: system. ]
 		raise: Error - MessageNotUnderstood
 		withExceptionDo: [ :anError |
 			self assert: anErrorMessageText equals: anError messageText.
@@ -218,78 +219,67 @@ shouldFailImporting: aReadStream messageText: anErrorMessageText asserting: anAs
 	! !
 
 
-!ImportTest methodsFor: 'setUp/tearDown' stamp: 'OK 6/27/2024 12:18:34'!
+!CustomerTest methodsFor: 'setUp/tearDown' stamp: 'OK 6/28/2024 23:59:34'!
 setUp
-	
-	customerSystem := Enviroment current createCustomerSystem.
-	customerSystem startSession.
-	customerSystem startTransaction.
+
+	system := Environment current createERPSystem.
+	system start.
+	system beginTransaction.
 ! !
 
-!ImportTest methodsFor: 'setUp/tearDown' stamp: 'OK 6/27/2024 10:25:47'!
+!CustomerTest methodsFor: 'setUp/tearDown' stamp: 'OK 6/28/2024 23:59:37'!
 tearDown
 
-	customerSystem commitSession.
-	customerSystem closeSession.
-
+	system commit.
+	system stop
 	! !
 
 
-!ImportTest methodsFor: 'customer' stamp: 'OK 6/27/2024 10:23:23'!
-customerWithIdentificationType: anIdType number: anIdNumber
-	
-	^customerSystem customerWithIdentificationType: anIdType number: anIdNumber.! !
-
-!ImportTest methodsFor: 'customer' stamp: 'OK 6/27/2024 10:22:37'!
-numberOfCustomers
-	^customerSystem numberOfCustomers.! !
-
-
-!ImportTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 19:41:20'!
+!CustomerTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 19:41:20'!
 addressRecordWithLessThanSixFields
 
 	^ReadStream on: 'C,Pepe,Sanchez,D,22333444
 A,San Martin,3322,Olivos,1636'! !
 
-!ImportTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 19:51:35'!
+!CustomerTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 19:51:35'!
 addressRecordWithMoreThanSixFields
 
 	^ReadStream on: 'C,Pepe,Sanchez,D,22333444
 A,San Martin,3322,Olivos,1636,BsAs,x'! !
 
-!ImportTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 19:14:13'!
+!CustomerTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 19:14:13'!
 addressWithoutCustomerData
 
 	^ReadStream on: 'A,San Martin,3322,Olivos,1636,BsAs'! !
 
-!ImportTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 19:53:41'!
+!CustomerTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 19:53:41'!
 customerRecordWithLessThanFiveFields
 
 	^ReadStream on: 'C,Pepe,Sanchez,D'! !
 
-!ImportTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 19:55:59'!
+!CustomerTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 19:55:59'!
 customerRecordWithMoreThanFiveFields
 
 	^ReadStream on: 'C,Pepe,Sanchez,D,22333444,x'! !
 
-!ImportTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 20:02:57'!
+!CustomerTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 20:02:57'!
 emptyLine
 
 	^ReadStream on: '
 '! !
 
-!ImportTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 19:34:25'!
+!CustomerTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 19:34:25'!
 invalidAddressRecordStartData
 
 	^ReadStream on: 'C,Pepe,Sanchez,D,22333444
 AA,San Martin,3322,Olivos,1636,BsAs'! !
 
-!ImportTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 19:22:55'!
+!CustomerTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 19:22:55'!
 invalidCustomerRecordStartData
 
 	^ReadStream on: 'CC,Pepe,Sanchez,D,22333444'! !
 
-!ImportTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 18:08:08'!
+!CustomerTest methodsFor: 'test data' stamp: 'HAW 5/22/2022 18:08:08'!
 validImportData
 
 	^ ReadStream on:
@@ -300,9 +290,258 @@ C,Juan,Perez,C,23-25666777-9
 A,Alem,1122,CABA,1001,CABA'! !
 
 
+!classDefinition: #SupplierTest category: #CustomerImporter!
+TestCase subclass: #SupplierTest
+	instanceVariableNames: 'system'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!SupplierTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 20:01:20'!
+assertAddressOfSupplierWithIDType: aSupplierIDType withIDNumber: aSupplierIDNumber hasStreet: aStreetName withNumber: aStreetNumber inCity: aCityName withCP: aCP inProvince: aProvince      
+
+	self assert: ( self 	isAddressOfSupplierWithIDType: aSupplierIDType withIDNumber: aSupplierIDNumber hasStreet: aStreetName withNumber: aStreetNumber inCity: aCityName withCP: aCP inProvince: aProvince ).    
+! !
+
+!SupplierTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 23:55:36'!
+assertCustomerOnImportedSupplierCustomers: aSupplierIDType withIDNumber: aSupplierIDNumber withCustomerIDType: aCustomerIDType withCustomerIDNumber: anIDNumber   
+
+	| importedSupplier |
+
+	importedSupplier := system supplierSystem supplierWithIdentificationType:aSupplierIDType number: aSupplierIDNumber.
+	self assert: ( importedSupplier hasCustomerWithIDType: aCustomerIDType andIDNumber: anIDNumber )! !
+
+!SupplierTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 23:55:30'!
+assertCustomerWithIdentificationType: anIdType number: anIdNumber hasFirstName: aFirstName lastName: aLastName
+
+	| importedCustomer |
+
+	importedCustomer := system customerSystem customerWithIdentificationType: anIdType number: anIdNumber.
+
+	self assert: aFirstName equals: importedCustomer firstName.
+	self assert: aLastName equals: importedCustomer lastName.
+	self assert: anIdType equals: importedCustomer identificationType.
+	self assert: anIdNumber equals: importedCustomer identificationNumber.
+! !
+
+!SupplierTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 20:04:02'!
+assertMaipuIsSupplier1sAddress
+
+	^ self assertAddressOfSupplierWithIDType: 'D' withIDNumber: '123' hasStreet: 'Maipu' withNumber: 888 inCity: 'Florida' withCP: 1122 inProvince: 'BsAs'! !
+
+!SupplierTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 20:24:01'!
+assertOctoKerbsIsSupplier1sCustomer
+
+	^ self assertCustomerOnImportedSupplierCustomers: 'D' withIDNumber: '123' withCustomerIDType: 'D' withCustomerIDNumber: '43802396'! !
+
+!SupplierTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 17:47:34'!
+assertPepeSanchezIsSupplier1sCustomer
+
+	^ self assertCustomerOnImportedSupplierCustomers: 'D' withIDNumber: '123' withCustomerIDType: 'D' withCustomerIDNumber: '22333444'! !
+
+!SupplierTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 17:46:56'!
+assertPepeSanchezWasImported
+
+	^ self assertCustomerWithIdentificationType: 'D' number: '22333444' hasFirstName: 'Pepe' lastName: 'Sanchez'! !
+
+!SupplierTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 20:03:55'!
+assertSanMartinIsSupplier1sAddress
+
+	^ self assertAddressOfSupplierWithIDType: 'D' withIDNumber: '123' hasStreet: 'San Martin' withNumber: 3322 inCity: 'Olivos' withCP: 1636 inProvince: 'BsAs'! !
+
+!SupplierTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 17:45:55'!
+assertSupplier1WasImported
+
+	^ self assertSupplierWithName: 'Supplier1' withIDType: 'D' andIDNumber: '123'! !
+
+!SupplierTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 23:54:36'!
+assertSupplierWithName: aName withIDType: anIdentificationType andIDNumber: anIdentificationNumber  
+
+	| importedSupplier |
+
+	importedSupplier := system supplierSystem supplierWithIdentificationType: anIdentificationType number: anIdentificationNumber.
+	
+	self assert: ( importedSupplier isNamed: aName ).
+	self assert: ( importedSupplier hasIDType: anIdentificationType ).
+	self assert: ( importedSupplier hasIDNumber: anIdentificationNumber )! !
+
+!SupplierTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 20:01:28'!
+denyAddressOfSupplierWithIDType: aSupplierIDType withIDNumber: aSupplierIDNumber hasStreet: aStreetName withNumber: aStreetNumber inCity: aCityName withCP: aCP inProvince: aProvince      
+
+	self deny: ( self 	isAddressOfSupplierWithIDType: aSupplierIDType withIDNumber: aSupplierIDNumber hasStreet: aStreetName withNumber: aStreetNumber inCity: aCityName withCP: aCP inProvince: aProvince ).    
+! !
+
+!SupplierTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 20:30:18'!
+denySanMartinIsFromSupplier1
+
+	^ self denyAddressOfSupplierWithIDType: 'D' withIDNumber: '123' hasStreet: 'San Martin' withNumber: 3322 inCity: 'Olivos' withCP: 1636 inProvince: 'BsAs'! !
+
+!SupplierTest methodsFor: 'assertions' stamp: 'OK 6/28/2024 23:54:45'!
+isAddressOfSupplierWithIDType: aSupplierIDType withIDNumber: aSupplierIDNumber hasStreet: aStreetName withNumber: aStreetNumber inCity: aCityName withCP: aCP inProvince: aProvince      
+
+	| importedSupplier |
+	
+	importedSupplier := system supplierSystem supplierWithIdentificationType: aSupplierIDType number: aSupplierIDNumber.
+	
+	^ importedSupplier hasAddressWithStreet: aStreetName withStreetNumber: aStreetNumber ! !
+
+
+!SupplierTest methodsFor: 'test data' stamp: 'OK 6/28/2024 15:20:19'!
+existingCustomerWithSupplier
+	
+	^ ReadStream on: 
+'S,Supplier1,D,123
+EC,D,5456774' ! !
+
+!SupplierTest methodsFor: 'test data' stamp: 'OK 6/28/2024 19:12:21'!
+invalidAddressFromSupplier
+
+	^ ReadStream on: 
+'S,Supplier1,D,123
+A,Maipu,888,Florida,1122,BsAs, '! !
+
+!SupplierTest methodsFor: 'test data' stamp: 'OK 6/28/2024 19:18:38'!
+invalidFormat
+
+	^ ReadStream on: 
+'Supplier1,D,123'! !
+
+!SupplierTest methodsFor: 'test data' stamp: 'OK 6/28/2024 14:36:50'!
+newCustomerWithoutSupplier
+
+	^ ReadStream on: 'NC,Pepe,Sanchez,D,22333444'! !
+
+!SupplierTest methodsFor: 'test data' stamp: 'OK 6/28/2024 16:31:57'!
+supplierWithNewCustomer
+
+	^ReadStream on:  
+'S,Supplier1,D,123
+NC,Pepe,Sanchez,D,22333444'! !
+
+!SupplierTest methodsFor: 'test data' stamp: 'OK 6/28/2024 17:44:24'!
+supplierWithNewCustomerAndExistingCustomer
+
+	^ReadStream on:  
+'S,Supplier1,D,123
+NC,Pepe,Sanchez,D,22333444
+EC,D,43802396'! !
+
+!SupplierTest methodsFor: 'test data' stamp: 'OK 6/28/2024 18:21:09'!
+validAddressesFromSupplier
+
+	^ ReadStream on: 
+'S,Supplier1,D,123
+A,San Martin,3322,Olivos,1636,BsAs
+A,Maipu,888,Florida,1122,BsAs'! !
+
+!SupplierTest methodsFor: 'test data' stamp: 'OK 6/28/2024 17:35:09'!
+validCustomer
+	
+	^ ReadStream on: 'C,Octo,Kerbs,D,43802396' ! !
+
+!SupplierTest methodsFor: 'test data' stamp: 'OK 6/28/2024 14:37:19'!
+validSupplier
+
+	^ ReadStream on: 'S,Supplier1,D,123'! !
+
+
+!SupplierTest methodsFor: 'testing' stamp: 'OK 6/28/2024 20:30:18'!
+test01SupplierIsImportedCorrectly
+	
+	SupplierImporter valueFrom: self validSupplier into: system.
+		
+	self assertSupplier1WasImported.
+	self denySanMartinIsFromSupplier1.! !
+
+!SupplierTest methodsFor: 'testing' stamp: 'OK 6/28/2024 19:20:31'!
+test02CanNotAddCustomerToEmptySupplier
+
+	self should: [ SupplierImporter valueFrom: self newCustomerWithoutSupplier into: system. ]
+		raise: Error - MessageNotUnderstood 
+		withMessageText: SupplierImporter canNotAddCustomerWithoutSupplierErrorDescription.
+	
+	
+
+	! !
+
+!SupplierTest methodsFor: 'testing' stamp: 'OK 6/28/2024 14:49:03'!
+test03CanNotAddNonExistentCustomerToSupplier
+
+	self should: [ SupplierImporter valueFrom: self existingCustomerWithSupplier into: system. ]
+		raise: Error - MessageNotUnderstood 
+		withMessageText: SupplierImporter customerNotFoundOnCustomerSystemErrorDescription.
+	
+	
+
+	! !
+
+!SupplierTest methodsFor: 'testing' stamp: 'OK 6/28/2024 17:47:34'!
+test04SuppliersNewCustomerIsAddedToCustomerSystem
+
+	SupplierImporter valueFrom: self supplierWithNewCustomer into: system.
+	
+	self assertSupplier1WasImported.
+	self assertPepeSanchezWasImported.
+	self assertPepeSanchezIsSupplier1sCustomer.
+	! !
+
+!SupplierTest methodsFor: 'testing' stamp: 'OK 6/28/2024 17:47:57'!
+test05NewCustomerAndExistingCustomerAreSuppliersCustomers
+
+	CustomerImporter valueFrom: self validCustomer into: system.
+	SupplierImporter valueFrom: self supplierWithNewCustomerAndExistingCustomer into: system.
+	
+	self assertSupplier1WasImported.
+	self assertPepeSanchezWasImported.
+	self assertPepeSanchezIsSupplier1sCustomer.
+	self assertOctoKerbsIsSupplier1sCustomer.! !
+
+!SupplierTest methodsFor: 'testing' stamp: 'OK 6/28/2024 18:36:50'!
+test06AddressesAreImportedCorrectly
+	
+	SupplierImporter valueFrom: self validAddressesFromSupplier into: system.
+	self assertSanMartinIsSupplier1sAddress.
+	self assertMaipuIsSupplier1sAddress.
+	
+	! !
+
+!SupplierTest methodsFor: 'testing' stamp: 'OK 6/28/2024 22:08:25'!
+test07CanNotImportInvalidAddresses
+	
+	self should: [ SupplierImporter valueFrom: self invalidAddressFromSupplier into: system ]
+		raise: Error - MessageNotUnderstood 
+		withMessageText: SupplierImporter invalidAddressRecordErrorDescription.
+	! !
+
+!SupplierTest methodsFor: 'testing' stamp: 'OK 6/28/2024 22:08:28'!
+test08InvalidRecordFormatShouldRiseError
+	
+	self should: [ SupplierImporter valueFrom: self invalidFormat into: system ]
+		raise: Error - MessageNotUnderstood 
+		withMessageText: SupplierImporter invalidRecordTypeErrorDescription.
+	! !
+
+
+!SupplierTest methodsFor: 'setup/teardown' stamp: 'OK 6/28/2024 23:47:26'!
+setUp
+
+	system := Environment current createERPSystem.
+	
+	system start.
+	system beginTransaction.
+! !
+
+!SupplierTest methodsFor: 'setup/teardown' stamp: 'OK 6/28/2024 13:07:30'!
+tearDown
+
+	system commit.
+	system stop
+	! !
+
+
 !classDefinition: #Address category: #CustomerImporter!
 Object subclass: #Address
-	instanceVariableNames: 'id streetName streetNumber town zipCode province'
+	instanceVariableNames: 'streetName streetNumber town zipCode province'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'CustomerImporter'!
@@ -369,12 +608,12 @@ zipCode: aZipCode
 
 !classDefinition: #Customer category: #CustomerImporter!
 Object subclass: #Customer
-	instanceVariableNames: 'id firstName lastName identificationType identificationNumber addresses'
+	instanceVariableNames: 'firstName lastName identificationType identificationNumber addresses'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'CustomerImporter'!
 
-!Customer methodsFor: 'addresses' stamp: 'HAW 5/22/2022 00:19:29'!
+!Customer methodsFor: 'addresses' stamp: 'OK 6/28/2024 14:24:22'!
 addAddress: anAddress
 
 	addresses add: anAddress ! !
@@ -447,18 +686,49 @@ initialize
 
 !classDefinition: #CustomerImporter category: #CustomerImporter!
 Object subclass: #CustomerImporter
-	instanceVariableNames: 'customerSystem readStream newCustomer line record'
+	instanceVariableNames: 'newCustomer record line readStream system'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'CustomerImporter'!
 
-!CustomerImporter methodsFor: 'initialization' stamp: 'OK 6/27/2024 10:32:32'!
-initializeFrom: aReadStream into: aCustomerSystem
-	customerSystem := aCustomerSystem.
-	readStream := aReadStream.! !
+!CustomerImporter methodsFor: 'initialization' stamp: 'OK 6/28/2024 23:35:20'!
+initializeFrom: aReadStream into: anERPSystem
+
+	readStream := aReadStream.
+	system := anERPSystem ! !
 
 
-!CustomerImporter methodsFor: 'evaluating' stamp: 'HAW 5/22/2022 18:48:58'!
+!CustomerImporter methodsFor: 'evaluating' stamp: 'OK 6/29/2024 00:43:35'!
+importAddress
+
+	| newAddress |
+	
+	self assertCustomerWasImported.
+	self assertValidAddressRecord.
+
+	newAddress := Address new.
+	newAddress streetName: record second.
+	newAddress streetNumber: record third asNumber .
+	newAddress town: record fourth.
+	newAddress zipCode: record fifth asNumber .
+	newAddress province: record sixth.
+	
+	newCustomer addAddress: newAddress.! !
+
+!CustomerImporter methodsFor: 'evaluating' stamp: 'OK 6/29/2024 00:45:01'!
+importCustomer
+	
+	self assertValidCustomerRecord.
+
+	newCustomer := Customer new.
+	newCustomer firstName: record second.
+	newCustomer lastName: record third.
+	newCustomer identificationType: record fourth. 
+	newCustomer identificationNumber: record fifth.
+	
+	system customerSystem add: newCustomer.! !
+
+!CustomerImporter methodsFor: 'evaluating' stamp: 'OK 6/28/2024 22:07:09'!
 value
 
 	[ self hasLineToImport ] whileTrue: [
@@ -468,90 +738,57 @@ value
 	! !
 
 
-!CustomerImporter methodsFor: 'customer' stamp: 'HAW 5/22/2022 19:59:39'!
-assertValidCustomerRecord
-
-	^ record size ~= 5 ifTrue: [ self error: self class invalidCustomerRecordErrorDescription ]! !
-
-!CustomerImporter methodsFor: 'customer' stamp: 'OK 6/27/2024 10:19:17'!
-importCustomer
-
-	self assertValidCustomerRecord.
-
-	newCustomer := Customer new.
-	newCustomer firstName: record second.
-	newCustomer lastName: record third.
-	newCustomer identificationType: record fourth.
-	newCustomer identificationNumber: record fifth.
-	self persistCustomer! !
-
-!CustomerImporter methodsFor: 'customer' stamp: 'HAW 5/22/2022 19:23:55'!
-isCustomerRecord
-
-	^ record first = 'C'! !
-
-!CustomerImporter methodsFor: 'customer' stamp: 'OK 6/27/2024 10:31:18'!
-persistCustomer
-
-	^ customerSystem persist: newCustomer! !
-
-
-!CustomerImporter methodsFor: 'address' stamp: 'HAW 5/22/2022 19:58:41'!
+!CustomerImporter methodsFor: 'customer' stamp: 'OK 6/29/2024 00:42:03'!
 assertCustomerWasImported
 
 	^ newCustomer ifNil: [ self error: self class canNotImportAddressWithoutCustomerErrorDescription ]! !
 
-!CustomerImporter methodsFor: 'address' stamp: 'HAW 5/22/2022 19:59:12'!
+!CustomerImporter methodsFor: 'customer' stamp: 'OK 6/28/2024 22:05:32'!
+assertValidCustomerRecord
+
+	^ record size ~= 5 ifTrue: [ self error: self class invalidCustomerRecordErrorDescription ]! !
+
+!CustomerImporter methodsFor: 'customer' stamp: 'OK 6/28/2024 14:00:15'!
+isCustomerRecord
+
+	^ record first = 'C'! !
+
+
+!CustomerImporter methodsFor: 'address' stamp: 'OK 6/28/2024 22:05:25'!
 assertValidAddressRecord
 
 	^ record size ~= 6 ifTrue: [ self error: self class invalidAddressRecordErrorDescription ]! !
 
-!CustomerImporter methodsFor: 'address' stamp: 'HAW 5/22/2022 19:59:12'!
-importAddress
-
-	| newAddress |
-
-	self assertCustomerWasImported.
-	self assertValidAddressRecord.
-
-	newAddress := Address new.
-	newCustomer addAddress: newAddress.
-	newAddress streetName: record second.
-	newAddress streetNumber: record third asNumber .
-	newAddress town: record fourth.
-	newAddress zipCode: record fifth asNumber .
-	newAddress province: record sixth! !
-
-!CustomerImporter methodsFor: 'address' stamp: 'HAW 5/22/2022 19:37:45'!
+!CustomerImporter methodsFor: 'address' stamp: 'OK 6/28/2024 22:07:01'!
 isAddressRecord
 
 	^ record first = 'A'! !
 
 
-!CustomerImporter methodsFor: 'evaluating - private' stamp: 'HAW 5/22/2022 20:04:35'!
+!CustomerImporter methodsFor: 'evaluating - private' stamp: 'OK 6/28/2024 22:33:12'!
 assertRecordNotEmpty
 
-	record isEmpty ifTrue: [ self error: self class invalidRecordTypeErrorDescription ]! !
+	record isEmpty ifTrue: [ self error: self class invalidRecordTypeErrorDescription ] ! !
 
-!CustomerImporter methodsFor: 'evaluating - private' stamp: 'HAW 5/22/2022 18:47:26'!
+!CustomerImporter methodsFor: 'evaluating - private' stamp: 'OK 6/28/2024 22:05:40'!
 createRecord
 
 	^ record := line findTokens: $,! !
 
-!CustomerImporter methodsFor: 'evaluating - private' stamp: 'HAW 5/22/2022 18:49:33'!
+!CustomerImporter methodsFor: 'evaluating - private' stamp: 'OK 6/28/2024 22:33:19'!
 hasLineToImport
 
 	line := readStream nextLine.
-	^line notNil! !
+	^line notNil ! !
 
-!CustomerImporter methodsFor: 'evaluating - private' stamp: 'HAW 5/22/2022 20:04:06'!
+!CustomerImporter methodsFor: 'evaluating - private' stamp: 'OK 6/29/2024 00:45:26'!
 importRecord
 
 	self assertRecordNotEmpty.
 
 	self isCustomerRecord ifTrue: [ ^self importCustomer ].
 	self isAddressRecord ifTrue: [ ^self importAddress ].
-
+	
 	self error: self class invalidRecordTypeErrorDescription! !
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
@@ -560,33 +797,34 @@ importRecord
 CustomerImporter class
 	instanceVariableNames: ''!
 
-!CustomerImporter class methodsFor: 'instance creation' stamp: 'OK 6/27/2024 10:21:21'!
+!CustomerImporter class methodsFor: 'instance creation' stamp: 'OK 6/28/2024 22:07:33'!
 from: aReadStream into: aCustomerSystem
+
 	^self new initializeFrom: aReadStream into: aCustomerSystem! !
 
 
-!CustomerImporter class methodsFor: 'importing' stamp: 'OK 6/27/2024 10:21:02'!
+!CustomerImporter class methodsFor: 'importing' stamp: 'OK 6/28/2024 22:08:00'!
 valueFrom: aReadStream into: aCustomerSystem
 
 	^(self from: aReadStream into: aCustomerSystem) value! !
 
 
-!CustomerImporter class methodsFor: 'error messages' stamp: 'HAW 5/22/2022 19:13:48'!
+!CustomerImporter class methodsFor: 'error messages' stamp: 'OK 6/28/2024 22:07:23'!
 canNotImportAddressWithoutCustomerErrorDescription
 
 	^'Cannot import address without customer'! !
 
-!CustomerImporter class methodsFor: 'error messages' stamp: 'HAW 5/22/2022 19:41:39'!
+!CustomerImporter class methodsFor: 'error messages' stamp: 'OK 6/28/2024 22:07:40'!
 invalidAddressRecordErrorDescription
 
 	^'Address record has to have six fields'! !
 
-!CustomerImporter class methodsFor: 'error messages' stamp: 'HAW 5/22/2022 19:53:56'!
+!CustomerImporter class methodsFor: 'error messages' stamp: 'OK 6/28/2024 22:07:46'!
 invalidCustomerRecordErrorDescription
 
 	^'Invalid Customer record'! !
 
-!CustomerImporter class methodsFor: 'error messages' stamp: 'HAW 5/22/2022 19:24:11'!
+!CustomerImporter class methodsFor: 'error messages' stamp: 'OK 6/28/2024 22:07:53'!
 invalidRecordTypeErrorDescription
 
 	^'Invalid record type'! !
@@ -599,40 +837,28 @@ Object subclass: #CustomerSystem
 	poolDictionaries: ''
 	category: 'CustomerImporter'!
 
-!CustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:26:57'!
-closeSession
+!CustomerSystem methodsFor: 'customers' stamp: 'OK 6/28/2024 22:44:38'!
+add: aCustomer
 
-	self subclassResponsibility! !
+	self subclassResponsibility ! !
 
-!CustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:27:05'!
-commitSession
-
-	self subclassResponsibility! !
-
-!CustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:27:09'!
+!CustomerSystem methodsFor: 'customers' stamp: 'HAW 5/22/2022 21:18:38'!
 customerWithIdentificationType: anIdType number: anIdNumber
 
-	self subclassResponsibility! !
+	self subclassResponsibility ! !
 
-!CustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:27:13'!
+!CustomerSystem methodsFor: 'customers' stamp: 'OK 6/29/2024 00:46:20'!
+initialize
+
+	self subclassResponsibility.! !
+
+!CustomerSystem methodsFor: 'customers' stamp: 'HAW 5/22/2022 21:18:51'!
 numberOfCustomers
 
-	self subclassResponsibility! !
+	self subclassResponsibility ! !
 
-!CustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:27:16'!
-persist: aNewCustomer
 
-	self subclassResponsibility! !
 
-!CustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:28:43'!
-startSession
-
-	self subclassResponsibility! !
-
-!CustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:27:23'!
-startTransaction
-
-	self subclassResponsibility! !
 
 
 !classDefinition: #PersistentCustomerSystem category: #CustomerImporter!
@@ -642,42 +868,31 @@ CustomerSystem subclass: #PersistentCustomerSystem
 	poolDictionaries: ''
 	category: 'CustomerImporter'!
 
-!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:26:57'!
-closeSession
+!PersistentCustomerSystem methodsFor: 'customers' stamp: 'OK 6/28/2024 22:44:05'!
+add: aCustomer
 
-	^ session close! !
+	^session persist: aCustomer ! !
 
-!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:27:05'!
-commitSession
-
-	^ session commit! !
-
-!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:27:09'!
+!PersistentCustomerSystem methodsFor: 'customers' stamp: 'HAW 5/22/2022 21:09:50'!
 customerWithIdentificationType: anIdType number: anIdNumber
 
-	^ (session
+	^(session
 		select: [ :aCustomer | aCustomer identificationType = anIdType and: [ aCustomer identificationNumber = anIdNumber ]]
 		ofType: Customer) anyOne! !
 
-!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:27:13'!
+!PersistentCustomerSystem methodsFor: 'customers' stamp: 'HAW 5/22/2022 21:08:47'!
 numberOfCustomers
 
-	^ (session selectAllOfType: Customer) size! !
+	^(session selectAllOfType: Customer) size! !
 
-!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:27:16'!
-persist: aNewCustomer 
-	
-	session persist: aNewCustomer.! !
 
-!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:28:43'!
-startSession
 
-	^ session := DataBaseSession for: (Array with: Address with: Customer)! !
+!PersistentCustomerSystem methodsFor: 'system lifecycle' stamp: 'OK 6/28/2024 23:39:26'!
+initialize
 
-!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:27:23'!
-startTransaction
+	session := DataBaseSession for: (Array with: Address with: Customer).
+	! !
 
-	^ session beginTransaction! !
 
 
 !classDefinition: #TransientCustomerSystem category: #CustomerImporter!
@@ -687,40 +902,27 @@ CustomerSystem subclass: #TransientCustomerSystem
 	poolDictionaries: ''
 	category: 'CustomerImporter'!
 
-!TransientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:04:56'!
-closeSession
+!TransientCustomerSystem methodsFor: 'system lifecycle' stamp: 'OK 6/28/2024 23:38:35'!
+initialize
 
-	customers := nil.! !
+	customers := OrderedCollection new.! !
 
-!TransientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:28:16'!
-commitSession
 
-	! !
 
-!TransientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:04:33'!
+!TransientCustomerSystem methodsFor: 'customers' stamp: 'OK 6/28/2024 22:44:18'!
+add: aCustomer
+
+	customers add: aCustomer ! !
+
+!TransientCustomerSystem methodsFor: 'customers' stamp: 'HAW 5/22/2022 21:22:52'!
 customerWithIdentificationType: anIdType number: anIdNumber
 
-	^ customers detect: [ :aCustomer | aCustomer identificationType = anIdType and: [ aCustomer identificationNumber = anIdNumber ]].! !
+	^customers detect: [ :aCustomer | aCustomer identificationType = anIdType and: [ aCustomer identificationNumber = anIdNumber ]]! !
 
-!TransientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:04:33'!
+!TransientCustomerSystem methodsFor: 'customers' stamp: 'HAW 5/22/2022 21:21:43'!
 numberOfCustomers
 
-	^ customers size! !
-
-!TransientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:04:33'!
-persist: aNewCustomer 
-	
-	customers add: aNewCustomer.! !
-
-!TransientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:04:33'!
-startSession
-
-	^ customers := Set new.! !
-
-!TransientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 11:31:11'!
-startTransaction
-
-	! !
+	^customers size! !
 
 
 !classDefinition: #DataBaseSession category: #CustomerImporter!
@@ -827,7 +1029,7 @@ newIdFor: anObject
 	^id! !
 
 
-!DataBaseSession methodsFor: 'persistance' stamp: 'HAW 11/14/2023 09:06:24'!
+!DataBaseSession methodsFor: 'persistance' stamp: 'OK 6/28/2024 14:23:25'!
 persist: anObject
 
 	| table |
@@ -838,7 +1040,7 @@ persist: anObject
 	
 	table := self tableOfType: anObject class.
 	self defineIdOf: anObject.
-	table add: anObject.
+	table addCustomer: anObject.
 	self persistRelationsOf: anObject.
 ! !
 
@@ -873,108 +1075,593 @@ for: aConfiguration
 	^self new initializeFor: aConfiguration! !
 
 
-!classDefinition: #Enviroment category: #CustomerImporter!
-Object subclass: #Enviroment
+!classDefinition: #ERPSystem category: #CustomerImporter!
+Object subclass: #ERPSystem
+	instanceVariableNames: 'customerSystem supplierSystem'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!ERPSystem methodsFor: 'system lifecycle' stamp: 'OK 6/29/2024 00:03:11'!
+customerSystem
+
+	self subclassResponsibility! !
+
+!ERPSystem methodsFor: 'system lifecycle' stamp: 'OK 6/29/2024 00:03:16'!
+start
+
+	self subclassResponsibility! !
+
+!ERPSystem methodsFor: 'system lifecycle' stamp: 'OK 6/29/2024 00:03:20'!
+stop
+
+	self subclassResponsibility! !
+
+!ERPSystem methodsFor: 'system lifecycle' stamp: 'OK 6/29/2024 00:03:25'!
+supplierSystem
+
+	self subclassResponsibility! !
+
+
+!ERPSystem methodsFor: 'transactions' stamp: 'OK 6/29/2024 00:02:59'!
+beginTransaction
+
+	self subclassResponsibility! !
+
+!ERPSystem methodsFor: 'transactions' stamp: 'OK 6/29/2024 00:03:06'!
+commit
+
+	self subclassResponsibility! !
+
+
+!classDefinition: #PersistentERPSystem category: #CustomerImporter!
+ERPSystem subclass: #PersistentERPSystem
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'CustomerImporter'!
 
-!Enviroment methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:12:14'!
-createCustomerSystem
+!PersistentERPSystem methodsFor: 'transactions' stamp: 'OK 6/29/2024 00:02:59'!
+beginTransaction
+
+	! !
+
+!PersistentERPSystem methodsFor: 'transactions' stamp: 'OK 6/29/2024 00:03:06'!
+commit
+
+	! !
+
+
+!PersistentERPSystem methodsFor: 'system lifecycle' stamp: 'OK 6/29/2024 00:03:11'!
+customerSystem
+
+	^ customerSystem.! !
+
+!PersistentERPSystem methodsFor: 'system lifecycle' stamp: 'OK 6/29/2024 00:38:45'!
+start
+	
+	customerSystem := PersistentCustomerSystem new.
+	supplierSystem   := PersistentSupplierSystem new.! !
+
+!PersistentERPSystem methodsFor: 'system lifecycle' stamp: 'OK 6/29/2024 00:03:20'!
+stop
+
+	customerSystem := nil.
+	supplierSystem := nil.! !
+
+!PersistentERPSystem methodsFor: 'system lifecycle' stamp: 'OK 6/29/2024 00:03:25'!
+supplierSystem
+
+	^ supplierSystem.! !
+
+
+!classDefinition: #TransientERPSystem category: #CustomerImporter!
+ERPSystem subclass: #TransientERPSystem
+	instanceVariableNames: 'customers'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!TransientERPSystem methodsFor: 'system lifecycle' stamp: 'OK 6/29/2024 00:40:17'!
+start
+	
+	customerSystem := TransientCustomerSystem new.
+	supplierSystem   := TransientSupplierSystem new.! !
+
+!TransientERPSystem methodsFor: 'system lifecycle' stamp: 'OK 6/29/2024 00:03:20'!
+stop
+
+	customerSystem := nil.
+	supplierSystem := nil.! !
+
+
+!TransientERPSystem methodsFor: 'provide-systems' stamp: 'OK 6/29/2024 00:03:11'!
+customerSystem
+
+	^ customerSystem.! !
+
+!TransientERPSystem methodsFor: 'provide-systems' stamp: 'OK 6/29/2024 00:03:25'!
+supplierSystem
+
+	^ supplierSystem.! !
+
+
+!TransientERPSystem methodsFor: 'transactions' stamp: 'OK 6/29/2024 00:02:59'!
+beginTransaction
+
+	! !
+
+!TransientERPSystem methodsFor: 'transactions' stamp: 'OK 6/29/2024 00:03:06'!
+commit
+
+	! !
+
+
+!classDefinition: #Environment category: #CustomerImporter!
+Object subclass: #Environment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!Environment methodsFor: 'customer system' stamp: 'OK 6/28/2024 23:32:30'!
+createERPSystem
 
 	self subclassResponsibility! !
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
-!classDefinition: 'Enviroment class' category: #CustomerImporter!
-Enviroment class
+!classDefinition: 'Environment class' category: #CustomerImporter!
+Environment class
 	instanceVariableNames: ''!
 
-!Enviroment class methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:15:38'!
+!Environment class methodsFor: 'current' stamp: 'HAW 5/22/2022 21:37:10'!
 current
-	
+
 	^(self subclasses detect: [ :anEnvironmentClass | anEnvironmentClass isCurrent ]) new! !
 
-!Enviroment class methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:15:52'!
+!Environment class methodsFor: 'current' stamp: 'HAW 11/23/2023 16:44:46'!
 environmentKey
 
 	^ #ENV! !
 
-!Enviroment class methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:15:59'!
+!Environment class methodsFor: 'current' stamp: 'HAW 11/23/2023 16:44:46'!
 environmentVariable
 
 	^ Smalltalk at: self environmentKey! !
 
-!Enviroment class methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:16:17'!
+!Environment class methodsFor: 'current' stamp: 'HAW 11/23/2023 16:44:09'!
 identifier
 
 	self subclassResponsibility! !
 
-!Enviroment class methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:16:21'!
+!Environment class methodsFor: 'current' stamp: 'HAW 5/22/2022 21:41:36'!
 isCurrent
 
 	self subclassResponsibility ! !
 
-!Enviroment class methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:16:49'!
+!Environment class methodsFor: 'current' stamp: 'HAW 11/23/2023 16:46:01'!
 makeCurrent
+
+	"
+	Tener en cuenta que en Smalltalk se podría poner directamente la clase de environment,
+	esto es DevelopmentEnvironment o IntegrationEnvironmet o hasta una instancia de ellas,
+	pero se está simulando el hecho de que esto esté definido por fuera del sistema, como una
+	variable del sistema operativo - Hernan"
 	
 	Smalltalk at: self environmentKey put: self identifier! !
 
 
-!classDefinition: #DeveloperEnviroment category: #CustomerImporter!
-Enviroment subclass: #DeveloperEnviroment
+!classDefinition: #DevelopmentEnvironment category: #CustomerImporter!
+Environment subclass: #DevelopmentEnvironment
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'CustomerImporter'!
 
-!DeveloperEnviroment methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:14:58'!
-createCustomerSystem
+!DevelopmentEnvironment methodsFor: 'customer system' stamp: 'OK 6/28/2024 23:32:57'!
+createERPSystem
+	
+	^ TransientERPSystem new.! !
 
-	^ TransientCustomerSystem new.! !
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
-!classDefinition: 'DeveloperEnviroment class' category: #CustomerImporter!
-DeveloperEnviroment class
+!classDefinition: 'DevelopmentEnvironment class' category: #CustomerImporter!
+DevelopmentEnvironment class
 	instanceVariableNames: ''!
 
-!DeveloperEnviroment class methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:17:20'!
+!DevelopmentEnvironment class methodsFor: 'current' stamp: 'HAW 11/23/2023 16:42:50'!
 identifier
 
 	^ #DEV! !
 
-!DeveloperEnviroment class methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:17:32'!
+!DevelopmentEnvironment class methodsFor: 'current' stamp: 'HAW 11/23/2023 16:43:52'!
 isCurrent
 
+	"
+	self makeCurrent
+	"
 	^self environmentVariable = self identifier! !
 
 
-!classDefinition: #IntegrationEnviroment category: #CustomerImporter!
-Enviroment subclass: #IntegrationEnviroment
+!classDefinition: #IntegrationEnvironment category: #CustomerImporter!
+Environment subclass: #IntegrationEnvironment
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'CustomerImporter'!
 
-!IntegrationEnviroment methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:15:20'!
-createCustomerSystem
+!IntegrationEnvironment methodsFor: 'customer system' stamp: 'OK 6/28/2024 23:33:11'!
+createERPSystem
 
-	^ PersistentCustomerSystem new.! !
+	^ PersistentERPSystem new.! !
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
-!classDefinition: 'IntegrationEnviroment class' category: #CustomerImporter!
-IntegrationEnviroment class
+!classDefinition: 'IntegrationEnvironment class' category: #CustomerImporter!
+IntegrationEnvironment class
 	instanceVariableNames: ''!
 
-!IntegrationEnviroment class methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:17:41'!
+!IntegrationEnvironment class methodsFor: 'current' stamp: 'HAW 11/23/2023 16:43:07'!
 identifier
 
 	^ #INT! !
 
-!IntegrationEnviroment class methodsFor: 'as yet unclassified' stamp: 'OK 6/27/2024 12:17:51'!
+!IntegrationEnvironment class methodsFor: 'current' stamp: 'HAW 11/23/2023 16:44:04'!
 isCurrent
 
+	"
+	self makeCurrent
+	"
 	^self environmentVariable = self identifier! !
+
+
+!classDefinition: #Supplier category: #CustomerImporter!
+Object subclass: #Supplier
+	instanceVariableNames: 'name iDType iDNumber customers addresses'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!Supplier methodsFor: 'initialization' stamp: 'OK 6/28/2024 19:13:12'!
+initializeWith: aName andIDType: anIDType andIDNumber: anIDNumber 
+	
+	name := aName.
+	iDType := anIDType.
+	iDNumber := anIDNumber.
+	customers := OrderedCollection new.
+	addresses := OrderedCollection new.! !
+
+
+!Supplier methodsFor: 'customer' stamp: 'OK 6/28/2024 18:04:05'!
+addCustomer: newCustomer 
+	
+	customers add: newCustomer.! !
+
+!Supplier methodsFor: 'customer' stamp: 'OK 6/28/2024 20:21:02'!
+hasCustomerWithIDType: anIDType andIDNumber: anIDNumber
+
+	^ ( customers select: [ :aCustomer | aCustomer identificationType = anIDType and: [ aCustomer identificationNumber = anIDNumber ]] ) isEmpty = false.! !
+
+
+!Supplier methodsFor: 'testing' stamp: 'OK 6/28/2024 17:31:45'!
+hasIDNumber: anIDNumber 
+	
+	^ iDNumber = anIDNumber.! !
+
+!Supplier methodsFor: 'testing' stamp: 'OK 6/28/2024 17:31:27'!
+hasIDType: anIDType
+
+	^ iDType = anIDType. 
+	
+	! !
+
+!Supplier methodsFor: 'testing' stamp: 'OK 6/28/2024 17:31:34'!
+isNamed: aName 
+	
+	^ name = aName.! !
+
+
+!Supplier methodsFor: 'address' stamp: 'OK 6/28/2024 19:12:43'!
+addAddress: newAddress 
+	
+	addresses add: newAddress.! !
+
+!Supplier methodsFor: 'address' stamp: 'OK 6/28/2024 20:26:39'!
+hasAddressWithStreet: aStreetName withStreetNumber: aNumber    
+	
+	^ ( addresses select: [ :anAddress | ( anAddress isAt: aStreetName ) and: ( anAddress streetNumber = aNumber)]) isEmpty = false.! !
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+!classDefinition: 'Supplier class' category: #CustomerImporter!
+Supplier class
+	instanceVariableNames: ''!
+
+!Supplier class methodsFor: 'as yet unclassified' stamp: 'OK 6/28/2024 13:23:56'!
+named: aName withIDType: anIDType withIDNumber: anIDNumber 
+	
+	^ self new initializeWith: aName andIDType: anIDType andIDNumber: anIDNumber.
+	! !
+
+
+!classDefinition: #SupplierImporter category: #CustomerImporter!
+Object subclass: #SupplierImporter
+	instanceVariableNames: 'newSupplier record line readStream system'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!SupplierImporter methodsFor: 'supplier' stamp: 'OK 6/28/2024 14:17:57'!
+isSupplierRecord
+	
+	^ record first = 'S'! !
+
+
+!SupplierImporter methodsFor: 'assertions' stamp: 'OK 6/28/2024 22:32:28'!
+assertRecordNotEmpty
+
+	record isEmpty ifTrue: [ self error: self class invalidRecordTypeErrorDescription ]! !
+
+!SupplierImporter methodsFor: 'assertions' stamp: 'OK 6/28/2024 14:16:54'!
+assertSupplierWasImported
+
+	^ newSupplier ifNil: [ self error: self class canNotAddCustomerWithoutSupplierErrorDescription ]! !
+
+!SupplierImporter methodsFor: 'assertions' stamp: 'OK 6/28/2024 22:05:25'!
+assertValidAddressRecord
+
+	^ record size ~= 6 ifTrue: [ self error: self class invalidAddressRecordErrorDescription ]! !
+
+!SupplierImporter methodsFor: 'assertions' stamp: 'OK 6/28/2024 22:05:32'!
+assertValidCustomerRecord
+
+	^ record size ~= 5 ifTrue: [ self error: self class invalidCustomerRecordErrorDescription ]! !
+
+!SupplierImporter methodsFor: 'assertions' stamp: 'OK 6/28/2024 14:32:08'!
+assertValidSupplierRecord
+
+	^ record size ~= 4 ifTrue: [ self error: self class invalidSupplierRecordErrorDescription ].! !
+
+
+!SupplierImporter methodsFor: 'address' stamp: 'OK 6/28/2024 22:07:02'!
+isAddressRecord
+
+	^ record first = 'A'! !
+
+
+!SupplierImporter methodsFor: 'record' stamp: 'OK 6/28/2024 22:32:33'!
+createRecord
+
+	^ record := line findTokens: $, ! !
+
+!SupplierImporter methodsFor: 'record' stamp: 'OK 6/28/2024 22:32:36'!
+hasLineToImport
+
+	line := readStream nextLine.
+	^line notNil ! !
+
+
+!SupplierImporter methodsFor: 'customer' stamp: 'OK 6/28/2024 14:10:09'!
+isExistingCustomerRecord
+	
+	^ record first = 'EC'! !
+
+!SupplierImporter methodsFor: 'customer' stamp: 'OK 6/28/2024 14:01:33'!
+isNewCustomerRecord
+	
+	^ record first = 'NC'! !
+
+
+!SupplierImporter methodsFor: 'evaluating' stamp: 'OK 6/29/2024 00:48:55'!
+importAddress
+
+	| newAddress |
+	
+	self assertSupplierWasImported.
+	self assertValidAddressRecord.
+
+	newAddress := Address new.
+	newAddress streetName: record second.
+	newAddress streetNumber: record third asNumber .
+	newAddress town: record fourth.
+	newAddress zipCode: record fifth asNumber .
+	newAddress province: record sixth.
+	
+	newSupplier addAddress: newAddress.! !
+
+!SupplierImporter methodsFor: 'evaluating' stamp: 'OK 6/29/2024 00:54:14'!
+importCustomer
+
+	| newCustomer |
+	
+	self assertSupplierWasImported.
+	self assertValidCustomerRecord.
+
+	newCustomer := Customer new.
+	newCustomer firstName: record second.
+	newCustomer lastName: record third.
+	newCustomer identificationType: record fourth.
+	newCustomer identificationNumber: record fifth. 
+	
+	system customerSystem add: newCustomer.
+	
+	newSupplier addCustomer: newCustomer.! !
+
+!SupplierImporter methodsFor: 'evaluating' stamp: 'OK 6/28/2024 23:56:36'!
+importExistingCustomer
+	
+	| existingCustomer |
+	self assertSupplierWasImported.
+	
+	[ existingCustomer := system customerSystem customerWithIdentificationType: record second number: record third ] on: Error 
+	do: [self error: self class customerNotFoundOnCustomerSystemErrorDescription].
+	
+	newSupplier addCustomer: existingCustomer.! !
+
+!SupplierImporter methodsFor: 'evaluating' stamp: 'OK 6/29/2024 00:55:01'!
+importRecord
+
+	self assertRecordNotEmpty.
+	
+	self isSupplierRecord ifTrue: [ ^self importSupplier ].
+	self isNewCustomerRecord ifTrue: [ ^self importCustomer ].
+	self isExistingCustomerRecord ifTrue: [ ^self importExistingCustomer ].
+	self isAddressRecord ifTrue: [ ^self importAddress ].
+	
+	self error: self class invalidRecordTypeErrorDescription.! !
+
+!SupplierImporter methodsFor: 'evaluating' stamp: 'OK 6/28/2024 23:47:49'!
+importSupplier
+	
+	self assertValidSupplierRecord.
+
+	newSupplier := Supplier 
+		named: record second 
+		withIDType: record third 
+		withIDNumber: record fourth.
+	
+	system supplierSystem add: newSupplier.! !
+
+!SupplierImporter methodsFor: 'evaluating' stamp: 'OK 6/28/2024 22:07:09'!
+value
+
+	[ self hasLineToImport ] whileTrue: [
+		self createRecord.
+		self importRecord ].
+
+	! !
+
+
+!SupplierImporter methodsFor: 'initialization' stamp: 'OK 6/28/2024 22:06:54'!
+initializeFrom: aReadStream into: aCustomerSystem
+
+	readStream := aReadStream.
+	system := aCustomerSystem ! !
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+!classDefinition: 'SupplierImporter class' category: #CustomerImporter!
+SupplierImporter class
+	instanceVariableNames: ''!
+
+!SupplierImporter class methodsFor: 'as yet unclassified' stamp: 'OK 6/28/2024 14:16:26'!
+canNotAddCustomerWithoutSupplierErrorDescription
+	
+	^ 'Can not add customer without the supplier'.! !
+
+!SupplierImporter class methodsFor: 'as yet unclassified' stamp: 'OK 6/28/2024 14:49:51'!
+customerNotFoundOnCustomerSystemErrorDescription
+	
+	^ 'The customer can not be found on customer system :('! !
+
+!SupplierImporter class methodsFor: 'as yet unclassified' stamp: 'OK 6/28/2024 18:43:13'!
+invalidAddressFormatErrorDescription
+	
+	^'Address format is invalid!!'.! !
+
+
+!SupplierImporter class methodsFor: 'error messages' stamp: 'OK 6/28/2024 22:07:23'!
+canNotImportAddressWithoutCustomerErrorDescription
+
+	^'Cannot import address without customer'! !
+
+!SupplierImporter class methodsFor: 'error messages' stamp: 'OK 6/28/2024 22:07:40'!
+invalidAddressRecordErrorDescription
+
+	^'Address record has to have six fields'! !
+
+!SupplierImporter class methodsFor: 'error messages' stamp: 'OK 6/28/2024 22:07:46'!
+invalidCustomerRecordErrorDescription
+
+	^'Invalid Customer record'! !
+
+!SupplierImporter class methodsFor: 'error messages' stamp: 'OK 6/28/2024 22:07:53'!
+invalidRecordTypeErrorDescription
+
+	^'Invalid record type'! !
+
+
+!SupplierImporter class methodsFor: 'instance creation' stamp: 'OK 6/28/2024 22:07:33'!
+from: aReadStream into: aCustomerSystem
+
+	^self new initializeFrom: aReadStream into: aCustomerSystem! !
+
+
+!SupplierImporter class methodsFor: 'importing' stamp: 'OK 6/28/2024 22:08:00'!
+valueFrom: aReadStream into: aCustomerSystem
+
+	^(self from: aReadStream into: aCustomerSystem) value! !
+
+
+!classDefinition: #SupplierSystem category: #CustomerImporter!
+Object subclass: #SupplierSystem
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!SupplierSystem methodsFor: 'customers' stamp: 'OK 6/28/2024 22:41:05'!
+add: aSupplier
+
+	self subclassResponsibility! !
+
+
+
+
+!SupplierSystem methodsFor: 'suppliers' stamp: 'OK 6/28/2024 23:49:05'!
+initialize! !
+
+!SupplierSystem methodsFor: 'suppliers' stamp: 'OK 6/28/2024 22:39:41'!
+supplierWithIdentificationType: anIDType number: anIDNumber
+
+	self subclassResponsibility! !
+
+
+!classDefinition: #PersistentSupplierSystem category: #CustomerImporter!
+SupplierSystem subclass: #PersistentSupplierSystem
+	instanceVariableNames: 'session'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+
+
+!PersistentSupplierSystem methodsFor: 'suppliers' stamp: 'OK 6/28/2024 22:41:05'!
+add: aSupplier
+
+	^ session persist: aSupplier ! !
+
+!PersistentSupplierSystem methodsFor: 'suppliers' stamp: 'OK 6/28/2024 23:48:52'!
+initialize! !
+
+!PersistentSupplierSystem methodsFor: 'suppliers' stamp: 'OK 6/28/2024 22:39:54'!
+supplierWithIdentificationType: anIDType number: anIDNumber 
+	
+	^ Supplier named: 'Supplier1' withIDType: 'D' withIDNumber: '123'.! !
+
+
+!classDefinition: #TransientSupplierSystem category: #CustomerImporter!
+SupplierSystem subclass: #TransientSupplierSystem
+	instanceVariableNames: 'suppliers'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!TransientSupplierSystem methodsFor: 'system lifecycle' stamp: 'OK 6/28/2024 23:48:12'!
+initialize
+
+	suppliers  := OrderedCollection new.! !
+
+
+
+!TransientSupplierSystem methodsFor: 'suppliers' stamp: 'OK 6/28/2024 22:41:05'!
+add: aSupplier
+
+	suppliers add: aSupplier ! !
+
+!TransientSupplierSystem methodsFor: 'suppliers' stamp: 'OK 6/28/2024 22:40:17'!
+supplierWithIdentificationType: anIDType number: anIDNumber 
+	
+	^ suppliers detect: [ :aSupplier | ( aSupplier hasIDType: anIDType ) and: [ aSupplier hasIDNumber: anIDNumber ]]! !
