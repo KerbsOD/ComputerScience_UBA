@@ -1,0 +1,8 @@
+- El mars rover avisa que cambio a los observadores.
+- No hay que crear un mensaje para cada colaborador interno que se puede modificar (updateHeading, updatePosition, etc).
+- El mars rover no le avisa a nadie, reemplazamos la asignacion para que cuadno se modifique avise a los interesados. De esta manera no escribbimos un notificador en cada parte del codigo donde se modifica (codigo repetido). Logica repetida, asignar avisar, asignar avisar, etc.
+- Ejemplo, cambiamos position por un objeto que tienen como colaborador interno al real position. (se esta wrappeando a la variable).
+- No subclasificamos el log con la window cjuntas porque no se comportan de manera similar. Que tengan los mismos mensajes no implica.
+- Position no conoce el '+' asi que le envia el mensaje a uno de sus colaboradores. Mediante la modificacion de doesNotUndestand. Es un proxy.
+- self se bindea en donde se define el bloque.
+- El objeto observado desconoce que esta siendo observado, no tiene que influir en su comportamiento.
