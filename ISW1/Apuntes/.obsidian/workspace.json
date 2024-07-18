@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Heuristicas de Diseno.md",
+                "file": "Automated refactors.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Heuristicas de Diseno.md",
+                "file": "Automated refactors.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Heuristicas de Diseno.md",
+                "file": "Automated refactors.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Heuristicas de Diseno.md"
+                "file": "Automated refactors.md"
               }
             }
           }
@@ -149,10 +149,17 @@
   },
   "active": "bc32b0f9e1cd0fc0",
   "lastOpenFiles": [
+    "Conceptos Basicos.md",
+    "Decorator.md",
+    "Heuristicas.pdf",
     "TDD.md",
+    "Proxy.md",
+    "Object Recursion.md",
+    "Null Object.md",
+    "Method Object.md",
+    "Heuristicas de Diseno.md",
     "Excalidraw/Drawing 2024-07-08 08.02.03.excalidraw.md",
     "Excalidraw",
-    "Heuristicas.pdf",
     "Books/Vim/Seleccion.md",
     "Books/Vim/NVChad.md",
     "Books/Vim/Movimiento.md",
