@@ -1,0 +1,4 @@
+- Influencias de smalltalk
+- Criticas de alan kay a smalltalk
+- que dice alan kay de lisp
+- que dice alan kay del metamodelo de smalltalk
