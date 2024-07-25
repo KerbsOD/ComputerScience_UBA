@@ -14,18 +14,18 @@ Por lo tanto no habrá carpetas para materias como Análisis Matemático, Álgeb
 
 - [Entregables](Algoritmos-1/Entregables/)
 - [Laboratorios](Algoritmos-1/Laboratorios/)
-- [Trabajos Prácticos](Algoritmos-1/Trabajos Prácticos/)
+- [Trabajos Prácticos](Algoritmos-1/Trabajos-Prácticos/)
 
 ### Algoritmos y Estructura de Datos II
 
 - [Entregables](Algoritmos-2/Entregables/)
 - [Laboratorios](Algoritmos-2/Laboratorios/)
-- [Trabajos Prácticos](Algoritmos-2/Trabajos Prácticos/) 
+- [Trabajos Prácticos](Algoritmos-2/Trabajos-Prácticos/) 
 
 ### Algoritmos y Estructura de Datos III
 
 - [Prácticas (Golang)](Algoritmos-3/Practicas/)
-- [Trabajos Prácticos](Algoritmos-3/Trabajos Prácticos)
+- [Trabajos Prácticos](Algoritmos-3/Trabajos-Prácticos)
 
 ## Área Sistemas
 
@@ -49,7 +49,7 @@ Por lo tanto no habrá carpetas para materias como Análisis Matemático, Álgeb
 ### Paradigmas de Programación
 
 - [Guías](ParadigmasDeProgramación/Guias)
-- [Trabajos Prácticos](ParadigmasDeProgramación/Trabajos Prácticos)
+- [Trabajos Prácticos](ParadigmasDeProgramación/Trabajos-Prácticos)
 
 
 
