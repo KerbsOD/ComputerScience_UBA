@@ -1,14 +1,7 @@
-# Repositorio de todo lo programado en las materias
-En este repositorio se encuentra todo lo que hice relacionado a la programación en la carrera de Ciencias de la Computación, Facultad de Ciencias Exactas y Naturales (FCEN), Universidad de Buenos Aires.
+![Logo](Logo.png)
 
-Solo se van a encontrar las materias donde tuvimos que programar:
-- Guías
-- Entregables
-- Trabajos prácticos
-  
-Por lo tanto no habrá carpetas para materias como Análisis Matemático, Álgebra, Probabilidad y Estadística, etc.
-
-## Área Algoritmos 
+En este repositorio se encuentra todo lo que hice relacionado a la programación en la carrera de [Ciencias de la Computación, Facultad de Ciencias Exactas y Naturales (FCEN), Universidad de Buenos Aires.
+](https://computacion.dc.uba.ar/plan-de-estudios-1993/)
 
 ### Algoritmos y Estructura de Datos I
 
@@ -27,8 +20,6 @@ Por lo tanto no habrá carpetas para materias como Análisis Matemático, Álgeb
 - [Prácticas (Golang)](Algoritmos-3/Practicas/)
 - [Trabajos Prácticos](Algoritmos-3/Trabajos-Prácticos)
 
-## Área Sistemas
-
 ### Organización del Computador I
 
 - [Parcial](OrganizaciónDelComputador-1/Parcial)
@@ -37,8 +28,6 @@ Por lo tanto no habrá carpetas para materias como Análisis Matemático, Álgeb
 
 - [Talleres](OrganizaciónDelComputador-2/Talleres)
 
-
-## Área Teoría
 
 ### Ingeniería del Software I
 
