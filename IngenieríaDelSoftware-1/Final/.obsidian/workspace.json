@@ -4,8 +4,9 @@
     "type": "split",
     "children": [
       {
-        "id": "bc14cff72f878fa9",
+        "id": "3f2615af0c50ebdf",
         "type": "tabs",
+        "dimension": 43.123667377398725,
         "children": [
           {
             "id": "db3881831e38525d",
@@ -18,53 +19,25 @@
                 "source": false
               }
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "bc14cff72f878fa9",
+        "type": "tabs",
+        "dimension": 56.876332622601275,
+        "children": [
           {
-            "id": "722a4171e61d4b65",
+            "id": "7427837a8ae709ce",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "THE EARLY HISTORY OF SMALLTALK.pdf"
-              }
-            }
-          },
-          {
-            "id": "dceda0264297230f",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "DevDotStar_Reeves_CodeAsDesign.pdf"
-              }
-            }
-          },
-          {
-            "id": "1aae279754439c37",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Naur.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fb5cd3aba75c9333",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "What is software design.md",
-                "mode": "source",
-                "source": false
+                "file": "Brooks_1986_-_No_Silver_Bullet.pdf"
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -114,7 +87,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "28f6897bf1c5a8cb",
@@ -130,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Naur.md",
+                "file": "No Silver Bullet.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Naur.md",
+                "file": "No Silver Bullet.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Naur.md"
+                "file": "No Silver Bullet.md"
               }
             }
           }
@@ -191,15 +165,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1aae279754439c37",
+  "active": "db3881831e38525d",
   "lastOpenFiles": [
+    "Brooks_1986_-_No_Silver_Bullet.pdf",
     "No Silver Bullet.md",
-    "What is software design.md",
     "Naur.md",
-    "DevDotStar_Reeves_CodeAsDesign.pdf",
+    "What is software design.md",
     "The Early history of smalltalk.md",
-    "THE EARLY HISTORY OF SMALLTALK.pdf",
+    "DevDotStar_Reeves_CodeAsDesign.pdf",
     "Diapos Naur.2020-1C.pdf",
-    "Brooks_1986_-_No_Silver_Bullet.pdf"
+    "THE EARLY HISTORY OF SMALLTALK.pdf"
   ]
 }
