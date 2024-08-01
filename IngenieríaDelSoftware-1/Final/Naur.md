@@ -1,2 +1,0 @@
-- Que dice el paper de naur
-- Relacionar incremental growth de brooks con ir desarrollando la teoria de naur.
