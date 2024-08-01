@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "No Silver Bullet.md",
+                "file": "Naur.md",
                 "mode": "source",
                 "source": false
               }
@@ -87,8 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "28f6897bf1c5a8cb",
@@ -104,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "No Silver Bullet.md",
+                "file": "Naur.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "No Silver Bullet.md",
+                "file": "Naur.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "No Silver Bullet.md"
+                "file": "Naur.md"
               }
             }
           }
@@ -167,8 +166,8 @@
   },
   "active": "db3881831e38525d",
   "lastOpenFiles": [
-    "Brooks_1986_-_No_Silver_Bullet.pdf",
     "No Silver Bullet.md",
+    "Brooks_1986_-_No_Silver_Bullet.pdf",
     "Naur.md",
     "What is software design.md",
     "The Early history of smalltalk.md",
