@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "bc32b0f9e1cd0fc0",
+            "id": "618db08f798b6a72",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Automated refactors.md",
+                "file": "Subclasificación.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Automated refactors.md",
+                "file": "Subclasificación.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Automated refactors.md",
+                "file": "Subclasificación.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Automated refactors.md"
+                "file": "Subclasificación.md"
               }
             }
           }
@@ -147,12 +147,14 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "bc32b0f9e1cd0fc0",
+  "active": "618db08f798b6a72",
   "lastOpenFiles": [
+    "TDD.md",
+    "Subclasificación.md",
+    "Automated refactors.md",
     "Conceptos Basicos.md",
     "Decorator.md",
     "Heuristicas.pdf",
-    "TDD.md",
     "Proxy.md",
     "Object Recursion.md",
     "Null Object.md",

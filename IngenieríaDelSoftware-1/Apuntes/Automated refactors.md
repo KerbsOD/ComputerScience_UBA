@@ -14,5 +14,3 @@ Cambia todas las aparciones de la variable temporal por su valor y la remueve de
 
 # inline method
 Cambia todas las apariciones del metodo por su implementacion y remueve el metodo de los mensajes del objeto.
-
-![[Tldraw 2024-06-15 9.02PM]]
