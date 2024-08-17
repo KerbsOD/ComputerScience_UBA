@@ -130,3 +130,4 @@ print(data). // Juan Perez
 ```
 
 **Fake**: Hace lo mismo que el objeto al que simula pero a menor escala. Por ejemplo una base de datos con una sola tabla. 
+

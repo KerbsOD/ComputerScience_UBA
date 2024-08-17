@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Subclasificación.md",
+                "file": "TDD.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Subclasificación.md",
+                "file": "TDD.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Subclasificación.md",
+                "file": "TDD.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Subclasificación.md"
+                "file": "TDD.md"
               }
             }
           }
@@ -149,16 +149,18 @@
   },
   "active": "618db08f798b6a72",
   "lastOpenFiles": [
-    "TDD.md",
     "Subclasificación.md",
+    "State.md",
+    "Object Recursion.md",
+    "Null Object.md",
+    "Method Object.md",
+    "MarsRover2.md",
+    "TDD.md",
     "Automated refactors.md",
     "Conceptos Basicos.md",
     "Decorator.md",
     "Heuristicas.pdf",
     "Proxy.md",
-    "Object Recursion.md",
-    "Null Object.md",
-    "Method Object.md",
     "Heuristicas de Diseno.md",
     "Excalidraw/Drawing 2024-07-08 08.02.03.excalidraw.md",
     "Excalidraw",
@@ -192,8 +194,6 @@
     "Library/Inge1/Automated refactors.md",
     "Library/TelegramGO/Basics.md",
     "Excalidraw/Drawing 2024-07-08 02.21.49.excalidraw.md",
-    "Medium-Theme/README.md",
-    "TelegramGO/Basics.md",
-    "Library/Programming/DesignPatterns/Method Object.md"
+    "Medium-Theme/README.md"
   ]
 }
