@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/octo/Documents/Computacion-UBA/SistemasOperativos/Guia0-Comandos/build",
+  "command": "/usr/bin/cc -g -std=gnu11 -o CMakeFiles/Guia0_Comandos.dir/Ejercicio10.c.o -c /home/octo/Documents/Computacion-UBA/SistemasOperativos/Guia0-Comandos/Ejercicio10.c",
+  "file": "/home/octo/Documents/Computacion-UBA/SistemasOperativos/Guia0-Comandos/Ejercicio10.c",
+  "output": "CMakeFiles/Guia0_Comandos.dir/Ejercicio10.c.o"
+}
+]

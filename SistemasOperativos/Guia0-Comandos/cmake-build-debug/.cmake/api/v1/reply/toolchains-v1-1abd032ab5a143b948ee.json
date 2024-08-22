@@ -1,0 +1,54 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"/usr/lib/gcc/x86_64-unknown-linux-gnu/13.2.0/include",
+						"/usr/lib/gcc/x86_64-unknown-linux-gnu/13.2.0/include-fixed",
+						"/usr/include/x86_64-linux-gnu",
+						"/usr/include"
+					],
+					"linkDirectories" : 
+					[
+						"/usr/lib/gcc/x86_64-unknown-linux-gnu/13.2.0",
+						"/usr/lib/x86_64-linux-gnu",
+						"/usr/lib64",
+						"/lib/x86_64-linux-gnu",
+						"/lib64",
+						"/usr/x86_64-unknown-linux-gnu/lib",
+						"/usr/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"gcc",
+						"gcc_s",
+						"c",
+						"gcc",
+						"gcc_s"
+					]
+				},
+				"path" : "/usr/bin/cc",
+				"version" : "13.2.0"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

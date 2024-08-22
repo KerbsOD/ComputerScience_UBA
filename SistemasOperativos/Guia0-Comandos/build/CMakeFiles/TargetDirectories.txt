@@ -1,0 +1,3 @@
+/home/octo/Documents/Computacion-UBA/SistemasOperativos/Guia0-Comandos/build/CMakeFiles/Guia0_Comandos.dir
+/home/octo/Documents/Computacion-UBA/SistemasOperativos/Guia0-Comandos/build/CMakeFiles/edit_cache.dir
+/home/octo/Documents/Computacion-UBA/SistemasOperativos/Guia0-Comandos/build/CMakeFiles/rebuild_cache.dir
