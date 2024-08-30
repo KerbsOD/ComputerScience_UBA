@@ -151,17 +151,19 @@
   "lastOpenFiles": [
     "Subclasificación.md",
     "State.md",
-    "Object Recursion.md",
-    "Null Object.md",
-    "Method Object.md",
-    "MarsRover2.md",
-    "TDD.md",
+    "Adapter.md",
     "Automated refactors.md",
+    "Composite.md",
     "Conceptos Basicos.md",
     "Decorator.md",
     "Heuristicas.pdf",
-    "Proxy.md",
     "Heuristicas de Diseno.md",
+    "MarsRover2.md",
+    "Null Object.md",
+    "Object Recursion.md",
+    "Proxy.md",
+    "TDD.md",
+    "Method Object.md",
     "Excalidraw/Drawing 2024-07-08 08.02.03.excalidraw.md",
     "Excalidraw",
     "Books/Vim/Seleccion.md",
@@ -192,8 +194,6 @@
     "Library/Inge1/Heuristicas de Diseno.md",
     "Library/Inge1/Changes Para Cuis.md",
     "Library/Inge1/Automated refactors.md",
-    "Library/TelegramGO/Basics.md",
-    "Excalidraw/Drawing 2024-07-08 02.21.49.excalidraw.md",
-    "Medium-Theme/README.md"
+    "Library/TelegramGO/Basics.md"
   ]
 }
