@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TDD.md",
+                "file": "Adapter.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TDD.md",
+                "file": "Adapter.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TDD.md",
+                "file": "Adapter.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TDD.md"
+                "file": "Adapter.md"
               }
             }
           }
@@ -149,9 +149,6 @@
   },
   "active": "618db08f798b6a72",
   "lastOpenFiles": [
-    "Subclasificación.md",
-    "State.md",
-    "Adapter.md",
     "Automated refactors.md",
     "Composite.md",
     "Conceptos Basicos.md",
@@ -159,11 +156,14 @@
     "Heuristicas.pdf",
     "Heuristicas de Diseno.md",
     "MarsRover2.md",
+    "Method Object.md",
     "Null Object.md",
     "Object Recursion.md",
     "Proxy.md",
+    "State.md",
+    "Subclasificación.md",
     "TDD.md",
-    "Method Object.md",
+    "Adapter.md",
     "Excalidraw/Drawing 2024-07-08 08.02.03.excalidraw.md",
     "Excalidraw",
     "Books/Vim/Seleccion.md",
@@ -193,7 +193,6 @@
     "Library/Inge1/MarsRover2.md",
     "Library/Inge1/Heuristicas de Diseno.md",
     "Library/Inge1/Changes Para Cuis.md",
-    "Library/Inge1/Automated refactors.md",
-    "Library/TelegramGO/Basics.md"
+    "Library/Inge1/Automated refactors.md"
   ]
 }
