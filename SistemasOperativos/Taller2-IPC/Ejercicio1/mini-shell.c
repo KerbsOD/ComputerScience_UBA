@@ -26,8 +26,9 @@ typedef char*** matrix;
 
 */
 
-void childRoutine()
+void childRoutine(int count, char** argv)
 {
+	execvp(argv[0],  &argv[0]);
 	exit(EXIT_SUCCESS);
 }
 
@@ -42,7 +43,7 @@ static int run(matrix progs, size_t count)
 		children[i] = fork();
 		if (children[i] == 0)
 		{
-			childRoutine();
+			childRoutine(progs[i]);
 		}
 	}
 
