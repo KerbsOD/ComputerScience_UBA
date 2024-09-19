@@ -41,7 +41,9 @@ En este repositorio se encuentra todo lo que programamos en la carrera de [Cienc
 - [Trabajos Prácticos](ParadigmasDeProgramación/Trabajos-Prácticos)
 
 
+### Métodos Numéricos
 
+- [Propiedades](MetodosNumericos/Propiedades.pdf) (El pdf no es mío. Source: https://github.com/daianalonso/MN-propiedades/blob/main/main.pdf)
 
 
 
