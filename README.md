@@ -40,6 +40,11 @@ En este repositorio se encuentra todo lo que programamos en la carrera de [Cienc
 - [Guías](ParadigmasDeProgramación/Guias)
 - [Trabajos Prácticos](ParadigmasDeProgramación/Trabajos-Prácticos)
 
+### Sistemas Operativos
+
+- [Guias](SistemasOperativos/Guias) 
+- [Trabajo Práctico](SistemasOperativos/TP-BlackFriday) 
+- [Talleres](SistemasOperativos/Talleres) 
 
 ### Métodos Numéricos
 
