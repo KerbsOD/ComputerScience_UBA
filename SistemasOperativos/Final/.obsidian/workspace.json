@@ -1,0 +1,187 @@
+{
+  "main": {
+    "id": "f513cd109daf19c2",
+    "type": "split",
+    "children": [
+      {
+        "id": "4b21334b4e690777",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8b157714dcb2f0e5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Sistemas-Distribuidos.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Sistemas-Distribuidos"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "66fd99e947d1eec3",
+    "type": "split",
+    "children": [
+      {
+        "id": "248dc9539db2b89a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "de3bc8cac9cf973e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e6c1af3aa0a5c11b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "5a29e92f112f57c6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "bc18670d1a5978d8",
+    "type": "split",
+    "children": [
+      {
+        "id": "8d83a774a417853f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ca0501126d08e9b4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Virtualizacion.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Virtualizacion"
+            }
+          },
+          {
+            "id": "a0a4aa6b4ebe72d0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Virtualizacion.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Virtualizacion"
+            }
+          },
+          {
+            "id": "7a59c1f6a6a6cb68",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "0f362889dd74d894",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Virtualizacion.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Virtualizacion"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "8b157714dcb2f0e5",
+  "lastOpenFiles": [
+    "Sistemas-de-Archivos.md",
+    "Administracion-Memoria.md",
+    "Administracion-Entrada-Salida.md",
+    "Scheduling.md",
+    "Assets/Pasted image 20241128184133.png",
+    "Assets/Pasted image 20241128184122.png",
+    "Procesos.md",
+    "Comunicacion entre Procesos.md",
+    "Assets/Pasted image 20241128155932.png",
+    "Assets/Pasted image 20241128153106.png",
+    "Assets/Pasted image 20241128145404.png",
+    "Assets/Pasted image 20241128113422.png",
+    "Assets/Pasted image 20241128104524.png",
+    "Assets/Pasted image 20241127184704.png",
+    "Assets",
+    "Virtualizacion.md",
+    "Seguridad.md",
+    "Sistemas-Distribuidos.md",
+    "Sincronizacion.md"
+  ]
+}
