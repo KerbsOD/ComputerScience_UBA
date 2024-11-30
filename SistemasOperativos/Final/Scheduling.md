@@ -33,8 +33,43 @@ Puede ser con desalojo o voluntario. Si un proceso nuevo llega y necesita menor 
 
 ## ¿Cómo funciona el scheduling con múltiples colas?
 
+Se tienen colas separadas para cada nivel de prioridad. Luego para cada cola se usa round robin.
 
+A cada proceso se le asigna una prioridad y este se mantiene en su misma cola durante toda su ejecucion.
+
+![[Pasted image 20241128213429.png]]
+Hay procesos que necesitan mayor prioridad como los procesos interactivos.
+
+Para las pilas multinivel tambien existen las *Multilevel-Feedback-Queue* que permite a los procesos moverse entre diferentes colas. Si un proceso usa demasiada rafaga de cpu se lo mueve a una cola mas baja dejando a los procesos de baja rafaga (interactivos, interfaz, entrada/salida) en las mayores prioridades.
+Tambien, si un proceso esta mucho tiempo en una cola de baja prioridad se lo puede subir a una de mejor prioridad para evitar starvation.
+
+> For example, consider a multilevel feedback queue scheduler with three
+> queues, numbered from 0 to 2 (Figure 5.9). The scheduler first executes all
+> processes in queue 0. Only when queue 0 is empty will it execute processes
+> in queue 1. Similarly, processes in queue 2 will be executed only if queues 0
+> and 1 are empty. A process that arrives for queue 1 will preempt a process in
+> queue 2. A process in queue 1 will in turn be preempted by a process arriving
+> for queue 0.
+
+- Un proceso entrante se lo pone en la *Queue 0*. A este se le da un quanta de 8ms. 
+- Si no termina en tiempo se lo mueve a la cola de la *Queue 1*. 
+- Si la *Queue 0* esta vacia se le da un quanta de 16ms al proceso en la cabeza de la *Queue 1*.
+- Si no se completa su ejecucion, se lo manda a la *Queue 2*.
+- Los procesos en la *Queue 2* solo corren si la *Queue 0* y la *Queue 1* estan vacias de forma *FIFO*.
+- Si una *Queue* espera mucho tiempo en una cola de baja prioridad se la sube a una de mayor prioridad.
 
 ##  ¿Hay algún problema con que las prioridades fueran fijas?
+
+Si las prioridades son fijas puede ocurrir que un proceso tenga starvation porque siempre hay procesos con mayor prioridad ejecutando. En estos casos se rompe el fairness.
 ##  Hablar sobre la afinidad de un procesador. ¿Qué información extra tenemos que tener en la PCB para mantener afinidad en un sistema multicore?
+
+La idea es que el scheduler ponga a los procesos en *Ready* en procesadores donde estuvieron corriendo antes para aprovechar el cache y maximizar cache hits. Esto hace que tarde un poco mas en schedulear pero acelera bastante la ejecucion de los programas.
+
+- Afinidad dura: A rajatabla, se hace siempre para todos los procesos.
+- Afinidad blanda: Se intenta una vez, si no se puede, se envia a otro procesador.
+
+En el PCB deberiamos tener un campo para marcar en que procesador fue la ultima ejecucion (o la de mas ejecuciones, los cache hits creo que dependen mas del tiempo desde que se ejecuto el proceso y no de la cantidad de veces).
+
 ##  Explicar el problema de inversión de prioridades.
+
+
