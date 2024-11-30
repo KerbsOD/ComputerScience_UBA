@@ -37,8 +37,8 @@ En este repositorio se encuentra todo lo que programamos en la carrera de [Cienc
 
 ### Paradigmas de Programación
 
-- [Guías](ParadigmasDeProgramación/Guias)
-- [Trabajos Prácticos](ParadigmasDeProgramación/Trabajos-Prácticos)
+- [Guías](ParadigmasDeProgramacion/Guias)
+- [Trabajos Prácticos](ParadigmasDeProgramacion/Trabajos-Prácticos)
 
 ### Sistemas Operativos
 
