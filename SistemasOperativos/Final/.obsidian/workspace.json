@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sistemas-de-Archivos.md",
+                "file": "Virtualizacion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sistemas-de-Archivos"
+              "title": "Virtualizacion"
             }
           }
         ]
@@ -164,17 +164,20 @@
   },
   "active": "5c8d28c5316e50e1",
   "lastOpenFiles": [
-    "Entrada-Salida.md",
+    "Assets/Pasted image 20241202025517.png",
+    "Assets/Pasted image 20241202025507.png",
+    "Sistemas-Distribuidos.md",
     "Sistemas-de-Archivos.md",
-    "Assets/Pasted image 20241201022759.png",
+    "Sincronizacion.md",
     "Sistema-de-Archivos-Distribuidos.md",
+    "Seguridad.md",
     "Scheduling.md",
     "Procesos.md",
     "Memoria.md",
+    "Entrada-Salida.md",
     "Virtualizacion.md",
-    "Sistemas-Distribuidos.md",
-    "Sincronizacion.md",
-    "Seguridad.md",
+    "Assets/Pasted image 20241201162629.png",
+    "Assets/Pasted image 20241201022759.png",
     "Assets/Pasted image 20241130190247.png",
     "Assets/Pasted image 20241130190231.png",
     "Assets/Pasted image 20241130184623.png",
@@ -183,8 +186,6 @@
     "Assets/Pasted image 20241128184133.png",
     "Assets/Pasted image 20241128184122.png",
     "Comunicacion entre Procesos.md",
-    "Assets/Pasted image 20241128155932.png",
-    "Assets/Pasted image 20241128153106.png",
     "Assets"
   ]
 }
