@@ -1,0 +1,177 @@
+{
+  "main": {
+    "id": "76f9e240e8d93dee",
+    "type": "split",
+    "children": [
+      {
+        "id": "ee9cb91fc83ff6e0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "383799ef23fc7cd8",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "01-Haskell/Clase 01 - Esquemas de recursion y tipo de datos inductivos.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Clase 01 - Esquemas de recursion y tipo de datos inductivos"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f09d7bfb00328446",
+    "type": "split",
+    "children": [
+      {
+        "id": "dd1e5279bf20d8b1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "beac27995de91b77",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "05c18041583f6744",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "dab7ae47e44158b6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c8fd2e2af92c3244",
+    "type": "split",
+    "children": [
+      {
+        "id": "087cd6d8a0c04bc4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0156972368ce491d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "01-Haskell/Clase 01 - Esquemas de recursion y tipo de datos inductivos.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Clase 01 - Esquemas de recursion y tipo de datos inductivos"
+            }
+          },
+          {
+            "id": "1751ad9ee45e47a1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01-Haskell/Clase 01 - Esquemas de recursion y tipo de datos inductivos.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Clase 01 - Esquemas de recursion y tipo de datos inductivos"
+            }
+          },
+          {
+            "id": "49a4b3fa4d3c8c6c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "8965386b001f3920",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01-Haskell/Clase 01 - Esquemas de recursion y tipo de datos inductivos.pdf"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Clase 01 - Esquemas de recursion y tipo de datos inductivos"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "383799ef23fc7cd8",
+  "lastOpenFiles": [
+    "09-SmallTalk/Clase Practica 11 - Smalltalk.pdf",
+    "07-Resolucion/Clase Practica 10 - Resolucion en logica de primer orden.pdf",
+    "06-LPO/Clase Practica 09 - Programacion Logica parte 2.pdf",
+    "06-LPO/Clase Practica 08 - Programacion Lógica parte 1.pdf",
+    "05-Inferencia/Clase Practica 07 - Inferencia de tipos.pdf",
+    "04-Lambda/Clase Practica 06 - Calculo Lambda parte 2.pdf",
+    "04-Lambda/Clase Practica 05 - Calculo Lambda parte 1.pdf",
+    "03-Proposicional/Clase Practica 04 - Sistemas deductivos.pdf",
+    "02-Razonamiento/Clase Practica 03 - Programacion Funcional parte 3.pdf",
+    "Clase Practica 03 - Programacion Funcional parte 3.pdf",
+    "01-Haskell/Clase Practica 03 - Programacion Funcional parte 3.pdf"
+  ]
+}
