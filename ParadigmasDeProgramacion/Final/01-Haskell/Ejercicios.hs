@@ -1,9 +1,4 @@
-{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
-
-{-# HLINT ignore "Avoid lambda" #-}
-import Control.Arrow (Arrow (first))
-import Data.ByteString (elemIndex)
-import Prelude hiding (filter, subtract, sum, (++))
+import Prelude hiding ((++))
 
 -- Ejercicio 1 ---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -15,14 +10,14 @@ max2 (x, y)
 normaVectorial :: (Float, Float) -> Float
 normaVectorial (x, y) = sqrt (x ^ 2 + y ^ 2)
 
-subtract :: Float -> Float -> Float
-subtract = flip (-)
+subtract2 :: Float -> Float -> Float
+subtract2 = flip (-)
 
-subtract2 :: (Float, Float) -> Float
-subtract2 (x, y) = (-) y x
+subtract2Curry :: (Float, Float) -> Float
+subtract2Curry (x, y) = (-) y x
 
 predecesor :: Float -> Float
-predecesor = subtract 1
+predecesor = subtract2 1
 
 predecesor2 :: (Float, a) -> Float
 predecesor2 = predecesor . fst
@@ -59,21 +54,19 @@ curry2 f a b = f (a, b)
 uncurry2 :: (a -> b -> c) -> ((a, b) -> c)
 uncurry2 f (a, b) = f a b
 
--- Creo que no se puede definir curryN porque los tipos no pueden ser dinamicos. Haria falta reflections o algo similar. (metaprogramacion?)
-
 -- Ejercicio 3 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 sum :: (Num a) => [a] -> a
 sum = foldr (+) 0
 
-elem :: (Eq a) => [a] -> a -> Bool
-elem xs e = foldr (\x rec -> x == e || rec) False xs
+elem2 :: (Eq a) => [a] -> a -> Bool
+elem2 xs e = foldr (\x rec -> x == e || rec) False xs
 
 (++) :: [a] -> [a] -> [a]
 (++) xs ys = foldr (:) ys xs
 
-filter :: (a -> Bool) -> [a] -> [a]
-filter f = foldr (\x rec -> if f x then x : rec else rec) []
+filter2 :: (a -> Bool) -> [a] -> [a]
+filter2 f = foldr (\x rec -> if f x then x : rec else rec) []
 
 map2 :: (a -> b) -> [a] -> [b]
 map2 = map
@@ -186,20 +179,12 @@ evaluar n = foldPoli n id (+) (*)
 
 data AB a = Nil | Bin (AB a) a (AB a)
 
-instance (Eq a) => Eq (AB a) where
-  Nil == Nil = True
-  Nil == (Bin izq r der) = False
-  (Bin izq r der) == (Bin izq2 r2 der2) = r == r2 && izq == izq2 && der == der2
-
-instance (Ord a) => Ord (AB a) where
-  compare Nil Nil = EQ
-  compare Nil (Bin {}) = LT
-  compare (Bin {}) Nil = GT
-  compare (Bin _ r _) (Bin _ r2 _) = compare r r2
-
-foldAB :: (a -> b -> b -> b) -> b -> AB a -> b
-foldAB _ z Nil = z
-foldAB f z (Bin izq r der) = f r (foldAB f z izq) (foldAB f z der)
+foldAB :: b -> (b -> a -> b -> b) -> AB a -> b
+foldAB casoNil casoBin arbol = case arbol of
+  Nil -> casoNil
+  Bin i r d -> casoBin (ac i) r (ac d)
+  where
+    ac = foldAB casoNil casoBin
 
 recAB :: b -> (a -> AB a -> AB a -> b -> b -> b) -> AB a -> b
 recAB z _ Nil = z
@@ -210,13 +195,13 @@ esNil Nil = True
 esNil _ = False
 
 alturaAB :: AB a -> Int
-alturaAB = foldAB (\r recIzq recDer -> 1 + max recIzq recDer) 0
+alturaAB = foldAB 0 (\recIzq r recDer -> 1 + max recIzq recDer)
 
 cantNodosAB :: AB a -> Int
-cantNodosAB = foldAB (\r recIzq recDer -> 1 + recIzq + recDer) 0
+cantNodosAB = foldAB 0 (\recIzq r recDer -> 1 + recIzq + recDer)
 
 mejorSegun2 :: (a -> a -> Bool) -> AB a -> a
-mejorSegun2 f (Bin izq r der) = foldAB (\r recIzq recDer -> if f r recIzq && f r recDer then r else if f recIzq recDer then recIzq else recDer) r (Bin izq r der)
+mejorSegun2 f (Bin izq r der) = foldAB r (\recIzq r recDer -> if f r recIzq && f r recDer then r else if f recIzq recDer then recIzq else recDer) (Bin izq r der)
 
 esABB :: (Ord a) => AB a -> Bool
 esABB = recAB True (\r izq der recIzq recDer -> mayor izq r && menor der r && recIzq && recDer)
@@ -229,10 +214,10 @@ esABB = recAB True (\r izq der recIzq recDer -> mayor izq r && menor der r && re
 -- Ejercicio 13 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 ramas :: AB a -> [[a]]
-ramas = foldAB (\r recIzq recDer -> if null recIzq && null recDer then [[r]] else map (r :) (recIzq ++ recDer)) []
+ramas = foldAB [] (\recIzq r recDer -> if null recIzq && null recDer then [[r]] else map (r :) (recIzq ++ recDer))
 
 mismaEstructura :: AB a -> AB b -> Bool
-mismaEstructura = foldAB (\r recIzq recDer arbol -> not (esNil arbol) && recIzq (hijoIzquierdo arbol) && recDer (hijoDerecho arbol)) (\arbol -> esNil arbol)
+mismaEstructura = foldAB esNil (\recIzq r recDer arbol -> not (esNil arbol) && recIzq (hijoIzquierdo arbol) && recDer (hijoDerecho arbol))
 
 hijoIzquierdo :: AB a -> AB a
 hijoIzquierdo (Bin izq _ _) = izq
@@ -272,14 +257,56 @@ alturaRT = foldRT (\r recHijos -> if null recHijos then 0 else 1 + maximum recHi
 
 -- Ejercicio 16 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+data HashSet a = Hash (a -> Integer) (Integer -> [a])
+
+vacio :: (a -> Integer) -> HashSet a
+vacio f = Hash f (const [])
+
+pertenece :: (Eq a) => a -> HashSet a -> Bool
+pertenece x (Hash f tabla) = x `elem` tabla (f x)
+
+agregar :: (Eq a) => a -> HashSet a -> HashSet a
+agregar x (Hash f tabla) = Hash f nuevaTabla
+  where
+    nuevaTabla n =
+      if n == f x
+        then
+          if x `elem` tabla n
+            then tabla n
+            else x : tabla n
+        else
+          tabla n
+
+interseccion :: (Eq a) => HashSet a -> HashSet a -> HashSet a
+interseccion (Hash f tabla1) (Hash _ tabla2) = Hash f nuevaTabla
+  where
+    nuevaTabla n = filter (\x -> pertenece x (Hash f tabla2)) (tabla1 n)
+
+foldrHSET :: (a -> a -> a) -> HashSet a -> a
+foldrHSET f (Hash _ tabla) = case concatMap tabla [0 ..] of
+  [] -> error "Empty HashSet"
+  xs -> foldr1 f xs
+
 -- Ejercicio 17 ---------------------------------------------------------------------------------------------------------------------------------------------
+
+-- [1, 3]
 
 -- Ejercicio 18 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+paresDeNat :: [(Int, Int)]
+paresDeNat = [(b, c) | a <- [0 ..], b <- [0 .. a], c <- [0 .. a], b + c == a]
+
 -- Ejercicio 19 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+pitagóricas :: [(Integer, Integer, Integer)]
+pitagóricas = [(b, a, c) | a <- [1 ..], b <- [1 .. a], c <- [1 .. a + b], a ^ 2 + b ^ 2 == c ^ 2]
+
 -- Ejercicio 20 ---------------------------------------------------------------------------------------------------------------------------------------------
+
 listasQueSuman :: Int -> [[Int]]
+listasQueSuman 0 = [[]]
+listasQueSuman n = [x : xs | x <- [1 .. n], xs <- listasQueSuman (n - x)]
+
 -- Ejercicio 21 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 enterosInfinitos :: [[Int]]
