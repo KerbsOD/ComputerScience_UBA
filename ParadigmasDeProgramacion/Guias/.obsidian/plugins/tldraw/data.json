@@ -1,0 +1,23 @@
+{
+  "embeds": {
+    "padding": 0,
+    "showBg": true,
+    "showBgDots": true
+  },
+  "fileDestinations": {
+    "confirmDestination": false,
+    "assetsFolder": "tldraw/assets",
+    "destinationMethod": "colocate",
+    "defaultFolder": "tldraw",
+    "colocationSubfolder": "resources"
+  },
+  "saveFileDelay": 0.5,
+  "newFilePrefix": "Tldraw ",
+  "newFileTimeFormat": "YYYY-MM-DD h.mmA",
+  "toolSelected": "draw",
+  "themeMode": "match-theme",
+  "gridMode": true,
+  "snapMode": false,
+  "debugMode": false,
+  "focusMode": false
+}

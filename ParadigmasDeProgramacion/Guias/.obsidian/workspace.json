@@ -1,0 +1,244 @@
+{
+  "main": {
+    "id": "ae60ec1285752698",
+    "type": "split",
+    "children": [
+      {
+        "id": "371324bc0ff888ab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f8b8f8d0e585b46a",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "02-Razonamiento/Clase 02 - Razonamiento ecuacional e induccion estructural.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Clase 02 - Razonamiento ecuacional e induccion estructural"
+            }
+          },
+          {
+            "id": "14127788694fa8f1",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "02-Razonamiento/Clase Practica 03 - Programacion Funcional parte 3.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Clase Practica 03 - Programacion Funcional parte 3"
+            }
+          },
+          {
+            "id": "b289df4605d12a7d",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "02-Razonamiento/Practica 2 - Razonamiento Ecuacional e induccion estructural.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Practica 2 - Razonamiento Ecuacional e induccion estructural"
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "dc6600d96c931ce6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "67477f5cb4e9ee04",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02-Razonamiento/Apuntes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Apuntes"
+            }
+          },
+          {
+            "id": "9ef517c9d03a7f1d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02-Razonamiento/Ejercicios.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ejercicios"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3d21317ac1d52f77",
+    "type": "split",
+    "children": [
+      {
+        "id": "f8415db1fabcb2d6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f254eac5d61624ae",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "baee37b7884c6ba6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "20ef01e416fd8e42",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "ba0a0d03075a4514",
+    "type": "split",
+    "children": [
+      {
+        "id": "03e0224dd96399ef",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e7c51acc398c7738",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "02-Razonamiento/Practica 2 - Razonamiento Ecuacional e induccion estructural.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Practica 2 - Razonamiento Ecuacional e induccion estructural"
+            }
+          },
+          {
+            "id": "36a95301e873fd49",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "02-Razonamiento/Practica 2 - Razonamiento Ecuacional e induccion estructural.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Practica 2 - Razonamiento Ecuacional e induccion estructural"
+            }
+          },
+          {
+            "id": "294ebfa5e495a127",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "08790d3aa2dd2edd",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "02-Razonamiento/Practica 2 - Razonamiento Ecuacional e induccion estructural.pdf"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Practica 2 - Razonamiento Ecuacional e induccion estructural"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "tldraw:Create new tldrawing": false
+    }
+  },
+  "active": "9ef517c9d03a7f1d",
+  "lastOpenFiles": [
+    "02-Razonamiento/Practica 2 - Razonamiento Ecuacional e induccion estructural.pdf",
+    "02-Razonamiento/Ejercicios.md",
+    "02-Razonamiento/Clase Practica 03 - Programacion Funcional parte 3.pdf",
+    "02-Razonamiento/Clase 02 - Razonamiento ecuacional e induccion estructural.pdf",
+    "02-Razonamiento/Apuntes.md",
+    "Pasted image 20250119105806.png",
+    "Pasted image 20250119105453.png",
+    "resources/resources/Tldraw 2025-01-19 10.13AM.md",
+    "resources/Tldraw 2025-01-19 10.13AM.md",
+    "resources/resources",
+    "resources",
+    "06-LPO/Clase 08 - Logica de Primer Orden.pdf",
+    "06-LPO/Practica 6 - Logica de primer orden.pdf",
+    "03-Proposicional/Practica 3 - Demostracion en Logica proposicional.pdf",
+    "03-Proposicional/Clase 04 - Sistemas deductivos y deduccion natural.pdf",
+    "01-Haskell/Guia01-ProgramacionFuncional.pdf"
+  ]
+}
