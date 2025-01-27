@@ -2,5 +2,6 @@
   "spellcheck": false,
   "showInlineTitle": true,
   "showRibbon": true,
-  "vimMode": true
+  "vimMode": true,
+  "promptDelete": false
 }

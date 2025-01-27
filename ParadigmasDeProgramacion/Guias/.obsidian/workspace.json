@@ -4,73 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "371324bc0ff888ab",
+        "id": "43f299b62842d27b",
         "type": "tabs",
         "children": [
           {
-            "id": "f8b8f8d0e585b46a",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "02-Razonamiento/Clase 02 - Razonamiento ecuacional e induccion estructural.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Clase 02 - Razonamiento ecuacional e induccion estructural"
-            }
-          },
-          {
-            "id": "14127788694fa8f1",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "02-Razonamiento/Clase Practica 03 - Programacion Funcional parte 3.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Clase Practica 03 - Programacion Funcional parte 3"
-            }
-          },
-          {
-            "id": "b289df4605d12a7d",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "02-Razonamiento/Practica 2 - Razonamiento Ecuacional e induccion estructural.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Practica 2 - Razonamiento Ecuacional e induccion estructural"
-            }
-          }
-        ],
-        "currentTab": 2
-      },
-      {
-        "id": "dc6600d96c931ce6",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "67477f5cb4e9ee04",
+            "id": "697999dc3b7af47a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02-Razonamiento/Apuntes.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Apuntes"
-            }
-          },
-          {
-            "id": "9ef517c9d03a7f1d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02-Razonamiento/Ejercicios.md",
+                "file": "04-Lambda/Ejercicios.md",
                 "mode": "source",
                 "source": false
               },
@@ -78,8 +21,7 @@
               "title": "Ejercicios"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -135,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "ba0a0d03075a4514",
@@ -222,23 +163,48 @@
       "tldraw:Create new tldrawing": false
     }
   },
-  "active": "9ef517c9d03a7f1d",
+  "active": "697999dc3b7af47a",
   "lastOpenFiles": [
-    "02-Razonamiento/Practica 2 - Razonamiento Ecuacional e induccion estructural.pdf",
+    "04-Lambda/Ejercicios.md",
+    "resources/Tldraw 2025-01-27 12.31AM.md",
+    "resources/Tldraw 2025-01-26 11.58PM.md",
+    "resources/Tldraw 2025-01-26 11.57PM.md",
+    "04-Lambda/Clase Practica 06 - Calculo Lambda parte 2.pdf",
+    "04-Lambda/Clase 06 - Correspondencia Curry-Howard. Operador de punto fijo.pdf",
+    "04-Lambda/Clase Practica 05 - Calculo Lambda parte 1.pdf",
+    "04-Lambda/Clase 05 - Calculo Lambda.pdf",
+    "04-Lambda/Practica 4 - Calculo Lambda - Tipado y Semantica Operacional.pdf",
+    "resources/Tldraw 2025-01-25 8.33PM.md",
     "02-Razonamiento/Ejercicios.md",
     "02-Razonamiento/Clase Practica 03 - Programacion Funcional parte 3.pdf",
+    "02-Razonamiento/Practica 2 - Razonamiento Ecuacional e induccion estructural.pdf",
+    "resources/Tldraw 2025-01-24 6.57PM.md",
+    "resources/Tldraw 2025-01-25 8.24PM.md",
+    "resources/Tldraw 2025-01-25 7.12PM.md",
+    "resources/Tldraw 2025-01-25 5.27PM.md",
+    "resources/Tldraw 2025-01-25 6.07AM.md",
+    "resources/Tldraw 2025-01-25 5.52AM.md",
+    "resources/Tldraw 2025-01-25 4.57AM.md",
+    "resources/Tldraw 2025-01-25 5.30AM.md",
+    "resources/Tldraw 2025-01-25 4.51AM.md",
+    "274f4ded-2bd4-4b94-90f7-3999c22e7119-tldrawFile.png",
+    "3001a05c-0626-4930-b1ea-5f88aef16c25-tldrawFile.png",
+    "Pasted image 20250124185724.png",
+    "resources/Tldraw 2025-01-24 6.49PM.md",
+    "resources/Tldraw 2025-01-24 6.45PM.md",
+    "resources/Tldraw 2025-01-24 6.43PM (2).md",
+    "resources/Tldraw 2025-01-24 6.43PM (1).md",
+    "resources/Tldraw 2025-01-24 6.43PM (0).md",
+    "resources/Tldraw 2025-01-24 6.43PM.md",
+    "resources/Tldraw 2025-01-24 6.40PM.md",
+    "resources/Tldraw 2025-01-24 6.31PM (0).md",
+    "resources/Tldraw 2025-01-24 6.31PM.md",
+    "resources/Tldraw 2025-01-24 3.29AM.md",
+    "resources/Tldraw 2025-01-24 3.20AM.md",
+    "resources/Pasted image 20250119105453.png",
+    "Excalidraw",
+    "04-Lambda/Clase 03 - Interpretes.pdf",
     "02-Razonamiento/Clase 02 - Razonamiento ecuacional e induccion estructural.pdf",
-    "02-Razonamiento/Apuntes.md",
-    "Pasted image 20250119105806.png",
-    "Pasted image 20250119105453.png",
-    "resources/resources/Tldraw 2025-01-19 10.13AM.md",
-    "resources/Tldraw 2025-01-19 10.13AM.md",
-    "resources/resources",
-    "resources",
-    "06-LPO/Clase 08 - Logica de Primer Orden.pdf",
-    "06-LPO/Practica 6 - Logica de primer orden.pdf",
-    "03-Proposicional/Practica 3 - Demostracion en Logica proposicional.pdf",
-    "03-Proposicional/Clase 04 - Sistemas deductivos y deduccion natural.pdf",
-    "01-Haskell/Guia01-ProgramacionFuncional.pdf"
+    "resources/Pasted image 20250119105806.png"
   ]
 }

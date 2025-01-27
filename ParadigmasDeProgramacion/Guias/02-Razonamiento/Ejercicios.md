@@ -368,34 +368,16 @@ foldr (\x rec -> rec ++ (x:[])) [] x:xs
 {HI}  = reverse xs ++ [x]
 
 -- Llegamos a:
-1. reverse x:xs = foldl (flip (:)) [] x:xs
-2. reverse xs ++ [x] = foldl (flip (:)) [] xs ++ [x]
+1. reverse x:xs 
+2. reverse xs ++ [x] 
 
 -- Queremos ver que son iguales, hacemos otra demostracion!
 ```
 
 ```haskell
-∀x::[a].∀xs::[a]. foldl (flip (:)) [] x:xs = foldl (flip (:)) [] xs ++ [x]
+∀x::[a].∀xs::[a]. reverse x:xs = reverse xs ++ [x]
 
--- Por principio de induccion estructural sobre listas.
 
--- Demostrar 
-P(xs): foldl (flip (:)) [] x:xs = foldl (flip (:)) [] (xs ++ [x])
-
--- Caso base: P([])
-foldl (flip (:)) [] ([] ++ [x])
-{++}  = foldl (flip (:)) [] (foldr (:) [x] [])
-{FR0} = foldl (flip (:)) [] [x]
-{--}  = foldl (flip (:)) [] x:[]
-
--- Caso inductivo:  ∀x::a. ∀xs::[a]. Usando P(xs) como hipotesis inductiva, quiero ver que P(x:xs).
-
--- Demostrar
-P(x:xs): foldl (flip (:)) [] x:(x:xs) = foldl (flip (:)) [] ((x:xs) ++ [x])
-
-foldl (flip (:)) [] x:(x:xs)
-{F1} = foldl (flip (:)) ( (flip (:)) [] x) (x:xs)
-{--} = foldl (flip (:)) [x] (x:xs)
 ```
 ## 3.8
 ```haskell
@@ -422,14 +404,15 @@ head (reverse (ponerAlFinal x []))
 -- Demostrar
 P(x:xs): head (reverse (ponerAlFinal x x:xs)) = x
 
-head (reverse (ponerAlFinal x x:xs)) 
-{P0} = head ( reverse ( foldr (:) (x:[]) (x:xs) ) )
-{F1} = head ( reverse ( (:) x ( foldr (:) (x:[]) xs ) ) )
-{P0} = head ( reverse ( x : (ponerAlFinal x xs) ))
-{R0} = head ( foldl (flip (:)) [] ( x : (ponerAlFinal x xs) ) )
-{F1} = head ( foldl (flip (:)) ( (flip (:)) [] x ) (ponerAlFinal x xs) )
-{--} = head ( foldl (flip (:)) x:[] (ponerAlFinal x xs) )
-{F1} = head ( foldl (flip (:)) ( (flip (:)) x:[] ))
+head (reverse (ponerAlFinal x y:ys)) 
+{P0} = head ( reverse ( foldr (:) (x:[]) (y:ys) ) )
+{F1} = head ( reverse ( (:) y ( foldr (:) (x:[]) ys ) ) )
+{P0} = head ( reverse ( y : (ponerAlFinal x ys) ))
+{R0} = head ( foldl (flip (:)) [] ( y : (ponerAlFinal x ys) ) )
+{F1} = head ( foldl (flip (:)) ( (flip (:)) [] y ) (ponerAlFinal x ys) )
+{--} = head ( foldl (flip (:)) y:[] (ponerAlFinal x ys) )
+{--} = head (foldl (flip (:)) [y] (ponerAlFinal x ys))
+
 ```
 
 # Ejercicio 5
